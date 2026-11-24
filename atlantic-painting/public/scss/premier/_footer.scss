@@ -1,0 +1,85 @@
+@use 'variables' as *;
+
+.pp-footer {
+  padding: 26px 0;
+  background: $pp-footer;
+  color: rgba($pp-white, 0.85);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px 36px;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+
+    img {
+      width: auto;
+      height: 42px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 34px;
+    font-size: 13px;
+
+    a:hover {
+      color: $pp-yellow;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    a {
+      color: $pp-white;
+      transition: color 0.2s ease, transform 0.2s ease;
+
+      &:hover {
+        color: $pp-yellow;
+        transform: translateY(-2px);
+      }
+    }
+
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  &__copy {
+    font-size: 12px;
+    color: rgba($pp-white, 0.75);
+  }
+
+  @include pp-down(xl) {
+    &__nav {
+      gap: 10px 22px;
+    }
+  }
+
+  @include pp-down(nav) {
+    padding: 36px 0 30px;
+
+    &__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__nav {
+      justify-content: center;
+    }
+  }
+
+  @include pp-down(sm) {
+    &__nav {
+      gap: 10px 20px;
+    }
+  }
+}

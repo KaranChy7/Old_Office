@@ -1,0 +1,116 @@
+@use 'variables' as *;
+
+.pp-process {
+  padding: 52px 0 56px;
+  background: $pp-white;
+
+  &__steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+    margin-top: 6px;
+    color: #A9B4C2;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @include pp-down(lg) {
+    &__steps {
+      flex-wrap: wrap;
+      gap: 36px 32px;
+    }
+
+    &__arrow {
+      display: none;
+    }
+  }
+
+  @include pp-down(md) {
+    padding: 48px 0 52px;
+
+    &__steps {
+      gap: 28px;
+    }
+  }
+}
+
+.pp-step {
+  flex: 1 1 0;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: start;
+  column-gap: 12px;
+
+  &__num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: $pp-blue;
+    font-family: $pp-font-display;
+    font-size: 15px;
+    font-weight: 600;
+    color: $pp-white;
+  }
+
+  &__icon {
+    color: $pp-navy;
+
+    svg {
+      width: 40px;
+      height: 40px;
+      stroke-width: 1.5;
+    }
+  }
+
+  &__body {
+    padding-top: 7px;
+
+    h3 {
+      font-family: $pp-font-body;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  }
+
+  @include pp-down(lg) {
+    flex: 0 0 calc(50% - 16px);
+  }
+
+  @include pp-down(md) {
+    &__icon svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    &__body {
+      h3 {
+        font-size: 15px;
+      }
+
+      p {
+        margin-top: 6px;
+        font-size: 14.5px;
+      }
+    }
+  }
+
+  @include pp-down(sm) {
+    flex-basis: 100%;
+  }
+}

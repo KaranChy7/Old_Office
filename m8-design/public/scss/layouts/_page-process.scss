@@ -1,0 +1,147 @@
+.process {
+    .process-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .process-box {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+
+            .image {
+                flex-basis: calc(40% - 10px);
+            }
+
+            .group {
+                flex-basis: calc(60% - 10px);
+                display: flex;
+                gap: 15px;
+            }
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
+
+.process-block {
+    flex-basis: calc(100% / 2 - 15px);
+    position: relative;
+    overflow: visible;
+    padding: 20px;
+    background-color: $whitey;
+    border: 2px solid #EEEEEE;
+
+    .svg-icon {
+        width: 40px;
+        aspect-ratio: 1/1;
+        display: inline-block;
+
+        svg {
+            width: 100%;
+            height: 100%;
+
+            path {
+                transition: 0.5s ease-in-out;
+            }
+        }
+    }
+
+    .desc {
+        .process-link {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-block: 20px;
+            text-transform: capitalize;
+            color: $black;
+            display: inline-block;
+        }
+    }
+
+    p {
+        line-height: 1.5;
+        font-size: 0.9375rem;
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .process {
+        .process-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .process-box {
+                flex-direction: column;
+                gap: 20px;
+
+                .group {
+                    justify-content: space-between;
+                    gap: 5px;
+                }
+
+                &:nth-child(even) {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .process-block {
+        flex-basis: calc(100% / 2 - 5px);
+    }
+}
+
+@include custom_max(992px) {
+    .process {
+        .process-wrapper {
+            gap: 30px;
+
+            .process-box {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    }
+
+    .process-block {
+        .desc {
+            .process-link {
+                font-size: 1.25rem;
+                margin-block: 10px;
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .process {
+        .process-wrapper {
+            .process-box {
+                .group {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+        }
+    }
+
+    .process-block {
+        .desc {
+            .process-link {
+                font-size: 1.125rem;
+            }
+        }
+
+        p {
+            font-size: 0.875rem;
+        }
+    }
+}

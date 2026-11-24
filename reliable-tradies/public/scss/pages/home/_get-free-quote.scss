@@ -1,0 +1,119 @@
+// =============================================
+// GET FREE QUOTE
+// =============================================
+@use '../../base/variables' as *;
+@use '../../base/mixins' as *;
+
+.get-quote {
+    @include section-padding;
+    background: $whitey;
+
+    .quote-inner {
+        display:               grid;
+        grid-template-columns: 1fr 1fr;
+        gap:                   80px;
+        align-items:           center;
+
+        @include custom_max(991px) {
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+    }
+
+    .quote-content {
+        .quote-perks {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .perk {
+                display:     flex;
+                align-items: center;
+                gap:         12px;
+                font-family: $secondaryFont;
+                font-size:   15px;
+                color:       $dark-color;
+                font-weight: 500;
+
+                i {
+                    width:         30px; height: 30px;
+                    border-radius: 50%;
+                    background:    rgba(212,132,42,0.1);
+                    display:       flex;
+                    align-items:   center;
+                    justify-content: center;
+                    color:         $secondaryColor;
+                    font-size:     14px;
+                    flex-shrink:   0;
+                }
+            }
+        }
+
+        .service-areas {
+            background:    $lgrey;
+            border-radius: $radius;
+            padding:       20px 22px;
+            margin-top:    24px;
+
+            p {
+                font-family: $secondaryFont;
+                font-size:   13px;
+                color:       $dark-color;
+                display:     flex;
+                align-items: center;
+                gap:         8px;
+
+                i { color: $secondaryColor; }
+                strong { color: $primaryColor; }
+            }
+        }
+    }
+
+    .quote-form-box {
+        background:    $primaryColor;
+        border-radius: $radius;
+        padding:       44px 40px;
+        position:      relative;
+        overflow:      hidden;
+
+        // Amber accent strip
+        &::before {
+            content:    '';
+            position:   absolute;
+            top:        0; left: 0;
+            width:      100%; height: 4px;
+            background: $secondaryColor;
+        }
+
+        .form-title {
+            font-family:   $primaryFont;
+            font-size:     1.6rem;
+            color:         $whitey;
+            font-weight:   700;
+            margin-bottom: 6px;
+        }
+
+        .form-sub {
+            font-family:   $secondaryFont;
+            font-size:     14px;
+            color:         rgba(255,255,255,0.55);
+            margin-bottom: 28px;
+        }
+
+        label { color: rgba(255,255,255,0.7) !important; }
+
+        input, textarea, select {
+            background:  rgba(255,255,255,0.06) !important;
+            border:      1.5px solid rgba(255,255,255,0.12) !important;
+            color:       $whitey !important;
+
+            &:focus {
+                border-color: $secondaryColor !important;
+                box-shadow:   0 0 0 3px rgba(212,132,42,0.15) !important;
+            }
+        }
+
+        @include custom_max(480px) { padding: 30px 22px; }
+    }
+}

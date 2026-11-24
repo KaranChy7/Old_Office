@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="GC-E Campers — Premium electric & hybrid camper hire and bespoke custom fit-outs on the Gold Coast. Explore Australia in style.">
+    <title>
+        GC-E Campers    </title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons (Remix Icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav__overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Nav Drawer -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">
+            <i class="ri-close-line"></i>
+        </button>
+        <a href="./" class="">Home</a>
+        <div class="mobile-nav__group">
+            <div class="mobile-nav__row">
+                <a href="camper_hire" class="">Hire</a>
+                <button class="mobile-nav__toggle" type="button" aria-expanded="false" aria-controls="mobileSubHire"
+                    aria-label="Show Hire services">
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+            </div>
+            <div class="mobile-nav__sub" id="mobileSubHire">
+                <div class="mobile-nav__sub-inner">
+                                        <a href="electric_camper_hire"
+                        class="">Electric Camper Hire</a>
+                                        <a href="hybrid_camper_hire"
+                        class="">Hybrid Camper Hire</a>
+                                        <a href="private_drive"
+                        class="">Private Drive</a>
+                                    </div>
+            </div>
+        </div>
+        <div class="mobile-nav__group">
+            <div class="mobile-nav__row">
+                <a href="fit_outs" class="">Fit-Outs</a>
+                <button class="mobile-nav__toggle" type="button" aria-expanded="false" aria-controls="mobileSubFitouts"
+                    aria-label="Show Fit-Outs services">
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+            </div>
+            <div class="mobile-nav__sub" id="mobileSubFitouts">
+                <div class="mobile-nav__sub-inner">
+                                        <a href="custom_fit_outs"
+                        class="">Custom Fit-Outs</a>
+                                        <a href="solar_electrical"
+                        class="">Solar &amp; Electrical</a>
+                                        <a href="pop_top_roofs"
+                        class="">Pop-Top Roofs</a>
+                                        <a href="diy_camper_kits"
+                        class="">DIY Camper Kits</a>
+                                    </div>
+            </div>
+        </div>
+        <a href="about_us" class="">About</a>
+        <a href="gallery" class="active">Gallery</a>
+        <a href="contact_us" class="">Contact</a>
+        <div class="mobile-nav__cta">
+            <a href="quote" class="btn btn--gold btn--block">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Site Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+
+            <!-- Logo -->
+            <a href="./" class="site-logo" aria-label="GC-E Campers home">
+                <div>
+                    <div class="site-logo__mark">GC&#8209;<span>E</span> CAMPERS</div>
+                    <div class="site-logo__sub">Electric &amp; Hybrid Hire</div>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="./" class="">Home</a>
+                <div class="site-nav__item">
+                    <a href="camper_hire" class="">Hire <i
+                            class="ri-arrow-down-s-line"></i></a>
+                    <div class="site-nav__dropdown">
+                                                <a href="electric_camper_hire"
+                            class="">Electric Camper Hire</a>
+                                                <a href="hybrid_camper_hire"
+                            class="">Hybrid Camper Hire</a>
+                                                <a href="private_drive"
+                            class="">Private Drive</a>
+                                            </div>
+                </div>
+                <div class="site-nav__item">
+                    <a href="fit_outs" class="">Fit-Outs <i
+                            class="ri-arrow-down-s-line"></i></a>
+                    <div class="site-nav__dropdown">
+                                                <a href="custom_fit_outs"
+                            class="">Custom Fit-Outs</a>
+                                                <a href="solar_electrical"
+                            class="">Solar &amp; Electrical</a>
+                                                <a href="pop_top_roofs"
+                            class="">Pop-Top Roofs</a>
+                                                <a href="diy_camper_kits"
+                            class="">DIY Camper Kits</a>
+                                            </div>
+                </div>
+                <a href="about_us" class="">About</a>
+                <a href="gallery" class="active">Gallery</a>
+                <a href="contact_us" class="">Contact</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="quote" class="btn btn--gold btn--sm">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+<section class="page-hero">
+    <div class="page-hero__bg">
+        <img src="images/image-13.jpg" alt="GC-E Campers gallery" loading="eager">
+    </div>
+    <div class="container">
+        <div class="page-hero__content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb__sep">/</span>
+                <span class="breadcrumb__current">Gallery</span>
+            </div>
+            <h2 class="page-hero__title">Our <em>Gallery</em></h2>
+        </div>
+    </div>
+</section>
+
+
+<section class="section section--black" id="gallery">
+    <div class="container">
+
+        <!-- Filter tabs -->
+        <div class="gallery-filters">
+                        <button class="gallery-filter-btn is-active"
+                data-filter="all">
+                All            </button>
+                        <button class="gallery-filter-btn "
+                data-filter="hire-fleet">
+                Hire Fleet            </button>
+                        <button class="gallery-filter-btn "
+                data-filter="fit-outs">
+                Fit-Outs            </button>
+                        <button class="gallery-filter-btn "
+                data-filter="on-the-road">
+                On the Road            </button>
+                    </div>
+
+        <!-- Grid -->
+        <div class="gallery-main-grid stagger">
+                        <div class="gallery-item" data-category="hire-fleet"
+                data-animate
+                onclick="openLightbox('images/image-1.jpg', 'VW ID. Buzz at the Gold Coast beach')">
+                <img src="images/image-1.jpg" alt="VW ID. Buzz at the Gold Coast beach" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">Hire Fleet</div>
+            </div>
+                        <div class="gallery-item" data-category="hire-fleet"
+                data-animate
+                onclick="openLightbox('images/image-10.jpg', 'Mini Countryman rooftop tent at sunset')">
+                <img src="images/image-10.jpg" alt="Mini Countryman rooftop tent at sunset" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">Hire Fleet</div>
+            </div>
+                        <div class="gallery-item" data-category="fit-outs"
+                data-animate
+                onclick="openLightbox('images/image-11.jpg', 'Custom timber interior fit-out')">
+                <img src="images/image-11.jpg" alt="Custom timber interior fit-out" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">Fit-Outs</div>
+            </div>
+                        <div class="gallery-item" data-category="fit-outs"
+                data-animate
+                onclick="openLightbox('images/image-8.jpg', 'Solar panel setup on van roof')">
+                <img src="images/image-8.jpg" alt="Solar panel setup on van roof" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">Fit-Outs</div>
+            </div>
+                        <div class="gallery-item" data-category="on-the-road"
+                data-animate
+                onclick="openLightbox('images/image-5.jpg', 'Camper parked at Noosa headland')">
+                <img src="images/image-5.jpg" alt="Camper parked at Noosa headland" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">On the Road</div>
+            </div>
+                        <div class="gallery-item" data-category="fit-outs"
+                data-animate
+                onclick="openLightbox('images/image-6.jpg', 'Interior kitchenette with timber joinery')">
+                <img src="images/image-6.jpg" alt="Interior kitchenette with timber joinery" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">Fit-Outs</div>
+            </div>
+                        <div class="gallery-item" data-category="on-the-road"
+                data-animate
+                onclick="openLightbox('images/image-7.jpg', 'VW Buzz driving Byron Bay hinterland')">
+                <img src="images/image-7.jpg" alt="VW Buzz driving Byron Bay hinterland" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">On the Road</div>
+            </div>
+                        <div class="gallery-item" data-category="hire-fleet"
+                data-animate
+                onclick="openLightbox('images/image-8.jpg', 'Pop-top roof open at campsite')">
+                <img src="images/image-8.jpg" alt="Pop-top roof open at campsite" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">Hire Fleet</div>
+            </div>
+                        <div class="gallery-item" data-category="fit-outs"
+                data-animate
+                onclick="openLightbox('images/image-9.jpg', 'Custom electrical system build')">
+                <img src="images/image-9.jpg" alt="Custom electrical system build" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">Fit-Outs</div>
+            </div>
+                        <div class="gallery-item" data-category="on-the-road"
+                data-animate
+                onclick="openLightbox('images/image-10.jpg', 'Camping at Kingscliff Beach')">
+                <img src="images/image-10.jpg" alt="Camping at Kingscliff Beach" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">On the Road</div>
+            </div>
+                        <div class="gallery-item" data-category="hire-fleet"
+                data-animate
+                onclick="openLightbox('images/image-11.jpg', 'Mini Camper at Sunshine Coast')">
+                <img src="images/image-11.jpg" alt="Mini Camper at Sunshine Coast" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">Hire Fleet</div>
+            </div>
+                        <div class="gallery-item" data-category="fit-outs"
+                data-animate
+                onclick="openLightbox('images/image-12.jpg', 'Workshop build in progress at Arundel')">
+                <img src="images/image-12.jpg" alt="Workshop build in progress at Arundel" loading="lazy">
+                <div class="gallery-hover">
+                    <i class="ri-zoom-in-line"></i>
+                </div>
+                <div class="gallery-item__tag">Fit-Outs</div>
+            </div>
+                    </div>
+
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lightbox__close" onclick="closeLightbox()" aria-label="Close">
+        <i class="ri-close-line"></i>
+    </button>
+    <img id="lightboxImg" class="lightbox__img" src="" alt="" onclick="event.stopPropagation()">
+    <p id="lightboxCaption" class="lightbox__caption"></p>
+</div>
+
+<script>
+function openLightbox(src, alt) {
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxImg').alt = alt;
+    document.getElementById('lightboxCaption').textContent = alt;
+    lb.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
+}
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
+
+// Filter functionality
+document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            const show = filter === 'all' || item.dataset.category === filter;
+            item.classList.toggle('is-hidden', !show);
+        });
+    });
+});
+</script>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer__grid">
+
+            <!-- Brand col -->
+            <div>
+                <div class="site-logo__mark site-footer__logo">GC&#8209;<span>E</span>
+                    CAMPERS</div>
+                <p class="site-footer__about">
+                    Premium camper hire, custom campervan fit-outs, VW ID. Buzz conversions, DIY camper modules
+                    and private-drive experiences from the Gold Coast.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <div class="site-footer__col-title">Navigate</div>
+                <ul class="site-footer__links">
+                    <li><a href="index">Home</a></li>
+                    <!-- <li><a href="camper_hire">Camper Hire</a></li>
+                    <li><a href="fit_outs">Fit-Outs</a></li> -->
+                    <li><a href="about_us">About Us</a></li>
+                    <li><a href="contact_us">Contact</a></li>
+                    <li><a href="quote">Get a Quote</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <div class="site-footer__col-title">Services</div>
+                <ul class="site-footer__links">
+                    <!--                     <li><a href="electric_camper_hire">Electric Camper Hire</a></li>
+                                        <li><a href="hybrid_camper_hire">Hybrid Camper Hire</a></li>
+                                        <li><a href="custom_fit_outs">Custom Fit-Outs</a></li>
+                                        <li><a href="solar_electrical">Solar &amp; Electrical</a></li>
+                                        <li><a href="pop_top_roofs">Pop-Top Roofs</a></li>
+                                        <li><a href="diy_camper_kits">DIY Camper Kits</a></li>
+                                        <li><a href="private_drive">Private Drive</a></li>
+                     -->
+
+                    <li><a href="camper_hire">Camper Hire</a></li>
+                    <li><a href="fit_outs">Fit-Outs</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <div class="site-footer__col-title">Contact</div>
+
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 7.81 19.79 19.79 0 01.01 4.18a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.12 6.12l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                    <span>
+                        <a href="tel:0400123456">0400 123 456</a>
+                                            </span>
+                </div>
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <a href="mailto:info@gcecampers.com.au">info@gcecampers.com.au</a>
+                </div>
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>14 Logistics Drive Arundel QLD 4214</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="site-footer__bottom">
+            <p class="site-footer__copyright">&copy; 2026 GC-E Campers. All rights reserved.            </p>
+            <div class="site-footer__legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+            <button class="back-to-top" id="backToTop" aria-label="Back to top">
+                <i class="ri-arrow-up-line"></i>
+            </button>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+</body>
+
+</html>

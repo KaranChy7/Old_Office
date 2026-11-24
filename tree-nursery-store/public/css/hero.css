@@ -1,0 +1,81 @@
+.hero {
+  background: linear-gradient(125deg, var(--green-950), var(--green-800));
+  color: #fff;
+  padding: 76px 0;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.hero-copy > p:not(.eyebrow) {
+  font-size: 18px;
+  color: #d9e9df;
+  max-width: 720px;
+}
+
+.hero .button-row {
+  margin-top: 30px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hero-stats span {
+  display: flex;
+  flex-direction: column;
+  color: #c9ddd0;
+  font-size: 13px;
+}
+
+.hero-stats strong {
+  color: #fff;
+  font-size: 22px;
+}
+
+.hero-image-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  border-radius: 32px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.22);
+  transform: rotate(1.5deg);
+}
+
+.hero-image-card img {
+  border-radius: 24px;
+  min-height: 470px;
+  object-fit: cover;
+}
+
+.floating-note {
+  position: absolute;
+  left: -26px;
+  bottom: 28px;
+  background: #fff;
+  color: var(--ink);
+  padding: 18px 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  max-width: 250px;
+}
+
+.floating-note strong, .floating-note span {
+  display: block;
+}
+
+.floating-note span {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}

@@ -1,0 +1,208 @@
+/* form css style is on quote.scss */
+
+.contact-wrap {
+    display: flex;
+    gap: 4em;
+
+    .contact-block {
+        width: 100%;
+        padding: 40px;
+        box-shadow: 0 0 22px -10px rgba($primaryColor, 0.5);
+
+        .align-left {
+            text-align: left;
+            margin-bottom: 40px;
+
+            h6 {
+                font-size: 20px;
+                font-weight: 300;
+                letter-spacing: 0.03em;
+                // color: $t-color;
+            }
+
+            h3 {
+                font-size: 28px;
+                font-weight: 700;
+                // color: $dblack;
+                // line-height: 1;
+                padding-top: 10px;
+            }
+
+            h4 {
+                font-size: 24px;
+                font-weight: 400;
+                // line-height: 1;
+            }
+        }
+
+        &.contact-image {
+            box-shadow: none;
+            padding: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.contact-detail {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    margin: 40px 0;
+
+    .details {
+        width: 100%;
+        border: 1px solid $primaryColor;
+        background-color: $primaryColor;
+        padding: 10px 20px;
+        border-radius: 30px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        text-align: center;
+
+        .topic {
+            h6 {
+                font-size: 18px;
+                color: $whitey;
+                font-weight: 500;
+            }
+        }
+
+        .info {
+            // padding: 10px 20px;
+            // margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s ease-in-out;
+
+            i {
+                // width: 10%;
+                font-size: 16px;
+                color: $whitey;
+                padding-right: 10px;
+            }
+
+            p {
+                // width: 90%;
+                font-size: 15px;
+                color: $whitey;
+            }
+
+            // &:hover {
+            //     box-shadow: 8px 6px 26px -18px $black;
+            // }
+        }
+    }
+}
+
+.google-map {
+    iframe {
+        display: block;
+        width: 100%;
+        height: 400px;
+    }
+}
+
+
+/* contact page style ends here */
+
+@include custom_max(992px) {
+    .contact-wrap {
+        gap: 4em;
+        flex-wrap: wrap;
+
+        img {
+            display: contents;
+        }
+
+        .contact-block {
+            .align-left {
+                text-align: center;
+            }
+        }
+    }
+
+    .contact-detail {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+        margin: 40px 0;
+
+        .details {
+            flex: 0 0 calc(100% / 2 - 20px);
+            margin: 0 10px 40px 10px;
+
+            .topic {
+                text-align: center;
+            }
+
+            .info {
+                justify-content: center;
+                text-align: center;
+
+                i {
+                    width: auto;
+                    margin-right: 10px;
+                }
+
+                p {
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .contact-wrap {
+        .contact-block {
+            .align-left {
+                text-align: center;
+            }
+        }
+    }
+
+    .google-map {
+        iframe {
+            height: 300px;
+        }
+    }
+}
+
+@include custom_max(577px) {
+    .contact-detail {
+        flex-direction: column;
+        margin: 30px 0;
+
+        .details {
+            margin: 0 0 30px 0;
+
+            .info {
+                margin-top: 0;
+
+                i {
+                    font-size: 13px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .google-map {
+        iframe {
+            height: 300px;
+        }
+    }
+}

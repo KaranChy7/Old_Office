@@ -1,0 +1,125 @@
+.service {
+    background-color: #F4F4F9;
+
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
+.service-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(#293B45, 30%);
+    padding-block: 20px 40px;
+
+    .title {
+        flex-basis: 50%;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0;
+    }
+
+    h6 {
+        font-size: 2.25rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        color: $black;
+        transition: 0.5s ease-in-out 0.2s;
+        overflow-wrap: anywhere;
+        line-height: 1.2;
+    }
+
+    .icon {}
+
+    .desc {
+        flex-basis: 40%;
+
+        p {
+            font-size: 0.9375rem;
+            font-family: $primaryFont;
+            font-weight: 500;
+            transition: 0.5s ease-in-out 0.3s;
+        }
+    }
+
+    &:hover {
+        .title {}
+
+        h6 {
+            color: $dblack;
+        }
+
+        .desc {
+            p {
+                color: $black;
+            }
+        }
+
+    }
+}
+
+@include custom_max(1200px) {
+    .service-block {
+        h6 {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .service-block {
+        .title {
+            flex-basis: 60%;
+        }
+
+        h6 {
+            font-size: 1.5rem;
+        }
+
+        .desc {
+            p {
+                font-size: 0.875rem;
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .service-block {
+        flex-direction: column;
+        align-items: center;
+
+        .desc {
+            text-align: center;
+
+            p {
+                font-size: 0.9375rem;
+            }
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .service-block {
+        .title {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+        }
+        h6{
+            font-size: 1.25rem;
+        }
+        .desc {
+            text-align: center;
+            margin-top: 20px;
+
+            p {
+                font-size: 0.9375rem;
+            }
+        }
+    }
+}

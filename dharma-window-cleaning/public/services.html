@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | Everest Crew Clean Pty Ltd</title>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts: Oswald + Inter + Playfair Display -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;900&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/main.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+
+<body>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" aria-hidden="true">
+        <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="top-bar__inner">
+            <div class="top-bar__left">
+                <a href="tel:0466803866" class="top-bar__item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z" />
+                    </svg>
+                    0466 803 866                </a>
+                <a href="mailto:info@everestcrewclean.com.au" class="top-bar__item top-bar__item--email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z" />
+                    </svg>
+                    info@everestcrewclean.com.au                </a>
+            </div>
+            <div class="top-bar__right">
+                <span class="top-bar__item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2a8 8 0 00-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 00-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z" />
+                    </svg>
+                    Ashfield NSW 2131 &middot; Servicing within 80 km                </span>
+                            </div>
+        </div>
+    </div>
+
+    <!-- Site Header -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Everest Crew Clean Pty Ltd Home">
+                <img src="images/logo.png" alt="Everest Crew Clean Pty Ltd" class="logo__image">
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="nav__link ">Home</a>
+
+                <a href="about.html" class="nav__link ">About</a>
+
+                <div class="nav__item nav__item--dropdown">
+                    <a href="services.html"
+                        class="nav__link active">Services</a>
+                    <button type="button" class="nav__dropdown-toggle" aria-label="Toggle services menu"
+                        aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="nav__chevron">
+                            <path d="M7 10l5 5 5-5z" />
+                        </svg>
+                    </button>
+
+                    <div class="nav__dropdown">
+                                                <a href="window-cleaning.html" class="nav__dropdown-link">Window Cleaning</a>
+                                                <a href="gutter-cleaning.html" class="nav__dropdown-link">Gutter Cleaning</a>
+                                                <a href="solar-panel-cleaning.html" class="nav__dropdown-link">Solar Panel Cleaning</a>
+                                                <a href="skylight-cleaning.html" class="nav__dropdown-link">Skylight Cleaning</a>
+                                                <a href="roof-pressure-wash.html" class="nav__dropdown-link">Roof Pressure Wash</a>
+                                                <a href="house-soft-pressure-wash.html" class="nav__dropdown-link">House Soft Pressure Wash</a>
+                                                <a href="backyard-pressure-wash-sealing.html" class="nav__dropdown-link">Backyard Pressure Wash &amp; Sealing</a>
+                                                <a href="gutter-guard-installation.html" class="nav__dropdown-link">Gutter Guard Installation</a>
+                                                <a href="solar-panel-bird-proofing.html" class="nav__dropdown-link">Solar Panel Bird Mesh (Bird Proofing)</a>
+                                                <a href="roof-repair-maintenance.html" class="nav__dropdown-link">Roof Repair &amp; Maintenance</a>
+                                                <a href="tree-branch-trimming.html" class="nav__dropdown-link">Tree &amp; Branch Trimming</a>
+                                            </div>
+                </div>
+
+                <a href="gallery.html" class="nav__link ">Gallery</a>
+                <a href="reviews.html" class="nav__link ">Reviews</a>
+                <a href="contact.html" class="nav__link ">Contact</a>
+                <a href="quote.html" class="nav__cta">Get a quote</a>
+            </nav>
+
+            <div class="nav-backdrop" id="nav-backdrop"></div>
+
+            <!-- Hamburger -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+<!-- ═══════════════════════════════════════
+     SERVICES
+══════════════════════════════════════ -->
+<section class="page-services">
+  <div class="page-services__container">
+
+    <div class="page-services__header">
+      <div class="page-services__badge" data-reveal>Our Services</div>
+      <h1 data-reveal data-delay="100">Expert cleaning for every property.</h1>
+      <p data-reveal data-delay="200">Residential, commercial and strata properties within an 80 km        radius of Ashfield, NSW. Pick a service below or request a quote.</p>
+    </div>
+
+    <!-- Category tab nav -->
+    <nav class="page-services__tabs" aria-label="Service categories" data-reveal data-delay="250">
+              <a href="#cleaning" class="page-services__tab">Cleaning</a>
+              <a href="#pressure-washing" class="page-services__tab">Pressure Washing</a>
+              <a href="#roof-property-maintenance" class="page-services__tab">Roof &amp; Property Maintenance</a>
+          </nav>
+
+          <div class="page-services__group" id="cleaning">
+
+        <div class="page-services__group-label" data-reveal>
+          <span>Cleaning</span>
+        </div>
+
+        <div class="page-services__grid">
+                      <a href="window-cleaning.html" class="page-services__card"
+              data-reveal data-delay="0">
+              <div class="page-services__card-media">
+                <img src="images/window-cleaning-detail.jpg" alt="Everest Crew Clean team member cleaning a tall glass window with a water-fed pole"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Windows</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>Window Cleaning</h3>
+                <p>Streak-free glass, frames and sills for homes, commercial buildings and strata properties.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                      <a href="gutter-cleaning.html" class="page-services__card"
+              data-reveal data-delay="50">
+              <div class="page-services__card-media">
+                <img src="images/gutter-cleaning.png" alt="Gutter before and after cleaning — leaves and sludge removed"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Gutters</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>Gutter Cleaning</h3>
+                <p>Leaves and debris cleared from gutters so rainwater flows away from your home.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                      <a href="solar-panel-cleaning.html" class="page-services__card"
+              data-reveal data-delay="100">
+              <div class="page-services__card-media">
+                <img src="images/solar-panel-cleaning.jpg" alt="Everest Crew Clean team member cleaning solar panels on a tiled roof"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Solar</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>Solar Panel Cleaning</h3>
+                <p>Dust, bird droppings and grime removed so your panels can take in the sun.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                      <a href="skylight-cleaning.html" class="page-services__card"
+              data-reveal data-delay="150">
+              <div class="page-services__card-media">
+                <img src="images/skylights-clean.jpg" alt="Skylight before and after cleaning — dirty glass, then clear glass"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Skylights</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>Skylight Cleaning</h3>
+                <p>Dirt, leaves and stains cleared from skylights so the natural light comes back in.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                  </div>
+
+      </div>
+          <div class="page-services__group" id="pressure-washing">
+
+        <div class="page-services__group-label" data-reveal>
+          <span>Pressure Washing</span>
+        </div>
+
+        <div class="page-services__grid">
+                      <a href="roof-pressure-wash.html" class="page-services__card"
+              data-reveal data-delay="0">
+              <div class="page-services__card-media">
+                <img src="images/roof-pressure-wash.jpg" alt="Everest Crew Clean team member pressure washing a terracotta tiled roof"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Roofs</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>Roof Pressure Wash</h3>
+                <p>Moss, lichen, dirt and stains washed off the roof so it looks fresh again.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                      <a href="house-soft-pressure-wash.html" class="page-services__card"
+              data-reveal data-delay="50">
+              <div class="page-services__card-media">
+                <img src="images/roof-pressure-wash-house.jpg" alt="Everest Crew Clean team member washing the exterior of a brick home"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Soft Wash</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>House Soft Pressure Wash</h3>
+                <p>A gentle, low-pressure wash for walls, eaves and render that removes dirt, mould and cobwebs.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                      <a href="backyard-pressure-wash-sealing.html" class="page-services__card"
+              data-reveal data-delay="100">
+              <div class="page-services__card-media">
+                <img src="images/driveway-pressure-clean.jpg" alt="Surface cleaner lifting grime off concrete, leaving a clean strip"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Wash &amp; Seal</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>Backyard Pressure Wash &amp; Sealing</h3>
+                <p>Patios, paths, pavers and decks pressure washed, then sealed to protect them.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                  </div>
+
+      </div>
+          <div class="page-services__group" id="roof-property-maintenance">
+
+        <div class="page-services__group-label" data-reveal>
+          <span>Roof &amp; Property Maintenance</span>
+        </div>
+
+        <div class="page-services__grid">
+                      <a href="gutter-guard-installation.html" class="page-services__card"
+              data-reveal data-delay="0">
+              <div class="page-services__card-media">
+                <img src="images/aluminum-gutter-guard.jpg" alt="Tiled roof gutter before and after aluminium mesh gutter guard is fitted"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Gutter Guard</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>Gutter Guard Installation</h3>
+                <p>Mesh gutter guard fitted along your roofline to keep leaves and debris out.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                      <a href="solar-panel-bird-proofing.html" class="page-services__card"
+              data-reveal data-delay="50">
+              <div class="page-services__card-media">
+                <img src="images/solarpanel.jpg" alt="Black bird mesh fitted around rooftop solar panels"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Bird Proofing</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>Solar Panel Bird Mesh (Bird Proofing)</h3>
+                <p>Mesh fitted around your solar panels to stop birds nesting underneath.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                      <a href="roof-repair-maintenance.html" class="page-services__card"
+              data-reveal data-delay="100">
+              <div class="page-services__card-media">
+                <img src="images/job-roof-valley.jpg" alt="Tiled roof and metal valley on a house above a brick driveway"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Roofs</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>Roof Repair &amp; Maintenance</h3>
+                <p>Broken tiles, valleys and roof wear fixed before they turn into leaks.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                      <a href="tree-branch-trimming.html" class="page-services__card"
+              data-reveal data-delay="150">
+              <div class="page-services__card-media">
+                <img src="images/gutter-branches.jpg" alt="Branches and plant growth pulled out of a blocked roof gutter"
+                  class="page-services__card-image">
+                <span class="page-services__card-tag">Trees</span>
+              </div>
+              <div class="page-services__card-body">
+                <h3>Tree &amp; Branch Trimming</h3>
+                <p>Overhanging branches trimmed back from the roof, gutters and paths.</p>
+                <span class="page-services__card-link">
+                  View details
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+                  </div>
+
+      </div>
+    
+  </div>
+</section>
+<!-- ═══════════════════════════════════════
+     SERVICES — PACKAGES
+══════════════════════════════════════ -->
+<section class="services-addons">
+    <div class="services-addons__container">
+        <div class="services-addons__grid">
+
+            <div class="services-addons__col" data-reveal="left">
+                <div class="services-addons__badge">Tailored packages</div>
+                <h2>Combine services in one visit.</h2>
+                <p>We offer flexible, tailored cleaning packages &mdash; pair any of these
+                    services and we'll take care of them together.</p>
+
+                <div class="services-addons__pills">
+                                        <span class="services-addons__pill">+ Window Cleaning</span>
+                                        <span class="services-addons__pill">+ Gutter Cleaning</span>
+                                        <span class="services-addons__pill">+ Solar Panel Cleaning</span>
+                                        <span class="services-addons__pill">+ Skylight Cleaning</span>
+                                        <span class="services-addons__pill">+ Roof Pressure Wash</span>
+                                        <span class="services-addons__pill">+ House Soft Pressure Wash</span>
+                                        <span class="services-addons__pill">+ Backyard Pressure Wash &amp; Sealing</span>
+                                        <span class="services-addons__pill">+ Gutter Guard Installation</span>
+                                        <span class="services-addons__pill">+ Solar Panel Bird Mesh (Bird Proofing)</span>
+                                        <span class="services-addons__pill">+ Roof Repair &amp; Maintenance</span>
+                                        <span class="services-addons__pill">+ Tree &amp; Branch Trimming</span>
+                                    </div>
+            </div>
+
+            <div class="services-addons__col" data-reveal="right" data-delay="150">
+                <div class="services-addons__badge">Need a custom scope?</div>
+                <h2>One-time service or ongoing maintenance?</h2>
+                <p>Either way, you can count on us to keep your property pristine and inviting.
+                    Tell us about the property and we'll send a personalised quote.</p>
+
+                <div class="services-addons__actions">
+                    <a href="quote.html" class="services-addons__btn-primary">Get a quote</a>
+                    <a href="tel:0466803866" class="services-addons__btn-secondary">Call 0466 803 866</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+ <footer class="site-footer">
+     <div class="site-footer__container">
+
+         <div class="site-footer__grid">
+
+             <!-- Brand -->
+             <div class="site-footer__brand">
+                 <a href="index.html" class="site-footer__logo" aria-label="Everest Crew Clean Pty Ltd Home">
+                     <img src="images/logo.png" alt="Everest Crew Clean Pty Ltd" class="site-footer__logo-image">
+                 </a>
+                 <p>Window, gutter, roof, solar panel and pressure cleaning, plus roof and property maintenance,
+                     within 80 km of Ashfield, NSW. A 100% insured company &mdash; Cleaning Beyond Expectations.</p>
+             </div>
+
+             <!-- Company -->
+             <div class="site-footer__col">
+                 <h4>Company</h4>
+                 <ul class="site-footer__links">
+                     <li><a href="about.html">About</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="gallery.html">Gallery</a></li>
+                     <li><a href="reviews.html">Reviews</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                     <li><a href="quote.html">Get a Quote</a></li>
+                 </ul>
+             </div>
+
+             <!-- Services -->
+             <div class="site-footer__col">
+                 <h4>Services</h4>
+                 <ul class="site-footer__links">
+                                          <li><a href="window-cleaning.html">Window Cleaning</a></li>
+                                          <li><a href="gutter-cleaning.html">Gutter Cleaning</a></li>
+                                          <li><a href="solar-panel-cleaning.html">Solar Panel Cleaning</a></li>
+                                          <li><a href="skylight-cleaning.html">Skylight Cleaning</a></li>
+                                          <li><a href="roof-pressure-wash.html">Roof Pressure Wash</a></li>
+                                          <li><a href="house-soft-pressure-wash.html">House Soft Pressure Wash</a></li>
+                                          <li><a href="backyard-pressure-wash-sealing.html">Backyard Pressure Wash &amp; Sealing</a></li>
+                                          <li><a href="gutter-guard-installation.html">Gutter Guard Installation</a></li>
+                                          <li><a href="solar-panel-bird-proofing.html">Solar Panel Bird Mesh (Bird Proofing)</a></li>
+                                          <li><a href="roof-repair-maintenance.html">Roof Repair &amp; Maintenance</a></li>
+                                          <li><a href="tree-branch-trimming.html">Tree &amp; Branch Trimming</a></li>
+                                      </ul>
+             </div>
+
+             <!-- Contact -->
+             <div class="site-footer__col">
+                 <h4>Contact</h4>
+                 <ul class="site-footer__links">
+                     <li><a href="tel:0466803866">0466 803 866</a></li>
+                     <li><a href="mailto:info@everestcrewclean.com.au">info@everestcrewclean.com.au</a></li>
+                     <li><span>Ashfield NSW 2131</span></li>
+                                                           </ul>
+             </div>
+
+         </div>
+
+     </div>
+
+     <div class="site-footer__bottom">
+         <div class="site-footer__container site-footer__bottom-inner">
+             <p>&copy; 2026 Everest Crew Clean Pty Ltd. All rights reserved. Designed &amp;
+                 Developed by <a href="https://linearwebsolutions.com.au/">Linear Web Solutions</a></p>
+
+         </div>
+     </div>
+ </footer>
+
+ <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+ <script src="js/scroll-animations.js"></script>
+ <script src="js/main.js"></script>
+ </body>
+
+ </html>

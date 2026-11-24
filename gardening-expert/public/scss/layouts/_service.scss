@@ -1,0 +1,232 @@
+.service-section {
+    padding: 80px 0;
+     
+
+    .service-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 40px;
+        padding-bottom: 60px;
+
+        .block {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            background-color: $whitey;
+            box-shadow: 0 0px 12px -4px #333;
+            border-radius: 20px;
+            padding: 20px;
+
+            .figure {
+                flex: 0 0 calc(45% - 15px);
+                border-radius: 10px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .text {
+                flex: 0 0 calc(55% - 15px);
+                padding: 15px 0;
+
+                h4 {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    padding-bottom: 15px;
+                    text-transform: capitalize;
+                    color: $primaryColor;
+                }
+
+                p {
+                    font-size: 0.9375rem;
+                    color: $black;
+                    margin-bottom: 10px;
+                }
+
+                ul {
+                    p {
+                        font-size: 1.125rem;
+                        font-weight: 500;
+                        color: $black;
+                        text-transform: capitalize;
+                        margin-bottom: 0;
+                    }
+
+                    li {
+                        font-size: 0.9375rem;
+                        color: $blackie;
+                        text-transform: capitalize;
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            // &:hover {
+            //     transform: scale(1.02);
+            //     cursor: pointer;
+            // }
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
+
+.titles {
+    text-align: center;
+    padding-bottom: 40px;
+
+    h5 {
+        font-size: 18px;
+        color: #000;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 36px;
+        color: $primaryColor;
+        font-weight: 700;
+    }
+}
+
+@include custom_max(991px) {
+    .service-section {
+        padding: 50px 0;
+
+        .titles {
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        .service-wrapper {
+            .block {
+                padding-bottom: 20px;
+                flex-direction: column;
+
+                .figure {
+                    img {
+                        aspect-ratio: 4/2;
+                    }
+                }
+
+                &:nth-child(even) {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(767px) {
+    .service-section {
+        padding: 30px 0;
+
+        .titles {
+            padding-bottom: 30px;
+
+            h5 {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            h2 {
+                font-size: 28px;
+                line-height: 1.4;
+            }
+        }
+
+        .service-wrapper {
+            .block {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .service-section {
+        .titles {
+            padding-bottom: 15px;
+        }
+
+        .service-wrapper {
+            .block {
+                height: auto;
+
+                .text {
+                    padding: 10px 0;
+
+                    h4 {
+                        font-size: 16px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .service-section {
+        .titles {
+            padding-bottom: 10px;
+
+            h5 {
+                line-height: 1.5;
+            }
+
+            h2 {
+                font-size: 24px;
+                line-height: 1.5;
+            }
+        }
+
+        .service-wrapper {
+            .block {
+                .text {
+                    padding: 10px 0;
+
+                    h4 {
+                        padding-bottom: 10px;
+                        ;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(320px) {
+    .service-section {
+        .titles {
+            h5 {
+                font-size: 15px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+        .service-wrapper {
+            .block {
+                .text {
+                    padding: 10px 0;
+
+                    h4 {
+                        padding-bottom: 10px;
+                        font-size: 15px;
+                    }
+
+                }
+            }
+        }
+    }
+}

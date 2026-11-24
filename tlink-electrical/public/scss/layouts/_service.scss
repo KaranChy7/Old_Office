@@ -1,0 +1,190 @@
+.service-block {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .block {
+        flex: 0 0 calc(100% / 2 - 20px);
+        margin-bottom: 20px;
+        background-color: #fff;
+        padding: 20px 30px;
+        margin: 70px 0 20px 0;
+        box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+        overflow: visible;
+        transition: 0.4s all;
+        border-radius: 10px;
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 10px;
+
+            .user-image {
+                margin-top: -85px;
+
+                img {
+                    width: 400px;
+                    aspect-ratio: 4/2;
+                    height: auto;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 20px;
+                    transition: 0.5s ease-in-out 0.2s;
+                }
+            }
+
+            .text {
+                text-align: center;
+
+                h2 {
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                    color: $secondaryColor;
+                    margin-top: 10px;
+                    text-transform: capitalize;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        height: 2px;
+                        width: 40px;
+                        background-color: $secondaryColor;
+                        margin: 10px auto;
+                    }
+
+                    span {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        .desc,
+        p {
+            // font-size: 14px;
+            color: $t-color;
+            line-height: 1.8;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        &:hover {
+            background-color: $primaryColor;
+            cursor: pointer;
+
+            .info {
+                .user-image {
+                    box-shadow: 0 0 10px -2px $dblack;
+                    transform: translateY(-5px);
+                }
+
+                .text {
+                    h2 {
+                        color: #fff;
+
+                        &::after {
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .desc,
+            p {
+                color: #fff;
+            }
+        }
+    }
+
+    // .slick-arrow {
+    //     position: absolute;
+    //     top: auto;
+    //     bottom: -30px;
+    //     transform: translateX(0);
+    //     overflow: hidden;
+
+    //     i {
+    //         font-size: 16px;
+    //         line-height: 32px;
+    //         height: 32px;
+    //         width: 32px;
+    //         padding: 10px 6px;
+    //         background-color: $primaryColor;
+    //         color: #fff;
+    //         text-align: center;
+    //         opacity: 0.8;
+    //         cursor: pointer;
+
+    //         &:hover {
+    //             opacity: 1;
+    //         }
+    //     }
+
+    //     &.left {
+    //         left: calc(50% - 30px);
+    //         transform: translateX(-50%);
+    //         z-index: 9;
+    //     }
+
+    //     &.right {
+    //         right: calc(50% - 30px);
+    //         transform: translateX(-50%);
+    //     }
+    // }
+}
+
+@include custom_max(992px) {
+    .service-block {
+        .block {
+            // flex: 0 0 calc(100% / 2 - 20px);
+            padding: 20px 15px;
+            margin: 60px 0 20px 0;
+
+            .info {
+                .user-image {
+                    margin-top: -75px;
+                    // border: 3px solid #fff;
+
+                    // img {
+                    //     height: 80px;
+                    //     width: 80px;
+                    // }
+                }
+
+                .text {
+                    text-align: center;
+
+                    h2 {
+                        font-size: 1.125rem;
+                        font-weight: 600;
+                        color: $primaryColor;
+                        margin-top: 10px;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            height: 2px;
+                            width: 40px;
+                            background-color: $primaryColor;
+                            margin: 10px auto;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .slick-arrow {
+            display: none !important;
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .service-block {
+        flex-direction: column;
+    }
+}

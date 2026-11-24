@@ -1,0 +1,148 @@
+// ── SHARED FORM STYLES ────────────────────────────────────
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+
+  @include respond($bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+
+  label {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $muted;
+    margin-bottom: 0.5rem;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    background: $dark;
+    border: 1px solid rgba($white, 0.08);
+    padding: 0.875rem 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+    color: $white;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+
+    &:focus { border-color: rgba($blue, 0.5); }
+    &::placeholder { color: rgba($muted, 0.5); }
+  }
+
+  select {
+    appearance: none;
+    cursor: pointer;
+    option { background: $dark; color: $white; }
+  }
+}
+
+// ── SERVICE CHECKBOXES ────────────────────────────────────
+.service-checks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+
+  @include respond($bp-xs) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-check {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: $blue;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  span {
+    font-size: 0.85rem;
+    color: rgba($white, 0.75);
+    font-family: 'Barlow', sans-serif;
+  }
+}
+
+// ── BUDGET RADIOS ─────────────────────────────────────────
+.budget-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.budget-radio {
+  position: relative;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  input:checked + .budget-label {
+    background: rgba($blue, 0.12);
+    border-color: $blue;
+    color: $blue;
+  }
+}
+
+.budget-label {
+  display: block;
+  padding: 0.75rem 1rem;
+  background: $black;
+  border: 1px solid rgba($white, 0.08);
+  font-size: 0.85rem;
+  color: $muted;
+  transition: all 0.2s;
+  text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+// ── FORM SUCCESS ──────────────────────────────────────────
+.form-success {
+  display: none;
+  background: rgba($blue, 0.12);
+  border: 1px solid rgba($blue, 0.3);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: $blue;
+    margin: 0 auto 0.75rem;
+  }
+
+  h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: $white;
+    margin-bottom: 0.4rem;
+  }
+
+  p { font-size: 0.88rem; color: $muted; }
+}

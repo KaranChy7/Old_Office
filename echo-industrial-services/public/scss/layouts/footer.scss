@@ -1,0 +1,281 @@
+footer {
+    background: #232323;
+    color: $whitey;
+    position: relative;
+
+    &.section {
+        padding-bottom: 20px;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px 15px;
+
+        .info-block {
+            flex-basis: calc(100% / 3 - 15px);
+            border: 1px solid rgba($whitey, 0.025);
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            gap: 10px 20px;
+            transition: 0.5s ease-in-out all;
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: $whitey;
+                border-radius: 10px;
+                z-index: -1;
+                transition: 0.5s ease-in-out;
+            }
+
+            .icon {
+                align-self: center;
+
+                i {
+                    font-size: 1.25rem;
+                    color: $whitey;
+                    align-self: center;
+                    transition: 0.5s ease-in-out 0.2s;
+                }
+            }
+
+            p {
+                color: $lgrey;
+                overflow-wrap: anywhere;
+                line-height: 1.3;
+                transition: 0.5s ease-in-out 0.2s;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+
+                .icon {
+                    i {
+                        color: $dblack;
+                    }
+                }
+
+                p {
+                    color: $dblack;
+                }
+            }
+        }
+    }
+
+    .footer-middle {
+        display: flex;
+        flex-wrap: wrap;
+
+        .block {
+            flex-basis: calc(55% - 10%);
+            margin-right: 10%;
+
+            &:last-child {
+                flex-basis: 25%;
+            }
+
+            .title {
+                font-family: $secondaryFont;
+                // font-size: 18px;
+                text-transform: uppercase;
+                font-weight: 600;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid $whitey;
+            }
+
+            p {
+                color: $whitey;
+                line-height: 1.7rem;
+                width: 80%;
+                padding-bottom: 40px;
+            }
+
+            .icons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px 15px;
+
+                a {
+                    transition: 0.5s ease-in-out all;
+                    border-radius: 10px;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+
+                    &.facebook {
+                        background: $facebook;
+                    }
+
+                    &.instagram {
+                        background: $youtube;
+                    }
+
+                    &.twitter {
+                        background: $twitter;
+                    }
+
+                    i {
+                        color: $whitey;
+                        padding: 12px;
+                    }
+                }
+            }
+
+            ul {
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .abn {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                span {
+                    border: 1px solid $whitey;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        .block {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 5px;
+            border-top: 1px solid $whitey;
+            padding: 10px 0;
+
+            p {
+                color: $whitey;
+
+                a {
+                    display: inline;
+                    color: $whitey;
+                }
+            }
+        }
+    }
+
+    .image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@include custom_max(992px) {
+    footer {
+        .footer-top {
+            flex-direction: column;
+            gap: 20px;
+
+            .info-block {
+                flex-basis: 100%;
+                width: 70%;
+                margin: auto;
+            }
+        }
+
+        .footer-middle {
+            flex-direction: column;
+
+            .block {
+                text-align: center;
+
+                .title {}
+
+                p {
+                    width: 100%;
+                    padding-bottom: 20px;
+                    text-align: center;
+                    // font-size: 0.9375rem;
+                }
+
+                .icons {
+                    justify-content: center;
+                    margin-bottom: 40px;
+                }
+
+                ul {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .abn {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .image {
+            img {
+                max-height: 370px;
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    footer {
+
+        .footer-top {
+
+            a {
+
+                .icon {
+                    padding-right: 15px;
+                    align-self: center;
+
+                    i {
+                        // font-size: 16px;
+                        color: $whitey;
+                        align-self: center;
+                    }
+                }
+            }
+        }
+
+
+
+        .footer-bottom {
+            padding-top: 50px;
+            width: 100%;
+
+            .block {
+                p {
+                    color: $whitey;
+                    text-align: center;
+
+                    a {
+                        display: inline;
+                        color: $whitey;
+                    }
+                }
+            }
+        }
+
+        .image {
+            display: none;
+        }
+    }
+}

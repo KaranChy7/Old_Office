@@ -1,0 +1,196 @@
+// =============================================
+// FOOTER
+// =============================================
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.site-footer {
+    background: $primaryColor;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: $secondaryFont;
+
+    // Top diagonal accent
+    &::before {
+        content: '';
+        display: block;
+        height: 4px;
+        background: linear-gradient(90deg, $secondaryColor 0%, transparent 100%);
+    }
+}
+
+.footer-main {
+    padding: 70px 0 50px;
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: 50px;
+
+        @include custom_max(991px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include custom_max(600px) {
+            grid-template-columns: 1fr;
+            gap: 36px;
+        }
+    }
+}
+
+.footer-col {
+    h4 {
+        font-family: $primaryFont;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: $whitey;
+        margin-bottom: 18px;
+        position: relative;
+        padding-bottom: 12px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: $secondaryColor;
+        }
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 20px;
+    }
+
+    ul li {
+        margin-bottom: 10px;
+
+        a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.65);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s, gap 0.3s;
+
+            &::before {
+                content: '›';
+                color: $secondaryColor;
+                font-weight: 700;
+            }
+
+            &:hover {
+                color: $secondaryColor;
+                gap: 12px;
+            }
+        }
+    }
+}
+
+.footer-logo {
+    height: 120px;
+    width: auto;
+    margin-bottom: 16px;
+}
+
+.footer-logo-text {
+    .logo-name {
+        font-family: $primaryFont;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: $whitey;
+        margin-bottom: 2px;
+    }
+
+    .logo-sub {
+        font-family: $secondaryFont;
+        font-size: 10px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: $secondaryColor;
+    }
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+
+    i {
+        color: $secondaryColor;
+        font-size: 16px;
+        margin-top: 2px;
+        flex-shrink: 0;
+    }
+
+    a {
+        color: rgba(255, 255, 255, 0.65);
+
+        &:hover {
+            color: $secondaryColor;
+        }
+    }
+}
+
+// Social icons
+.footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+
+    a {
+        width: 36px;
+        height: 36px;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.07);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 15px;
+        transition: background 0.3s, color 0.3s;
+
+        &:hover {
+            background: $secondaryColor;
+            color: $whitey;
+        }
+    }
+}
+
+// Bottom bar
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 20px 0;
+
+    .footer-bottom-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    p {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.45);
+
+        a {
+            color: rgba(255, 255, 255, 0.6);
+
+            &:hover {
+                color: $secondaryColor;
+            }
+        }
+    }
+
+    .footer-abn {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.35);
+    }
+}

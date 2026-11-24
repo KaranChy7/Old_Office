@@ -1,0 +1,238 @@
+// ── FREE QUOTE PAGE ───────────────────────────────────────
+.quote-main {
+  padding: 5rem 0 7rem;
+  background: $white;
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 5rem;
+  align-items: start;
+
+  @include respond(1100px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── STEP TRACKER ──────────────────────────────────────────
+.step-tracker {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 2.5rem;
+}
+
+.step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  position: relative;
+
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: calc(50% + 18px);
+    right: calc(-50% + 18px);
+    height: 2px;
+    background: rgba($black, 0.12);
+    z-index: 0;
+  }
+
+  &.done:not(:last-child)::after,
+  &.active:not(:last-child)::after {
+    background: $blue;
+  }
+}
+
+.step-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba($black, 0.05);
+  border: 2px solid rgba($black, 0.12);
+  @include flex-center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  color: rgba($steel, 0.6);
+  z-index: 1;
+  transition: all 0.3s;
+
+  .step-dot.active & {
+    background: $blue;
+    border-color: $blue;
+    color: $white;
+  }
+  .step-dot.done & {
+    background: rgba($blue, 0.2);
+    border-color: $blue;
+    color: $blue;
+  }
+}
+
+.step-label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba($steel, 0.6);
+  text-align: center;
+
+  .step-dot.active & {
+    color: $blue;
+  }
+}
+
+// ── FORM WRAP ─────────────────────────────────────────────
+.quote-form-wrap {
+  background: $black;
+  padding: 2.75rem 3rem;
+  border: 1px solid rgba($white, 0.05);
+
+  h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    color: $white;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.35rem;
+  }
+
+  > p {
+    font-size: 0.88rem;
+    color: $muted;
+    margin-bottom: 2rem;
+  }
+}
+
+.step-panel {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.75rem;
+}
+
+.step-count {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.75rem;
+  color: $muted;
+  letter-spacing: 0.1em;
+}
+
+.quote-success {
+  display: none;
+  text-align: center;
+  padding: 2rem 0;
+
+  svg {
+    width: 64px;
+    height: 64px;
+    color: $blue;
+    margin: 0 auto 1.5rem;
+  }
+
+  h3 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    color: $white;
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    font-size: 0.92rem;
+    color: $muted;
+    line-height: 1.8;
+    max-width: 380px;
+    margin: 0 auto 1.5rem;
+  }
+}
+
+// ── SIDEBAR ───────────────────────────────────────────────
+.quote-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: sticky;
+  top: 120px;
+
+  @include respond(1100px) {
+    position: static;
+  }
+}
+
+.sidebar-card {
+  background: $muted;
+  border: 1px solid rgba($black, 0.08);
+  padding: 2rem;
+
+  h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $blue;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba($blue, 0.15);
+  }
+}
+
+.sidebar-promise {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.promise-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    color: $blue;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  p {
+    font-size: 0.85rem;
+    color: rgba($steel, 0.7);
+    line-height: 1.6;
+  }
+}
+
+.sidebar-phone {
+  text-align: center;
+
+  p {
+    font-size: 0.82rem;
+    color: rgba($steel, 0.65);
+    margin-bottom: 0.75rem;
+  }
+
+  a {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    color: $blue;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  span {
+    font-size: 0.75rem;
+    color: rgba($steel, 0.55);
+  }
+}

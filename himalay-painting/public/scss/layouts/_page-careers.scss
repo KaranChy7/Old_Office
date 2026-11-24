@@ -1,0 +1,75 @@
+.page-careers {
+    h5 {
+        font-weight: 800;
+        color: $secondaryColor;
+        text-transform: capitalize;
+        margin-bottom: 40px;
+
+        span {
+            color: $fadeColor;
+        }
+    }
+
+    .wrapper {
+        gap: 30px;
+
+        .figure {
+            flex-basis: calc(40% - 30px);
+
+            img {
+                width: 100%;
+                height: 100%;
+                aspect-ratio: 4/3;
+                object-fit: cover;
+                border-radius: $radius-l;
+            }
+        }
+
+        .content {
+            flex-basis: calc(60% - 30px);
+        }
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .how-to-apply {
+        .wrapper {
+            .content {
+                p {
+                    margin-bottom: 20px;
+                }
+
+                ul {
+                    p {
+                        margin-bottom: 8px;
+                        font-weight: 700;
+                    }
+
+                    li {
+                        display: list-item;
+                        list-style: circle;
+                        list-style-position: inside;
+                        margin-bottom: 5px;
+                        font-size: 0.9375rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .form-wrapper {
+        max-width: 800px;
+        margin-inline: auto;
+        text-align: center;
+
+        .form {
+            .form-group {
+                label {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

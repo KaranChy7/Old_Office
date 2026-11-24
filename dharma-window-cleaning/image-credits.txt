@@ -1,0 +1,26 @@
+Everest Crew Clean Pty Ltd — image & video credits
+
+All photos and videos used on the site are the client's own.
+
+Uploaded by the client 2026-11-04:
+  window-cleaning-detail.jpg, gutter-cleaning.png, aluminum-gutter-guard.jpg, solarpanel.jpg, logo.png, favicon.png
+  Video1–8.mov (originals). Copied without re-encoding to .mp4 for browser support:
+    Video1.mov -> solar-bird-proofing.mp4
+    Video2.mov -> solar-panel-cleaning.mp4
+    Video3.mov -> solar-panel-cleaning-roof.mp4
+    Video4.mov -> solar-bird-mesh.mp4
+    Video5.mov -> driveway-pressure-clean.mp4
+    Video6.mov -> gutter-cleaning.mp4
+    Video7.mov -> roof-pressure-wash-brick.mp4
+    Video8.mov -> roof-pressure-wash.mp4
+  These .jpg files are still frames taken from those videos (used as images and video posters):
+    gutter-cleaning-video.jpg, gutter-branches.jpg, solar-panel-cleaning.jpg, solar-panel-cleaning-detail.jpg,
+    solar-bird-mesh.jpg, solar-bird-pigeons.jpg, driveway-pressure-clean.jpg, roof-pressure-wash.jpg,
+    roof-pressure-wash-detail.jpg, roof-pressure-wash-house.jpg
+
+Supplied earlier by the client:
+  video.mp4 — promo video (home banner). video-poster.jpg is a frame from it.
+  skylights-clean.jpg — frame from the promo video (Skylight Cleaning page).
+  job-roof-valley.jpg — client's job photo (Roof Repair & Maintenance page).
+
+Not used anywhere (safe to delete): tree-branch-trimming.jpg (stock), job-gutter-front.jpg, job-gutter-rear.jpg, 1favicon.png

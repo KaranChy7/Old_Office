@@ -1,0 +1,142 @@
+.testimonial-block {
+    padding: 30px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    max-width: calc(100% - 50px);
+    background-color: $primaryColor;
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        .icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+
+            i {
+                font-size: 38px;
+                color: rgba($primaryColor, 0.3);
+            }
+        }
+
+        .image {
+            img {
+                height: 70px;
+                width: 70px;
+                object-fit: cover;
+                object-position: center;
+                overflow: hidden;
+                border-radius: 100%;
+            }
+        }
+
+        .name {
+            margin-left: 20px;
+
+            h3 {
+                font-size: 20px;
+                font-weight: 700;
+                color: $whitey;
+            }
+
+            h6 {
+                font-size: 14px;
+                font-weight: 400;
+                color: $lgrey;
+                margin-top: 3px;
+            }
+
+            .rating {
+                margin-top: 6px;
+
+                i {
+                    font-size: 13px;
+                    color: #ffc107;
+                    margin-right: 2px;
+                }
+            }
+        }
+
+        .google-icon {
+            margin-left: auto;
+
+            img {
+                height: 50px;
+                width: 50px;
+                object-fit: cover;
+                object-position: center;
+                overflow: hidden;
+                border-radius: 100%;
+            }
+        }
+    }
+
+    .text {
+        margin-top: 20px;
+        line-height: 1.8;
+
+        p {
+            line-height: inherit;
+        }
+    }
+}
+
+.testimonials-section {
+    background-color: $lightBg;
+
+    // space between the review cards (Bootstrap gutter on the slick row)
+    .section-wrappers .row {
+        --bs-gutter-x: 40px;
+
+        @include custom_max(767px) {
+            --bs-gutter-x: 24px;
+        }
+    }
+
+    .slick-dots {
+        margin-top: 25px;
+    }
+}
+
+.review-shot {
+    margin: 0;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: #242526;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+}
+
+.review-link {
+    margin-top: 40px;
+    text-align: center;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        border-radius: 6px;
+        background-color: $primaryColor;
+        color: $whitey;
+        font-weight: 600;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: darken($primaryColor, 7%);
+            color: $whitey;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+.form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px 10px;
+
+    .form-group {
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &.half-width {
+            flex-basis: calc(100% / 2 - 10px);
+        }
+
+        label {
+            font-size: 1.125rem;
+            color: $whitey;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        .form-input {
+            border: 1px solid rgba($whitey, 0.3);
+            background: transparent;
+            padding: 10px;
+            font-size: 1rem;
+            text-transform: capitalize;
+            color: $whitey;
+            border-radius: 10px;
+            resize: none;
+
+            &::placeholder {
+                font-size: 1rem;
+                color: $whitey;
+            }
+
+            &:focus-visible {
+                outline: 0;
+                box-shadow: 2px 2px 3px -1px $whitey;
+                border-bottom: 1px solid $whitey;
+            }
+        }
+
+    }
+}
+
+@include custom_max(992px) {
+    .form {
+        .form-group {
+            label {
+                font-size: 1.25rem;
+            }
+
+            .form-input {
+                font-size: 0.9375;
+
+                &::placeholder {
+                    font-size: 0.9375;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .form {
+        flex-direction: column;
+        gap: 20px;
+
+        .form-group {
+            label {
+                font-size: 1.125rem;
+            }
+
+            .form-input {
+                font-size: 0.875rem;
+
+                &::placeholder {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+}

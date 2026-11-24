@@ -1,0 +1,76 @@
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px 10px;
+
+    .form-group {
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &.half-width {
+            flex-basis: calc(100% / 2 - 10px);
+        }
+
+        label {
+            font-size: 1rem;
+            color: $whitey;
+            font-weight: 700;
+            text-transform: capitalize;
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            border: none;
+            // border-bottom: 1px solid $whitey;
+            // background: transparent;
+            padding: 10px;
+            font-size: 0.9375rem;
+            text-transform: capitalize;
+            border-radius: 5px;
+
+            &::placeholder {
+                font-size: 0.9375rem;
+                color: $black;
+            }
+
+            &:focus-visible {
+                border: none;
+                outline: 0;
+                box-shadow: 2px 2px 3px -1px $whitey;
+                border-bottom: 1px solid $whitey;
+            }
+        }
+
+        select {
+            width: 100%;
+        }
+
+        .form-subgroup {
+            label {
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+
+@include custom_max(576px) {
+    .form {
+        flex-direction: column;
+        gap: 20px;
+
+        .form-group {
+
+            .form-input {
+                font-size: 0.875rem;
+
+                &::placeholder {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+}

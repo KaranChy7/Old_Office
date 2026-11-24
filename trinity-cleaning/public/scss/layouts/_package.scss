@@ -1,0 +1,198 @@
+.package-section {
+    padding: 24px;
+    background: $whitey;
+
+    .package-contain {
+        margin-bottom: 20px;
+        position: relative;
+
+        .title {
+            display:block;
+            align-items: center;
+                text-align: center;
+             
+            h4 {
+                font-size: 2rem !important;
+                
+            }           
+
+        }
+    }
+
+    .package-layout {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 22px;
+    }
+ 
+    .package-wrapper {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        p {
+            color: $dblack;
+            padding: 18px ;
+
+            span{
+                color : $primaryColor;
+                font-weight: 700;
+
+            }
+        }
+
+        .package-block {
+            flex-basis: calc(100% / 2 - 20px);
+
+            .package-card {
+                 
+                border: 1px solid $grey;
+                border-radius: 12px;
+                padding: 16px;
+                box-shadow: 0 6px 20px rgba(16, 24, 40, .2);
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            
+                h6 {
+                    padding: 4px 0 6px;
+                    color: $secondaryColor;
+                    font-size: 20px;
+                }
+
+                p {
+                    margin: 0 0 14px;
+                    font-size: 15px;
+                    line-height: 1.45;
+                    color: $primaryColor;
+                }
+
+                .button a {
+                    display: inline-block;
+                    font-weight: 700;
+                    font-size: 15px;
+                    color: $secondaryColor;
+                    text-decoration: none;
+                    border: 1px dashed rgba(15, 70, 117, .35);
+                    border-radius: 10px;
+                    padding: 10px 14px;
+                    transition: all .2s ease;
+
+                    &:hover,
+                    &:focus-visible {
+                        background: rgba(15, 70, 117, .06);
+                        border-color: $secondaryColor;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .quote-box {
+        flex: 0 0 360px;
+        max-width: 360px;
+        background: $whitey;
+        border: 1px solid $grey;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(16, 24, 40, .06);
+        overflow: hidden;
+
+        .quote-header {
+            background: $secondaryColor;
+            color: $whitey;
+            text-align: center;
+            padding: 12px 14px;
+
+            h4 {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 900;
+                letter-spacing: .4px;
+                text-transform: uppercase;
+            }
+        }
+
+        .quote-form {
+            padding: 16px;
+
+            .form-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 10px;
+
+                input,
+                select {
+                    flex: 1;
+                }
+            }
+
+            input,
+            select,
+            button {
+                width: 100%;
+                padding: 10px 12px;
+                border-radius: 10px;
+                border: 1px solid $grey;
+                font: inherit;
+                color:$secondaryColor;
+
+                &:focus {
+                    outline: 2px solid transparent;
+                    box-shadow: 0 0 0 3px rgba(15, 70, 117, .25);
+                    border-color: $secondaryColor;
+                }
+            }
+
+            >input[type="text"] {
+                margin-bottom: 10px;
+            }
+
+            button {
+                background: $secondaryColor;
+                color: $whitey;
+                cursor: pointer;
+                font-weight: 800;
+                margin-top: 4px;
+                transition: filter .2s ease;
+
+                &:hover,
+                &:focus-visible {
+                    filter: brightness(1.06);
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .package-layout {
+            flex-direction: column;
+        }
+
+        .quote-box {
+            flex: 1 1 100%;
+            max-width: none;
+        }
+
+        .package-wrapper {
+            .package-block {               
+                flex-basis: calc(100% / 2 - 20px);
+        }
+
+        }
+        
+    }
+     @media (max-width: 576px) {
+        .package-wrapper {
+            .package-block {
+                flex-basis: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,608 @@
+// =============================================
+// HERO SLIDER SECTION
+// =============================================
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+// ── Outer wrapper ────────────────────────────
+.hero-slider-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: $primaryColor;
+}
+
+// ── Slide track ─────────────────────────────
+.hero-slider {
+    position: relative;
+    width: 100%;
+}
+
+// ── Individual slide ────────────────────────
+// Inactive slides are taken out of flow (absolute) so they never
+// affect the track's height — only the active slide (position: relative
+// below) sets the height, sized to whatever its content needs.
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0s linear 0.9s;
+    z-index: 1;
+
+    &.active {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transition:
+            opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 0s linear 0s;
+        z-index: 2;
+
+        .hero-content {
+            animation: slideContentIn 0.85s ease forwards;
+        }
+        .hero-image-panel {
+            animation: slidePanelIn 0.85s 0.15s ease both;
+        }
+    }
+
+    &.slide-out {
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1;
+    }
+}
+
+// ── Slide background ─────────────────────────
+.slide-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    .slide-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            105deg,
+            rgba(28, 28, 30, 0.88) 0%,
+            rgba(28, 28, 30, 0.7) 50%,
+            rgba(28, 28, 30, 0.4) 100%
+        );
+    }
+}
+
+// ── Amber diagonal slash ─────────────────────
+.hero-slash {
+    position: absolute;
+    top: 0;
+    right: 36%;
+    width: 4px;
+    height: 100%;
+    background: $secondaryColor;
+    opacity: 0.35;
+    transform: skewX(-8deg);
+    z-index: 3;
+    pointer-events: none;
+
+    @include custom_max(991px) {
+        display: none;
+    }
+}
+
+// ── Container z-index ─────────────────────────
+.hero-slide .container {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+}
+
+// ── Hero inner grid ──────────────────────────
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding: 140px 0 100px;
+
+    @include custom_max(991px) {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 140px 0 80px;
+    }
+}
+
+// ── Hero content (left) ─────────────────────
+.hero-content {
+    .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: $secondaryFont;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: $secondaryColor;
+        margin-bottom: 24px;
+
+        i {
+            font-size: 14px;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 32px;
+            height: 2px;
+            background: $secondaryColor;
+        }
+    }
+
+    h1 {
+        font-family: $primaryFont;
+        font-size: clamp(2.8rem, 6.5vw, 5.6rem);
+        font-weight: 700;
+        line-height: 1;
+        color: $whitey;
+        margin-bottom: 22px;
+        letter-spacing: -1px;
+
+        em {
+            font-style: italic;
+            color: $secondaryColor;
+            display: block;
+        }
+    }
+
+    .hero-desc {
+        font-family: $secondaryFont;
+        font-size: 17px;
+        color: rgba(255, 255, 255, 0.72);
+        line-height: 1.75;
+        max-width: 480px;
+        margin-bottom: 36px;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+
+        @include custom_max(768px) {
+            display: none;
+        }
+    }
+}
+
+// ── Stats strip ─────────────────────────────
+.hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 46px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+
+    .stat-item {
+        .num {
+            font-family: $primaryFont;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+            color: $secondaryColor;
+            line-height: 1;
+        }
+
+        .label {
+            font-family: $secondaryFont;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 4px;
+        }
+    }
+}
+
+// ── Right image panel ────────────────────────
+.hero-image-panel {
+    position: relative;
+    height: 520px;
+
+    .img-frame {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: $radius;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            border-bottom: 4px solid $secondaryColor;
+            border-right: 4px solid $secondaryColor;
+            border-radius: 0 0 $radius 0;
+        }
+    }
+
+    .hero-badge {
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        background: $secondaryColor;
+        padding: 20px 22px;
+        border-radius: $radius;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(212, 132, 42, 0.45);
+        min-width: 120px;
+
+        .badge-icon {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 6px;
+        }
+
+        .badge-num {
+            font-family: $primaryFont;
+            font-size: 2rem;
+            font-weight: 700;
+            color: $whitey;
+            line-height: 1;
+        }
+
+        .badge-text {
+            font-family: $secondaryFont;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 4px;
+            max-width: 90px;
+        }
+    }
+
+    @include custom_max(991px) {
+        display: none;
+        height: 320px;
+
+        .hero-badge {
+            bottom: -14px;
+            left: 14px;
+            padding: 14px 16px;
+
+            .badge-num {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    @include custom_max(600px) {
+        height: 240px;
+    }
+}
+
+// ── Slider controls wrapper ──────────────────
+.hero-slider-controls {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+
+    @include custom_max(992px) {
+        display: none;
+    }
+}
+
+// ── Prev / Next arrows ──────────────────────
+.hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: rgba(28, 28, 30, 0.5);
+    backdrop-filter: blur(6px);
+    color: $whitey;
+    font-size: 16px;
+    cursor: pointer;
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        border-color 0.3s,
+        background 0.3s,
+        transform 0.3s;
+
+    &:hover {
+        border-color: $secondaryColor;
+        background: $secondaryColor;
+        transform: translateY(-50%) scale(1.08);
+    }
+
+    &.hero-prev {
+        left: 28px;
+    }
+    &.hero-next {
+        right: 28px;
+    }
+
+    @include custom_max(767px) {
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+
+        &.hero-prev {
+            left: 12px;
+        }
+        &.hero-next {
+            right: 12px;
+        }
+    }
+}
+
+// ── Dot navigation ───────────────────────────
+.hero-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    pointer-events: all;
+    align-items: center;
+
+    @include custom_max(767px) {
+        bottom: 60px;
+    }
+}
+
+.hero-dot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: opacity 0.3s;
+    opacity: 0.5;
+
+    &:hover {
+        opacity: 0.85;
+    }
+
+    &.active {
+        opacity: 1;
+
+        .dot-line {
+            width: 32px;
+            background: $secondaryColor;
+        }
+        .dot-label {
+            color: $secondaryColor;
+        }
+    }
+
+    .dot-line {
+        display: block;
+        width: 14px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 2px;
+        transition:
+            width 0.4s ease,
+            background 0.4s ease;
+    }
+
+    .dot-label {
+        font-family: $secondaryFont;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
+        transition: color 0.3s;
+        white-space: nowrap;
+    }
+
+    @include custom_max(480px) {
+        .dot-label {
+            display: none;
+        }
+    }
+}
+
+// ── Thumbnail strip ──────────────────────────
+.hero-thumbs {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    gap: 0;
+    pointer-events: all;
+
+    @include custom_max(767px) {
+        display: none;
+    }
+}
+
+.hero-thumb {
+    width: 100px;
+    height: 70px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    opacity: 0.5;
+    transition:
+        opacity 0.35s,
+        transform 0.35s;
+    flex-shrink: 0;
+
+    &:hover {
+        opacity: 0.85;
+    }
+
+    &.active {
+        opacity: 1;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: $secondaryColor;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .thumb-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(28, 28, 30, 0.55);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+
+        i {
+            color: $secondaryColor;
+            font-size: 14px;
+        }
+
+        span {
+            font-family: $secondaryFont;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: $whitey;
+        }
+    }
+
+    @include custom_max(991px) {
+        width: 74px;
+    }
+}
+
+// ── Progress bar ─────────────────────────────
+.hero-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 5;
+}
+
+.hero-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: $secondaryColor;
+    transition: width linear;
+}
+
+// ── Scroll cue ───────────────────────────────
+.hero-scroll-cue {
+    position: absolute;
+    bottom: 28px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 5;
+
+    span {
+        font-family: $secondaryFont;
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+    }
+
+    .scroll-line {
+        width: 2px;
+        height: 36px;
+        background: linear-gradient($secondaryColor, transparent);
+        animation: scroll-drop 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scroll-drop {
+        0% {
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+        50% {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+        100% {
+            transform: scaleY(0);
+            transform-origin: bottom;
+        }
+    }
+
+    @include custom_max(767px) {
+        display: none;
+    }
+}
+
+// ── Slide entry animations ───────────────────
+@keyframes slideContentIn {
+    from {
+        opacity: 0;
+        transform: translateX(-28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slidePanelIn {
+    from {
+        opacity: 0;
+        transform: translateX(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

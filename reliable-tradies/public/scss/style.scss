@@ -1,0 +1,43 @@
+// =============================================
+// STYLE.SCSS — Reliable Tradies Group
+// Entry point — compile to css/style.css
+// =============================================
+
+// Base
+@use "base/variables" as *;
+@use "base/mixins" as *;
+
+// Modules
+@use "modules/common";
+@use "modules/components";
+@use "modules/forms";
+@use "modules/typography";
+@use "modules/buttons";
+@use "modules/breadcrumb";
+@use "modules/icon-block";
+@use "modules/mobile-call-button";
+@use "modules/scroll-top";
+
+// Includes
+@use "includes/header";
+@use "includes/footer";
+
+// Home page sections
+@use "pages/home/hero-section";
+@use "pages/home/about-us";
+@use "pages/home/features";
+@use "pages/home/why-choose-us";
+@use "pages/home/services";
+@use "pages/home/gallery";
+@use "pages/home/about-features";
+@use "pages/home/faq";
+@use "pages/home/call-us";
+@use "pages/home/testimonial";
+@use "pages/home/get-free-quote";
+
+// Inner pages
+@use "pages/about-page";
+@use "pages/services-page";
+@use "pages/contact-page";
+@use "pages/quote-page";
+@use "pages/service-detail";

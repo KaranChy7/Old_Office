@@ -1,0 +1,59 @@
+.before-after-image {
+
+    background: $territary;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, $territary, rgba($primaryColor, 0.6));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, $territary, rgba($primaryColor, 0.6));
+    padding: 60px 0;
+
+
+
+    .before-after-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px 10px;
+        padding-bottom: 40px;
+
+        .block {
+            flex-basis: calc(100% / 2 - 10px);
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+
+
+            a {
+                flex-basis: 50%;
+                position: relative;
+
+                p {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding: 5px 10px;
+                    background-color: $black;
+                    color: $whitey;
+                    font-size: 0.875rem;
+                    text-transform: capitalize;
+                    border-radius: 5px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    aspect-ratio: 4/4;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .before-after-image {
+        .before-after-wrap {
+            flex-direction: column;
+        }
+    }
+}

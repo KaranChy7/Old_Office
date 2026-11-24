@@ -1,0 +1,51 @@
+.review {
+    text-align: center;
+    padding: 35px 0 20px 0;
+    margin-top: 30px;
+
+    h2 {
+        font-size: 20px;
+        font-weight: 600;
+        font-family: $primaryFont;
+        color: $secondaryColor;
+        margin-bottom: 30px;
+    }
+
+    ul {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+
+        li {
+            text-align: center;
+            margin: 0 20px;
+
+            a {
+                text-align: center;
+                margin: 0 auto;
+                max-width: 150px;
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .review {
+        margin-top: 10px;
+
+        ul {
+            flex-wrap: wrap;
+
+            li {
+                flex: 0 0 35%;
+                margin-bottom: 20px;
+
+                a {
+                    text-align: center;
+                    margin: 0 auto;
+                    max-width: 150px;
+                }
+            }
+        }
+    }
+}

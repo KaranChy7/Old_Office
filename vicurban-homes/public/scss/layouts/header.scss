@@ -1,0 +1,192 @@
+header {
+	// background-color: $whitey;
+	background-color: #000;
+
+	.navtop {
+		background-color: $whitey;
+
+		.header-wrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 5px 0;
+
+
+			ul {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				li {
+					margin-right: 25px;
+
+					.item {
+						color: $dblack;
+
+						h6 {
+							font-size: 13px;
+							font-weight: 500;
+						}
+
+						i {
+							margin-right: 10px;
+						}
+					}
+				}
+			}
+
+			.icon {
+				li {
+					margin-right: 0;
+
+					.social-icons {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: center;
+
+						.item {
+							margin-left: 20px;
+
+							&:hover {
+								color: $rblue;
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	.navbar {
+		padding: 0;
+
+		.navbar-brand {
+			figure {
+				max-width: 180px;
+				// background-color: $whitey;
+				border-radius: 8px;
+			}
+		}
+
+		.navbar-toggler {
+			background-color: $whitey;
+			border-radius: 3px;
+			border: 1px solid $t-color;
+		}
+
+		&-collapse {
+			justify-content: flex-end;
+
+			.navbar-nav {
+				align-items: center;
+
+				.nav-link {
+					margin: 5px 10px;
+					padding: 0 5px;
+					color: $whitey;
+					text-transform: uppercase;
+					letter-spacing: 0.03em;
+					font-size: 14px;
+					font-weight: 600;
+					transition: 0.5s ease-in-out;
+
+					&.button {
+						padding: 8px 20px;
+						font-size: 13px;
+						color: $whitey;
+						background-color: $primaryColor;
+						border-color: $primaryColor;
+						transition: 0.5s;
+
+						&:hover {
+							background-color: transparent;
+							border: 1px solid $primaryColor;
+						}
+					}
+				}
+
+				.nav-item {
+
+					&.active,
+					&:hover {
+						.nav-link {
+							color: $secondaryColor;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+@include custom_max(992px) {
+	header {
+		.navtop {
+			display: none;
+		}
+
+		.navbar {
+
+			/* Hamburger Menu Style */
+			.navbar-toggler {
+				z-index: 999;
+				border: 1px solid $whitey;
+				width: 40px;
+				aspect-ratio: 1/1;
+				position: relative;
+
+				svg {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					// fill: $whitey;
+
+					&.burger {
+						transition: 0.3s ease-in-out;
+					}
+
+					&.cross {
+						opacity: 0;
+						top: 60%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						transition: 0.3s ease-in-out;
+					}
+				}
+
+				&:focus-within {
+					box-shadow: none;
+					outline: none;
+				}
+
+				&[aria-expanded="true"] {
+					svg {
+						fill: $black;
+
+						&.burger {
+							opacity: 0;
+						}
+
+						&.cross {
+							opacity: 1;
+							top: 50%;
+						}
+
+					}
+				}
+			}
+
+			&-collapse {
+				.navbar-nav {
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+	}
+}

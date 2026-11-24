@@ -1,0 +1,200 @@
+// =============================================
+// COMMON — Global base styles
+// =============================================
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: $secondaryFont;
+    color: $primaryColor;
+    background: $whitey;
+    overflow-x: hidden;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    margin: 0 !important;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 30px;
+    @include custom_max(767px) {
+        padding: 0 18px;
+    }
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: $secondaryFont;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $secondaryColor;
+    margin-bottom: 18px;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $secondaryColor;
+    }
+}
+
+.section-title {
+    font-family: $primaryFont;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: $primaryColor;
+    margin-bottom: 18px;
+
+    em {
+        font-style: italic;
+        color: $secondaryColor;
+    }
+}
+
+.section-desc {
+    font-family: $secondaryFont;
+    font-size: 16px;
+    color: $dark-color;
+    line-height: 1.75;
+    max-width: 560px;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: $secondaryColor;
+    color: $whitey;
+    font-family: $secondaryFont;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition:
+        background 0.3s,
+        transform 0.2s,
+        box-shadow 0.3s;
+
+    &:hover {
+        background: #b86e1e;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(212, 132, 42, 0.35);
+        color: $whitey;
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: $whitey;
+    font-family: $secondaryFont;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 15px 34px;
+    border-radius: 3px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition:
+        border-color 0.3s,
+        background 0.3s;
+
+    &:hover {
+        border-color: $whitey;
+        background: rgba(255, 255, 255, 0.08);
+    }
+}
+
+// Scroll animations
+[data-animate] {
+    opacity: 0;
+    transform: translateY(36px);
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+
+    &.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-animate="left"] {
+    transform: translateX(-40px);
+    &.animated {
+        transform: translateX(0);
+    }
+}
+
+[data-animate="right"] {
+    transform: translateX(40px);
+    &.animated {
+        transform: translateX(0);
+    }
+}
+
+[data-animate="scale"] {
+    transform: scale(0.92);
+    &.animated {
+        transform: scale(1);
+    }
+}
+
+// Amber diagonal divider
+.slash-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, $secondaryColor, transparent);
+    margin: 24px 0;
+    clip-path: polygon(0 0, 95% 0, 100% 100%, 5% 100%);
+}

@@ -1,0 +1,312 @@
+@use 'variables' as *;
+
+.pp-contact {
+  padding: 80px 0;
+  background: $pp-white;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba($pp-navy, 0.14);
+  }
+
+  // Navy details panel
+  &__info {
+    position: relative;
+    overflow: hidden;
+    padding: 48px 40px;
+    background: $pp-navy;
+    color: $pp-white;
+
+    // Paint sweep accent
+    &::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      bottom: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba($pp-blue, 0.35);
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      font-size: clamp(24px, 2.4vw, 30px);
+      font-weight: 600;
+      color: $pp-white;
+    }
+  }
+
+  &__eyebrow {
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $pp-yellow;
+  }
+
+  &__text {
+    margin-top: 14px;
+    font-size: 15px;
+    color: rgba($pp-white, 0.88);
+  }
+
+  &__perks {
+    display: grid;
+    gap: 10px;
+    margin-top: 22px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      color: $pp-yellow;
+      stroke-width: 2.6;
+    }
+  }
+
+  &__details {
+    display: grid;
+    gap: 18px;
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid rgba($pp-white, 0.15);
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    small {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba($pp-white, 0.6);
+    }
+
+    a {
+      word-break: break-all;
+
+      &:hover {
+        color: $pp-yellow;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba($pp-white, 0.1);
+    color: $pp-yellow;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @include pp-down(lg) {
+    padding: 56px 0;
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include pp-down(sm) {
+    padding: 0;
+
+    .pp-container {
+      padding: 0;
+    }
+
+    &__grid {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    &__info {
+      padding: 40px 16px;
+    }
+  }
+}
+
+// ── Quote form ──────────────────────────────
+.pp-form {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  padding: 44px 40px;
+  background: $pp-white;
+
+  @include pp-down(sm) {
+    padding: 36px 16px 44px;
+  }
+
+  &__group {
+    border: 0;
+
+    legend {
+      margin-bottom: 10px;
+      font-family: $pp-font-display;
+      font-size: 15px;
+      font-weight: 600;
+      color: $pp-heading;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @include pp-down(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__trap {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  &__submit {
+    justify-self: start;
+    margin-top: 4px;
+
+    @include pp-down(sm) {
+      justify-self: stretch;
+    }
+  }
+
+  &__status {
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 14.5px;
+    font-weight: 500;
+
+    &.is-success {
+      background: rgba($pp-green, 0.12);
+      color: #1E7A45;
+    }
+
+    &.is-error {
+      background: rgba(#D93025, 0.1);
+      color: #B3261E;
+    }
+  }
+}
+
+.pp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pp-chip {
+  position: relative;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  span {
+    display: inline-block;
+    padding: 9px 18px;
+    border: 1.5px solid $pp-border;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $pp-heading;
+    transition: $pp-transition;
+  }
+
+  &:hover span {
+    border-color: $pp-blue;
+  }
+
+  input:checked + span {
+    border-color: $pp-navy;
+    background: $pp-navy;
+    color: $pp-white;
+  }
+
+  input:focus-visible + span {
+    outline: 2px solid $pp-blue;
+    outline-offset: 2px;
+  }
+}
+
+.pp-field {
+  display: grid;
+  gap: 6px;
+
+  > span {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: $pp-heading;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1.5px solid $pp-border;
+    border-radius: 4px;
+    background: #FAFBFD;
+    font: inherit;
+    font-size: 16px; // 16px+ stops iOS zooming in on focus
+    color: $pp-heading;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $pp-blue;
+      box-shadow: 0 0 0 3px rgba($pp-blue, 0.15);
+      background: $pp-white;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 110px;
+  }
+
+  &.is-invalid {
+    input,
+    textarea {
+      border-color: #D93025;
+    }
+  }
+}

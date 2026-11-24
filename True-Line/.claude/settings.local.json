@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node \"C:\\\\Users\\\\chyka\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--Office-File-mjrd-constructions-v2-mjrd-constructions\\\\176ac64a-ff3d-43e4-834e-9867164d27ac\\\\scratchpad\\\\add-service-ids.mjs\")",
+      "Bash(pkill -f \"gulp php\")",
+      "Bash(pkill -f \"node.*gulp\")",
+      "Bash(npx -y chromium-cli --help)",
+      "Bash(npx playwright *)",
+      "Bash(php -v)",
+      "Bash(command -v chrome.exe)",
+      "Bash(command -v msedge.exe)",
+      "Bash(command -v chromium-cli)",
+      "Bash(find / -iname \"*chromium-cli*\" -maxdepth 6 2>/dev/null | head -20)",
+      "Read(//d//**)",
+      "Bash(powershell -NoProfile -Command \"Get-Process php -ErrorAction SilentlyContinue | Stop-Process -Force\")"
+    ]
+  }
+}

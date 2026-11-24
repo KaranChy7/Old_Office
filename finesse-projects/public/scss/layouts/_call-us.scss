@@ -1,0 +1,87 @@
+.call-us {
+    // padding-top: 40px;
+    padding-bottom: 100px;
+    background-image: url("../images/call-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba($dblack, 0.7);
+        z-index: -1;
+    }
+
+    .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-bottom: 40px;
+
+        .desc {
+
+            h5 {
+                font-size: 2rem;
+                font-weight: 700;
+                letter-spacing: 0.01em;
+                color: $whitey;
+            }
+
+            p {
+                font-family: $primaryFont;
+                margin-block: 20px 0;
+                color: $whitey;
+                text-transform: uppercase;
+
+            }
+        }
+    }
+
+    .extra-desc {
+        border-top: 2px solid $whitey;
+        padding-block: 40px;
+
+        p {
+            color: $whitey;
+        }
+    }
+}
+
+
+
+@include custom_max(992px) {
+    .call-us {
+        .wrap {
+            .desc {
+
+                h5 {
+                    font-size: 1.75rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+@include custom_max(576px) {
+    .call-us {
+        .wrap {
+
+            .desc {
+                h5 {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .button-wrap {
+                flex-direction: column;
+            }
+        }
+    }
+}

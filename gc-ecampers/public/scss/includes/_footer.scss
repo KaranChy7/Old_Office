@@ -1,0 +1,177 @@
+// ============================================================
+// GC-E CAMPERS — FOOTER
+// ============================================================
+
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.site-footer {
+  background: $color-dark;
+  border-top: 1px solid rgba($color-gold, 0.1);
+  padding: $spacing-lg 0 $spacing-md;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: $spacing-md;
+    padding-bottom: $spacing-md;
+    border-bottom: 1px solid rgba($color-white, 0.06);
+
+    @include laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__col-title {
+    font-family: $font-body;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 1.25rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    a {
+      font-size: 0.85rem;
+      color: $color-gray-mid;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-gold;
+      }
+    }
+  }
+
+  &__about {
+    font-size: 0.85rem;
+    color: $color-gray-mid;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  &__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: $color-gray-mid;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+
+    svg {
+      color: $color-gold;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    a {
+      color: inherit;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-gold;
+      }
+    }
+  }
+
+  &__bottom {
+    @include flex-between;
+    padding-top: $spacing-md;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__copyright {
+    font-size: 0.78rem;
+    color: rgba($color-white, 0.3);
+    letter-spacing: 0.05em;
+  }
+
+  &__legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+
+    a {
+      font-size: 0.78rem;
+      color: rgba($color-white, 0.3);
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-gold;
+      }
+    }
+  }
+}
+
+// Social icons
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+
+  a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba($color-white, 0.1);
+    @include flex-center;
+    color: $color-gray-mid;
+    font-size: 0.85rem;
+    transition: all $transition-fast;
+
+    &:hover {
+      border-color: $color-gold;
+      color: $color-gold;
+      background: rgba($color-gold, 0.08);
+    }
+  }
+}
+
+// Back to top (sits in the footer bottom bar)
+.back-to-top {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  @include flex-center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $color-gold-light, $color-gold, $color-gold-dark);
+  color: $color-black;
+  font-size: 1.25rem;
+  box-shadow: 0 6px 24px rgba($color-gold, 0.3);
+  transition:
+    transform $transition-mid,
+    box-shadow $transition-mid;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba($color-gold, 0.5);
+  }
+
+  @include tablet {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}

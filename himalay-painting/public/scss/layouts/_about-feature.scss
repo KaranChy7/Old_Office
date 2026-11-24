@@ -1,0 +1,100 @@
+.about-feature {
+    padding-top: 60px;
+    background-color: rgba($fadeColor, 0.5);
+
+    .main-title {
+        h4 {
+            span {
+                display: block;
+                color: $primaryColor;
+            }
+        }
+    }
+
+    .wrapper {
+        flex-direction: column;
+        gap: 80px;
+        align-items: initial;
+
+        .aboutFeature-image {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+
+            .figure {
+                flex-basis: calc(100% / 3 - 30px);
+                height: 100%;
+                transition: 0.5s ease-in-out;
+
+                img {
+                    width: 100%;
+                    aspect-ratio: 3/4;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: $radius-l;
+                }
+
+                &:hover {
+                    transform: translateY(-20px);
+                }
+            }
+        }
+
+        .aboutFeature-content {
+            text-align: center;
+
+            p {
+                margin-bottom: 30px;
+                font-weight: 400;
+                font-size: 0.875rem;
+                max-width: 800px;
+                margin-inline: auto;
+            }
+
+            .desc {
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .about-feature {
+        .wrapper {
+            align-items: center;
+            gap: 30px;
+
+            /* looping slider on mobile only (Swiper set up in main.js) */
+            .aboutFeature-slider {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .aboutFeature-image {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                gap: 0;
+
+                .figure {
+                    flex-basis: auto;
+
+                    img {
+                        aspect-ratio: 1/1;
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        transform: none;
+                    }
+                }
+            }
+        }
+    }
+}

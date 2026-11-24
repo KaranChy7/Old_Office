@@ -1,0 +1,121 @@
+.about {
+    .main-title {
+        text-align: left;
+        margin-bottom: 30px;
+
+        h4 {
+            color: $primaryColor;
+            font-weight: 800;
+
+
+            span {
+                color: $lgrey;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: initial;
+        gap: 40px;
+
+        .about-features {
+            flex-basis: calc(40% - 40px);
+            min-width: 0;
+            max-height: fit-content;
+            background-color: $dblack;
+            margin-top: -80px;
+            z-index: 1;
+            padding: 40px;
+            text-align: center;
+            border-radius: $radius;
+
+            .main-title {
+                margin-bottom: 60px;
+                text-align: center;
+
+                h4 {
+                    color: $secondaryColor;
+                    font-size: 2.2rem;
+                    line-height: 1.2;
+                }
+            }
+
+            .feature {
+                .feature-block {
+                    p {
+                        color: $lgrey;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+
+        .about-content {
+            flex-basis: calc(60% - 40px);
+            min-width: 0;
+            padding: 60px 0;
+
+            p {
+                color: $lgrey;
+            }
+
+            .sub {
+                margin-top: 30px;
+
+                h4 {
+                    font-weight: 800;
+                    color: $primaryColor;
+                    font-family: $inter;
+                    font-size: 2rem;
+
+                    span {
+                        font-weight: 600;
+                        font-family: $territaryFont;
+                        color: $lgrey;
+                    }
+                }
+
+                p {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .about {
+        .wrapper {
+            flex-direction: column;
+            justify-content: initial;
+            align-items: start;
+            gap: 40px;
+
+            .about-features {
+                min-width: 0;
+                width: 100%;
+                margin-top: 60px;
+
+                .main-title {
+                    margin-bottom: 20px;
+
+                    h4 {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            .about-content {
+                padding: 0;
+
+                .sub {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}

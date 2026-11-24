@@ -1,0 +1,23 @@
+#slide-test-1 {
+    height: 0;
+    padding-top: 0;
+    // padding-left: 0;
+    // .range-labels {
+    //     li {
+    //         width: 123px;
+    //     }
+    // }
+}
+
+.range {
+    width: 100%;
+    height: 3px;
+}
+
+@include custom_max(768px) {
+    .range-labels {
+        li {
+            width: calc(100% / 7);
+        }
+    }
+}

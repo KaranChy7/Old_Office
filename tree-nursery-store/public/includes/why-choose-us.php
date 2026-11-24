@@ -1,0 +1,3 @@
+<section class="section"><div class="container"><div class="section-heading centered"><div><p class="eyebrow">A better nursery experience</p><h2>Why Choose Us</h2></div></div><div class="benefit-grid">
+    <?php foreach ([['🌳','Quality Trees and Plants'],['✓','Carefully Selected Varieties'],['🔒','Secure Online Payments'],['🚚','Reliable Delivery Options'],['☀','Helpful Product Information'],['☎','Friendly Customer Support']] as [$icon,$title]): ?><div class="benefit-card reveal"><span><?= $icon ?></span><h3><?= e($title) ?></h3><p>Clear information, dependable products and support designed to make ordering straightforward.</p></div><?php endforeach; ?>
+</div></div></section>

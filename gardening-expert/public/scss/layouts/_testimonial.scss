@@ -1,0 +1,129 @@
+.testimonial {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($dblack, 0.8);
+    }
+
+    .title {
+        position: relative;
+        margin-bottom: 60px;
+        text-align: center;
+
+        h2 {
+            color: $whitey;
+        }
+
+        p {
+            color: $whitey;
+            max-width: 800px;
+            margin: 10px auto 0;
+        }
+    }
+
+    .testimonial-slider {
+
+        .testimonial-block {
+
+            .image {
+                margin: auto;
+                width: 80px;
+                aspect-ratio: 1/1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $whitey;
+                border: 1px solid $whitey;
+                border-radius: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .text {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            p {
+                display: inline-block;
+                width: 600px;
+                margin: 0 auto;
+                padding: 30px 0;
+                color: $whitey;
+            }
+
+            h5 {
+                display: inline-block;
+                font-size: 18px;
+                font-weight: 700;
+                color: $whitey;
+                padding-bottom: 5px;
+            }
+
+            h6 {
+                font-size: 14px;
+                color: $whitey;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+@include custom_max(577px) {
+    .testimonial {
+        .testimonial-slider {
+            .testimonial-block {
+                .image {
+                    margin-top: 20px;
+                }
+
+                p {
+                    font-size: 14px;
+                    width: auto;
+                    margin: 0 40px;
+                    padding: 30px 0;
+                }
+
+                h5 {
+                    font-size: 16px;
+                }
+
+                h6 {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(481px) {
+    .testimonial {
+        .testimonial-slider {
+            .testimonial-block {
+                .image {
+                    margin-top: 20px;
+                }
+
+                p {
+                    font-size: 13px;
+                    margin: 0 20px;
+                }
+
+                h6 {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,171 @@
+.section-quote {
+    padding: 80px 0;
+    background:
+        linear-gradient(rgba($dblack, 0.9)),
+        url('../images/callus.jpg') no-repeat center/cover;
+}
+
+.quote-wrapper {
+    position: relative;
+
+    .content {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: $primaryColor;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: $whitey;
+        }
+
+        .desc {
+            font-size: 16px;
+            color: $whitey;
+        }
+    }
+
+    .form-container {
+        max-width: 800px;
+        margin: 60px auto 0 auto;
+        background-color: linear-gradient(rgba($dblack, 0.8));
+        border: 1px solid rgba($whitey, 0.1);
+        border-radius: 12px;
+        padding: 40px;
+
+        .form-title {
+            h3 {
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: $whitey;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                margin-bottom: 28px;
+            }
+        }
+    }
+}
+
+.quote-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 20px;
+
+    .form-group {
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &.half-width {
+            flex-basis: calc(100% / 2 - 10px);
+        }
+
+        label {
+            font-size: 0.9375rem;
+            color: $whitey;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            border-radius: 5px;
+            border: none;
+            background: $grey;
+            padding: 12px;
+            font-size: 0.9375rem;
+            color: $dblack;
+            resize: none;
+            width: 100%;
+
+            &::placeholder {
+                color: rgba($black, 0.5);
+            }
+
+            &:focus-visible {
+                outline: 0;
+                box-shadow: 0 0 0 2px rgba($primaryColor, 0.6);
+            }
+        }
+
+        select.form-input {
+            appearance: none;
+            cursor: pointer;
+        }
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@include custom_max(767px) {
+    .section-quote {
+        padding-bottom: 0;
+        margin-top: 0;
+    }
+
+    .quote-wrapper {
+        flex-direction: column;
+        justify-content: center;
+
+        .content {
+            max-width: 500px;
+            text-align: center;
+            padding: 30px 10px;
+
+            h3 {
+                font-size: 18px;
+            }
+
+            .desc {
+                font-size: 14px;
+            }
+        }
+
+        .form-container {
+            max-width: 100%;
+            margin-top: 30px;
+            padding: 30px 24px;
+
+            .form-title {
+                h3 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .quote-form {
+        .form-group.half-width {
+            flex-basis: 100%;
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .quote-wrapper {
+        .content {
+            h3 {
+                font-size: 16px;
+            }
+
+            .desc {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .quote-form {
+        .form-input {
+            padding: 10px;
+            font-size: 0.875rem;
+
+            &::placeholder {
+                font-size: 0.875rem;
+            }
+        }
+    }
+}

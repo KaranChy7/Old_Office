@@ -1,0 +1,179 @@
+.about-section {
+
+    .about-wrapper {
+
+        flex-wrap: wrap;
+        gap: 40px 60px;
+
+        .image-block {
+            flex-basis: 30%;
+            height: auto;
+
+
+            .image {
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    bottom: 15px;
+                    right: 15px;
+                    background-color: rgba($whitey, 0.8);
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    aspect-ratio: 3/2;
+                }
+            }
+
+            .text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+
+                .h2 {
+                    font-size: 150px;
+                    font-weight: 900;
+                    color: $primaryColor;
+                    line-height: 1;
+                }
+
+                .h5 {
+                    font-size: 22px;
+                    font-weight: 600;
+                    // text-transform: uppercase;
+                    margin-top: 15px;
+
+                    span {
+                        display: block;
+                        margin-top: 5px;
+                        font-size: 13px;
+                        text-transform: none;
+                    }
+                }
+            }
+        }
+
+        .content-block {
+            flex-basis: calc(70% - 60px);
+
+            .section-heading {
+                .h6 {
+                    color: $dblack;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                }
+            }
+
+            .content {
+                .desc {
+                    p {
+                        margin: 25px 0;
+                        color: $black;
+                    }
+                }
+
+                .button {
+                    margin-top: 30px;
+
+                    .btn-effect {
+                        display: inline-flex;
+                    }
+                }
+            }
+        }
+
+        .block {
+            &.extra-block {
+                flex-basis: 100%;
+
+                p {
+                    font-size: 16px;
+                    color: $black;
+                    margin-bottom: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(1199px) {
+    .about-section {
+        .about-wrapper {
+            align-items: center;
+        }
+    }
+}
+
+@include custom_max(991px) {
+    .about-section {
+        .about-wrapper {
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .image-block {
+                max-width: 350px;
+
+                .text {
+                    .h2 {
+                        font-size: 120px;
+                    }
+
+                    .h5 {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .content-block {
+                flex: 0 0 100%;
+                padding-left: 0;
+                margin-top: 30px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include custom_max(767px) {
+    .about-section {
+        .about-wrapper {
+            .image-block {
+                max-width: 280px;
+
+                .text {
+                    .h2 {
+                        font-size: 90px;
+                    }
+
+                    .h5 {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .content-block {
+                .content {
+                    .desc {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

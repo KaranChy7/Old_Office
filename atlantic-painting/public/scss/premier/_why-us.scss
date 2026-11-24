@@ -1,0 +1,217 @@
+@use 'variables' as *;
+
+.pp-why {
+  position: relative;
+  overflow: hidden;
+  background: $pp-light;
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__content {
+    width: 72%;
+    padding: 34px 0 30px;
+  }
+
+  &__intro {
+    max-width: 470px;
+    margin-top: 14px;
+    font-size: 14.5px;
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 28px;
+  }
+
+  &__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 29%;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left center;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, $pp-light 0%, rgba($pp-light, 0) 22%);
+    }
+  }
+
+  @include pp-down(xl) {
+    &__content {
+      width: 74%;
+    }
+
+    &__media {
+      width: 27%;
+    }
+  }
+
+  @include pp-down(lg) {
+    &__content {
+      width: 100%;
+      padding: 52px 0 40px;
+    }
+
+    &__features {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 32px;
+    }
+
+    &__media {
+      position: relative;
+      width: 100%;
+      height: 320px;
+
+      img {
+        object-position: center;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  // Phones: drop the decorative swatch photo (it would sit right
+  // above the next section's photo)
+  @include pp-down(md) {
+    &__content {
+      padding: 48px 0 52px;
+    }
+
+    &__intro {
+      font-size: 15px;
+    }
+
+    &__media {
+      display: none;
+    }
+  }
+
+  @include pp-down(sm) {
+    &__features {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 28px;
+    }
+  }
+}
+
+// Reorder media below content on smaller screens
+@include pp-down(lg) {
+  .pp-why {
+    display: flex;
+    flex-direction: column;
+
+    &__inner { order: 1; }
+    &__media { order: 2; }
+  }
+}
+
+.pp-feature {
+  padding: 0 14px;
+  text-align: center;
+  border-left: 1px solid #CDD7E4;
+
+  &:first-child {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto;
+    border-radius: 50%;
+    color: $pp-white;
+    box-shadow: 0 6px 14px rgba($pp-navy, 0.16);
+
+    svg {
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  h3 {
+    margin: 16px 0 8px;
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  @include pp-down(lg) {
+    padding: 0 16px;
+
+    &:first-child {
+      padding-left: 16px;
+    }
+
+    // Keep dividers only between items on the same row (3 per row)
+    &:nth-child(3n + 1) {
+      border-left: 0;
+    }
+  }
+
+  @include pp-down(md) {
+    h3 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 13.5px;
+    }
+  }
+
+  @include pp-down(sm) {
+    padding: 0 10px;
+
+    &:first-child {
+      padding-left: 10px;
+    }
+
+    &__icon {
+      width: 50px;
+      height: 50px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &:nth-child(3n + 1) {
+      border-left: 1px solid #CDD7E4;
+    }
+
+    &:nth-child(2n + 1) {
+      border-left: 0;
+    }
+
+    // Centre the last lone item
+    &:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+  }
+}

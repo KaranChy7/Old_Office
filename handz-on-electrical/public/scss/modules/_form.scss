@@ -1,0 +1,98 @@
+ .form {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     gap: 20px 20px;
+
+     .form-group {
+         flex-basis: 100%;
+         display: flex;
+         flex-direction: column;
+
+         label {
+             font-family: $primaryFont;
+             font-weight: 500;
+             font-size: 1rem;
+             color: $graphite;
+             margin-bottom: 5px;
+         }
+
+         .form-input {
+             font-family: $secondaryFont;
+             color: $dblack;
+             border: none;
+             font-size: 0.9375rem;
+             border-radius: 5px;
+             padding: 8px 5px;
+
+             &.message {
+                 resize: none;
+                 min-height: 120px;
+             }
+         }
+
+         &.half-width {
+             flex-basis: calc(50% - 10px);
+         }
+
+     }
+
+ }
+
+ @include custom_max(768px) {
+     .form {
+         gap: 20px;
+
+         .form-group {
+             label {
+                 font-size: 0.9375rem;
+             }
+
+             .form-input {
+                 font-size: 0.875rem;
+             }
+
+             &.half-width {
+                 flex-basis: calc(50% - 10px);
+             }
+         }
+     }
+ }
+
+ @include custom_max(480px) {
+     .form {
+         flex-direction: column;
+
+         .form-group {
+             &.half-width {
+                 flex-basis: 100%;
+             }
+
+             .form-input {
+                 width: 100%;
+             }
+         }
+     }
+ }
+// Shared by the quote and contact forms
+.contact-hint {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 0.875rem;
+    color: $mutedText;
+}
+
+.form-privacy {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: $mutedText;
+    text-align: left;
+
+    i {
+        margin-top: 3px;
+        color: $primaryColor;
+    }
+}

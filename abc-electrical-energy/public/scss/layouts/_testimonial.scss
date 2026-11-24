@@ -1,0 +1,154 @@
+.slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial {
+    background-image: url(../images/testi_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba($dblack, 0.8);
+        z-index: -1;
+    }
+
+    .section-title {
+        h6 {
+            color: $lgrey;
+        }
+
+        h4{
+            color: $whitey;
+        }
+    }
+
+}
+
+.testi-block {
+    margin: 0 20px;
+
+    &.slick-active.slick-center {
+
+        .block {
+            opacity: 1;
+
+            .desc {
+                p {
+                    display: block;
+                }
+            }
+        }
+    }
+
+
+
+
+    .block {
+        opacity: 0.3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // width: 90%;
+        // margin: 0 20px;
+        text-align: center;
+
+        .figure {
+            width: 100px;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .desc {
+            text-align: center;
+
+            h6 {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: $primaryColor;
+                margin: 15px 0 20px 0;
+                text-transform: capitalize;
+            }
+
+            p {
+                display: none;
+                line-height: 1.5;
+                color: $whitey;
+            }
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+
+    .testi-block {
+        margin: 0 20px;
+
+        .block {
+
+            .figure {
+                width: 100px;
+            }
+
+            .desc {
+
+                h6 {
+                    font-size: 1.125rem;
+                    margin: 15px 0 20px 0;
+                }
+
+                p {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .testi-block {
+        .block {
+            opacity: 1;
+            max-width: 500px;
+            margin: auto;
+
+            .desc {
+
+                h6 {
+                    font-size: 1rem;
+                }
+
+                p {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .testi-block {
+        .block {
+            margin: 0 30px;
+        }
+    }
+}

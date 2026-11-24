@@ -1,0 +1,99 @@
+// =============================================
+// GLINT PLUS PAINTING SERVICE — MIXINS
+// =============================================
+
+@use 'variables' as *;
+
+@mixin flex($align: center, $justify: flex-start, $gap: 0) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  @if $gap != 0 { gap: $gap; }
+}
+
+@mixin grid($cols, $gap: 2rem) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+}
+
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $font-display;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border-radius: $radius-sm;
+  transition: $transition;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background: $navy;
+  color: $white;
+  border: 2px solid $white;
+
+  &:hover {
+    background: $navy-dark;
+    border-color: $white;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}
+
+@mixin btn-outline {
+  @include btn-base;
+  background: transparent;
+  color: $navy;
+  border: 2px solid $navy;
+
+  &:hover {
+    background: $navy;
+    color: $white;
+  }
+}
+
+@mixin btn-outline-white {
+  @include btn-base;
+  background: transparent;
+  color: $white;
+  border: 2px solid rgba($white, 0.6);
+
+  &:hover {
+    background: $white;
+    color: $navy;
+    border-color: $white;
+  }
+}
+
+@mixin respond($bp) {
+  @if $bp == 'xl'    { @media (max-width: 1280px) { @content; } }
+  @if $bp == 'lg'    { @media (max-width: 1024px) { @content; } }
+  @if $bp == 'md'    { @media (max-width: 768px)  { @content; } }
+  @if $bp == 'sm'    { @media (max-width: 576px)  { @content; } }
+}
+
+// Shared heading / lead-paragraph styles — used both by the .section-title /
+// .section-lead utility classes and by bare h1-h6 / p selectors scoped to a
+// parent block, so headings and paragraphs don't need their own class.
+@mixin heading($color: $navy) {
+  font-family: $font-display;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: $color;
+}
+
+@mixin lead($color: $grey-600) {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 560px;
+  color: $color;
+}

@@ -1,0 +1,570 @@
+// Single service pages (gates, fences, metal-doors, etc.)
+
+.svc-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $goldDark;
+    padding-left: 40px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 30px;
+        height: 2px;
+        background-color: $secondaryColor;
+    }
+}
+
+// 1. intro: image + text
+.svc-intro {
+    .svc-intro-wrap {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .svc-intro-image {
+        flex-basis: calc(50% - 30px);
+        position: relative;
+        padding: 0 0 30px 30px;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 70%;
+            height: 70%;
+            border-radius: 24px;
+            background-color: $secondaryColor;
+            z-index: -1;
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba($primaryColor, 0.2);
+        }
+
+        .svc-badge {
+            position: absolute;
+            right: -20px;
+            bottom: 60px;
+            background-color: $primaryColor;
+            color: $territary;
+            padding: 18px 24px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba($primaryColor, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            i {
+                font-size: 1.75rem;
+                color: $secondaryColor;
+            }
+
+            strong {
+                display: block;
+                font-size: 1.125rem;
+                color: $secondaryColor;
+            }
+
+            span {
+                font-size: 0.8125rem;
+            }
+        }
+    }
+
+    .svc-intro-text {
+        flex-basis: calc(50% - 30px);
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: $primaryColor;
+            margin: 12px 0 20px;
+            line-height: 1.15;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        .svc-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+
+            li {
+                position: relative;
+                padding-left: 32px;
+                font-weight: 600;
+                font-size: 0.9375rem;
+                color: $primaryColor;
+
+                &::before {
+                    content: '\f00c';
+                    font-family: 'Font Awesome 6 Free';
+                    font-weight: 900;
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 50%;
+                    background-color: $secondaryColor;
+                    color: $onSecondary;
+                    font-size: 0.6875rem;
+                    display: grid;
+                    place-items: center;
+                }
+            }
+        }
+    }
+}
+
+// 2. highlights band
+.svc-features {
+    background: linear-gradient(135deg, $background, $background1);
+
+    .svc-heading {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto 50px;
+
+        .svc-label {
+            color: $secondaryColor;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: $whitey;
+            margin-top: 12px;
+        }
+    }
+
+    .svc-feature-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .svc-feature {
+        background-color: rgba($whitey, 0.06);
+        border: 1px solid rgba($secondaryColor, 0.25);
+        border-radius: 20px;
+        padding: 32px 26px;
+        transition: 0.3s ease-in-out;
+
+        i {
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+            background-color: $secondaryColor;
+            color: $onSecondary;
+            margin-bottom: 22px;
+        }
+
+        h5 {
+            font-size: 1.1875rem;
+            font-weight: 700;
+            color: $whitey;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: rgba($territary, 0.85);
+            font-size: 0.9375rem;
+        }
+
+        &:hover {
+            transform: translateY(-6px);
+            background-color: rgba($whitey, 0.1);
+            border-color: $secondaryColor;
+        }
+    }
+}
+
+// 3. process steps
+.svc-process {
+    background-color: $territary;
+
+    .svc-heading {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto 50px;
+
+        h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: $primaryColor;
+            margin-top: 12px;
+        }
+    }
+
+    .svc-steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        counter-reset: step;
+    }
+
+    .svc-step {
+        background-color: $whitey;
+        border-radius: 20px;
+        padding: 34px 26px 28px;
+        position: relative;
+        box-shadow: 0 10px 30px rgba($primaryColor, 0.06);
+        border-top: 4px solid $secondaryColor;
+
+        .num {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1;
+            color: rgba($secondaryColor, 0.6);
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        h5 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: $primaryColor;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 0.9375rem;
+        }
+    }
+}
+
+// 4. related services
+.svc-related {
+    .svc-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 40px;
+
+        h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: $primaryColor;
+            margin-top: 12px;
+        }
+    }
+
+    .svc-related-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 18px;
+    }
+
+    .svc-related-card {
+        position: relative;
+        display: block;
+        border-radius: 18px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease-in-out;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba($primaryColor, 0.9), rgba($primaryColor, 0) 60%);
+        }
+
+        span {
+            position: absolute;
+            left: 18px;
+            right: 18px;
+            bottom: 18px;
+            z-index: 1;
+            color: $whitey;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.3;
+
+            i {
+                display: block;
+                margin-top: 8px;
+                color: $secondaryColor;
+                font-size: 0.875rem;
+                transition: 0.3s ease-in-out;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.08);
+            }
+
+            span i {
+                transform: translateX(6px);
+            }
+        }
+    }
+}
+
+// 5. call to action band
+.svc-cta {
+    padding-bottom: 120px;
+
+    .svc-cta-box {
+        background-color: $secondaryColor;
+        border-radius: 28px;
+        padding: 50px 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: -80px;
+            top: -80px;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background-color: rgba($whitey, 0.2);
+        }
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: $onSecondary;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: $onSecondary;
+        }
+
+        .svc-cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            position: relative;
+        }
+
+        .btn-cta-phone {
+            background-color: transparent;
+            border: 2px solid $onSecondary;
+            color: $onSecondary;
+
+            &:hover {
+                background-color: $onSecondary;
+                color: $secondaryColor;
+            }
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .svc-related .svc-related-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .svc-features .svc-feature-grid,
+    .svc-process .svc-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include custom_max(992px) {
+    .svc-intro {
+        .svc-intro-wrap {
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .svc-intro-image .svc-badge {
+            right: 10px;
+        }
+
+        .svc-intro-text h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .svc-cta {
+        padding-bottom: 80px;
+
+        .svc-cta-box {
+            padding: 40px 30px;
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .svc-intro .svc-intro-text .svc-checklist,
+    .svc-features .svc-feature-grid,
+    .svc-process .svc-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .svc-related .svc-related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .svc-features .svc-heading h2,
+    .svc-process .svc-heading h2,
+    .svc-related .svc-heading h2 {
+        font-size: 1.75rem;
+    }
+
+    .svc-cta .svc-cta-box h3 {
+        font-size: 1.5rem;
+    }
+}
+
+// All Services overview page
+.svc-overview {
+    .svc-heading {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 50px;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: $primaryColor;
+            margin: 12px 0 16px;
+        }
+    }
+
+    .svc-card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .svc-card {
+        display: flex;
+        flex-direction: column;
+        background-color: $whitey;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 12px 35px rgba($primaryColor, 0.08);
+        border: 1px solid rgba($secondaryColor, 0.3);
+        transition: 0.3s ease-in-out;
+
+        .svc-card-image {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                aspect-ratio: 3/2;
+                object-fit: cover;
+                transition: 0.5s ease-in-out;
+            }
+
+            .num {
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                background-color: $primaryColor;
+                color: $secondaryColor;
+                font-weight: 800;
+                font-size: 0.9375rem;
+                padding: 8px 14px;
+                border-radius: 12px;
+            }
+        }
+
+        .svc-card-body {
+            padding: 26px 26px 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            h3 {
+                font-size: 1.375rem;
+                font-weight: 700;
+                color: $primaryColor;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size: 0.9375rem;
+                margin-bottom: 20px;
+            }
+
+            .svc-more {
+                margin-top: auto;
+                font-weight: 700;
+                font-size: 0.9375rem;
+                color: $goldDark;
+
+                i {
+                    margin-left: 6px;
+                    transition: 0.3s ease-in-out;
+                }
+            }
+        }
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba($primaryColor, 0.16);
+            border-color: $secondaryColor;
+
+            .svc-card-image img {
+                transform: scale(1.06);
+            }
+
+            .svc-more i {
+                transform: translateX(6px);
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .svc-overview .svc-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include custom_max(576px) {
+    .svc-overview {
+        .svc-card-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .svc-heading h2 {
+            font-size: 1.75rem;
+        }
+    }
+}

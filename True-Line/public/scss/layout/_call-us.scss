@@ -1,0 +1,109 @@
+// =============================================
+// GLINT PLUS PAINTING SERVICE — CALL US
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.call-us {
+  background: linear-gradient(135deg, $navy 0%, $navy-dark 100%);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba($white, 0.03);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -60%;
+    left: 5%;
+    width: 400px;
+    height: 400px;
+    background: rgba($white, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    font-family: $font-body;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba($white, 0.5);
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    color: $white;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+
+    span { color: $white; }
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: rgba($white, 0.7);
+    margin-bottom: 2.5rem;
+    line-height: 1.65;
+  }
+
+  &__actions {
+    @include flex(center, center, 1rem);
+    flex-wrap: wrap;
+  }
+
+  &__btn-primary {
+    @include btn-base;
+    background: $white;
+    color: $navy;
+    border: 2px solid $white;
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    &:hover {
+      background: $grey-200;
+      border-color: $grey-200;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+  }
+
+  &__btn-secondary {
+    @include btn-outline-white;
+  }
+
+  &__abn {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: rgba($white, 0.35);
+    letter-spacing: 0.05em;
+  }
+
+  // Margin-top variant
+  &--mt {
+    margin-top: 4rem;
+  }
+}

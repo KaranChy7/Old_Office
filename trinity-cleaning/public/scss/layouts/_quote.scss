@@ -1,0 +1,161 @@
+.quote {
+    background-image: url(../images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba($secondaryColor, 0.75);
+        z-index: -1;
+    }
+
+    .quote-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .quote-content {
+            flex-basis: 45%;
+
+            .icon-box {
+                width: 80px;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                background-color: rgba($whitey, 0.2);
+                display: grid;
+                place-items: center;
+
+                i {
+                    font-size: 2rem;
+                    color: $green;
+                }
+            }
+
+            .content {
+                margin-top: 50px;
+
+                h4 {
+                    color: $whitey;
+                }
+
+                p {
+                    color: $lgrey;
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        .form-quote {
+            flex-basis: 50%;
+            background-color: $whitey;
+            border-radius: $radius-m;
+
+            .form {
+                gap: 20px;
+                padding: 30px;
+
+                .form-group {
+                    label {
+                        padding-bottom: 8px;
+                    }
+
+                    .form-input {
+                        background-color: $whitey;
+                        color: $black;
+                        border: 1px solid $t-color;
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+@include custom_max(992px) {
+    .quote {
+        .quote-wrapper {
+
+            .quote-content {
+                flex-basis: 40%;
+            }
+
+            .form-quote {
+                flex-basis: 50%;
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .quote {
+        .quote-wrapper {
+            flex-direction: column;
+            max-width: 80%;
+            margin-inline: auto;
+            gap: 60px;
+
+            .quote-content {
+
+                .icon-box {
+                    width: 60px;
+
+                    i {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                .content {
+                    margin-top: 30px;
+                }
+            }
+
+            .form-quote {
+
+                .form {
+                    gap: 20px;
+                    padding: 30px;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .quote {
+        .quote-wrapper {
+            max-width: 100%;
+            gap: 40px;
+            align-items: initial;
+
+            .quote-content {
+
+                .icon-box {
+                    width: 60px;
+
+                    i {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                .content {
+                    margin-top: 30px;
+                }
+            }
+
+            .form-quote {
+
+                .form {
+                    gap: 20px;
+                    padding: 30px;
+                }
+            }
+        }
+    }
+}

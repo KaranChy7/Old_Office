@@ -1,0 +1,1201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Finesse Painting Services | Inala QLD | 26 Years of Excellence
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
+    <!-- Slick Slider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- FLOATING CALL BUTTON -->
+    <a href="tel:0409904617" class="float-call" aria-label="Call us">📞</a>
+    <button class="back-top" id="backTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        ↑
+    </button>
+
+    <!-- MOBILE NAV OVERLAY -->
+    <div class="nav-overlay" id="navOverlay" onclick="closeMobileNav()"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+        <a href="#about" onclick="closeMobileNav()">About Us</a>
+        <a href="#services" onclick="closeMobileNav()">Services</a>
+        <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+        <a href="#why" onclick="closeMobileNav()">Why Us</a>
+        <a href="#testimonials" onclick="closeMobileNav()">Reviews</a>
+        <a href="#faq" onclick="closeMobileNav()">FAQ</a>
+        <a href="#contact" onclick="closeMobileNav()">Contact</a>
+        <a href="#quote" onclick="closeMobileNav()" style="color: var(--accent); margin-top: 10px">Get a Quote</a>
+    </nav>
+
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-inner">
+                <div style="display: flex; gap: 24px; flex-wrap: wrap">
+                    <a href="tel:0409904617">📞 0409 904 617</a>
+                    <a href="mailto:ashkanrodman@yahoo.com.au">✉ ashkanrodman@yahoo.com.au</a>
+                    <a href="#contact">📍 Inala QLD 4077</a>
+                </div>
+                <div class="topbar-right">
+                    <span class="hours">⏰ Mon–Sat: 7:00 AM – 5:00 PM</span>
+                    <span style="color: rgba(255, 255, 255, 0.25)">|</span>
+                    <span style="color: rgba(255, 255, 255, 0.6); font-size: 12px">ABN: 41 410 220 939</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="mainHeader">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 32 32">
+                            <path d="M4 28 L16 4 L28 28 Z" fill="white" opacity="0.9" />
+                            <rect x="9" y="20" width="14" height="3" fill="white" />
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <div class="brand">Finesse Painting</div>
+                        <!-- <div class="tagline">Services — Est. 1998</div> -->
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#why">Why Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="tel:0409904617" class="nav-phone">📞 0409 904 617</a>
+                    <a href="#quote" class="btn btn-red">Free Quote</a>
+                </div>
+                <button class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+<section class="hero" id="home">
+    <div class="hero-slider" id="heroSlider">
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+            <img src="images/16.jpg" alt="Professional exterior painting" />
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+            <img src="images/9.jpg" alt="Interior painting services" />
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+            <img src="images/18.jpg" alt="Painting craftsmanship" />
+        </div>
+    </div>
+
+    <div class="hero-content">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                ⭐ Inala's Most Trusted Painters · 26 Years Strong
+            </div>
+            <h2 class="hero-title">
+                Painting That
+                <span class="highlight">Transforms</span>
+                Every Space
+            </h2>
+            <p class="hero-desc">
+                From a freshly painted interior that breathes new life into your
+                home, to bold exterior coatings that command attention on your
+                street — Finesse Painting Services delivers results that last,
+                impress, and endure.
+            </p>
+            <div class="hero-btns">
+                <a href="#quote" class="btn btn-red">Get a Free Quote ›</a>
+                <a href="#services" class="btn btn-outline">Our Services</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-arrows" style="bottom: 50%; transform: translateY(50%)">
+        <button class="hero-arr" onclick="changeSlide(-1)">‹</button>
+        <button class="hero-arr" onclick="changeSlide(1)">›</button>
+    </div>
+
+    <div class="hero-controls" style="
+          bottom: 160px;
+          right: 20px;
+          flex-direction: row;
+          gap: 8px;
+          position: absolute;
+        ">
+        <!-- <button class="hero-dot active" onclick="goSlide(0)"></button>
+        <button class="hero-dot" onclick="goSlide(1)"></button>
+        <button class="hero-dot" onclick="goSlide(2)"></button> -->
+    </div>
+</section><div class="hero-stats">
+    <div class="hero-stats-inner">
+        <div class="hero-stat">
+            <span class="num" data-target="26">0</span>
+            <span class="label">Years Experience</span>
+        </div>
+        <div class="hero-stat">
+            <span class="num" data-target="1500">0</span>
+            <span class="label">Projects Completed</span>
+        </div>
+        <div class="hero-stat">
+            <span class="num" data-target="50">0</span>
+            <span class="label">KM Service Radius</span>
+        </div>
+        <div class="hero-stat">
+            <span class="num" data-target="100">0</span>
+            <span class="label">% Satisfaction Rate</span>
+        </div>
+    </div>
+</div><section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-images reveal-left">
+                <img class="about-img-main" src="images/22.jpg" alt="Finesse Painting team at work" />
+                <img class="about-img-accent" src="images/17.jpg" alt="Professional finish" />
+                <div class="about-badge">
+                    <span class="num">26</span>
+                    <span class="txt">Years of Excellence</span>
+                </div>
+            </div>
+            <div class="about-content reveal-right">
+                <span class="section-label">Who We Are</span>
+                <h2 class="section-title">
+                    A Legacy Built on <span>Precision</span> & Pride
+                </h2>
+                <p class="section-sub">
+                    Finesse Painting Services isn't just a name — it's a promise.
+                    Since 1998, we've been proudly serving Inala and the greater
+                    Brisbane region with a hands-on, detail-obsessed approach to
+                    painting and property maintenance. With over 26 years of
+                    boots-on-the-ground experience, our founder and lead tradesman
+                    brings an unmatched level of skill, professionalism, and care to
+                    every project — whether it's a single feature wall or a full
+                    exterior residential job.
+                </p>
+                <br />
+                <p class="section-sub">
+                    We believe a fresh coat of paint is never just cosmetic — it's an
+                    investment in your property's value, your family's comfort, and
+                    your peace of mind. That's why we take the time to prepare
+                    surfaces properly, use only premium-grade materials, and ensure
+                    every edge is crisp and every surface is flawless before we pack
+                    up our tools.
+                </p>
+
+                <div class="about-features">
+                    <div class="about-feat reveal">
+                        <div class="af-icon">🛡️</div>
+                        <div>
+                            <div class="af-title">Fully Licensed & Insured</div>
+                            <div class="af-sub">Peace of mind guaranteed</div>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal">
+                        <div class="af-icon">🎨</div>
+                        <div>
+                            <div class="af-title">Premium Materials Only</div>
+                            <div class="af-sub">Dulux, Taubmans & more</div>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal">
+                        <div class="af-icon">⏱️</div>
+                        <div>
+                            <div class="af-title">On-Time Delivery</div>
+                            <div class="af-sub">Reliable scheduling, always</div>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal">
+                        <div class="af-icon">✅</div>
+                        <div>
+                            <div class="af-title">Workmanship Guarantee</div>
+                            <div class="af-sub">We stand behind every job</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="abn-block reveal">
+                    <div style="font-size: 24px">📋</div>
+                    <div>
+                        <div style="
+                    color: rgba(255, 255, 255, 0.6);
+                    font-size: 12px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    margin-bottom: 4px;
+                  ">
+                            Registered Business
+                        </div>
+                        <strong>ABN: 41 410 220 939 </strong>
+                    </div>
+                </div>
+
+                <!-- <div style="margin-top:30px;" class="reveal">
+          <a href="#quote" class="btn btn-red">Request a Free Quote ›</a>
+        </div> -->
+            </div>
+        </div>
+    </div>
+</section><section class="services" id="services">
+    <div class="container">
+        <div class="services-header reveal">
+            <span class="section-label" style="color: var(--accent)">What We Do</span>
+            <h2 class="section-title">
+                Painting Solutions for <span>Every Surface</span>
+            </h2>
+            <p class="section-sub">
+                We cover a comprehensive range of painting and maintenance services
+                — each delivered with the same obsessive attention to detail that
+                has defined our reputation for over two decades.
+            </p>
+        </div>
+        <div class="services-grid reveal">
+            <div class="service-card">
+                <img src="images/1.jpg" alt="Interior Painting" />
+                <div class="service-info">
+                    <div class="service-num">01 — Interior</div>
+                    <h3>Interior Painting</h3>
+                    <p class="service-desc">
+                        Transform the way you live inside your home. From ceilings and
+                        feature walls to full room makeovers, our interior painting
+                        service is precise, clean, and beautifully finished — with zero
+                        mess left behind.
+                    </p>
+                    <span class="service-arrow">Learn More →</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="images/2.jpg" alt="Exterior Painting" />
+                <div class="service-info">
+                    <div class="service-num">02 — Exterior</div>
+                    <h3>Exterior Painting</h3>
+                    <p class="service-desc">
+                        Your home's exterior is its first impression. We use
+                        weather-resistant, UV-stable coatings to give your property a
+                        bold, lasting finish that holds up beautifully through
+                        Queensland's harsh climate.
+                    </p>
+                    <span class="service-arrow">Learn More →</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="images/3.jpg" alt="Fence Painting" />
+                <div class="service-info">
+                    <div class="service-num">03 — Fencing</div>
+                    <h3>Fence Painting</h3>
+                    <p class="service-desc">
+                        Timber, Colorbond, pool fences, garden borders — we handle all
+                        types of fencing with the right primer, paint, or stain to
+                        protect, seal and beautify your boundary from post to post.
+                    </p>
+                    <span class="service-arrow">Learn More →</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="images/4.jpg" alt="Handyman Services" />
+                <div class="service-info">
+                    <div class="service-num">04 — Handyman</div>
+                    <h3>Handyman Services</h3>
+                    <p class="service-desc">
+                        Beyond paint, we tackle those nagging maintenance tasks —
+                        patching holes, fixing cracks, replacing fixtures, and general
+                        property upkeep that keep your home or investment in peak
+                        condition.
+                    </p>
+                    <span class="service-arrow">Learn More →</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="images/5.jpg" alt="Residential Painting" />
+                <div class="service-info">
+                    <div class="service-num">05 — Residential</div>
+                    <h3>Residential Projects</h3>
+                    <p class="service-desc">
+                        Whether it's a fresh repaint before selling, a full renovation
+                        coat, or a single room refresh — we treat every residential job
+                        like it's our own home. Neat, respectful, and always immaculate.
+                    </p>
+                    <span class="service-arrow">Learn More →</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="images/6.jpg" alt="Commercial" />
+                <div class="service-info">
+                    <div class="service-num">06 — Commercial</div>
+                    <h3>Commercial Painting</h3>
+                    <p class="service-desc">
+                        We provide expert commercial painting services in Inala QLD.
+                        From offices to warehouses, our team delivers high-quality,
+                        long-lasting finishes with minimal disruption to your business
+                        operations.
+                    </p>
+                    <span class="service-arrow">Learn More →</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><section class="why" id="why">
+    <div class="container">
+        <div class="why-grid">
+            <div class="why-img-wrap reveal-left">
+                <img class="why-img-main" src="images/23.jpg" alt="Why choose Finesse Painting" />
+                <!-- <div class="why-img-overlay">
+        <span class="big">A+</span>
+        <span class="small">Quality Rating</span>
+    </div> -->
+            </div>
+            <div class="reveal-right">
+                <span class="section-label">Why Choose Us</span>
+                <h2 class="section-title">
+                    Trusted for Over <span>Two Decades</span> — For Good Reason
+                </h2>
+                <p class="section-sub">
+                    Choosing a painter is a matter of trust — trust that they'll show
+                    up, do the job properly, respect your space, and deliver exactly
+                    what was promised. Here's why thousands of homeowners across the
+                    Inala region continue to choose Finesse.
+                </p>
+
+                <div class="why-reasons">
+                    <div class="why-item reveal">
+                        <div class="why-icon">🏆</div>
+                        <div class="why-text">
+                            <h4>26 Years of Hands-On Experience</h4>
+                            <p>
+                                With over a quarter century of trade experience, there is no
+                                surface, structure, or project challenge our team hasn't
+                                already seen, solved, and delivered on.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-icon">💬</div>
+                        <div class="why-text">
+                            <h4>Clear, Honest Communication</h4>
+                            <p>
+                                We provide detailed, itemised quotes with no hidden costs.
+                                You'll always know what's happening, when it's happening,
+                                and exactly what you're paying for.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-icon">🧹</div>
+                        <div class="why-text">
+                            <h4>Clean, Respectful Workmanship</h4>
+                            <p>
+                                We protect your furniture, floors, and fixtures — and we
+                                clean up thoroughly when we're done. Expect your space left
+                                exactly as we found it, only better painted.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-icon">⏰</div>
+                        <div class="why-text">
+                            <h4>Prompt & Reliable Scheduling</h4>
+                            <p>
+                                We respect your time. Our team arrives within our agreed
+                                7am–5pm window and keeps you updated every step of the way —
+                                no ghost calls, no no-shows.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><section class="process" id="process">
+    <div class="container">
+        <div class="process-header reveal">
+            <span class="section-label">How It Works</span>
+            <h2 class="section-title">Our Simple <span>4-Step Process</span></h2>
+            <p class="section-sub" style="margin: 0 auto">
+                From your first call to the final coat — we make the entire painting
+                journey smooth, transparent, and stress-free.
+            </p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step reveal">
+                <div class="step-num">01</div>
+                <h4 class="step-title">Free Consultation</h4>
+                <p class="step-desc">
+                    Call or email us to discuss your project. We'll ask the right
+                    questions and schedule a site visit at a time that suits you.
+                </p>
+            </div>
+            <div class="process-step reveal">
+                <div class="step-num">02</div>
+                <h4 class="step-title">Detailed Quote</h4>
+                <p class="step-desc">
+                    We provide a clear, itemised written quote — covering labour,
+                    materials, prep, and timeframes. No surprises. Ever.
+                </p>
+            </div>
+            <div class="process-step reveal">
+                <div class="step-num">03</div>
+                <h4 class="step-title">Skilled Execution</h4>
+                <p class="step-desc">
+                    Our team arrives on schedule, preps surfaces thoroughly, applies
+                    premium paints, and maintains a clean, respectful workspace
+                    throughout.
+                </p>
+            </div>
+            <div class="process-step reveal">
+                <div class="step-num">04</div>
+                <h4 class="step-title">Final Inspection</h4>
+                <p class="step-desc">
+                    We walk through the finished job with you, touch up anything that
+                    needs it, and only consider ourselves done when you're completely
+                    satisfied.
+                </p>
+            </div>
+        </div>
+    </div>
+</section><section class="gallery" id="gallery">
+    <div class="container">
+        <div class="gallery-header reveal">
+            <span class="section-label" style="color: var(--accent)">Our Work</span>
+            <h2 class="section-title">Recent <span>Projects</span></h2>
+            <p class="section-sub">
+                A picture says a thousand words. Browse through a selection of our
+                recent residential and commercial painting work across the Brisbane
+                region.
+            </p>
+        </div>
+        <!-- <div class="gallery-filter reveal">
+      <button class="filter-btn active">All Projects</button>
+      <button class="filter-btn">Interior</button>
+      <button class="filter-btn">Exterior</button>
+      <button class="filter-btn">Fencing</button>
+      <button class="filter-btn">Handyman</button>
+    </div> -->
+        <div class="gallery-grid reveal">
+            <div class="gallery-item">
+                <img src="images/19.jpg" alt="Finished commercial building repaint" />
+                <div class="gallery-overlay">
+                    <div style="font-size: 28px">🔍</div>
+                    <span>Commercial Painting</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/9.jpg" alt="Finished home exterior repaint" />
+                <div class="gallery-overlay">
+                    <div style="font-size: 28px">🔍</div>
+                    <span>Exterior Painting</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/18.jpg" alt="Finished living room interior" />
+                <div class="gallery-overlay">
+                    <div style="font-size: 28px">🔍</div>
+                    <span>Interior Painting</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/21.jpg" alt="Finished commercial facade in bright blue" />
+                <div class="gallery-overlay">
+                    <div style="font-size: 28px">🔍</div>
+                    <span>Commercial Painting</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/5.jpg" alt="Finished two-storey home exterior" />
+                <div class="gallery-overlay">
+                    <div style="font-size: 28px">🔍</div>
+                    <span>Exterior Painting</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/14.jpg" alt="Finished office interior in deep green" />
+                <div class="gallery-overlay">
+                    <div style="font-size: 28px">🔍</div>
+                    <span>Office Interior</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/23.jpg" alt="Finished multi-colour commercial facade" />
+                <div class="gallery-overlay">
+                    <div style="font-size: 28px">🔍</div>
+                    <span>Commercial Painting</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/1.jpg" alt="Finished feature-wall lounge room" />
+                <div class="gallery-overlay">
+                    <div style="font-size: 28px">🔍</div>
+                    <span>Interior Painting</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="testimonials-header reveal">
+            <span class="section-label">Client Stories</span>
+            <h2 class="section-title">What Our Customers <span>Say</span></h2>
+            <p class="section-sub" style="margin: 0 auto">
+                Don't take our word for it — hear from the homeowners and property
+                managers who've trusted us with their most valued spaces.
+            </p>
+        </div>
+
+        <div class="testi-slider" id="testiSlider">
+            <div class="testi-track" id="testiTrack">
+                <div class="testi-slide">
+                    <div class="testi-cards">
+                        <div class="testi-card reveal">
+                            <div class="testi-stars">★★★★★</div>
+                            <p class="testi-text">
+                                "Ashkan and his team did an absolutely outstanding job on
+                                our home's exterior. From the initial quote to the final
+                                coat, every step was professional, timely, and transparent.
+                                Our neighbours keep stopping to ask who painted the house —
+                                we're so proud of the result!"
+                            </p>
+                            <div class="testi-author">
+                                <div class="testi-avatar">SJ</div>
+                                <div>
+                                    <div class="testi-name">Sandra J.</div>
+                                    <div class="testi-loc">📍 Forest Lake, QLD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-card reveal">
+                            <div class="testi-stars">★★★★★</div>
+                            <p class="testi-text">
+                                "We hired Finesse to repaint our rental property before
+                                listing it. The transformation was incredible. The team was
+                                respectful of the property, cleaned up after themselves, and
+                                finished on schedule. Highly recommend for anyone in the
+                                Brisbane area."
+                            </p>
+                            <div class="testi-author">
+                                <div class="testi-avatar">MK</div>
+                                <div>
+                                    <div class="testi-name">Michael K.</div>
+                                    <div class="testi-loc">📍 Oxley, QLD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-card reveal">
+                            <div class="testi-stars">★★★★★</div>
+                            <p class="testi-text">
+                                "Best painter I've ever hired. He noticed things I wouldn't
+                                have even thought to ask about — hairline cracks, a bit of
+                                rising damp near the window sill — and fixed it all before
+                                painting. That kind of thoroughness is rare. Genuinely
+                                exceptional service."
+                            </p>
+                            <div class="testi-author">
+                                <div class="testi-avatar">TR</div>
+                                <div>
+                                    <div class="testi-name">Tanya R.</div>
+                                    <div class="testi-loc">📍 Richlands, QLD</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-slide">
+                    <div class="testi-cards">
+                        <div class="testi-card">
+                            <div class="testi-stars">★★★★★</div>
+                            <p class="testi-text">
+                                "I called Finesse Painting for a fence repaint and handyman
+                                job on a Friday — they fit me in the following week, quoted
+                                fairly, and the finish was excellent. Straightforward, no
+                                drama, brilliant result. That's all you want from a
+                                tradesperson."
+                            </p>
+                            <div class="testi-author">
+                                <div class="testi-avatar">BL</div>
+                                <div>
+                                    <div class="testi-name">Barry L.</div>
+                                    <div class="testi-loc">📍 Inala, QLD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-card">
+                            <div class="testi-stars">★★★★★</div>
+                            <p class="testi-text">
+                                "From the very first call to the final inspection, the
+                                communication was clear and professional. The team showed up
+                                exactly when they said they would, the prep work was
+                                meticulous, and the finish was smooth and flawless. Five
+                                stars without hesitation."
+                            </p>
+                            <div class="testi-author">
+                                <div class="testi-avatar">CP</div>
+                                <div>
+                                    <div class="testi-name">Claire P.</div>
+                                    <div class="testi-loc">📍 Darra, QLD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-card">
+                            <div class="testi-stars">★★★★★</div>
+                            <p class="testi-text">
+                                "We needed our entire home interior repainted before a big
+                                family event. Finesse turned it around quickly without
+                                cutting corners. Every room looked brand new — the colour
+                                choices they suggested were perfect too. Couldn't be
+                                happier."
+                            </p>
+                            <div class="testi-author">
+                                <div class="testi-avatar">AP</div>
+                                <div>
+                                    <div class="testi-name">Ahmed P.</div>
+                                    <div class="testi-loc">📍 Acacia Ridge, QLD</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testi-controls">
+            <button class="testi-dot active" onclick="goTesti(0)"></button>
+            <button class="testi-dot" onclick="goTesti(1)"></button>
+        </div>
+    </div>
+</section><section class="quote-cta" id="quote">
+    <div class="container">
+        <div class="quote-inner">
+            <span class="section-label">Get Started Today</span>
+            <h2 class="section-title" style="color: white">
+                Request Your Free
+                <span style="color: var(--accent)">No-Obligation Quote</span>
+            </h2>
+            <p class="section-sub">
+                Tell us about your project and we'll get back to you within one
+                business day with a clear, detailed quote. No pressure. No
+                obligation. Just honest, expert advice.
+            </p>
+
+            <div class="quote-form reveal-scale">
+                <h3>🎨 Tell Us About Your Project</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Your Full Name</label>
+                        <input type="text" placeholder="e.g. Jane Smith" />
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="04XX XXX XXX" />
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="your@email.com" />
+                    </div>
+                    <div class="form-group">
+                        <label>Your Suburb / Postcode</label>
+                        <input type="text" placeholder="e.g. Oxley 4075" />
+                    </div>
+                    <div class="form-group">
+                        <label>Service Required</label>
+                        <select>
+                            <option value="">— Select a Service —</option>
+                            <option>Interior Painting</option>
+                            <option>Exterior Painting</option>
+                            <option>Fence Painting</option>
+                            <option>Handyman Services</option>
+                            <option>Residential Projects</option>
+                            <option>Commercial Painting</option>
+                            <option>Multiple / Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Property Type</label>
+                        <select>
+                            <option value="">— Select Type —</option>
+                            <option>House</option>
+                            <option>Unit / Apartment</option>
+                            <option>Townhouse</option>
+                            <option>Investment / Rental Property</option>
+                            <option>Commercial</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label>Project Details</label>
+                        <textarea
+                            placeholder="Tell us as much as you can — number of rooms, surface condition, preferred timeline, any specific concerns..."></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-red" style="
+            width: 100%;
+            justify-content: center;
+            font-size: 16px;
+            padding: 20px;
+            ">
+                    Submit My Quote Request ›
+                </button>
+                <p style="
+            margin-top: 16px;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+            ">
+                    📞 Prefer to call? Reach us directly on
+                    <a href="tel:0409904617" style="color: var(--red); font-weight: 700">0409 904 617</a>
+                    · Mon–Sat 7am–5pm
+                </p>
+            </div>
+        </div>
+    </div>
+</section><section class="features" id="features">
+    <div class="container">
+        <div class="features-header reveal">
+            <span class="section-label" style="color: var(--accent)">Our Advantage</span>
+            <h2 class="section-title">The Finesse <span>Difference</span></h2>
+            <p class="section-sub">
+                Every painter shows up with a brush. What separates us is everything
+                else — the planning, the precision, the professionalism, and the
+                care.
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Precision Every Time</h3>
+                <p class="feature-text">
+                    We don't rush. Our painting is methodical and controlled — tight
+                    lines, even coverage, consistent sheen — delivering results that
+                    look factory-perfect rather than hastily applied.
+                </p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🌦️</div>
+                <h3 class="feature-title">Weather-Ready Coatings</h3>
+                <p class="feature-text">
+                    Queensland's climate demands exterior paints that can handle
+                    blistering summers and tropical downpours. We use
+                    high-performance, UV-resistant, weatherproof coatings as our
+                    standard.
+                </p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">Transparent Pricing</h3>
+                <p class="feature-text">
+                    Our quotes are detailed and honest. The price you agree to is the
+                    price you pay — no hidden extras for additional coats, travel, or
+                    prep work discovered on-site.
+                </p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🏠</div>
+                <h3 class="feature-title">Respect for Your Space</h3>
+                <p class="feature-text">
+                    We protect your belongings, mask your fixtures, lay drop sheets on
+                    every floor — and we leave the job site cleaner than we found it.
+                    Your home is treated as our own.
+                </p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">📋</div>
+                <h3 class="feature-title">Expert Colour Advice</h3>
+                <p class="feature-text">
+                    Not sure what shade suits your home? We're happy to walk you
+                    through colour pairing, finishes, and combinations — drawing on 26
+                    years of knowing what works and what doesn't.
+                </p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🔁</div>
+                <h3 class="feature-title">Built for Repeat Business</h3>
+                <p class="feature-text">
+                    Many of our clients have been with us for 10+ years across
+                    multiple properties. We earn long-term loyalty by doing
+                    consistently great work — not by overselling, then
+                    underdelivering.
+                </p>
+            </div>
+        </div>
+    </div>
+</section><section class="faq" id="faq">
+    <div class="container">
+        <div class="faq-grid">
+            <div class="reveal-left">
+                <span class="section-label">Got Questions?</span>
+                <h2 class="section-title">
+                    Frequently Asked <span>Questions</span>
+                </h2>
+                <p class="section-sub">
+                    Painting questions are always welcome — we'd rather you understand
+                    the full picture before we start. Here are the most common things
+                    people ask us.
+                </p>
+                <img class="faq-img" src="images/20.jpg" alt="FAQ" style="margin-top: 30px" />
+            </div>
+            <div class="reveal-right">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span>How long does a typical painting job take?</span>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                Project timelines depend on the size and complexity of the
+                                work. A single room interior can be completed in a day,
+                                while a full exterior repaint might take three to five days.
+                                We'll provide a realistic timeline in your quote and keep
+                                you updated throughout.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span>Do I need to move my furniture before you arrive?</span>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                We recommend clearing light items from the walls and
+                                breakables from surfaces. Large furniture can usually be
+                                moved by us to the centre of the room and covered with drop
+                                sheets. Just let us know and we'll advise what preparation
+                                is needed for your specific job.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span>What brands and types of paint do you use?</span>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                We work primarily with premium Australian brands such as
+                                Dulux, Taubmans, and Haymes — using the product that best
+                                suits the surface, environment, and finish required. For
+                                exterior work in Queensland, we always use weatherproof,
+                                UV-stable formulations as standard.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span>Do you service areas outside of Inala?</span>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                Absolutely. We service all suburbs within approximately 50km
+                                of our Inala base, which covers a wide range of Brisbane
+                                south-west, western, and surrounding communities. If you're
+                                unsure whether we cover your area, just give us a call at
+                                0409 904 617 — we're happy to confirm.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span>Is your work guaranteed?</span>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                Yes. We stand behind every job we complete. If any aspect of
+                                our workmanship causes concern within a reasonable period
+                                after completion, we'll return to assess and rectify it at
+                                no extra cost. Your satisfaction is the measure of our
+                                success.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span>How do I get a quote? Is it really free?</span>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                Completely free and with no obligation. Simply call us,
+                                email us, or fill in the form on this page, and we'll
+                                arrange a convenient time to view your project. We'll
+                                provide a written quote outlining all costs before any work
+                                begins.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span>Can you help with colour selection?</span>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                We love helping clients with colour choices — it's one of
+                                the most impactful decisions of any repaint. Drawing on 26
+                                years of experience, we can suggest palettes that suit your
+                                home's architecture, natural light, and personal style — and
+                                we always recommend testing a sample patch before full
+                                application.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-contact reveal">
+                    <h4>Still Have a Question?</h4>
+                    <p>
+                        Our team is available Monday to Saturday, 7am to 5pm. We're
+                        always happy to chat through your project, answer questions, or
+                        arrange a no-obligation site visit.
+                    </p>
+                    <a href="tel:0409904617" class="btn btn-red">📞 Call 0409 904 617</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <section class="contact-section" id="contact">
+     <div class="container">
+         <div class="contact-grid">
+             <div class="reveal-left">
+                 <span class="section-label">Get In Touch</span>
+                 <h2 class="section-title">
+                     Ready to <span>Transform</span> Your Property?
+                 </h2>
+                 <p class="section-sub">
+                     Whether you've got a clear brief or you're still figuring out what
+                     you need — reach out. A quick conversation with our team is the
+                     easiest way to get your project moving.
+                 </p>
+
+                 <div class="contact-cards">
+                     <a href="tel:0409904617" class="contact-card">
+                         <div class="cc-icon">📞</div>
+                         <div>
+                             <div class="cc-label">Call Us Direct</div>
+                             <div class="cc-val">0409 904 617</div>
+                             <div class="cc-sub">Best for urgent enquiries</div>
+                         </div>
+                     </a>
+                     <a href="mailto:ashkanrodman@yahoo.com.au" class="contact-card">
+                         <div class="cc-icon">✉️</div>
+                         <div>
+                             <div class="cc-label">Email Us</div>
+                             <div class="cc-val">ashkanrodman@yahoo.com.au</div>
+                             <div class="cc-sub">We reply within 1 business day</div>
+                         </div>
+                     </a>
+                     <div class="contact-card">
+                         <div class="cc-icon">📍</div>
+                         <div>
+                             <div class="cc-label">Our Location</div>
+                             <div class="cc-val">Inala QLD 4077</div>
+                             <div class="cc-sub">Servicing up to 50km radius</div>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div style="margin-top: 30px" class="reveal">
+                     <h4 style="
+                  font-family: &quot;Barlow Condensed&quot;, sans-serif;
+                  font-size: 14px;
+                  font-weight: 700;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: var(--charcoal);
+                  margin-bottom: 14px;
+                ">
+                         Operating Hours
+                     </h4>
+                     <div class="hours-grid">
+                         <div class="hour-item">
+                             <div class="hour-day">Monday – Friday</div>
+                             <div class="hour-time">7:00 AM – 5:00 PM</div>
+                         </div>
+                         <div class="hour-item">
+                             <div class="hour-day">Saturday</div>
+                             <div class="hour-time">7:00 AM – 5:00 PM</div>
+                         </div>
+                         <div class="hour-item" style="
+                    grid-column: span 2;
+                    background: var(--charcoal);
+                    border-left-color: var(--accent);
+                  ">
+                             <div class="hour-day" style="color: white">
+                                 Sunday & Public Holidays
+                             </div>
+                             <div class="hour-time" style="color: rgba(255, 255, 255, 0.6)">
+                                 Closed
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <div class="reveal-right">
+                 <div class="contact-img-wrap">
+                     <img class="contact-img" src="images/18.jpg" alt="Contact Finesse Painting" />
+                     <div style="
+                  margin-top: 20px;
+                  background: var(--charcoal);
+                  padding: 30px;
+                  color: white;
+                ">
+                         <p style="
+                    font-family: &quot;Barlow Condensed&quot;, sans-serif;
+                    font-size: 13px;
+                    letter-spacing: 3px;
+                    text-transform: uppercase;
+                    color: var(--accent);
+                    margin-bottom: 12px;
+                  ">
+                             Why Wait?
+                         </p>
+                         <p style="
+                    font-family: &quot;Playfair Display&quot;, serif;
+                    font-size: 22px;
+                    font-weight: 700;
+                    line-height: 1.3;
+                    margin-bottom: 16px;
+                  ">
+                             "Your next great room is one phone call away."
+                         </p>
+                         <p style="
+                    font-size: 14px;
+                    color: rgba(255, 255, 255, 0.65);
+                    line-height: 1.7;
+                    margin-bottom: 24px;
+                  ">
+                             We take a limited number of projects each month to ensure
+                             every client gets our full focus and best work. Contact us
+                             today to secure your spot.
+                         </p>
+                         <a href="tel:0409904617" class="btn btn-red" style="width: 100%; justify-content: center">📞
+                             Call 0409 904 617</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </section>
+
+
+<footer id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="fi">
+                        <svg viewBox="0 0 32 32" width="22" height="22">
+                            <path d="M4 28 L16 4 L28 28 Z" fill="white" opacity="0.9" />
+                            <rect x="9" y="20" width="14" height="3" fill="white" />
+                        </svg>
+                    </div>
+                    <span class="fn">Finesse Painting Services</span>
+                </div>
+                <p>
+                    Inala's trusted painting professionals since 1998. With 26 years
+                    of experience, premium materials, and an uncompromising commitment
+                    to quality, we deliver results that speak for themselves — one
+                    coat at a time.
+                </p>
+                <div class="footer-socials">
+                    <a href="#" class="social-btn">f</a>
+                    <a href="#" class="social-btn">in</a>
+                    <a href="mailto:ashkanrodman@yahoo.com.au" class="social-btn">@</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#services">Interior Painting</a></li>
+                    <li><a href="#services">Exterior Painting</a></li>
+                    <li><a href="#services">Fence Painting</a></li>
+                    <li><a href="#services">Handyman Services</a></li>
+                    <li><a href="#services">Residential Project</a></li>
+                    <li><a href="#services">Commercial Painting</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#gallery">Project Gallery</a></li>
+                    <li><a href="#testimonials">Client Reviews</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#quote">Free Quote</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:0409904617">📞 0409 904 617</a></li>
+                    <li><a href="mailto:ashkanrodman@yahoo.com.au">✉ Email Us</a></li>
+                    <li><a href="#contact">📍 Inala QLD 4077</a></li>
+                    <li><a href="#contact">⏰ Mon–Sat 7am–5pm</a></li>
+                    <li><a href="#quote">🎨 Get a Free Quote</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                <span style="color: rgba(255, 255, 255, 0.5)">© 2024 Finesse Painting Services. All rights
+                    reserved.</span>
+                <span class="abn-footer" style="margin-left: 16px">ABN: 41 410 220 939</span>
+            </div>
+            <div style="display: flex; gap: 20px">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- Jquery Links -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+<!-- End of Body Section -->
+
+</html>
+<!-- End -->

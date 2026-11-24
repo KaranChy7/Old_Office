@@ -1,0 +1,148 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — BLOG (NOTES FROM THE SITE)
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// Section-scoped teal accent + serif display face (kept local so the
+// rest of the site's monochrome palette/typography is untouched).
+$blog-teal: #D7262F;
+$blog-teal-dark: #A81C24;
+$blog-teal-light: #FBE2E3;
+$blog-ink: #141414;
+$blog-grey: #5C5C5C;
+$blog-font-serif: 'Playfair Display', serif;
+
+.blog {
+  background: linear-gradient(160deg, #F7FAF4 0%, #EEF7E8 100%);
+  padding: 5rem 0 6rem;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__header {
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    background: $blog-teal-light;
+    color: $blog-teal-dark;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+  }
+
+  &__title {
+    font-family: $blog-font-serif;
+    font-size: clamp(2rem, 3.8vw, 2.9rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: $blog-ink;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $blog-grey;
+    max-width: 520px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+    @include respond(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    border: 1px solid rgba($blog-ink, 0.08);
+    border-radius: $radius-lg;
+    padding: 1.75rem;
+    transition: $transition;
+
+    &:hover {
+      box-shadow: $shadow-md;
+      transform: translateY(-4px);
+    }
+  }
+
+  &__card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  &__card-tag {
+    display: inline-flex;
+    align-items: center;
+    background: $blog-teal-light;
+    color: $blog-teal-dark;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+  }
+
+  &__card-date {
+    font-size: 0.8rem;
+    color: $blog-grey;
+  }
+
+  &__card-title {
+    font-family: $blog-font-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: $blog-ink;
+    margin-bottom: 0.75rem;
+  }
+
+  &__card-excerpt {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: $blog-grey;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  &__card-link {
+    @include flex(center, flex-start, 0.3rem);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $blog-teal;
+    margin-top: auto;
+    transition: $transition;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(3px);
+    }
+  }
+}

@@ -1,0 +1,281 @@
+/* Service Area & Care Section Both Scss Is here */
+.service-area {
+    margin-bottom: 100px;
+
+    .service-area-image {
+        position: relative;
+        z-index: 1;
+
+        .figure {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            background-color: $secondaryColor;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px 40px;
+
+            h6 {
+                color: $whitey;
+            }
+
+            .social-wrap {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+
+                a {
+                    img {
+                        max-width: 150px;
+                    }
+                }
+            }
+        }
+    }
+
+    .about {
+        position: relative;
+
+        .about-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0.15;
+            }
+        }
+
+        .about-content {
+            flex-basis: calc(60% - 50px);
+            flex-grow: 1;
+
+            .main-title {
+                margin-bottom: 20px;
+            }
+
+            .point-wrap {
+                gap: 20px;
+                margin-top: 10px;
+
+                li {
+                    flex-basis: calc(50% - 20px);
+                    display: list-item;
+                    list-style: circle;
+                    list-style-position: inside;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: $secondaryColor;
+                    margin: 0;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    &.care-section {
+        margin-bottom: 0;
+
+        .service-area-image {
+            position: relative;
+            z-index: 1;
+
+
+            .main-content {
+                position: absolute;
+                top: -120px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 75%;
+                background-color: $whitey;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+
+                .top-wrap {
+                    padding: 20px 40px;
+                    text-align: center;
+                    width: 100%;
+
+                    h5 {
+                        font-weight: 600;
+                        color: $secondaryColor;
+                        text-transform: capitalize;
+                    }
+
+                    p {
+                        margin-block: 20px;
+                        max-width: 650px;
+                        margin-inline: auto;
+                    }
+
+                    .image-wrap {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px 50px;
+
+                        .figure {
+                            max-width: 70px;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+
+                .content {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    transform: translateX(0);
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .service-area {
+        .service-area-image {
+            .content {
+                h6 {
+                    font-size: 1.25rem;
+                }
+
+                .social-wrap {
+                    gap: 20px;
+
+                    a {
+                        img {
+                            max-width: 125px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .service-area {
+        .service-area-image {
+
+            .content {
+                flex-direction: column;
+                gap: 20px;
+
+                h6 {
+                    font-size: 1.25rem;
+                }
+
+            }
+        }
+
+        .about {
+            .about-content {
+                .point-wrap {
+                    gap: 10px;
+
+                    li {
+                        flex-basis: calc(50% - 10px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .service-area {
+        .service-area-image {
+
+            .content {
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+                gap: 20px;
+                // background-color: rgba($secondaryColor, 0.5);
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: translateX(0);
+
+                h6 {
+                    font-size: 1.25rem;
+                }
+
+            }
+        }
+
+        .about {
+            .about-content {
+                .point-wrap {
+                    gap: 10px;
+
+                    li {
+                        flex-basis: calc(50% - 10px);
+                    }
+                }
+            }
+        }
+
+        &.care-section {
+            .service-area-image {
+                .main-content {
+                    position: relative;
+                    top: -0;
+                    left: 0;
+                    transform: translateX(-0);
+                    width: 100%;
+                    box-shadow: none;
+
+                    .top-wrap {
+                        padding: 20px 40px;
+                        text-align: center;
+                        width: 100%;
+
+                        .image-wrap {
+                            flex-wrap: wrap;
+                            gap: 20px 30px;
+
+                            .figure {
+                                max-width: 60px;
+                            }
+                        }
+                    }
+
+                    .content {
+                        h6 {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

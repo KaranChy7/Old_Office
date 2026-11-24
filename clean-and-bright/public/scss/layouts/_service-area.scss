@@ -1,0 +1,78 @@
+.service-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+
+    .text-content {
+        flex: 1 1 45%;
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+
+            span {
+                color: #2e2e2e;
+            }
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+
+            li {
+                font-size: 1rem;
+                margin: 10px 0;
+                color: #0071ce; // blue checkmark imitation
+            }
+        }
+    }
+
+    .map-content {
+        flex: 1 1 45%;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            div {
+                display: flex;
+                align-items: center;
+                font-size: 0.9rem;
+                color: #444;
+
+                .box {
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 8px;
+                }
+
+                .serviced {
+                    background-color: #87c540; // green
+                }
+
+                .limited {
+                    background-color: #d3d3d3; // gray
+                }
+            }
+        }
+    }
+}

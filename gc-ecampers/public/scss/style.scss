@@ -1,0 +1,22 @@
+// ============================================================
+// GC-E CAMPERS — MAIN STYLESHEET
+// ============================================================
+
+// Base
+@use "base/variables" as *;
+@use "base/reset";
+@use "base/mixins" as *;
+
+// Modules (reusable)
+@use "module/typography";
+@use "module/common";
+@use "module/component";
+@use "module/forms";
+
+// Includes (header/footer)
+@use "includes/header";
+@use "includes/footer";
+
+// Pages
+@use "pages/home";
+@use "pages/inner";

@@ -1,0 +1,186 @@
+.features {
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // background: linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5));
+        // opacity: 0.5;
+        background-color: rgba($dblack, 0.6);
+        z-index: -1;
+    }
+
+    .wrapper {
+        padding-right: 40px;
+        position: relative;
+        max-width: 600px;
+
+        li {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .icon {
+                margin: 5px 20px 5px 0;
+                flex: 0 0 75px;
+
+                img {
+                    width: 70px;
+                }
+            }
+
+            .text {
+                h5 {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    color: $primaryColor;
+                    text-transform: capitalize;
+                    letter-spacing: 0.03em;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 14px;
+                    color: $whitey;
+                    line-height: 1.6;
+                    letter-spacing: 0.02em;
+                }
+            }
+        }
+    }
+
+    .request-quote {
+        position: relative;
+        background-color: $dblack;
+        padding: 40px 20px;
+        border-radius: 5px;
+
+        h4 {
+            font-size: clamp(1.125rem, 2vw, 1.75rem);
+            font-weight: 500;
+            color: $whitey;
+            text-transform: capitalize;
+            letter-spacing: 0.03em;
+            margin-bottom: 30px;
+
+            &::after {
+                content: "";
+                display: block;
+                height: 2px;
+                width: 40px;
+                background-color: $primaryColor;
+                margin-top: 5px;
+            }
+        }
+
+        .form {
+            margin-top: 20px;
+
+            .group {
+                margin-bottom: 15px;
+
+                .form-control {
+                    font-size: clamp(0.8125rem, 2vw, 1rem);
+                    // height: 40px;
+                    padding: 8px 10px;
+                    font-weight: 300;
+                    border-radius: 5px;
+                }
+
+                &.d-flex {
+                    input+input {
+                        margin-left: 10px;
+                    }
+                }
+
+                textarea {
+                    min-height: 100px;
+                    font-size: clamp(0.8125rem, 2vw, 1rem);
+                    font-weight: 300;
+                    resize: none;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .features {
+        padding: 40px 0;
+
+        .wrapper {
+            padding-right: 0;
+
+            li {
+                margin-bottom: 30px;
+
+                .text {
+                    h5 {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .request-quote {
+            margin-top: 50px;
+
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .features {
+        .wrapper {
+            li {
+                flex-direction: column;
+                text-align: center;
+
+                .icon {
+                    margin: 0 0 10px 0;
+                    flex: 0 0 auto;
+
+                    img {
+                        max-width: 50px;
+                    }
+                }
+            }
+        }
+
+        .request-quote {
+            h4 {
+                text-align: center;
+
+                &::after {
+                    margin: 5px auto;
+                }
+            }
+
+            .form {
+                .group {
+                    &.button {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

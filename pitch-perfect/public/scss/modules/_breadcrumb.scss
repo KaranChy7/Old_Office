@@ -1,0 +1,56 @@
+.breadcrumb {
+    background: url('../images/bcrumb.jpg') no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba($primaryColor, 0.5);
+        z-index: -1;
+    }
+
+    .bread-title {
+        text-align: center;
+        padding-bottom: 20px;
+        display: block;
+        color: $dblack;
+
+        &::before {
+            content: '\f107';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'fontAwesome';
+            font-size: 16px;
+            color: $whitey;
+        }
+
+        &:last-child {
+            &::before {
+                content: '';
+            }
+        }
+    }
+
+    h4 {
+        font-size: 32px;
+        font-weight: 700;
+        // color: $whitey;
+    }
+
+    h5 {
+        font-size: 22px;
+        // color: $black;
+    }
+
+    h6 {
+        font-size: 18px;
+        // color: $black;
+    }
+}

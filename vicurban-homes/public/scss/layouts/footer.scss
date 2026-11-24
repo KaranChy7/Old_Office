@@ -1,0 +1,326 @@
+footer {
+	background-color: $dblack;
+	padding-top: 60px;
+
+	.footer-block {
+		.title {
+			margin-bottom: 10px;
+			padding: 0;
+			text-align: left;
+
+			img {
+				max-width: 200px;
+				padding: 10px;
+				border-radius: 12px;
+				// background-color: $whitey;
+			}
+
+			h4 {
+				font-size: 20px;
+				color: $whitey;
+				font-weight: 500;
+				text-transform: uppercase;
+			}
+
+		}
+
+		.detail {
+			padding: 45px 0 30px 0;
+
+			p,
+			.item {
+				font-size: 16px;
+				color: #ffffff;
+				line-height: 1.9;
+				font-weight: 400;
+			}
+
+			p {
+				padding-right: 20px;
+			}
+
+			.item {
+				i {
+					padding-right: 10px;
+				}
+
+				&.sideline {
+					h5 {
+						font-size: 14px;
+						line-height: 1.9;
+						margin-left: 15px;
+						//position: relative;
+
+						&::before {
+							content: '';
+							position: absolute;
+							top: 12px;
+							left: -15px;
+							width: 10px;
+							height: 1px;
+							background-color: $whitey;
+						}
+
+						&:after {
+							content: '';
+							position: absolute;
+							top: 0;
+							left: -15px;
+							width: 1px;
+							height: 30px;
+							background-color: $whitey;
+						}
+					}
+				}
+			}
+
+			&.detail1 {
+				margin-top: -16px;
+			}
+		}
+	}
+
+	.social-icons {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		background-color: $whitey;
+		width: 240px;
+		margin: 20px auto 0 auto;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+
+		a {
+			margin: 10px 20px;
+
+			i {
+				color: $secondaryColor;
+				transition: 0.4s;
+
+				&:hover {
+					color: $rblue;
+				}
+			}
+		}
+	}
+}
+
+.footer-bottom {
+	background-color: $dblack;
+	padding: 30px 0;
+
+	.bottom-wrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+		flex-wrap: wrap;
+
+
+		.block,
+		.develop {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			flex-wrap: wrap;
+
+			p,
+			a {
+				line-height: 1.5;
+				font-size: 0.875rem;
+				color: $whitey ;
+				text-transform: capitalize;
+				display: inline-block;
+
+			}
+
+			a {
+				position: relative;
+
+				&::before {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 0;
+					height: 2px;
+					background-color: $whitey;
+					transition: 0.3s ease-in-out;
+				}
+
+				&:hover {
+
+					&::before {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include custom_max(1199px) {
+	footer {
+		.footer-block {
+			.detail {
+				p {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}
+
+@include custom_max(992px) {
+	footer {
+		.footer-block {
+			.title {
+				margin-bottom: 0;
+
+				img {
+					width: 70px;
+				}
+
+				&.logo {
+					margin-top: 0;
+				}
+			}
+
+			.detail {
+				padding: 35px 0 10px 0;
+			}
+		}
+	}
+}
+
+
+@include custom_max(767px) {
+	footer {
+		padding-top: 40px;
+
+		.footer-wrapper {
+			text-align: center;
+
+			.footer-block {
+				.title {
+					text-align: center;
+
+					h4 {
+						font-size: 18px;
+					}
+
+					&.logo {
+						margin-bottom: 16px;
+					}
+				}
+
+				.detail {
+					padding: 10px 0 25px 0;
+
+					p,
+					.item {
+						font-size: 13px;
+					}
+
+					p {
+						padding: 0 40px;
+					}
+
+					.item {
+						&.sideline {
+							h5 {
+								&::before {
+									left: 160px;
+								}
+
+								&:after {
+									left: 160px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.social-icons {
+			width: 200px;
+			margin-top: 0;
+			background-color: inherit;
+
+			a {
+				margin: 0 15px;
+
+				i {
+					color: $whitey;
+				}
+			}
+		}
+	}
+
+	.footer-bottom {
+
+		.bottom-wrap {
+			flex-wrap: wrap;
+			flex-direction: column;
+
+
+			.develop {
+				justify-content: center;
+
+			}
+
+		}
+	}
+}
+
+@include custom_max(576px) {
+	footer {
+		padding-top: 20px;
+
+		.footer-wrapper {
+			.footer-block {
+				.title {
+					text-align: center;
+
+					h4 {
+						font-size: 17px;
+					}
+				}
+
+				.detail {
+					p {
+						padding: 0 100px;
+						text-align: center;
+					}
+
+					.item {
+						&.sideline {
+							h5 {
+
+								&::before,
+								&:after {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include custom_max(480px) {
+	footer {
+		.footer-wrapper {
+			.footer-block {
+				.detail {
+					p {
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+}

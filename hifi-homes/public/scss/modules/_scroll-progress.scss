@@ -1,0 +1,23 @@
+// =============================================
+// GLINT PLUS PAINTING SERVICE — SCROLL PROGRESS BAR
+// =============================================
+
+@use '../base/variables' as *;
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 1100;
+  pointer-events: none;
+
+  &__bar {
+    height: 100%;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left center;
+    background: linear-gradient(90deg, $teal, $blue);
+  }
+}

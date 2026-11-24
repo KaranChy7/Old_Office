@@ -1,0 +1,109 @@
+.special_features {
+    .feature-wrapper {
+        display: flex;
+        flex-direction: row;
+
+        .features-block {
+            flex: 0 0 calc(100% / 3 - 20px);
+            margin: 0 10px;
+            text-align: center;
+            transition: 0.3s ease-in-out;
+            padding: 0 10px;
+
+            .image {
+                img {
+                    width: 70px;
+                }
+
+                h4 {
+                    font-size: 20px;
+                    font-weight: 900;
+                    padding: 20px 0;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                    transition: 0.3s ease-in-out;
+                }
+            }
+
+            .desc {
+                p {
+                    color: $t-color;
+                    word-spacing: 0.05em;
+                    line-height: 1.5;
+                    transition: 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .special_features {
+        .feature-wrapper {
+            .features-block {
+                .image {
+                    img {
+                        width: 80px;
+                    }
+
+                    h4 {
+                        font-size: 18px;
+                        padding: 20px 0;
+                    }
+                }
+
+                .desc {
+                    p {
+                        // font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .special_features {
+        .feature-wrapper {
+            flex-direction: column;
+
+            .features-block {
+                padding: 20px 10px;
+
+                .image {
+                    img {
+                        width: 60px;
+                    }
+
+                    h4 {
+                        font-size: 18px;
+                        padding: 15px 0;
+                    }
+                }
+
+                .desc {
+                    p {
+                        // font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(577px) {
+    .special_features {
+        .feature-wrapper {
+            .features-block {
+                padding: 10px 10px;
+
+                .image {
+                    h4 {
+                        font-size: 16px;
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+}

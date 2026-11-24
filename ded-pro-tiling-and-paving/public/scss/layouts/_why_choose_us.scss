@@ -1,0 +1,294 @@
+.why-choose-us {
+    &-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px 0;
+
+        .why-choose-us-counter {
+            flex-basis: 45%;
+            position: relative;
+
+            .image {
+
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .counter-box {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(28, 39, 82, 0.7);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(5.5px);
+                -webkit-backdrop-filter: blur(5.5px);
+                width: 600px;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-block: 100px;
+                padding-inline: 60px;
+
+                .count-block {
+                    width: 100%;
+                    display: flex;
+                    margin-bottom: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .number {
+                        flex-basis: 25%;
+                        background-color: $primaryColor;
+                        text-align: center;
+                        padding: 15px 20px;
+
+
+                        p {
+                            font-family: $primaryFont;
+                            font-size: 1.25rem;
+                            font-weight: 700;
+                            line-height: 1.3;
+                            color: $dblack;
+                            display: block;
+                        }
+                    }
+
+                    .name {
+                        flex-basis: 75%;
+                        border: 1px solid $whitey;
+                        padding: 15px 20px;
+
+
+                        h6 {
+                            font-family: $primaryFont;
+                            font-size: 1.25rem;
+                            font-weight: 700;
+                            line-height: 1.3;
+                            color: $whitey;
+                            text-transform: capitalize;
+                            display: block;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .why-choose-us-desc {
+            flex-basis: 55%;
+            max-width: 600px;
+            padding-left: 60px;
+
+            .main-title {
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 0.9375rem;
+                line-height: 1.3;
+                color: $t-color;
+            }
+
+            ul {
+                li {
+                    margin-top: 30px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    gap: 10px;
+
+                    .icon {
+                        width: 30px;
+                        height: 30px;
+                        background-color: $primaryColor;
+                        border-radius: 50%;
+                        color: $primaryColor;
+                        display: grid;
+                        place-items: center;
+
+                        i {
+                            color: $dblack;
+                        }
+                    }
+
+                    .content {
+                        flex-basis: calc(100% - 50px);
+
+                        h6 {
+                            font-size: 1.125rem;
+                            font-weight: 700;
+                            color: $dblack;
+                        }
+
+                        p {
+                            margin-top: 5px;
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(1400px) {
+    .why-choose-us {
+        &-wrapper {
+            .why-choose-us-counter {
+                .counter-box {
+                    padding: 60px;
+
+                    .count-block {
+                        .number {
+                            p {
+                                font-size: 1.25rem;
+                            }
+                        }
+
+                        .name {
+                            h6 {
+                                font-size: 1.25rem;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .why-choose-us-desc {
+                ul {
+                    li {
+                        margin-top: 30px;
+
+                        .content {
+                            h6 {
+                                font-size: 1.125rem;
+                            }
+
+                            p {
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .why-choose-us {
+        &-wrapper {
+            align-items: initial;
+
+            .why-choose-us-desc {
+                padding-left: 40px;
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .why-choose-us {
+        &-wrapper {
+            flex-direction: column;
+            flex-wrap: nowrap;
+
+            .why-choose-us-counter {
+                .image {
+                    img {
+                        aspect-ratio: 3/2;
+                    }
+                }
+
+                .counter-box {
+                    padding: 40px;
+
+                    .count-block {
+                        .number {
+                            p {
+                                font-size: 1.125rem;
+                            }
+                        }
+
+                        .name {
+                            h6 {
+                                font-size: 1.125rem;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .why-choose-us-desc {
+                padding: 0 40px;
+                max-width: 100%;
+
+                ul {
+                    li {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .why-choose-us {
+        &-wrapper {
+
+            .why-choose-us-counter {
+                .image {
+                    img {
+                        aspect-ratio: 1/1;
+                    }
+                }
+
+                .counter-box {
+                    padding: 40px;
+
+                    .count-block {
+                        .number {
+                            p {
+                                font-size: 1.125rem;
+                            }
+                        }
+
+                        .name {
+                            h6 {
+                                font-size: 1.125rem;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .why-choose-us-desc {
+                padding: 0 40px;
+                max-width: 100%;
+
+                ul {
+                    li {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

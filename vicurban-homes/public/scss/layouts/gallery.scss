@@ -1,0 +1,38 @@
+.gallery {
+    background-color: $dblack;
+
+    p {
+        color: $whitey;
+    }
+
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px 10px;
+
+        .photo {
+            flex-basis: calc(100% / 4 - 10px);
+
+            img {
+                width: 100%;
+                aspect-ratio: 3/2;
+                object-fit: cover;
+                border-radius: 10px;
+                transition: transform .5s ease-in-out;
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(991px) {}
+
+@include custom_max(767px) {}
+
+@include custom_max(480px) {}

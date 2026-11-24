@@ -1,0 +1,51 @@
+// =============================================
+// BUTTONS
+// =============================================
+@use '../base/variables' as *;
+
+.btn-dark {
+    display:         inline-flex;
+    align-items:     center;
+    gap:             10px;
+    background:      $primaryColor;
+    color:           $whitey;
+    font-family:     $secondaryFont;
+    font-size:       14px;
+    font-weight:     600;
+    letter-spacing:  1px;
+    text-transform:  uppercase;
+    padding:         16px 36px;
+    border-radius:   3px;
+    border:          none;
+    cursor:          pointer;
+    transition:      background 0.3s, transform 0.2s;
+
+    &:hover {
+        background: #484848;
+        transform:  translateY(-2px);
+        color:      $whitey;
+    }
+}
+
+.btn-amber-outline {
+    display:         inline-flex;
+    align-items:     center;
+    gap:             10px;
+    background:      transparent;
+    color:           $secondaryColor;
+    font-family:     $secondaryFont;
+    font-size:       14px;
+    font-weight:     600;
+    letter-spacing:  1px;
+    text-transform:  uppercase;
+    padding:         14px 32px;
+    border-radius:   3px;
+    border:          2px solid $secondaryColor;
+    cursor:          pointer;
+    transition:      all 0.3s;
+
+    &:hover {
+        background: $secondaryColor;
+        color:      $whitey;
+    }
+}

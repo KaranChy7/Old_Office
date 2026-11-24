@@ -1,0 +1,167 @@
+.why-choose-us {
+    padding-top: 0;
+
+    .wrapper {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+
+        .why-content {
+            flex-basis: calc(60% - 30px);
+
+            .main-title {
+                text-align: left;
+            }
+
+            .wrap-block {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: space-between;
+
+                .choose-block {
+                    flex-basis: calc(50% - 10px);
+                    background-color: $whitey;
+                    padding: 25px;
+                    border-radius: 20px;
+                    position: relative;
+                    z-index: 1;
+                    overflow: hidden;
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 0;
+                        height: 0;
+                        border-radius: 20px;
+                        background-color: $dblack;
+                        transition: 0.5s ease-in-out;
+                        z-index: -1;
+                    }
+
+                    svg {
+
+                        path {
+                            fill: $dblack;
+                            transition: 0.5s ease-in-out 0.2s;
+                        }
+
+
+                    }
+
+                    h6 {
+                        font-size: 1.125rem;
+                        font-weight: 600;
+                        color: $primaryColor;
+                        text-transform: capitalize;
+                        color: $dblack;
+                        margin: 20px 0 15px 0;
+                        transition: 0.5s ease-in-out;
+                    }
+
+                    p {
+                        font-size: 0.875rem;
+                        color: $black;
+                        transition: 0.5s ease-in-out;
+                    }
+
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        svg {
+                            path {
+                                fill: $secondaryColor;
+                            }
+                        }
+
+                        h6 {
+                            color: $primaryColor;
+                        }
+
+                        p {
+                            color: $lgrey;
+                        }
+                    }
+                }
+            }
+        }
+
+        .why-image-block {
+            flex-basis: calc(40% - 10px);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                aspect-ratio: 1/1;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .why-choose-us {
+        .wrapper {
+            flex-direction: column;
+            gap: 40px;
+
+            .why-content {
+                .main-title {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .why-choose-us {
+        .wrapper {
+            gap: 30px;
+
+            .why-content {
+                .wrap-block {
+                    gap: 20px;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+
+                    .choose-block {
+                        padding: 20px;
+
+                        &::before {
+                            width: 150%;
+                            height: 150%;
+                        }
+
+                        svg {
+                            width: 50px;
+                            aspect-ratio: 1/1;
+
+                            path {
+                                stroke: $whitey;
+                            }
+                        }
+
+                        h6 {
+                            margin: 15px 0;
+                            color: $whitey;
+                        }
+
+                        p {
+                            color: $lgrey;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

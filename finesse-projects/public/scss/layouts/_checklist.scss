@@ -1,0 +1,104 @@
+.checklist {
+    .main-title {
+        text-align: center;
+    }
+
+    .checklist-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px 20px;
+
+        .checklist-block {
+            flex-basis: calc(100% / 3 - 20px);
+            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+
+            h5 {
+                font-size: 1.125rem;
+                background-color: $secondaryColor;
+                text-transform: capitalize;
+                color: $whitey;
+                padding: 20px;
+            }
+
+            ul {
+                padding: 20px 30px;
+
+                li {
+                    position: relative;
+                    z-index: 1;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: $dblack;
+                    margin-top: 20px;
+                    padding-left: 20px;
+                    text-transform: capitalize;
+
+                    &::before {
+                        content: '\f101';
+                        position: absolute;
+                        top: 5px;
+                        left: 0;
+                        font-family: 'font Awesome 5 free';
+                        font-size: 0.75rem;
+                        font-weight: 700;
+                        color: $dblack;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .checklist {
+        .checklist-wrapper {
+            justify-content: space-between;
+            gap: 30px 15px;
+
+            .checklist-block {
+                flex-basis: calc(100% / 2 - 15px);
+
+                h5 {
+                    font-size: 1.125rem;
+                }
+
+                ul {
+                    padding: 20px 30px;
+
+                    li {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .checklist {
+        .checklist-wrapper {
+            .checklist-block {
+                h5 {
+                    padding: 10px 20px;
+                }
+
+                ul {
+                    padding: 10px;
+
+                    li {
+                        margin-top: 10px;
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .checklist {
+        .checklist-wrapper {
+            flex-direction: column;
+        }
+    }
+}

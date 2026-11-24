@@ -1,0 +1,48 @@
+.quote {
+    background-image: url('../images/quote_bg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba($dblack, 0.4);
+        z-index: -1;
+
+    }
+
+    .quote-wrapper {
+        max-width: 600px;
+
+        .section-title {
+            // margin-left: auto;
+            // margin-right: auto;
+            // text-align: center;
+
+            h5 {
+                color: $whitey;
+            }
+
+            p {
+                color: $lgrey;
+            }
+        }
+
+        .form {
+            padding: 40px 30px;
+            background-color: $whitey;
+            border-radius: 10px;
+
+            .form-group {
+                label {
+                    color: $secondaryColor;
+                }
+            }
+        }
+    }
+}

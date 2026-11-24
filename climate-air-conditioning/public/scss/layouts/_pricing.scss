@@ -1,0 +1,144 @@
+.pricing {
+    background-color: $black;
+    //padding-top: 40px;
+    margin-top: 40px;
+
+    .main-title {
+        h5 {
+            color: $secondaryColor;
+        }
+
+        p {
+            color: $whitey;
+        }
+    }
+
+    .pricing-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px 20px;
+
+        .price-block {
+            flex-basis: calc(100% / 3 - 20px);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 10px;
+            margin: 0 2px;
+            border-radius: 40px;
+
+
+            .figure {
+                img {
+                    width: 100%;
+                    aspect-ratio: 3/2;
+                    object-fit: cover;
+                }
+            }
+
+            .desc {
+                padding: 20px;
+                background-color: $black;
+                text-align: center;
+
+                h5 {
+                    color: $primaryColor;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }
+
+                p {
+                    margin: 10px 0 15px;
+                    color: $lgrey;
+
+                    span {
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        color: $secondaryColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .pricing {
+        .pricing-wrapper {
+            //flex-direction: column;
+
+            .price-block {
+                display: flex;
+
+                .figure {
+                    flex-basis: 50%;
+                }
+
+                .desc {
+                    flex-basis: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .pricing {
+        .pricing-wrapper {
+            .price-block {
+                .figure {
+
+                    img {
+                        aspect-ratio: 1/1;
+                        height: 100%;
+                    }
+                }
+
+                .desc {
+                    h5 {
+                        font-size: 1.125rem;
+                    }
+
+                    p {
+                        span {
+                            font-size: 1.0625em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .pricing {
+        .pricing-wrapper {
+            .price-block {
+                flex-direction: column;
+
+                .figure {
+                    img {
+                        aspect-ratio: 2/1;
+                        height: auto;
+                    }
+                }
+
+                .desc {
+                    h5 {
+                        font-size: 1.125rem;
+                    }
+
+                    p {
+                        span {
+                            font-size: 1.0625em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

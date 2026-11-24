@@ -1,0 +1,218 @@
+.banner {
+    position: relative;
+    z-index: 1;
+
+    .banner-slider {
+        .banner-block {
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                // background: linear-gradient(270deg, rgba($dblack, 0) 0, rgba($whitey,0.7) 70%,  $whitey 100%);
+                background-color: rgba($black, 0.5);
+            }
+
+            .figure {
+                height: calc(100dvh - 76px);
+                display: block;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content {
+                position: absolute;
+                top: 200px;
+                left: 10%;
+                // transform: translate(0, -50%);
+                max-width: 700px;
+
+                h6 {
+                    font-size: 0.9375rem;
+                    color: $whitey;
+                }
+
+                h4 {
+                    font-size: 2.75rem;
+                    font-weight: 700;
+                    color: $whitey;
+                    line-height: 1.2;
+                    word-spacing: 5px;
+                    margin-block: 25px;
+
+                    span {
+                        color: $dblack;
+                    }
+                }
+
+                .btn-wrap {
+                    margin-top: 30px;
+                }
+
+            }
+        }
+    }
+
+    .form {
+        position: absolute;
+        top: 0;
+        right: 120px;
+        max-width: 385px;
+        background-color: $primaryColor;
+        padding: 80px 35px 50px 35px;
+    }
+
+    .slick-arrow {
+        opacity: 0;
+    }
+
+    &:hover {
+        .slick-arrow {
+            opacity: 1;
+            border: 1px solid $t-color;
+
+            &:hover {
+                background-color: transparent;
+
+                i {
+                    color: $dblack;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(1400px) {
+    .banner {
+        .banner-slider {
+            .banner-block {
+                .content {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 80px;
+                    max-width: 600px;
+
+                    h4 {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+
+        .form {
+            padding: 40px;
+            gap: 15px;
+
+            .form-group {
+                .form-input {
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .banner {
+        .banner-slider {
+            .banner-block {
+                .content {
+                    max-width: 500px;
+
+                    h4 {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+
+        .form {
+            right: 80px;
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .banner {
+        .form {
+            position: relative;
+            top: 0;
+            right: 0;
+            max-width: 100%;
+            padding: 50px 40px;
+            flex-direction: row;
+            gap: 10px;
+
+            .form-group {
+                flex-basis: calc(100% / 2 - 10px);
+
+                &:last-child {
+                    flex-basis: 100%;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .banner {
+        .banner-slider {
+            .banner-block {
+                .figure {
+                    height: 100%;
+                }
+
+                .container {
+                    width: 100%;
+                    max-width: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .content {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    transform: translate(0%, 0%);
+                    padding: 40px;
+                    max-width: 100%;
+                    background-color: $dblack;
+
+                    h4 {
+                        font-size: 2rem;
+                        color: $whitey;
+                    }
+                }
+            }
+        }
+
+        .form {
+            display: none;
+        }
+
+    }
+}
+
+@include custom_max(576px) {
+    .banner {
+        .banner-slider {
+            .banner-block {
+                .content {
+                    h4 {
+                        font-size: 1.5rem;
+                    }
+
+                    .btn-wrap {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

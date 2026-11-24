@@ -1,0 +1,302 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — SERVICE AREAS PAGE
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// One accent colour per region card
+$region-colours: (
+  'green':  $green,
+  'lime':   #D7262F,
+  'blue':   #1F7FB8,
+  'pink':   #C2457A,
+  'amber':  #C98A00,
+  'purple': #6B4FB0,
+);
+
+.service-areas {
+  // Sydney Harbour, NSW — darkened so the intro text stays readable
+  background: linear-gradient(rgba($dblack, 0.6), rgba($dblack, 0.78)), url("../images/nsw-sydney.jpg") center top / cover no-repeat fixed;
+  padding: 5rem 0 6rem;
+
+  @include respond(lg) {
+    background-attachment: scroll; // fixed backgrounds are jumpy on phones and tablets
+  }
+
+  @include respond(md) {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .section-badge {
+    background: rgba($white, 0.95);
+  }
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  // ── Intro ──
+  &__intro {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: $white;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: rgba($white, 0.88);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  &__tags {
+    @include flex(center, center, 0.6rem);
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    span {
+      @include flex(center, flex-start, 0.45rem);
+      background: $white;
+      color: $forest;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      box-shadow: $shadow-sm;
+    }
+
+    .icon {
+      color: $green;
+    }
+  }
+
+  &__search {
+    @include flex(center, flex-start, 0.75rem);
+    max-width: 480px;
+    margin: 0 auto;
+    background: $white;
+    border: 2px solid rgba($green, 0.25);
+    border-radius: 999px;
+    padding: 0.35rem 1.25rem;
+    box-shadow: $shadow-md;
+    transition: $transition;
+
+    &:focus-within {
+      border-color: $green;
+    }
+
+    .icon {
+      color: $green;
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font-family: $font-body;
+      font-size: 1rem;
+      padding: 0.65rem 0;
+      color: $ink;
+    }
+  }
+
+  &__no-match {
+    margin-top: 1rem;
+    color: $green-dark;
+    font-weight: 600;
+  }
+
+  // ── Region cards ──
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+    align-items: start;
+
+    @include respond(lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__region {
+    --accent: #{$green};
+    background: $white;
+    border-radius: $radius-lg;
+    border-top: 5px solid var(--accent);
+    box-shadow: $shadow-md;
+    overflow: hidden;
+
+    @each $name, $colour in $region-colours {
+      &--#{$name} {
+        --accent: #{$colour};
+        --accent-soft: #{rgba($colour, 0.1)};
+      }
+    }
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__region-head {
+    @include flex(center, flex-start, 0.85rem);
+    padding: 1.25rem 1.5rem;
+    background: var(--accent-soft);
+
+    @include respond(sm) {
+      flex-wrap: wrap;
+      padding: 1rem 1.15rem;
+    }
+  }
+
+  &__region-icon {
+    @include flex(center, center);
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: $white;
+    font-size: 1.15rem;
+  }
+
+  &__region-title {
+    flex: 1;
+    font-family: $font-display;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $ink;
+    letter-spacing: 0.02em;
+
+    @include respond(sm) {
+      font-size: 1.15rem;
+    }
+  }
+
+  &__region-count {
+    background: var(--accent);
+    color: $white;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.55rem 1rem;
+    padding: 1.5rem;
+    list-style: none;
+
+    @include respond(md) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 1.15rem;
+    }
+
+    @media (max-width: 360px) {
+      grid-template-columns: 1fr;
+    }
+
+    li {
+      @include flex(flex-start, flex-start, 0.45rem);
+      color: $text-body;
+      font-size: 0.92rem;
+      line-height: 1.35;
+
+      &[hidden] {
+        display: none;
+      }
+    }
+
+    .icon {
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+  }
+
+  // ── CTA ──
+  &__cta {
+    @include flex(center, space-between, 1.5rem);
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding: 2rem 2.25rem;
+    border-radius: $radius-lg;
+    background: linear-gradient(120deg, $forest 0%, $green 100%);
+    color: $white;
+
+    @include respond(md) {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  &__cta-title {
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+
+  &__cta-text {
+    color: rgba($white, 0.85);
+  }
+
+  &__cta-actions {
+    @include flex(center, flex-start, 0.75rem);
+    flex-wrap: wrap;
+
+    @include respond(md) {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    @include btn-base;
+    background: $amber;
+    color: $ink;
+
+    &:hover {
+      background: $white;
+    }
+
+    &--light {
+      background: transparent;
+      color: $white;
+      border: 2px solid rgba($white, 0.7);
+
+      &:hover {
+        background: $white;
+        color: $forest;
+      }
+    }
+
+    @include respond(sm) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

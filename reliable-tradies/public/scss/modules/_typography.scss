@@ -1,0 +1,39 @@
+// =============================================
+// TYPOGRAPHY
+// =============================================
+@use '../base/variables' as *;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $primaryFont;
+    font-weight: 700;
+    line-height: 1.2;
+    color:       $primaryColor;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h3 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
+h4 { font-size: 1.3rem; }
+h5 { font-size: 1.1rem; }
+
+p {
+    font-family: $secondaryFont;
+    font-size:   16px;
+    line-height: 1.75;
+    color:       $dark-color;
+}
+
+strong { font-weight: 700; }
+
+.display-text {
+    font-family:  $primaryFont;
+    font-size:    clamp(3.5rem, 8vw, 7rem);
+    font-weight:  800;
+    line-height:  0.95;
+    letter-spacing: -2px;
+}
+
+.italic-accent {
+    font-style: italic;
+    color:      $secondaryColor;
+}

@@ -1,0 +1,83 @@
+.form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px 20px;
+
+    .form-group {
+        flex-basis: 100%;
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+
+        &:nth-child(4) {
+
+            .icon-block {
+                align-items: flex-start;
+                padding-top: 15px;
+            }
+        }
+
+        &.half-width {
+            flex-basis: calc(50% - 20px);
+        }
+
+        .icon-block {
+            width: 40px;
+            background-color: $black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                color: $whitey;
+            }
+        }
+
+        .form-input {
+            width: 100%;
+            border: 1px solid $black;
+            padding: 10px 10px;
+            color: $black;
+            font-size: 0.9375rem;
+            background-color: transparent;
+            resize: none;
+            border-radius: 5px;
+
+            &::placeholder {
+                text-transform: capitalize;
+                color: $black;
+            }
+
+            &:focus-visible {
+                outline: none;
+                box-shadow: 1px 4px 11px -6px $lgrey;
+            }
+
+            &.message {
+                height: 120px;
+            }
+
+            option {
+                color: $black;
+            }
+
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .form {
+        gap: 20px;
+    }
+}
+
+@include custom_max(576px) {
+    .form {
+        .form-group {
+            &.half-width {
+                flex-basis: 100%;
+            }
+        }
+    }
+}

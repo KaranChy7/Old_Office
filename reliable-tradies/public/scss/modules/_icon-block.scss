@@ -1,0 +1,42 @@
+// =============================================
+// ICON BLOCK
+// =============================================
+@use '../base/variables' as *;
+
+.icon-block {
+    display:     flex;
+    align-items: flex-start;
+    gap:         18px;
+    padding:     22px 0;
+
+    .icon-wrap {
+        flex-shrink:   0;
+        width:         50px;
+        height:        50px;
+        border-radius: 8px;
+        background:    rgba(212, 132, 42, 0.1);
+        display:       flex;
+        align-items:   center;
+        justify-content: center;
+
+        svg, i {
+            font-size: 22px;
+            color:     $secondaryColor;
+        }
+    }
+
+    .icon-content {
+        h4 {
+            font-family:   $primaryFont;
+            font-size:     1.15rem;
+            color:         $primaryColor;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size:   14px;
+            color:       $dark-color;
+            line-height: 1.65;
+        }
+    }
+}

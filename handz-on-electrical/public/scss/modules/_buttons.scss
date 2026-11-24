@@ -1,0 +1,260 @@
+// Bootstrap Button Overwrite
+button {
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+.btn {
+    border: none;
+}
+
+.btn,
+.form-control {
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: 1px solid $grey;
+    font-family: $territaryFont;
+    cursor: pointer;
+    transition: 0.4s all;
+
+    &:focus,
+    &:hover {
+        box-shadow: none;
+        outline: none;
+        color: inherit;
+    }
+
+    &-orange {
+        color: $whitey;
+        background-color: $orange;
+        border-color: $orange;
+
+        &:hover {
+            color: $orange;
+            background-color: transparent;
+        }
+    }
+
+    &-black {
+        color: $whitey;
+        background-color: $dblack;
+        border-color: $dblack;
+
+        &:hover {
+            color: $whitey;
+            background-color: $dblack;
+            border-color: $dblack;
+        }
+    }
+
+    &.btn-secondary {
+        color: $whitey;
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+        border-radius: 6px;
+
+        &:hover {
+            color: $whitey;
+            background-color: darken($primaryColor, 7%);
+        }
+    }
+
+    &.btn-primary {
+        color: $whitey;
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+
+        &:hover {
+            color: $primaryColor;
+            background-color: transparent;
+        }
+    }
+
+    &-small {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+
+    &-view-all,
+    &-custom {
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 8px 26px;
+    }
+
+    &.btn-custom-large,
+    &.btn-custom-small {
+        padding: 12px 32px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    &.btn-custom-small {
+        padding: 8px 24px;
+    }
+
+    &.btn-red {
+        background-color: $primaryColor;
+        color: $whitey;
+        border-color: $primaryColor;
+
+        &:hover {
+            background-color: transparent;
+            border-color: $primaryColor;
+            color: $dblack;
+        }
+    }
+}
+
+.site-button {
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+    line-height: 1.42857;
+    margin-left: -1px;
+    text-decoration: none;
+}
+
+// Simple solid buttons. The wrapper div carries the colour variant; the link/button inside fills it,
+// so the whole button is clickable.
+.btn-effect {
+    display: inline-flex;
+    border-radius: 6px;
+    background-color: $primaryColor;
+    border: 1.5px solid $primaryColor;
+    color: $whitey;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+
+    a,
+    button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 12px 26px;
+        margin: 0;
+        border: 0;
+        background: none;
+        color: inherit;
+        font-family: $territaryFont;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        text-transform: none;
+        line-height: 1.3;
+        cursor: pointer;
+    }
+
+    &:hover {
+        background-color: darken($primaryColor, 7%);
+        border-color: darken($primaryColor, 7%);
+        color: $whitey;
+    }
+
+    &:focus-within {
+        outline: 3px solid rgba($primaryColor, 0.35);
+        outline-offset: 2px;
+    }
+
+    &.small {
+
+        a,
+        button {
+            padding: 8px 16px;
+            font-size: 0.875rem;
+        }
+    }
+
+    &.large {
+
+        a,
+        button {
+            padding: 14px 32px;
+        }
+    }
+
+    // Colour variants: every filled button is Forest Green
+    &.primary,
+    &.secondary,
+    &.black {
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+    }
+
+    &.white {
+        background-color: $whitey;
+        border-color: $whitey;
+        color: $primaryColor;
+
+        &:hover {
+            background-color: $lightBg;
+            border-color: $lightBg;
+            color: $primaryColor;
+        }
+    }
+
+    &.ghost,
+    &.ghost-secondary {
+        background-color: transparent;
+        border-color: $primaryColor;
+        color: $primaryColor;
+
+        &:hover {
+            background-color: $primaryColor;
+            color: $whitey;
+        }
+    }
+}
+
+@include custom_max(1199px) {}
+
+@include custom_max(991px) {
+
+    .btn,
+    .form-control {
+        &-small {
+            font-size: 11px;
+        }
+
+        &-view-all,
+        &-custom {
+            font-size: 12px;
+        }
+
+        &.btn-custom-large,
+        &.btn-custom-small {
+            font-size: 12px;
+        }
+    }
+
+    .btn-effect {
+
+        a,
+        button {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+@include custom_max(767px) {
+
+    .btn,
+    .form-control {
+
+        &.btn-custom-large,
+        &.btn-custom-small {
+            padding: 8px 20px;
+            font-size: 13px;
+        }
+    }
+}

@@ -1,0 +1,144 @@
+body {
+    position: relative;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    transition: 0.4s all;
+}
+
+.mobile-call-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    z-index: 99;
+    display: none;
+
+    @include custom_max(767px) {
+        display: block;
+    }
+
+    a {
+        font-size: 1.25rem;
+        height: 45px;
+        width: 45px;
+        line-height: 45px;
+        color: #fff;
+        background-color: rgba($primaryColor, 0.7);
+        border-radius: 100%;
+    }
+}
+
+.main-title {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+
+    h5 {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.2;
+        text-transform: capitalize;
+    }
+
+    p {
+        margin-top: 10px;
+        color: $black;
+        line-height: 1.5;
+    }
+}
+
+.title {
+    margin-bottom: 40px;
+
+    h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $whitey;
+        word-spacing: 2px;
+        line-height: 1.2;
+        text-transform: capitalize;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 0.875rem;
+        color: $lgrey;
+    }
+}
+
+.testimonial-title {
+    h6 {
+        font-size: 1.25rem;
+        color: $primaryColor;
+        font-weight: 700;
+        text-transform: capitalize;
+
+        span {
+            display: block;
+        }
+    }
+
+    p {
+        margin-top: 10px;
+        color: $dblack;
+        line-height: 1.5;
+    }
+}
+
+@include custom_max(992px) {
+    .title {
+        margin-bottom: 30px;
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            margin-top: 15px;
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .main-title {
+        margin: 0 auto 30px;
+
+        h5 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .main-title {
+        h5 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin-top: 5px;
+        }
+    }
+
+    .title {
+        margin-bottom: 20px;
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    }
+}

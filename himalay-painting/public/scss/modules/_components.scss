@@ -1,0 +1,59 @@
+.section {
+    padding: 120px 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.container {
+    max-width: 1500px;
+}
+
+@include custom_max(1440px) {
+    .container {
+        max-width: 1280px;
+    }
+
+}
+
+@include custom_max(1200px) {
+    .section {
+        padding: 100px 0;
+    }
+
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@include custom_max(992px) {
+    .section {
+        padding: 80px 0;
+    }
+
+    .container {
+        max-width: 760px;
+    }
+}
+
+
+@include custom_max(768px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .container {
+        max-width: 580px;
+    }
+}
+
+@include custom_max(576px) {
+    .section {
+        padding: 40px 0;
+    }
+}

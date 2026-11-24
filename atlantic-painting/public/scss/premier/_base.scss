@@ -1,0 +1,170 @@
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $pp-header-h;
+  -webkit-text-size-adjust: 100%;
+}
+
+body.pp-body {
+  font-family: $pp-font-body;
+  font-size: 15px;
+  line-height: 1.6;
+  color: $pp-text;
+  background: $pp-white;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+
+  &.nav-open {
+    overflow: hidden;
+  }
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $pp-font-display;
+  color: $pp-heading;
+  line-height: 1.2;
+}
+
+.pp-container {
+  width: 100%;
+  max-width: $pp-container + 48px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @include pp-down(sm) {
+    padding: 0 16px;
+  }
+}
+
+// Section heads
+.pp-section-head {
+  text-align: center;
+  margin-bottom: 38px;
+
+  &--sm {
+    margin-bottom: 32px;
+  }
+}
+
+.pp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: $pp-font-body;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $pp-navy;
+  margin-bottom: 10px;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 22px;
+    height: 1.5px;
+    background: currentColor;
+  }
+
+  &--left::before {
+    width: 6px;
+  }
+}
+
+.pp-title {
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+
+  &--sm {
+    font-size: clamp(22px, 2.4vw, 27px);
+  }
+}
+
+// Buttons
+.pp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-family: $pp-font-body;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: $pp-transition;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  &--lg {
+    padding: 15px 30px;
+    font-size: 15px;
+  }
+
+  &--yellow {
+    background: $pp-yellow;
+    color: $pp-navy-dark;
+    box-shadow: 0 6px 18px rgba($pp-yellow, 0.35);
+
+    &:hover {
+      background: $pp-yellow-dark;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--outline {
+    border: 1.5px solid rgba($pp-white, 0.85);
+    color: $pp-white;
+
+    &:hover {
+      background: $pp-white;
+      color: $pp-navy;
+    }
+  }
+}
+
+// Icon circle colours
+.pp-bg--blue { background: $pp-blue; }
+.pp-bg--green { background: $pp-green; }
+.pp-bg--gold { background: $pp-gold; }
+.pp-bg--purple { background: $pp-purple; }
+.pp-bg--teal { background: $pp-teal; }

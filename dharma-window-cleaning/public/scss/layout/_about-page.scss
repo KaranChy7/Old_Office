@@ -1,0 +1,174 @@
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.page-about {
+  background: linear-gradient(160deg, $white 0%, rgba($ink, 0.03) 100%);
+  padding: 5rem 0 6rem;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  // ── Badge & title (shared by hero + promises) ──
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    background: $primary-light;
+    color: $primary;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+
+    &--secondary {
+      margin-top: 4rem;
+    }
+  }
+
+ 
+  > .page-about__container > h2 {
+    font-family: $font-serif;
+    font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: $ink;
+    letter-spacing: -0.01em;
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  // ── Our story hero ─────────────────────────────
+  &__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: 3.5rem;
+    margin-bottom: 5rem;
+
+    @include respond(lg) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  &__hero-content {
+    max-width: 540px;
+
+    h1 {
+      font-family: $font-serif;
+      font-size: clamp(2rem, 3.8vw, 2.9rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: $ink;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: $grey;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__stat-number {
+    font-family: $font-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: $primary;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  &__stat-label {
+    font-size: 0.8rem;
+    color: $grey;
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3.1;
+    object-fit: cover;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-lg;
+  }
+
+  // ── Four promises grid ─────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+
+    @include respond(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    background: $white;
+    border: 1px solid rgba($ink, 0.08);
+    border-radius: $radius-lg;
+    padding: 1.75rem;
+    transition: $transition;
+
+    &:hover {
+      box-shadow: $shadow-md;
+      transform: translateY(-4px);
+    }
+  }
+
+  &__card-icon {
+    @include flex(center, center);
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: $primary-light;
+    color: $primary;
+    margin-bottom: 1.25rem;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__card {
+    h3 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: $ink;
+      margin-bottom: 0.6rem;
+    }
+
+    p {
+      font-size: 0.87rem;
+      line-height: 1.6;
+      color: $grey;
+    }
+  }
+}

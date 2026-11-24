@@ -1,0 +1,534 @@
+// =============================================
+// COMMERCIAL CLEANING — HEADER
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+@keyframes header-drop-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cta-pulse {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(0) scale(1.06);
+  }
+}
+
+@keyframes hamburger-punch {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: $transition;
+  animation: header-drop-in 0.6s ease-out;
+
+  &.scrolled {
+    box-shadow: $shadow-md;
+
+    .header-inner {
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+    }
+  }
+}
+
+.header-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  column-gap: 1.5rem;
+  padding: 0.75rem 2.5rem;
+  background-color: $navy-dark;
+  transition: padding 0.3s ease;
+
+  @include respond(lg) {
+    grid-template-columns: auto 1fr auto;
+    padding: 0.6rem 1.25rem;
+  }
+}
+
+// Logo — centered column on desktop
+.logo {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &__mark {
+    display: block;
+    height: 64px;
+    width: 195px;
+    flex-shrink: 0;
+    color: $white;
+    transition: height 0.3s ease, width 0.3s ease;
+  }
+
+  @include respond(lg) {
+    grid-column: 1;
+    justify-self: start;
+
+    &__mark {
+      height: 46px;
+      width: 140px;
+    }
+  }
+}
+
+// Wrapper around both nav groups.
+// Desktop: transparent pass-through so nav--left / nav--right sit directly
+// in the header grid. Mobile: becomes the single slide-out overlay panel.
+.nav-panel {
+  display: contents;
+
+  @include respond(lg) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    position: fixed;
+    inset: 0;
+    left: auto;
+    width: 84%;
+    max-width: 360px;
+    height: 100vh;
+    padding: 6rem 2.25rem 3rem;
+    overflow-y: auto;
+    background: rgba($navy-dark, 0.9);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-left: 1px solid rgba($white, 0.12);
+    z-index: 999;
+    visibility: hidden;
+    clip-path: circle(0% at 100% 0%);
+    transition: clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.6s;
+    pointer-events: none;
+
+    &.open {
+      visibility: visible;
+      clip-path: circle(150% at 100% 0%);
+      pointer-events: auto;
+    }
+  }
+}
+
+// Nav groups
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+
+  &--left {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  &--right {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  @include respond(lg) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1.35rem;
+
+    &--right {
+      margin-top: 1.75rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba($white, 0.14);
+    }
+  }
+}
+
+.nav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  @include respond(lg) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+.nav__link {
+  font-family: $font-display;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $white;
+  transition: $transition;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 100%;
+    height: 2px;
+    background: $white;
+    transition: right 0.3s ease;
+  }
+
+  &:hover,
+  &.active {
+    color: $white;
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  @include respond(lg) {
+    font-size: 1.1rem;
+    color: $white;
+    opacity: 0;
+    transform: scale(0.6) rotate(-8deg) translateY(10px);
+    transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &:hover,
+    &.active {
+      color: $white;
+    }
+  }
+}
+
+// Services dropdown toggle (chevron)
+.nav__dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  color: $white;
+
+  svg {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  @include respond(lg) {
+    color: $white;
+    position: absolute;
+    top: -2px;
+    right: 0;
+    padding: 8px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.nav__dropdown {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 0;
+  transform: translateY(6px);
+  min-width: 260px;
+  background: $white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-lg;
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+.nav__dropdown--mega {
+  min-width: 560px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.15rem 1.5rem;
+  padding: 1rem;
+}
+
+.nav__dropdown-link {
+  display: block;
+  padding: 0.7rem 0.9rem;
+  border-radius: $radius-sm;
+  font-family: $font-body;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+  color: $text-dark;
+  transition: $transition;
+
+  &:hover {
+    background: $grey-100;
+    color: $navy;
+  }
+
+  &--accent {
+    color: $navy;
+    font-weight: 600;
+  }
+}
+
+.nav__item--dropdown {
+
+  &:hover .nav__dropdown,
+  &:focus-within .nav__dropdown,
+  &.open .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &.open .nav__dropdown-toggle svg {
+    transform: rotate(180deg);
+  }
+}
+
+@include respond(lg) {
+  .nav__dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin-top: 0;
+    background: transparent;
+    box-shadow: none;
+    width: 100%;
+    min-width: 0;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+  }
+
+  .nav__item--dropdown.open .nav__dropdown {
+    max-height: 260px;
+    padding: 0.75rem 0 0.25rem 0.25rem;
+    transform: none;
+  }
+
+  .nav__item--dropdown.open .nav__dropdown--mega {
+    max-height: 620px;
+  }
+
+  .nav__dropdown--mega {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .nav__dropdown-link {
+    color: rgba($white, 0.8);
+    padding: 0.55rem 0;
+
+    &:hover {
+      background: transparent;
+      color: $white;
+    }
+
+    &--accent {
+      color: $white;
+      margin-top: 0.4rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba($white, 0.14);
+    }
+  }
+}
+
+// Phone pill CTA
+.nav__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: $white;
+  color: $navy-dark;
+  font-family: $font-display;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  transition: $transition;
+
+  svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: $grey-200;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  @include respond(lg) {
+    opacity: 0;
+    transform: scale(0.6) rotate(-8deg) translateY(10px);
+    transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: $white;
+    color: $navy-dark;
+    margin-top: 0.5rem;
+
+    &:hover {
+      background: $grey-200;
+    }
+  }
+}
+
+// Staggered cascade entrance once the mobile nav is open
+.nav-panel.open {
+
+  .nav__link,
+  .nav__phone {
+    @include respond(lg) {
+      opacity: 1;
+      transform: scale(1) rotate(0) translateY(0);
+    }
+  }
+
+  @include respond(lg) {
+
+    .nav--left .nav__link:nth-child(1),
+    .nav--left .nav__item:nth-child(1) .nav__link {
+      transition-delay: 0.08s;
+    }
+
+    .nav--left .nav__link:nth-child(2),
+    .nav--left .nav__item:nth-child(2) .nav__link {
+      transition-delay: 0.14s;
+    }
+
+    .nav--left .nav__link:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+
+    .nav--right .nav__link:nth-child(1) {
+      transition-delay: 0.26s;
+    }
+
+    .nav--right .nav__link:nth-child(2) {
+      transition-delay: 0.32s;
+    }
+
+    .nav--right .nav__link:nth-child(3) {
+      transition-delay: 0.38s;
+    }
+
+    .nav__phone {
+      transition-delay: 0.44s;
+      animation: cta-pulse 0.6s ease 0.8s 1;
+    }
+  }
+}
+
+// Backdrop behind the mobile nav panel
+.nav-backdrop {
+  display: none;
+
+  @include respond(lg) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba($navy-dark, 0.65);
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+    pointer-events: none;
+    transition: opacity 0.45s ease, visibility 0.45s, backdrop-filter 0.45s ease, -webkit-backdrop-filter 0.45s ease;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      pointer-events: auto;
+    }
+  }
+}
+
+// Hamburger
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 4px;
+
+  &.active {
+    animation: hamburger-punch 0.4s ease;
+  }
+
+  span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: $white;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.2s ease, background 0.3s ease;
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+
+  @include respond(lg) {
+    display: flex;
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+}

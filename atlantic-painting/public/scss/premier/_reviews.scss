@@ -1,0 +1,202 @@
+@use 'variables' as *;
+
+.pp-reviews {
+  padding: 72px 0 80px;
+  background: $pp-light;
+
+  &__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 38px;
+  }
+
+  &__intro {
+    max-width: 480px;
+    margin-top: 12px;
+    font-size: 15px;
+  }
+
+  &__score {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+    padding: 18px 24px;
+    border-radius: 6px;
+    background: $pp-white;
+    box-shadow: 0 6px 20px rgba($pp-navy, 0.08);
+
+    .pp-google {
+      width: 36px;
+      height: 36px;
+    }
+
+    small {
+      font-size: 13px;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    strong {
+      font-family: $pp-font-display;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1;
+      color: $pp-heading;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  @include pp-down(lg) {
+    padding: 56px 0 64px;
+
+    &__head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      max-width: 640px;
+    }
+  }
+
+  // Phones: swipeable row of review cards
+  @include pp-down(md) {
+    padding: 48px 0 52px;
+
+    &__head {
+      margin-bottom: 26px;
+    }
+
+    &__grid {
+      display: flex;
+      gap: 16px;
+      max-width: none;
+      margin: 0 -24px;
+      padding: 4px 24px 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 0 24px;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .pp-review {
+      flex: 0 0 82%;
+      scroll-snap-align: start;
+      padding: 24px 20px 22px;
+
+      blockquote {
+        font-size: 15px;
+      }
+    }
+  }
+
+  @include pp-down(sm) {
+    &__grid {
+      margin: 0 -16px;
+      padding: 4px 16px 18px;
+      scroll-padding: 0 16px;
+    }
+
+    &__score {
+      width: 100%;
+      padding: 16px 18px;
+    }
+  }
+}
+
+.pp-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: $pp-gold;
+
+  svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.pp-google {
+  width: 22px;
+  height: 22px;
+}
+
+.pp-review {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px 26px;
+  border-top: 4px solid $pp-yellow;
+  border-radius: 4px;
+  background: $pp-white;
+  box-shadow: 0 6px 20px rgba($pp-navy, 0.06);
+  transition: $pp-transition;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba($pp-navy, 0.12);
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  blockquote {
+    flex: 1;
+    margin: 18px 0 24px;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: $pp-heading;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid $pp-border;
+
+    strong {
+      display: block;
+      font-family: $pp-font-display;
+      font-size: 15px;
+      font-weight: 600;
+      color: $pp-heading;
+    }
+
+    small {
+      font-size: 12.5px;
+    }
+  }
+
+  &__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: $pp-navy;
+    font-family: $pp-font-display;
+    font-size: 14px;
+    font-weight: 600;
+    color: $pp-yellow;
+  }
+}

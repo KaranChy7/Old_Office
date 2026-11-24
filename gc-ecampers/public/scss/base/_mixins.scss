@@ -1,0 +1,108 @@
+// ============================================================
+// GC-E CAMPERS — MIXINS
+// ============================================================
+
+@use "../base/variables" as *;
+
+// Responsive
+@mixin mobile {
+  @media (max-width: #{$bp-mobile}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: #{$bp-tablet}) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: #{$bp-laptop}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: #{$bp-desktop}) {
+    @content;
+  }
+}
+
+// Flex helpers
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Gold gradient text
+@mixin gold-text {
+  background: linear-gradient(135deg, $color-gold-light 0%, $color-gold 50%, $color-gold-dark 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Gold border bottom accent
+@mixin gold-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, $color-gold, transparent);
+  }
+}
+
+// Section padding
+@mixin section-padding {
+  padding: $spacing-xl 0;
+  @include tablet {
+    padding: $spacing-lg 0;
+  }
+  @include mobile {
+    padding: $spacing-md 0;
+  }
+}
+
+// Overlay
+@mixin dark-overlay($opacity: 0.6) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba($color-black, $opacity);
+    z-index: 1;
+  }
+}
+
+// Gold shimmer animation
+@mixin shimmer-border {
+  border: 1px solid rgba($color-gold, 0.3);
+  transition: border-color $transition-mid;
+  &:hover {
+    border-color: rgba($color-gold, 0.8);
+  }
+}
+
+// Card base
+@mixin card-base {
+  background: $color-dark-card;
+  border-radius: $radius-md;
+  overflow: hidden;
+  transition:
+    transform $transition-mid,
+    box-shadow $transition-mid;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba($color-gold, 0.1);
+  }
+}

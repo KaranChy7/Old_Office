@@ -1,0 +1,151 @@
+// =============================================
+// CALL US CTA
+// =============================================
+@use '../../base/variables' as *;
+@use '../../base/mixins' as *;
+
+.call-us {
+    position:    relative;
+    overflow:    hidden;
+    padding:     100px 0;
+    background:  $primaryColor;
+
+    // BG image overlay
+    .cta-bg {
+        position:            absolute;
+        inset:               0;
+        background-image:    url('../images/cta-bg.jpg');
+        background-size:     cover;
+        background-position: center;
+        opacity:             0.12;
+    }
+
+    // Diagonal amber panel
+    &::before {
+        content:    '';
+        position:   absolute;
+        top:        0; right: -80px;
+        width:      45%;
+        height:     100%;
+        background: $secondaryColor;
+        opacity:    0.1;
+        transform:  skewX(-12deg);
+        z-index:    0;
+    }
+
+    .container { position: relative; z-index: 1; }
+
+    .cta-inner {
+        display:         flex;
+        align-items:     center;
+        justify-content: space-between;
+        gap:             50px;
+        flex-wrap:       wrap;
+    }
+
+    .cta-content {
+        flex: 1;
+        min-width: 280px;
+
+        .cta-label {
+            font-family:    $secondaryFont;
+            font-size:      11px;
+            font-weight:    700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color:          $secondaryColor;
+            margin-bottom:  14px;
+            display:        flex;
+            align-items:    center;
+            gap:            10px;
+
+            &::before {
+                content:    '';
+                display:    block;
+                width:      30px;
+                height:     2px;
+                background: $secondaryColor;
+            }
+        }
+
+        h2 {
+            font-family:   $primaryFont;
+            font-size:     clamp(2rem, 4vw, 3rem);
+            color:         $whitey;
+            font-weight:   700;
+            line-height:   1.15;
+            margin-bottom: 16px;
+
+            em {
+                font-style: italic;
+                color:      $secondaryColor;
+            }
+        }
+
+        p {
+            font-family: $secondaryFont;
+            font-size:   15px;
+            color:       rgba(255,255,255,0.65);
+            max-width:   440px;
+        }
+    }
+
+    .cta-actions {
+        display:         flex;
+        flex-direction:  column;
+        align-items:     flex-end;
+        gap:             16px;
+
+        @include custom_max(767px) {
+            align-items: flex-start;
+            width:       100%;
+        }
+
+        .phone-big {
+            display:     flex;
+            align-items: center;
+            gap:         14px;
+            color:       $whitey;
+
+            .ph-icon {
+                width:         52px; height: 52px;
+                border-radius: 50%;
+                background:    $secondaryColor;
+                display:       flex;
+                align-items:   center;
+                justify-content: center;
+
+                i { font-size: 22px; color: $whitey; }
+            }
+
+            .ph-details {
+                span {
+                    display:        block;
+                    font-family:    $secondaryFont;
+                    font-size:      11px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color:          rgba(255,255,255,0.5);
+                }
+
+                a {
+                    font-family:  $primaryFont;
+                    font-size:    1.8rem;
+                    font-weight:  700;
+                    color:        $whitey;
+                    transition:   color 0.3s;
+                    &:hover { color: $secondaryColor; }
+                }
+            }
+        }
+
+        .hours-note {
+            font-family: $secondaryFont;
+            font-size:   12px;
+            color:       rgba(255,255,255,0.45);
+            text-align:  right;
+
+            @include custom_max(767px) { text-align: left; }
+        }
+    }
+}

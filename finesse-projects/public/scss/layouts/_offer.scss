@@ -1,0 +1,184 @@
+.offer {
+    background-color: rgba($black, 0.8);
+
+    .wrapper {
+        .offer-content {
+            flex-basis: calc(35% - 30px);
+            // padding: 0 30px;
+            text-align: center;
+
+            .main-title {
+                h4 {
+                    color: $whitey;
+                    text-transform: uppercase;
+
+                    span {
+                        color: $fadeColor;
+                        text-transform: uppercase;
+                    }
+
+                }
+            }
+
+            p {
+                font-size: 0.9375rem;
+                font-weight: 300;
+                margin-top: 20px;
+                color: $whitey;
+            }
+        }
+
+        .offer-image {
+            flex-basis: calc(65% - 30px);
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+
+            .figure {
+                width: 100%;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: $radius-m;
+
+                    &.absolute-brush {
+                        position: absolute;
+                        bottom: -100px;
+                        right: -50px;
+                        z-index: 1;
+                        width: 200px;
+                        height: 200px;
+
+                    }
+                }
+
+                &:first-child {
+                    margin-bottom: 0;
+                }
+
+                &:last-child {
+                    margin-top: -100px;
+                }
+
+                &:nth-child(2) {
+                    margin-block: -50px;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(1440px){
+    .offer {    
+        .wrapper {    
+            .offer-image {    
+                .figure {    
+                    img {    
+                        &.absolute-brush {
+                            bottom: -80px;
+                            right: 0;
+                            width: 150px;
+                            height: 150px;    
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
+
+@include custom_max(992px) {
+    .offer {
+        .wrapper {
+            padding: 0 0 50px 0;
+            flex-direction: column;
+            gap: 100px;
+
+            .offer-image {
+                .figure {
+                    &:first-child {
+                        margin-bottom: -60px;
+                    }
+
+                    &:last-child {
+                        margin-top: -60px;
+                    }
+
+                    &:nth-child(2) {
+                        margin-block: -30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .offer {
+        .wrapper {
+            .offer-image {
+                gap: 20px;
+
+                .figure {
+                    img {
+                        &.absolute-brush {
+                            width: 100px;
+                            height: 100px;
+                            bottom: -50px;
+                            right: 0;
+                        }
+                    }
+
+                    &:first-child {
+                        margin-bottom: -60px;
+                    }
+
+                    &:last-child {
+                        margin-top: -60px;
+                    }
+
+                    &:nth-child(2) {
+                        margin-block: -30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .offer {
+        .wrapper {
+            gap: 30px;
+            .offer-image {
+                flex-direction: column;
+                gap: 20px;
+
+                .figure {
+                    img {
+                        &.absolute-brush {
+                            width: 100px;
+                            height: 100px;
+                            bottom: -50px;
+                            right: 0;
+                        }
+                    }
+
+                    &:first-child {
+                        margin-bottom: 0;
+                    }
+
+                    &:last-child {
+                        margin-top: 0;
+                    }
+
+                    &:nth-child(2) {
+                        margin-block: 0;
+                    }
+                }
+            }
+        }
+    }
+}

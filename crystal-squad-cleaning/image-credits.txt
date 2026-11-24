@@ -1,0 +1,16 @@
+services/office-cleaning.jpg  <-  File:FEMA - 32011 - FEMA Joint Field Office (JFO) preparation in Ohio.jpg (Public domain) https://commons.wikimedia.org/wiki/File:FEMA_-_32011_-_FEMA_Joint_Field_Office_(JFO)_preparation_in_Ohio.jpg
+services/end-of-lease-cleaning.jpg  <-  File:This modern kitchen showcases sleek white cabinetry and a clean design.jpg (CC BY 2.0) https://commons.wikimedia.org/wiki/File:This_modern_kitchen_showcases_sleek_white_cabinetry_and_a_clean_design.jpg
+services/assistance-with-daily-activities.jpg  <-  Caregiver Nurse (CC0, stocksnap) https://stocksnap.io/photo/caregiver-nurse-TBEMNLXLVQ
+services/organizational-cleaning.jpg  <-  T-shirts hanging on wooden hangers (CC0, rawpixel) https://www.rawpixel.com/image/11515804/t-shirts-hanging-wooden-hangers
+services/house-cleaning.jpg  <-  File:Woman cleaning kitchen cabinets in a bright home.jpg (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Woman_cleaning_kitchen_cabinets_in_a_bright_home.jpg
+services/all-types-of-cleaning.jpg  <-  Cleaning products (CC0, rawpixel) https://www.rawpixel.com/image/5903626/cleaning-products-free-public-domain-cc0-photo
+services/carpet-cleaning.jpg  <-  File:Floor cleaner inside Sullivan Hall.jpg (CC BY-SA 3.0) https://commons.wikimedia.org/wiki/File:Floor_cleaner_inside_Sullivan_Hall.jpg
+services/window-cleaning.jpg  <-  File:Cleaning windows.jpg (CC BY-SA 2.0) https://commons.wikimedia.org/wiki/File:Cleaning_windows.jpg
+services/residential-cleaning.jpg  <-  File:Person using a handheld vacuum cleaner on a couch in a living room.jpg (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Person_using_a_handheld_vacuum_cleaner_on_a_couch_in_a_living_room.jpg
+services/commercial-cleaning.jpg  <-  File:บริการแม่บ้านทำความสะอาด แบบประจำ.jpg (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AA%E0%B8%B0%E0%B8%AD%E0%B8%B2%E0%B8%94_%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B3.jpg
+1.jpg  <-  File:Person cleaning living room floor with vacuum cleaner in modern home.jpg (CC BY 2.0) https://commons.wikimedia.org/wiki/File:Person_cleaning_living_room_floor_with_vacuum_cleaner_in_modern_home.jpg
+2.jpg  <-  Mop Sweeping (CC0, stocksnap) https://stocksnap.io/photo/mop-sweeping-J4C1WJDMMU
+about.jpg  <-  Cleaning Kitchen Counter (CC0, rawpixel) https://www.rawpixel.com/image/6074009/cleaning-kitchen-counter
+gallery/*.jpg  <-  supplied by the client
+videos/banner.mp4 + images/banner-poster.jpg  <-  edited from Mixkit free stock videos 21380, 45041, 48835, 45039, 5319 (Mixkit Free License, commercial use allowed) https://mixkit.co/license/
+images/nsw-sydney.jpg  <-  "Sydney Harbour, New South Wales, Australia" by Stu's Images (CC BY-SA 4.0) https://commons.wikimedia.org/wiki/File:Sydney_Harbour,_New_South_Wales,_Australia.jpg

@@ -1,0 +1,1 @@
+<section class="section section-tint"><div class="container"><div class="section-heading"><div><p class="eyebrow">Popular choices</p><h2>Featured Products</h2></div><a href="<?= e(url('shop')) ?>">Shop the full range →</a></div><div class="product-grid"><?= implode('', array_map('render_product_card', $featured)) ?></div></div></section>

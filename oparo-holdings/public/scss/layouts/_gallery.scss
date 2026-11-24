@@ -1,0 +1,176 @@
+.gallery {
+    padding-top: 20px;
+}
+
+.gallery-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 20px;
+
+    .gallery-item {
+        flex-basis: calc(100% / 4 - 20px);
+        position: relative;
+        overflow: hidden;
+        transition: 0.4s ease-in-out;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            // background-color: rgba($dblack, 0.5);
+            opacity: 0;
+            transition: 0.4s ease-in-out;
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 2/2;
+            object-fit: cover;
+            object-position: center center;
+            border-radius: 12px;
+        }
+
+        .txt-slidein {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+
+            .imgzoomin {
+                display: none;
+                text-align: right;
+
+                i {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    background-color: $dblack;
+                    text-align: center;
+                    color: $whitey;
+                    font-size: 16px;
+                    transform: translateX(45px);
+                    transition: 0.4s ease-in-out;
+                    transition-delay: 0.1s;
+
+                    &:hover {
+                        background-color: $primaryColor;
+                    }
+                }
+            }
+
+            h6 {
+                font-size: 14px;
+                color: $dblack;
+                background-color: rgba($primaryColor, 0.6);
+                text-transform: capitalize;
+                padding: 12px 0;
+                transform: translateY(45px);
+                transition: 0.4s ease-in-out;
+                transition-delay: 0.2s;
+                text-align: center;
+
+            }
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+                z-index: 1;
+            }
+
+            img {
+                transform: scale(1.2);
+            }
+
+            .txt-slidein {
+                z-index: 2;
+
+                .imgzoomin {
+                    i {
+                        transform: translateX(0);
+                    }
+                }
+
+                h6 {
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .gallery-wrap {
+        .gallery-item {
+            flex-basis: calc(100% / 3 - 20px);
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .gallery-wrap {
+        .gallery-item {
+            flex-basis: calc(100% / 2 - 20px);
+        }
+    }
+}
+
+@include custom_max(577px) {
+    .gallery-wrap {
+        .gallery-item {
+
+            .txt-slidein {
+                .imgzoomin {
+                    i {
+                        width: 35px;
+                        height: 35px;
+                        line-height: 35px;
+                        font-size: 14px;
+                    }
+                }
+
+                h6 {
+                    font-size: 14px;
+                    padding: 8px 15px;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .gallery-wrap {
+        .gallery-item {
+            &::before {
+                opacity: 1;
+                z-index: 1;
+            }
+
+            img {
+                transform: scale(1.2);
+            }
+
+            .txt-slidein {
+                z-index: 2;
+
+                .imgzoomin {
+                    text-align: right;
+
+                    i {
+                        transform: translateX(0);
+                        background-color: $primaryColor;
+
+                        // &:hover {}
+                    }
+                }
+
+                h6 {
+                    border: 1px solid rgba($whitey, 0.5);
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}

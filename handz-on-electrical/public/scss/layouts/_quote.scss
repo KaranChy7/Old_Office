@@ -1,0 +1,659 @@
+.section-quote {
+    position: relative;
+    padding: 100px 0;
+    background-color: $whitey;
+}
+
+.section-quote-wrap {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 40px;
+    align-items: start;
+
+    // Intro panel
+    .quote-intro {
+        position: sticky;
+        top: calc(#{$headerHeight} + 24px);
+        padding: 45px 40px;
+        border-radius: 12px;
+        color: $whitey;
+        background-color: $primaryColor;
+
+        .eyebrow {
+            display: inline-block;
+            padding: 6px 14px;
+            margin-bottom: 18px;
+            border-radius: 50px;
+            background-color: rgba($whitey, 0.12);
+            border: 1px solid rgba($whitey, 0.2);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: $whitey;
+            margin-bottom: 15px;
+        }
+
+        .lead {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba($whitey, 0.8);
+            margin-bottom: 35px;
+        }
+
+        .steps-title {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba($whitey, 0.85);
+            margin-bottom: 20px;
+        }
+    }
+
+    .quote-steps {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 35px;
+
+        li {
+            position: relative;
+            display: flex;
+            gap: 16px;
+            padding-bottom: 22px;
+
+            // connecting line between steps
+            &:not(:last-child)::before {
+                content: "";
+                position: absolute;
+                left: 17px;
+                top: 38px;
+                bottom: 4px;
+                width: 2px;
+                background-color: rgba($whitey, 0.18);
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: $whitey;
+            color: $primaryColor;
+            font-weight: 700;
+            font-size: 0.9375rem;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: $whitey;
+            margin: 6px 0 4px;
+        }
+
+        p {
+            font-size: 0.875rem;
+            line-height: 1.55;
+            color: rgba($whitey, 0.75);
+            margin: 0;
+        }
+    }
+
+    .quote-contact {
+        list-style: none;
+        padding: 25px 0 0;
+        margin: 0;
+        border-top: 1px solid rgba($whitey, 0.15);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9375rem;
+            color: rgba($whitey, 0.9);
+            word-break: break-word;
+        }
+
+        i {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background-color: rgba($whitey, 0.12);
+            color: rgba($whitey, 0.85);
+            font-size: 0.875rem;
+        }
+
+        a {
+            color: $whitey;
+            font-weight: 600;
+            transition: color 0.2s;
+
+            &:hover {
+                color: rgba($whitey, 0.85);
+            }
+        }
+    }
+
+    .map {
+        margin-top: 30px;
+        border-radius: 14px;
+        overflow: hidden;
+        height: 220px;
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+
+    // Form card
+    .quote-card {
+        padding: 24px;
+        border-radius: 12px;
+        background-color: $whitey;
+        border: 1px solid $borderColor;
+    }
+}
+
+.quote-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .form-step {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &:not(:first-child) {
+            padding-top: 35px;
+            border-top: 1px dashed $grey;
+        }
+    }
+
+    .step-heading {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $secondaryColor;
+        margin: 0;
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background-color: rgba($primaryColor, 0.1);
+            color: $primaryColor;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+    }
+
+    .step-hint {
+        font-size: 0.875rem;
+        color: $dark-color;
+        margin: -10px 0 0;
+    }
+
+    .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 20px;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+
+        &.full {
+            grid-column: 1 / -1;
+        }
+    }
+
+    fieldset.field {
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    label,
+    legend {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: $secondaryColor;
+        padding: 0;
+    }
+
+    legend {
+        margin-bottom: 10px;
+    }
+
+    small {
+        margin-left: 6px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: $t-color;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 13px 15px;
+        font-size: 0.9375rem;
+        color: $secondaryColor;
+        background-color: #f7f9f8;
+        border: 1.5px solid #e1e7e3;
+        border-radius: 10px;
+        transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+
+        &::placeholder {
+            color: #9aa5a0;
+        }
+
+        &:hover {
+            border-color: darken(#e1e7e3, 10%);
+        }
+
+        &:focus {
+            outline: none;
+            background-color: $whitey;
+            border-color: $primaryColor;
+            box-shadow: 0 0 0 4px rgba($primaryColor, 0.12);
+        }
+
+        &.message {
+            min-height: 120px;
+            resize: vertical;
+        }
+    }
+
+    select.form-input {
+        appearance: none;
+        cursor: pointer;
+        padding-right: 40px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23145A38' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+    }
+
+    // Visually hidden native inputs, still focusable for keyboard users
+    .chip input,
+    .segmented input {
+        position: absolute;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+    }
+
+    // Service chips
+    .chip-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .chip {
+        position: relative;
+        cursor: pointer;
+
+        span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border-radius: 50px;
+            border: 1.5px solid #e1e7e3;
+            background-color: $whitey;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: $secondaryColor;
+            transition: all 0.2s;
+
+            &::before {
+                content: "+";
+                font-weight: 700;
+                color: $primaryColor;
+                transition: all 0.2s;
+            }
+        }
+
+        &:hover span {
+            border-color: $primaryColor;
+        }
+
+        input:checked+span {
+            background-color: $primaryColor;
+            border-color: $primaryColor;
+            color: $whitey;
+
+            &::before {
+                content: "\2713";
+                color: $whitey;
+            }
+        }
+
+        input:focus-visible+span {
+            box-shadow: 0 0 0 4px rgba($primaryColor, 0.2);
+        }
+    }
+
+    // One-off / ongoing selector
+    .segmented {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+
+        label {
+            position: relative;
+            cursor: pointer;
+        }
+
+        span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 10px;
+            border-radius: 12px;
+            border: 1.5px solid #798a7f;
+            background-color: #f7f9f8;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: $secondaryColor;
+            text-align: center;
+            transition: all 0.2s;
+
+            i {
+                font-size: 1.125rem;
+                color: $primaryColor;
+            }
+        }
+
+        label:hover span {
+            border-color: $primaryColor;
+        }
+
+        input:checked+span {
+            background-color: rgba($primaryColor, 0.06);
+            border-color: $primaryColor;
+            box-shadow: inset 0 0 0 1px $primaryColor;
+        }
+
+        input:focus-visible+span {
+            box-shadow: 0 0 0 4px rgba($primaryColor, 0.2);
+        }
+    }
+
+    // Photo uploads
+    .file-inputs {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+
+        .form-input.file {
+            padding: 10px;
+            border-style: dashed;
+            cursor: pointer;
+            font-size: 0.875rem;
+            color: $dark-color;
+
+            &::file-selector-button {
+                margin-right: 12px;
+                padding: 8px 14px;
+                border: 0;
+                border-radius: 8px;
+                background-color: rgba($primaryColor, 0.1);
+                color: $primaryColor;
+                    font-weight: 700;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+            &:hover::file-selector-button {
+                background-color: rgba($primaryColor, 0.18);
+            }
+        }
+    }
+
+    // Submit
+    .form-submit {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        p {
+            font-size: 0.8125rem;
+            color: $t-color;
+            text-align: center;
+            margin: 0;
+        }
+    }
+
+    .submit-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 17px 30px;
+        border: 0;
+        border-radius: 6px;
+        background-color: $primaryColor;
+        color: $whitey;
+        font-family: $secondaryFont;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: darken($primaryColor, 7%);
+        }
+
+        &:focus-visible {
+            outline: 3px solid rgba($primaryColor, 0.35);
+            outline-offset: 3px;
+        }
+    }
+}
+
+@include custom_max(1199px) {
+    .section-quote-wrap {
+        gap: 30px;
+
+        .quote-intro {
+            padding: 40px 30px;
+
+            h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        .quote-card {
+            padding: 35px;
+        }
+    }
+}
+
+@include custom_max(991px) {
+    .section-quote {
+        padding: 70px 0;
+    }
+
+    .section-quote-wrap {
+        grid-template-columns: minmax(0, 1fr);
+
+        .quote-intro {
+            position: static;
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .section-quote {
+        padding: 50px 0;
+    }
+
+    .section-quote-wrap {
+        gap: 20px;
+
+        .quote-intro {
+            padding: 30px 22px;
+            border-radius: 16px;
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .quote-card {
+            padding: 28px 20px;
+            border-radius: 16px;
+        }
+    }
+
+    .quote-form {
+        .field-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .segmented span {
+            padding: 14px 6px;
+            font-size: 0.8125rem;
+        }
+    }
+}
+
+// Short version used on the home page
+.section-quote.quote-short {
+    padding: 80px 0;
+
+    .section-quote-wrap {
+        grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+        align-items: stretch;
+        gap: 30px;
+
+        .quote-intro {
+            position: static;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .eyebrow {
+                align-self: flex-start;
+            }
+
+            .lead {
+                margin-bottom: 30px;
+            }
+        }
+
+        .quote-card {
+            padding: 35px 40px;
+        }
+    }
+
+    .quote-form {
+        gap: 22px;
+
+        .form-input {
+            padding: 8px 12px;
+        }
+
+        .chip span {
+            padding: 7px 14px;
+            font-size: 0.8125rem;
+        }
+
+        .form-submit p a {
+            display: inline;
+            color: $primaryColor;
+            font-weight: 700;
+            text-decoration: underline;
+
+            &:hover {
+                color: $secondaryColor;
+            }
+        }
+    }
+}
+
+@include custom_max(991px) {
+    .section-quote.quote-short {
+        padding: 60px 0;
+
+        .section-quote-wrap {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .section-quote.quote-short {
+        padding: 45px 0;
+
+        .section-quote-wrap .quote-card {
+            padding: 28px 20px;
+        }
+    }
+}
+
+ 
+@include custom_max(991px) {
+    .section-quote:not(.quote-short) .section-quote-wrap .quote-card {
+        order: -1;
+    }
+}
+
+@include custom_max(767px) {
+    .quote-form .form-input {
+        font-size: 1rem;
+    }
+}
+
+// Home page: the quick form sits straight under the banner on phones, and lower down on larger screens
+.section-quote.quote-short.quote-slot-mobile {
+    display: none;
+}
+
+@include custom_max(767px) {
+    .section-quote.quote-short.quote-slot-mobile {
+        display: block;
+        padding-top: 30px;
+    }
+
+    .section-quote.quote-short.quote-slot-desktop {
+        display: none;
+    }
+}

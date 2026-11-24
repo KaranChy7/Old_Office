@@ -1,0 +1,55 @@
+.quote-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 60px 40px;
+	justify-content: space-between;
+	padding: 40px 60px;
+	border-radius: 25px;
+	background: url(../images/quote-image.jpg) no-repeat center/cover;
+	position: relative;
+	z-index: 1;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-color: rgba($primaryColor, 0.2);
+		border-radius: 25px;
+		z-index: -1;
+	}
+
+	.block {
+		flex-basis: calc(50% - 40px);
+
+		//.section-header {
+			// h6 {
+			// 	color: $lgrey;
+			// }
+
+			// h4 {
+			// 	color: $whitey;
+
+			// 	&::after {
+			// 		border-color: $whitey;
+			// 	}
+			// }
+		//}
+
+		.image {
+			display: none;
+		}
+	}
+}
+
+@include custom_max(992px) {
+	.quote-wrap {
+		gap: 40px;
+		flex-direction: column;
+
+		.block {
+			&.image-block {
+				display: none;
+			}
+		}
+	}
+}

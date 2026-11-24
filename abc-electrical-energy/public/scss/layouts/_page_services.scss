@@ -1,0 +1,120 @@
+.page-services {
+
+    .page-service-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .service-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        box-shadow: none;
+
+        .figure {
+            flex: 0 0 calc(100% / 2 - 40px);
+            height: 100%;
+            width: 100%;
+            border-radius: 20px 30px 15px 25px;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                aspect-ratio: 2/2;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .block-content {
+            flex: 0 0 calc(100% / 2);
+
+            h4 {
+                font-size: 30px;
+                color: $primaryColor;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+                padding-bottom: 20px;
+            }
+
+            p {
+                // font-size: 15px;
+                margin-bottom: 10px;
+            }
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+@include custom_max(1199px) {
+    .page-services {
+        .service-block {
+            align-items: center;
+
+            .figure {
+                flex: 0 0 calc(40% - 20px);
+            }
+
+            .block-content {
+                flex: 0 0 calc(60% - 20px);
+
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .page-services {
+        .service-block {
+            flex-direction: column;
+
+            .figure {
+                flex: 0 0 calc(100%);
+            }
+
+            .block-content {
+                flex: 0 0 calc(100%);
+                text-align: center;
+
+                h4 {
+                    padding: 10px 0;
+                }
+
+                p {
+                    margin-bottom: 5px;
+                }
+            }
+
+            &:nth-child(even) {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .page-services {
+        .page-service-wrapper {
+            gap: 30px;
+        }
+
+        .service-block {
+
+            .block-content {
+                h4 {
+                    font-size: 20px;
+                }
+
+                // p {
+                //     font-size: 14px;
+                // }
+            }
+        }
+    }
+}

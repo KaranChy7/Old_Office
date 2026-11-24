@@ -1,0 +1,125 @@
+.features {
+    position: relative;
+    z-index: 111;
+
+    .section-title {
+        max-width: 100%;
+        margin-bottom: 40px;
+     
+    }
+
+    .wrapper {
+        gap: 40px 25px;
+    }
+}
+
+.feature-block {
+    flex-basis: calc(100% / 4 - 25px);
+    background-color: transparent;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: $radius;
+    border: 1px solid $primaryColor;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        background-color: $primaryColor;
+        transition: 0.5s ease-in-out;
+        z-index: -1;
+    }
+
+    .icon {
+        margin-bottom: 20px;
+
+        svg {
+            path {
+                stroke: $black;
+                fill: transparent;
+                transition: 0.5s ease-in-out 0.2s;
+            }
+        }
+    }
+
+    h6 {
+        color: $black;
+        transition: 0.5s ease-in-out 0.1s;
+    }
+
+    &:hover {
+        &::before {
+            height: 0;
+        }
+
+        .icon {
+            svg {
+                path {
+                    stroke: $secondaryColor;
+                }
+            }
+        }
+
+        h6 {
+            color: $secondaryColor;
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .features {
+
+        .wrapper {
+            gap: 20px 10px;
+        }
+    }
+
+    .feature-block {
+        flex-basis: calc(100% / 2 - 10px);
+    }
+}
+
+@include custom_max(992px) {
+    .features {
+        margin-top: 0;
+        padding: 60px 0;
+    }
+}
+
+@include custom_max(768px) {
+    .features {
+        padding: 40px 0;
+
+        .wrapper {
+            flex-direction: column;
+        }
+    }
+
+    .feature-block {
+        flex-basis: 100%;
+        width: 400px;
+        gap: 20px;
+
+        .icon {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .features {
+        padding: 30px 0;
+    }
+
+    .feature-block {
+        width: 100%;
+        gap: 20px;
+    }
+}

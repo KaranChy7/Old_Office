@@ -1,0 +1,212 @@
+// =============================================
+// HIFI HOMES — FOOTER
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.site-footer {
+  background: $navy;
+}
+
+// ── Top grid: About / Menu / Newsletter ───────
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 0 3rem;
+
+  // Grid items default to min-width: auto, which refuses to shrink below
+  // their content's intrinsic minimum — without this, the newsletter
+  // input/button row pushes the column (and the page) wider than the
+  // viewport on narrow phones.
+  > * {
+    min-width: 0;
+  }
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+}
+
+.site-footer__logo-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.site-footer__logo {
+  width: 190px;
+  height: auto;
+}
+
+.site-footer__heading {
+  font-family: $font-display;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $gold-light;
+  margin-bottom: 1.1rem;
+}
+
+.site-footer__blurb {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba($white, 0.6);
+  max-width: 340px;
+
+  @include respond(sm) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.site-footer__newsletter {
+  display: flex;
+  margin-top: 1.25rem;
+  max-width: 320px;
+
+  @include respond(sm) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.site-footer__newsletter-input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid rgba($white, 0.2);
+  border-right: none;
+  border-radius: $radius-sm 0 0 $radius-sm;
+  background: rgba($white, 0.05);
+  color: $white;
+  padding: 0.75rem 1rem;
+  font-family: $font-body;
+  font-size: 0.85rem;
+
+  &::placeholder {
+    color: rgba($white, 0.4);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: rgba($white, 0.4);
+  }
+}
+
+.site-footer__newsletter-btn {
+  @include btn-base;
+  flex-shrink: 0;
+  background: $gold;
+  color: $navy-dark;
+  font-weight: 700;
+  border-radius: 0 $radius-sm $radius-sm 0;
+  padding: 0.75rem 1.4rem;
+
+  &:hover {
+    background: $gold-light;
+  }
+}
+
+// ── Bottom bar: region / follow / accept ──────
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba($white, 0.1);
+
+  @include respond(lg) {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.site-footer__region {
+  border: 1px solid rgba($white, 0.25);
+  background: transparent;
+  color: rgba($white, 0.75);
+  border-radius: $radius-sm;
+  padding: 0.5rem 0.75rem;
+  font-family: $font-body;
+  font-size: 0.8rem;
+
+  option {
+    color: $navy-dark;
+  }
+}
+
+.site-footer__bottom-label {
+  font-family: $font-display;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba($white, 0.5);
+  margin-right: 0.75rem;
+}
+
+.site-footer__follow {
+  display: flex;
+  align-items: center;
+}
+
+.site-footer__follow-btn {
+  @include btn-base;
+  display: inline-flex;
+  background: $gold;
+  color: $navy-dark;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  &:hover {
+    background: $gold-light;
+  }
+}
+
+.site-footer__accept {
+  display: flex;
+  align-items: center;
+}
+
+.site-footer__accept-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.site-footer__accept-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 22px;
+  border: 1px solid rgba($white, 0.25);
+  border-radius: 4px;
+  color: rgba($white, 0.7);
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+// ── Legal line ─────────────────────────────────
+.site-footer__legal {
+  padding: 1.25rem 0 2rem;
+  font-size: 0.78rem;
+  color: rgba($white, 0.4);
+  text-align: center;
+  border-top: 1px solid rgba($white, 0.08);
+}

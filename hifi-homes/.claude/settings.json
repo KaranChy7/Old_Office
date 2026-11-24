@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(node test-gallery.js)",
+      "Bash(node test-gallery2.js)",
+      "Bash(npx sass *)",
+      "Bash(node test-quote.js)",
+      "Bash(where php *)",
+      "Bash(php -v)"
+    ]
+  }
+}

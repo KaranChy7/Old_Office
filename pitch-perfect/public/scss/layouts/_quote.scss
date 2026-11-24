@@ -1,0 +1,300 @@
+.quote {
+    background: url('../images/quotebg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($dblack, 0.6);
+        z-index: -1;
+    }
+
+    .quote-wrapper {
+        display: flex;
+        flex-direction: row;
+        //margin: 0 0 200px 0;
+        margin: 0 0 100px 0;
+
+        .quote-block {
+            flex: 0 0 calc(70% - 60px);
+            margin-right: 60px;
+            position: relative;
+
+            .form-block {
+                //position: absolute;
+                top: 0;
+                left: 0;
+                margin: 0 60px;
+                background-color: rgba($dblack, 0.9);
+            }
+
+            .title {
+                text-align: left;
+                padding: 40px 0 20px 0;
+
+                h5 {
+                    font-size: 32px;
+                    font-weight: 700;
+                    color: $whitey;
+                    letter-spacing: 0.02em;
+                    word-spacing: 0.04em;
+                    padding-left: 30px;
+                }
+
+                p {
+                    font-size: 14px;
+                    color: $whitey;
+                    padding: 20px 30px 0;
+                }
+            }
+
+        }
+
+        // .quote-image {
+        //     flex: 0 0 30%;
+        // }
+    }
+}
+
+.form {
+    padding: 40px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px 20px;
+
+    .form-set {
+        flex: 0 0 calc(50% - 20px);
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba($t-color, 0.3);
+            resize: none;
+            border-radius: 5px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &.full_width {
+            flex: 100%;
+            //margin: 0 10px 30px 10px;
+        }
+
+    }
+
+    &.contact-form {
+        flex-direction: column;
+        margin: 0 0 30px 0;
+        padding: 0;
+
+        .form-set {
+            label {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                i {
+                    padding-right: 10px;
+                }
+
+                span {
+                    font-size: 16px;
+                }
+            }
+
+            &.message {
+                flex: 0 0 calc(100% - 20px);
+                margin-right: 10px;
+            }
+
+            .btn-primary {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .quote {
+        .quote-wrapper {
+            margin: 0 0 100px 0;
+
+            .quote-block {
+                flex: 0 0 calc(70% - 60px);
+                margin-right: 60px;
+
+                .form-block {
+                    margin: 0 40px;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .quote {
+        position: relative;
+
+        .quote-wrapper {
+            flex-direction: column;
+            margin: 0;
+
+            .quote-block {
+                margin-right: 0;
+                position: relative;
+                z-index: 3;
+
+                .form-block {
+                    position: relative;
+                }
+
+                .title {
+                    h5 {
+                        font-size: 26px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .quote-image {
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                width: 200px;
+                z-index: 2;
+            }
+        }
+    }
+
+    .form {
+        padding: 40px 20px;
+        margin-bottom: 40px;
+    }
+}
+
+@include custom_max(768px) {
+    .quote {
+        .quote-wrapper {
+            .quote-block {
+                .form-block {
+                    margin: 0;
+                }
+
+                .title {
+                    h5 {
+                        font-size: 22px;
+                    }
+
+                    p {
+                        // font-size: 13px;
+                        width: 400px;
+                        padding: 20px 0 0 0;
+                    }
+                }
+            }
+
+            .quote-image {
+                display: none;
+            }
+        }
+    }
+
+    .form {
+        padding: 40px 20px;
+        margin-bottom: 40px;
+
+        .form-set {
+            //margin: 0 10px 20px 10px;
+
+            .form-input {
+                padding: 5px 10px;
+            }
+        }
+    }
+}
+
+@include custom_max(481px) {
+    .quote {
+        .quote-wrapper {
+            .quote-block {
+                .title {
+                    padding: 20px 10px;
+
+                    h5 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        width: 100%;
+                        padding: 10px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .form {
+        padding: 40px 20px;
+
+        .form-set {
+            margin: 0 10px 20px 10px;
+
+            .form-input {
+                padding: 5px 10px;
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@include custom_max(420px) {
+    .quote {
+        .quote-wrapper {
+            .quote-block {
+                .title {
+                    padding: 20px 10px;
+
+                    h5 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        width: 100%;
+                        padding: 10px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .form {
+        flex-direction: column;
+
+        .form-set {
+            margin: 0 0 20px 0;
+        }
+
+        &.contact-form {
+            flex-direction: column;
+            margin: 0 0 30px 0;
+
+            .form-set {
+                &.message {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

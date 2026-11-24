@@ -1,0 +1,180 @@
+// =============================================
+// GALLERY
+// =============================================
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.home-gallery {
+    @include section-padding;
+    background: $whitey;
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 56px;
+
+        .section-label {
+            justify-content: center;
+        }
+        .section-desc {
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    .gallery-masonry {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 16px;
+
+        @include custom_max(991px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include custom_max(480px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gallery-item {
+        position: relative;
+        border-radius: $radius;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:nth-child(1) {
+            grid-row: span 2;
+        }
+        &:nth-child(4) {
+            grid-column: span 2;
+        }
+        &:nth-child(6) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+        @include custom_max(991px) {
+            &:nth-child(1) {
+                grid-row: span 1;
+            }
+            &:nth-child(4) {
+                grid-column: span 1;
+            }
+            &:nth-child(6) {
+                grid-column: initial;
+                grid-row: initial;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(28, 28, 30, 0.85) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 22px;
+
+            .g-label {
+                font-family: $secondaryFont;
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: $secondaryColor;
+                margin-bottom: 5px;
+            }
+
+            .g-title {
+                font-family: $primaryFont;
+                font-size: 1.2rem;
+                color: $whitey;
+            }
+
+            .g-zoom {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.8);
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: $secondaryColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $whitey;
+                font-size: 20px;
+                transition: transform 0.3s;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.06);
+            }
+
+            .gallery-overlay {
+                opacity: 1;
+                .g-zoom {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+        }
+    }
+
+    .gallery-cta {
+        text-align: center;
+        margin-top: 44px;
+    }
+}
+
+// Lightbox
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.93);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s,
+        visibility 0.3s;
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    img {
+        max-width: 90vw;
+        max-height: 85vh;
+        object-fit: contain;
+        border-radius: $radius;
+    }
+
+    .lb-close {
+        position: absolute;
+        top: 24px;
+        right: 28px;
+        color: $whitey;
+        font-size: 32px;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $secondaryColor;
+        }
+    }
+}

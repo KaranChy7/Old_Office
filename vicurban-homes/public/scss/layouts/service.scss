@@ -1,0 +1,121 @@
+.service-section {
+    .title {
+        p {
+            color: $lgrey;
+        }
+
+        color: $lgrey;
+    }
+
+    .service-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px 20px;
+
+        .block {
+            flex-basis: calc(100% / 3 - 20px);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba($t-color, 0.1);
+            transition: 0.5s ease-in-out;
+            background-color: $whitey;
+
+            .figure {
+                width: 100%;
+                overflow: hidden;
+                aspect-ratio: 3/2;
+                // display: flex;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform-origin: 50% 65%;
+                    transition: transform 0.7s, filter 0.5s ease-in-out;
+                }
+            }
+
+            &:last-child {
+
+                .figure {
+                    display: flex;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .text {
+                padding: 20px;
+
+
+                h6 {
+                    font-weight: 700;
+                    padding-bottom: 15px;
+                    color: $primaryColor;
+                }
+
+            }
+
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+                .figure {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(991px) {
+    .service-section {
+        .service-wrapper {
+            gap: 40px 20px;
+
+            .block {
+                flex-basis: calc(100% / 2 - 20px);
+
+                .text {
+                    padding: 15px;
+
+                    h6 {
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .service-section {
+        .service-wrapper {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 20px;
+
+            .block {
+                .figure {
+                    aspect-ratio: 3/1;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .service-section {
+        .service-wrapper {
+            .block {
+                .figure {
+                    aspect-ratio: 3/2;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,133 @@
+.section-facts {
+    position: relative;
+    z-index: 1;
+    padding: 180px 0 40px;
+    background: $whitey;
+
+    .section-title {
+        align-items: center;
+        text-align: center;
+        margin-bottom: 142px;
+
+
+        h3 {
+            padding-top: 10px;
+            position: relative;
+            font-size: 60px;
+            display: inline;
+            color: $black;
+            font-weight: 900;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 199px;
+                right: 166px;
+                bottom: -40px;
+                height: 2px;
+                background: $dblack;
+            }
+        }
+    }
+
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+
+        .facts-block {
+            padding: 10px 0;
+            position: relative;
+
+
+
+            h4 {
+                display: inline;
+                margin: 0;
+                font-size: 16px;
+                font-weight: 700;
+                color: $dblack;
+                font-family: $secondaryFont;
+
+
+                &::after {
+                    content: " - ";
+                    font-weight: 600;
+                }
+            }
+
+            p {
+                display: inline;
+                font-size: 16px;
+                line-height: 1.55;
+                opacity: 0.95;
+                color: $black;
+                font-family: $secondaryFont;
+            }
+        }
+    }
+}
+
+
+@include custom_max(992px) {
+    .section-facts {
+        padding: 40px 0 40px;
+
+        .section-title {
+            margin-bottom: 120px;
+
+            h3 {
+                font-size: 40px;
+                // font-weight: 400;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 160px;
+                    right: 130px;
+                    bottom: -40px;
+                    height: 2px;
+                    background: $dblack;
+                }
+            }
+        }
+
+        .content {
+            gap: 10px;
+            // padding: 0 20px;
+
+            .facts-block {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+    }
+}
+
+@include custom_max(576px) {
+    .section-facts {
+
+        .section-title {
+            margin-bottom: 80px;
+
+            h3 {
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 120px;
+                    right: 97px;
+                    bottom: -30px;
+                    height: 2px;
+                    background: $dblack;
+                }
+            }
+        }
+
+        .facts-block {
+            flex: 1 1 100%;
+        }
+    }
+}

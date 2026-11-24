@@ -1,0 +1,59 @@
+// ── PROCESS STRIP (services page) ─────────────────────────
+.process-strip { padding: 5rem 0; background: $steel; }
+
+.process-strip-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .section-label { @include label-centered; }
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 12.5%; right: 12.5%;
+    height: 2px;
+    background: rgba($blue, 0.2);
+  }
+
+  @include respond($bp-lg) {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    &::before { display: none; }
+  }
+
+  @include respond($bp-md) { grid-template-columns: 1fr; }
+}
+
+.process-step { text-align: center; padding: 0 1.5rem; }
+
+.ps-num {
+  width: 56px; height: 56px;
+  background: $blue;
+  border-radius: 50%;
+  @include flex-center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: $white;
+  margin: 0 auto 1.25rem;
+}
+
+.process-step {
+  h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $white;
+    margin-bottom: 0.5rem;
+  }
+
+  p { font-size: 0.83rem; color: $muted; line-height: 1.65; }
+}

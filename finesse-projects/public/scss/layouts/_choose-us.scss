@@ -1,0 +1,126 @@
+.choose-us {
+    background-image: url(../images/choose-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    // background-position: center;
+    padding: 200px 0;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 54, 105, 0.048);
+        z-index: -1;
+    }
+
+    .choose-wrap {
+        background-image: radial-gradient(circle farthest-corner at 3.7% 49.8%, rgba(#303030, 0.9) 40%, rgba(#303030, 1) 79%);
+        // background-color: $black;
+
+    }
+
+    .main-title {
+        h4 {
+            color: $primaryColor;
+
+            span {
+                display: block;
+                color: $whitey;
+                text-transform: capitalize;
+            }
+        }
+
+        p {
+            color: $lgrey;
+            max-width: 650px;
+        }
+    }
+
+    .title {
+        margin-bottom: 30px;
+        text-align: center;
+
+        h6 {
+            font-size: 1.125rem;
+            color: $whitey;
+            text-transform: uppercase;
+        }
+    }
+
+    .wrapper {
+        gap: 40px;
+        align-items: initial;
+
+        .choose-block {
+            flex-basis: calc(100% / 4 - 40px);
+            // padding: 40px;
+            background-color: $primaryColor;
+            padding: 25px 50px;
+            border-radius: $radius;
+
+            h6 {
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: $whitey;
+                margin-block: 20px;
+                text-transform: capitalize;
+            }
+
+            p {
+                color: $whitey;
+            }
+        }
+    }
+}
+
+@include custom_max(1440px) {
+    .choose-us {
+        .wrapper {
+            .choose-block {
+                padding: 15px 30px;
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .choose-us {
+        .title {
+            h6 {
+                font-size: 1rem;
+            }
+        }
+
+        .wrapper {
+            gap: 40px 20px;
+
+            .choose-block {
+                flex-basis: calc(50% - 20px);
+
+                h6 {
+                    font-size: 1.125rem;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .choose-us {
+
+        .wrapper {
+            gap: 30px;
+            flex-direction: column;
+
+            .choose-block {
+
+                h6 {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

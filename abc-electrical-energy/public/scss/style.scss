@@ -1,0 +1,33 @@
+@import "base/variables";
+@import "base/mixins";
+@import "modules/typography";
+@import "modules/buttons";
+@import "modules/scroll-top";
+@import "modules/slick";
+@import "modules/common";
+@import "modules/components";
+@import "modules/breadcrumb";
+@import "modules/form";
+@import "modules/icon_block";
+@import "modules/mobile_call_btn";
+//Index Section Style
+@import "layouts/header";
+@import "layouts/banner";
+@import "layouts/why_choose_us";
+@import "layouts/featured-service";
+@import "layouts/what-we-offer";
+@import "layouts/gallery";
+@import "layouts/about";
+@import "layouts/service";
+@import "layouts/about-features";
+@import "layouts/roofing";
+@import "layouts/quote";
+@import "layouts/testimonial";
+@import "layouts/call_us";
+@import "layouts/footer";
+// Thanks Page Style
+@import "layouts/page_about";
+@import "layouts/page_services";
+@import "layouts/page_contact";
+@import "layouts/page_quote";
+@import "layouts/thanks";

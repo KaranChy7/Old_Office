@@ -1,0 +1,12 @@
+
+@use '../base/variables' as *;
+
+.icon-sm {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.img-fallback {
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+}

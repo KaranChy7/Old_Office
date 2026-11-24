@@ -1,0 +1,98 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — HOME FAQ
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.faq {
+  background: $white;
+  padding: 5rem 0;
+
+  @include respond(md) {
+    padding: 3.5rem 0;
+  }
+
+  &__container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__head {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+    font-weight: 700;
+    color: $ink;
+    margin-bottom: 0.85rem;
+  }
+
+  &__text {
+    color: $muted;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  &__list {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  &__item {
+    background: $grey-100;
+    border: 1px solid $grey-200;
+    border-left: 4px solid $amber;
+    border-radius: $radius-md;
+    transition: $transition;
+
+    &[open] {
+      background: $white;
+      border-left-color: $green;
+      box-shadow: $shadow-sm;
+
+      .faq__question .icon {
+        transform: rotate(180deg);
+        color: $green;
+      }
+    }
+  }
+
+  &__question {
+    @include flex(center, space-between, 1rem);
+    padding: 1.1rem 1.35rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: $ink;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    .icon {
+      flex-shrink: 0;
+      color: $muted;
+      transition: $transition;
+    }
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__answer {
+    padding: 0 1.35rem 1.2rem;
+    color: $text-body;
+    line-height: 1.7;
+  }
+}

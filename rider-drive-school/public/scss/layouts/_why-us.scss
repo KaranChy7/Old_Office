@@ -1,0 +1,138 @@
+#why-us {
+  background: linear-gradient(300deg, $blue 0%, $black 80%);
+  padding: $section-pad;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+
+  @include respond($bp-lg) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.why-us-image {
+  position: relative;
+  height: 700px;
+  order: 2;
+
+  @include respond($bp-lg) {
+    order: 0;
+    height: 400px;
+  }
+
+  @include respond($bp-md) {
+    height: 320px;
+  }
+
+  .img-bg {
+    position: absolute;
+    inset: 1.5rem 0 0 1.5rem;
+    background: $blue;
+    opacity: 0.15;
+  }
+
+  .img-main-wrap {
+    position: absolute;
+    inset: 0 1.5rem 1.5rem 0;
+    overflow: hidden;
+  }
+}
+
+.why-us-badge {
+  position: absolute;
+  bottom: -1rem;
+  left: -1rem;
+  background: $black;
+  border: 3px solid $blue;
+  padding: 1.5rem;
+  z-index: 5;
+
+  .big-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: $blue;
+    line-height: 1;
+  }
+
+  .label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $muted;
+  }
+}
+
+.why-us-content {
+  order: 1;
+}
+
+.why-us-content p {
+  color: rgba($white, 0.65);
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.why-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.why-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.25rem;
+  background: rgba($white, 0.02);
+  border: 1px solid rgba($white, 0.04);
+  transition: border-color 0.3s, background 0.3s;
+
+  &:hover {
+    border-color: rgba($blue, 0.3);
+    background: rgba($blue, 0.04);
+  }
+}
+
+.why-item-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba($blue, 0.12);
+  border: 1px solid rgba($blue, 0.25);
+  @include flex-center;
+  flex-shrink: 0;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    color: $blue;
+  }
+}
+
+.why-item {
+  h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $white;
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: $muted;
+    line-height: 1.65;
+  }
+}

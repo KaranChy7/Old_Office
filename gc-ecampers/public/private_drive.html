@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="GC-E Private Drive — premium Gold Coast and Brisbane Airport transfers, private day hire and event transport in an electric VW ID. Buzz.">
+    <title>
+        GC-E Campers    </title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons (Remix Icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav__overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Nav Drawer -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">
+            <i class="ri-close-line"></i>
+        </button>
+        <a href="./" class="">Home</a>
+        <div class="mobile-nav__group">
+            <div class="mobile-nav__row">
+                <a href="camper_hire" class="active">Hire</a>
+                <button class="mobile-nav__toggle" type="button" aria-expanded="false" aria-controls="mobileSubHire"
+                    aria-label="Show Hire services">
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+            </div>
+            <div class="mobile-nav__sub" id="mobileSubHire">
+                <div class="mobile-nav__sub-inner">
+                                        <a href="electric_camper_hire"
+                        class="">Electric Camper Hire</a>
+                                        <a href="hybrid_camper_hire"
+                        class="">Hybrid Camper Hire</a>
+                                        <a href="private_drive"
+                        class="active">Private Drive</a>
+                                    </div>
+            </div>
+        </div>
+        <div class="mobile-nav__group">
+            <div class="mobile-nav__row">
+                <a href="fit_outs" class="">Fit-Outs</a>
+                <button class="mobile-nav__toggle" type="button" aria-expanded="false" aria-controls="mobileSubFitouts"
+                    aria-label="Show Fit-Outs services">
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+            </div>
+            <div class="mobile-nav__sub" id="mobileSubFitouts">
+                <div class="mobile-nav__sub-inner">
+                                        <a href="custom_fit_outs"
+                        class="">Custom Fit-Outs</a>
+                                        <a href="solar_electrical"
+                        class="">Solar &amp; Electrical</a>
+                                        <a href="pop_top_roofs"
+                        class="">Pop-Top Roofs</a>
+                                        <a href="diy_camper_kits"
+                        class="">DIY Camper Kits</a>
+                                    </div>
+            </div>
+        </div>
+        <a href="about_us" class="">About</a>
+        <a href="gallery" class="">Gallery</a>
+        <a href="contact_us" class="">Contact</a>
+        <div class="mobile-nav__cta">
+            <a href="quote" class="btn btn--gold btn--block">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Site Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+
+            <!-- Logo -->
+            <a href="./" class="site-logo" aria-label="GC-E Campers home">
+                <div>
+                    <div class="site-logo__mark">GC&#8209;<span>E</span> CAMPERS</div>
+                    <div class="site-logo__sub">Electric &amp; Hybrid Hire</div>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="./" class="">Home</a>
+                <div class="site-nav__item">
+                    <a href="camper_hire" class="active">Hire <i
+                            class="ri-arrow-down-s-line"></i></a>
+                    <div class="site-nav__dropdown">
+                                                <a href="electric_camper_hire"
+                            class="">Electric Camper Hire</a>
+                                                <a href="hybrid_camper_hire"
+                            class="">Hybrid Camper Hire</a>
+                                                <a href="private_drive"
+                            class="active">Private Drive</a>
+                                            </div>
+                </div>
+                <div class="site-nav__item">
+                    <a href="fit_outs" class="">Fit-Outs <i
+                            class="ri-arrow-down-s-line"></i></a>
+                    <div class="site-nav__dropdown">
+                                                <a href="custom_fit_outs"
+                            class="">Custom Fit-Outs</a>
+                                                <a href="solar_electrical"
+                            class="">Solar &amp; Electrical</a>
+                                                <a href="pop_top_roofs"
+                            class="">Pop-Top Roofs</a>
+                                                <a href="diy_camper_kits"
+                            class="">DIY Camper Kits</a>
+                                            </div>
+                </div>
+                <a href="about_us" class="">About</a>
+                <a href="gallery" class="">Gallery</a>
+                <a href="contact_us" class="">Contact</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="quote" class="btn btn--gold btn--sm">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+<section class="page-hero">
+    <div class="page-hero__bg">
+        <img src="images/image-2.jpg" alt="Private Drive — GC-E Campers" loading="eager">
+    </div>
+    <div class="container">
+        <div class="page-hero__content">
+            <div class="breadcrumb">
+                <a href="./">Home</a>
+                <span class="breadcrumb__sep">/</span>
+                <a href="camper_hire">Hire</a>
+                <span class="breadcrumb__sep">/</span>
+                <span class="breadcrumb__current">Private Drive</span>
+            </div>
+            <h2 class="page-hero__title">Private <em>Drive</em></h2>
+        </div>
+    </div>
+</section>
+
+<!-- Intro -->
+<section class="section section--black">
+    <div class="container">
+        <div class="about-story__layout">
+
+            <div class="about-story__img" data-animate="fade-left">
+                <img src="images/image-11.jpg" alt="Private Drive by GC-E Campers" loading="lazy">
+                <div class="about-story__label">
+                    <div class="about-story__label-tag">From $185</div>
+                    <div class="about-story__label-title">Gold Coast Airport ↔ Surfers Paradise</div>
+                </div>
+            </div>
+
+            <div class="about-story__content" data-animate="fade-right">
+                <div class="section-eyebrow">GCE Private Drive</div>
+                <h2 class="section-title">Airport transfers in the<br><span class="text-gold">green-and-white ID. Buzz.</span></h2>
+                <div class="gold-divider"></div>
+                                <p class="body-text">Premium pre-booked transfers from Gold Coast and Brisbane airports, plus private day hire and events — all in our dedicated electric VW ID. Buzz.</p>
+                                <p class="body-text">Your driver meets you on arrival, loads your bags and gets you where you're going in quiet, comfortable, zero-emission style.</p>
+                
+                <div class="about-story__stats">
+                                        <div>
+                        <div class="about-story__stat-num">$185</div>
+                        <div class="about-story__stat-label">One Way</div>
+                    </div>
+                                        <div>
+                        <div class="about-story__stat-num">2</div>
+                        <div class="about-story__stat-label">Airports</div>
+                    </div>
+                                        <div>
+                        <div class="about-story__stat-num">0</div>
+                        <div class="about-story__stat-label">Emissions</div>
+                    </div>
+                                    </div>
+
+                <div class="btn-group service-single__actions">
+                    <a href="quote?service=private-drive" class="btn btn--gold">
+                        <i class="ri-calendar-check-line"></i> Book a Transfer                    </a>
+                    <a href="contact_us" class="btn btn--outline">Ask a Question</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="section section--dark">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow section-eyebrow--center">Private Drive</div>
+            <h2 class="section-title">Private Drive <span class="text-gold">services</span></h2>
+        </div>
+        <div class="grid-3 stagger">
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-plane-line"></i></div>
+                <div class="service-box__title">Airport Transfers</div>
+                <p class="service-box__text">Gold Coast (OOL) and Brisbane (BNE) airport pickups and drop-offs.</p>
+            </div>
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-sun-foggy-line"></i></div>
+                <div class="service-box__title">Private Day Hire</div>
+                <p class="service-box__text">Hinterland, beaches or wineries — a driver and vehicle for the day.</p>
+            </div>
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-goblet-line"></i></div>
+                <div class="service-box__title">Events</div>
+                <p class="service-box__text">Weddings, corporate events and special occasions in style.</p>
+            </div>
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-time-line"></i></div>
+                <div class="service-box__title">Flight Monitoring</div>
+                <p class="service-box__text">We track your flight and adjust pickup if you're early or delayed.</p>
+            </div>
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-suitcase-3-line"></i></div>
+                <div class="service-box__title">Luggage Space</div>
+                <p class="service-box__text">Room for suitcases, boards and prams without the squeeze.</p>
+            </div>
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-leaf-line"></i></div>
+                <div class="service-box__title">Fully Electric</div>
+                <p class="service-box__text">Quiet, smooth and zero tailpipe emissions from door to door.</p>
+            </div>
+                    </div>
+    </div>
+</section>
+
+<!-- Inclusions -->
+<section class="section section--black">
+    <div class="container">
+        <div class="vehicle-detail__layout">
+
+            <div class="vehicle-detail__gallery" data-animate="fade-left">
+                <div class="vehicle-detail__main-img">
+                    <img src="images/image-9.jpg" alt="Private Drive inclusions"
+                        loading="lazy">
+                </div>
+            </div>
+
+            <div data-animate="fade-right">
+                <div class="section-eyebrow">The Details</div>
+                <h2 class="section-title">Every trip <span class="text-gold">includes</span></h2>
+                <div class="gold-divider"></div>
+                <div class="vehicle-detail__features">
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Private vehicle — no sharing</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Professional local driver</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Meet & greet on arrival</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Flight tracking</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Luggage assistance</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Fixed, pre-agreed price</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Bottled water on board</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Child seats on request</span>
+                    </div>
+                                    </div>
+                <div class="btn-group vehicle-detail__actions">
+                    <a href="quote?service=private-drive"
+                        class="btn btn--gold">Book a Transfer</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="how-section section">
+    <div class="container">
+        <div class="section-head section-head--tight">
+            <div class="section-eyebrow section-eyebrow--center">The Process</div>
+            <h2 class="section-title">How to <span class="text-gold">book</span></h2>
+        </div>
+        <div class="how-section__steps stagger">
+                        <div class="step-item" data-animate>
+                <div class="step-item__num">01</div>
+                <div class="step-item__title">Enquire</div>
+                <p class="step-item__text">Send your date, pickup, drop-off and passenger details.</p>
+            </div>
+                        <div class="step-item" data-animate>
+                <div class="step-item__num">02</div>
+                <div class="step-item__title">Confirm</div>
+                <p class="step-item__text">We confirm your fixed price and booking details.</p>
+            </div>
+                        <div class="step-item" data-animate>
+                <div class="step-item__num">03</div>
+                <div class="step-item__title">Meet</div>
+                <p class="step-item__text">Your driver meets you at arrivals or your pickup address.</p>
+            </div>
+                        <div class="step-item" data-animate>
+                <div class="step-item__num">04</div>
+                <div class="step-item__title">Arrive</div>
+                <p class="step-item__text">Sit back and relax all the way to your destination.</p>
+            </div>
+                    </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--black">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow section-eyebrow--center">Good to Know</div>
+            <h2 class="section-title">Common <span class="text-gold">Questions</span></h2>
+        </div>
+        <div class="service-faq">
+                        <details class="service-faq__item" open>
+                <summary class="service-faq__q">How much is an airport transfer?<i class="ri-add-line"></i></summary>
+                <p class="service-faq__a">Gold Coast Airport to Surfers Paradise is $185 one way, per vehicle. Other routes are quoted on enquiry.</p>
+            </details>
+                        <details class="service-faq__item" >
+                <summary class="service-faq__q">What if my flight is delayed?<i class="ri-add-line"></i></summary>
+                <p class="service-faq__a">We track your flight and adjust the pickup time, so you won't be left waiting.</p>
+            </details>
+                        <details class="service-faq__item" >
+                <summary class="service-faq__q">How many passengers can you take?<i class="ri-add-line"></i></summary>
+                <p class="service-faq__a">Tell us your group size and luggage when you enquire and we'll confirm it fits comfortably.</p>
+            </details>
+                        <details class="service-faq__item" >
+                <summary class="service-faq__q">Do you do Brisbane Airport?<i class="ri-add-line"></i></summary>
+                <p class="service-faq__a">Yes — we run transfers to and from both Gold Coast and Brisbane airports.</p>
+            </details>
+                    </div>
+    </div>
+</section>
+
+<!-- Other services -->
+<section class="section section--dark">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow section-eyebrow--center">Explore More</div>
+            <h2 class="section-title">Other <span class="text-gold">Services</span></h2>
+        </div>
+        <div class="service-links stagger">
+                                    <a href="electric_camper_hire" class="service-links__card" data-animate>
+                <i class="ri-flashlight-line service-links__icon"></i>
+                <span class="service-links__name">Electric Camper Hire</span>
+                <span class="service-links__text">Hire our fully electric VW ID. Buzz camper with pop-top roof, solar and a full touring fit-out.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                    <a href="hybrid_camper_hire" class="service-links__card" data-animate>
+                <i class="ri-roadster-line service-links__icon"></i>
+                <span class="service-links__name">Hybrid Camper Hire</span>
+                <span class="service-links__text">A compact Mini Countryman rooftop camper — easy to drive, easy to park, perfect for couples.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                    <a href="custom_fit_outs" class="service-links__card" data-animate>
+                <i class="ri-tools-line service-links__icon"></i>
+                <span class="service-links__name">Custom Fit-Outs</span>
+                <span class="service-links__text">Full campervan conversions designed and built in our Arundel workshop.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                    <a href="solar_electrical" class="service-links__card" data-animate>
+                <i class="ri-sun-line service-links__icon"></i>
+                <span class="service-links__name">Solar &amp; Electrical</span>
+                <span class="service-links__text">Lithium batteries, roof solar, inverters and monitoring for true off-grid touring.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                    <a href="pop_top_roofs" class="service-links__card" data-animate>
+                <i class="ri-home-4-line service-links__icon"></i>
+                <span class="service-links__name">Pop-Top Roofs</span>
+                <span class="service-links__text">Add standing room and a rooftop bed with a quality pop-top roof conversion.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                    <a href="diy_camper_kits" class="service-links__card" data-animate>
+                <i class="ri-box-3-line service-links__icon"></i>
+                <span class="service-links__name">DIY Camper Kits</span>
+                <span class="service-links__text">Ready-made camper modules and kits you can fit yourself and remove when you need the van back.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                </div>
+    </div>
+</section>
+
+
+<div class="parallax-banner" id="parallaxBanner">
+    <div class="parallax-banner__bg" id="parallaxBg">
+        <img src="images/image-14.jpg" alt="Australian coastline road trip" loading="lazy">
+    </div>
+    <div class="parallax-banner__content">
+        <div class="section-eyebrow section-eyebrow--center">Ready to start?</div>
+        <h2 class="parallax-banner__title">
+            Hire it. Build it. <span class="text-gold"> Explore.</span>
+        </h2>
+        <p class="parallax-banner__text">
+            Camper hire, custom fit-outs, ID. Buzz conversions, DIY products or Private Drive.
+        </p>
+        <a href="quote.html" class="btn btn--gold">
+            <i class="ri-calendar-line"></i> Book Your Adventure
+        </a>
+    </div>
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer__grid">
+
+            <!-- Brand col -->
+            <div>
+                <div class="site-logo__mark site-footer__logo">GC&#8209;<span>E</span>
+                    CAMPERS</div>
+                <p class="site-footer__about">
+                    Premium camper hire, custom campervan fit-outs, VW ID. Buzz conversions, DIY camper modules
+                    and private-drive experiences from the Gold Coast.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <div class="site-footer__col-title">Navigate</div>
+                <ul class="site-footer__links">
+                    <li><a href="index">Home</a></li>
+                    <!-- <li><a href="camper_hire">Camper Hire</a></li>
+                    <li><a href="fit_outs">Fit-Outs</a></li> -->
+                    <li><a href="about_us">About Us</a></li>
+                    <li><a href="contact_us">Contact</a></li>
+                    <li><a href="quote">Get a Quote</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <div class="site-footer__col-title">Services</div>
+                <ul class="site-footer__links">
+                    <!--                     <li><a href="electric_camper_hire">Electric Camper Hire</a></li>
+                                        <li><a href="hybrid_camper_hire">Hybrid Camper Hire</a></li>
+                                        <li><a href="custom_fit_outs">Custom Fit-Outs</a></li>
+                                        <li><a href="solar_electrical">Solar &amp; Electrical</a></li>
+                                        <li><a href="pop_top_roofs">Pop-Top Roofs</a></li>
+                                        <li><a href="diy_camper_kits">DIY Camper Kits</a></li>
+                                        <li><a href="private_drive">Private Drive</a></li>
+                     -->
+
+                    <li><a href="camper_hire">Camper Hire</a></li>
+                    <li><a href="fit_outs">Fit-Outs</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <div class="site-footer__col-title">Contact</div>
+
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 7.81 19.79 19.79 0 01.01 4.18a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.12 6.12l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                    <span>
+                        <a href="tel:0400123456">0400 123 456</a>
+                                            </span>
+                </div>
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <a href="mailto:info@gcecampers.com.au">info@gcecampers.com.au</a>
+                </div>
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>14 Logistics Drive Arundel QLD 4214</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="site-footer__bottom">
+            <p class="site-footer__copyright">&copy; 2026 GC-E Campers. All rights reserved.            </p>
+            <div class="site-footer__legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+            <button class="back-to-top" id="backToTop" aria-label="Back to top">
+                <i class="ri-arrow-up-line"></i>
+            </button>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+</body>
+
+</html>

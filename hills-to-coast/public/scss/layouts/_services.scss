@@ -1,0 +1,140 @@
+.service {
+    padding: 80px 0;
+
+    .wrapper {
+        gap: 40px;
+        align-items: initial;
+    }
+}
+
+.service-block {
+    flex-basis: calc(33% - 40px);
+    aspect-ratio: 2/2;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    .figure {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .service-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(0);
+        padding: 10px 40px;
+        background-color: $secondaryColor;
+        transition: 0.5s ease-in-out;
+    }
+
+    h6 {
+        font-size: 1.25rem;
+        color: $black;
+        text-transform: capitalize;
+    }
+
+    .content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-300px);
+        width: 300px;
+        height: 100%;
+        background-color: rgba($black, 0.4);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        justify-content: center;
+        text-align: left;
+        transition: 0.5s ease-in-out 0.2s;
+
+        h6 {
+            color: $secondaryColor;
+        }
+
+        p {
+            margin: 15px 0;
+            font-size: 0.935rem;
+            line-height: 1.5;
+            color: $whitey;
+        }
+    }
+
+    &:hover {
+        .service-title {
+            transform: translateX(-300px);
+        }
+
+        .content {
+            transform: translateX(0);
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .service {
+        .wrapper {
+            gap: 30px;
+        }
+    }
+
+    .service-block {
+        flex-basis: calc(50% - 15px);
+
+        .service-title {
+            padding: 10px 20px;
+        }
+
+        h6 {
+            font-size: 1rem;
+        }
+
+        .content {
+            transform: translateX(-200px);
+            width: 200px;
+            padding: 20px;
+
+
+            p {
+                font-size: 0.875rem;
+            }
+        }
+
+        &:hover {
+            .service-title {
+                transform: translateX(-200px);
+            }
+
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .service {
+        .wrapper {
+            gap: 20px;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+    }
+
+    .service-block {
+        aspect-ratio: 4/2;
+    }
+}
+
+@include custom_max(480px) {
+
+    .service-block {
+        aspect-ratio: 3/2;
+    }
+}

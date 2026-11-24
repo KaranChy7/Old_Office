@@ -1,0 +1,48 @@
+
+// Colors — Charcoal, White & Brass (bathroomware retail)
+$navy: #1f1e1e;        // charcoal (mid) — default accent on light backgrounds
+$navy-dark: #141414;   // charcoal (darkest) — page/section backgrounds
+$blue: $navy;           // accent, aliased to charcoal for light-bg contexts
+$blue-light: #6E6E6E;   // accent hover tint on light backgrounds
+$cream: #F5F5F4;
+$pale-blue: #ECECEB;
+$teal: $navy;            // accent, aliased to charcoal for light-bg contexts
+$teal-light: #6E6E6E;    // accent hover tint on light backgrounds
+$gold: #A9885C;          // brass accent — icons, hovers, highlights
+$gold-light: #C7AD84;
+$white: #FFFFFF;
+$grey-100: #F8F9FA;
+$grey-200: #E9ECEF;
+$grey-400: #ADB5BD;
+$grey-600: #6C757D;
+$grey-800: #343A40;
+$text-dark: #1C1C1C;
+$text-body: #4A4A4A;
+$dblack: #000;
+
+// Typography
+$font-display: 'Oswald', sans-serif;
+$font-body: 'Inter', sans-serif;
+
+// Sizing
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+
+// Transitions
+$transition: all 0.3s ease;
+$transition-slow: all 0.5s ease;
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba(26, 46, 74, 0.08);
+$shadow-md: 0 6px 24px rgba(26, 46, 74, 0.12);
+$shadow-lg: 0 16px 48px rgba(26, 46, 74, 0.18);
+$shadow-xl: 0 24px 64px rgba(26, 46, 74, 0.24);
+
+// Layout
+$container-max: 1240px;
+$gap-sm: 1rem;
+$gap-md: 2rem;
+$gap-lg: 4rem;
+$gap-xl: 6rem;

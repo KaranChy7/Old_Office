@@ -1,0 +1,176 @@
+// =============================================
+// GLINT PLUS PAINTING SERVICE — PAGE HERO (inner pages)
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ── Inner page hero ────────────────────────
+.page-hero {
+  background: $navy;
+  padding: 8rem 0 4rem ;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, $navy-dark 0%, $navy 100%);
+  }
+
+  // Angled bottom edge — cream (about)
+  &--cream::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    height: 60px;
+    background: $cream;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    transform: translateZ(0);
+  }
+
+  // Angled bottom edge — navy (services into navy section)
+  &--navy::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    height: 60px;
+    background: $white;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    transform: translateZ(0);
+  }
+
+  // Angled bottom edge — white (gallery, contact)
+  &--white::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    height: 60px;
+    background: $white;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    transform: translateZ(0);
+  }
+
+  // Angled bottom edge — navy-dark (quote)
+  &--navy-dark::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    height: 60px;
+    background: $navy-dark;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    transform: translateZ(0);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__eyebrow {
+    justify-content: flex-start;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+}
+
+// ── SVG icon sizes ──────────────────────────
+.icon-sm {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.icon-md {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+// ── Section eyebrow centered / left variants
+.section-eyebrow--center {
+  justify-content: center;
+}
+
+.section-eyebrow--left {
+  justify-content: flex-start;
+}
+
+// ── Section lead spacing utility ───────────
+.section-lead--mt {
+  margin-top: 1rem;
+}
+
+// ── Services header centered text ──────────
+.services__header--centered {
+  text-align: center;
+
+  .section-lead {
+    margin: 1rem auto 0;
+    text-align: center;
+  }
+}
+
+// ── Reusable primary button (anchor) ───────
+.btn-primary {
+  @include btn-primary;
+}
+
+// ── About section top spacing variant ──────
+.about--inner {
+  padding-top: 6rem;
+}
+
+// ── About body text paragraphs ─────────────
+.about__body-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: $text-body;
+
+  &--mt { margin: 1rem 0; }
+  &--mb { margin: 0 0 1.5rem; }
+}
+
+// ── Stat gold accent span ──────────────────
+.stat-gold {
+  color: $white;
+}
+
+// ── Form feedback ──────────────────────────
+.form-status {
+  margin-top: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+
+  &:empty {
+    display: none;
+  }
+
+  &.is-success {
+    color: #1e7b3a;
+  }
+
+  &.is-error {
+    color: #b3261e;
+  }
+}
+
+// Spam trap — hidden from people, visible to bots
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

@@ -1,0 +1,499 @@
+<?php
+$page = 'services';
+include 'includes/header.php';
+include 'includes/icon-slider.php';
+include 'includes/breadcrumb.php';
+?>
+<div class="page-services">
+    <div class="container">
+        <div class="service_wrapper">
+            <div class="service-block" id="Services1">
+                <div class="figures">
+                    <div class="images">
+                        <img src="images/RoofRepairs/roofrepairs1.jpg" alt="Image 1">
+                        <img src="images/RoofRepairs/roofrepairs2.jpg" alt="Image 1">
+                        <img src="images/RoofRepairs/roofrepairs3.jpg" alt="Image 1">
+                        <img src="images/RoofRepairs/roofrepairs4.jpg" alt="Image 1">
+                        <img src="images/RoofRepairs/roofrepairs5.jpg" alt="Image 1">
+                        <img src="images/RoofRepairs/roofrepairs6.jpg" alt="Image 1">
+                        <img src="images/RoofRepairs/roofrepairs7.jpg" alt="Image 1">
+                        <img src="images/RoofRepairs/roofrepairs8.jpg" alt="Image 1">
+
+                    </div>
+                </div>
+                <div class="content">
+                    <h5>Roof Repairs</h5>
+                    <p>A roof is more than just a cover over your head—it’s your home’s first line of defense against
+                        the elements. Over time, even the best-built roofs can show signs of wear due to weather, age,
+                        or accidental damage. Regular roof repairs help maintain your home’s safety, energy efficiency,
+                        and value. Ignoring minor issues can lead to much bigger—and more expensive—problems later on.
+                        That’s why timely repair is not just a smart move, but a necessary one. A well-maintained roof
+                        speaks volumes about the overall health of your home.
+                    </p>
+                    <p>One of the most common reasons homeowners seek roof repair is due to leaks. These often begin as
+                        small drips or damp spots but can escalate quickly, causing internal damage to ceilings, walls,
+                        and insulation. Identifying and addressing leaks early is crucial to preventing mold and
+                        structural rot. Often, leaks are caused by damaged flashing, cracked tiles, or compromised
+                        sealing. With proper inspection and skilled workmanship, these issues can be resolved before
+                        they spread. Early intervention is always the best approach when it comes to water intrusion.
+                    </p>
+                </div>
+                <div class="bottom-content">
+                    <p>Weather plays a major role in roof damage, especially in areas that experience strong winds,
+                        heavy rains, or hailstorms. Roof tiles can be torn off, gutters can loosen, and debris can cause
+                        unexpected damage. After any severe weather event, it’s wise to have a professional examine your
+                        roof for potential trouble spots. Even if the damage isn’t visible from the ground, underlying
+                        issues may be brewing. Routine post-storm inspections can save you from major headaches and
+                        costly emergency repairs down the road.
+                    </p>
+                    <p>Aside from weather, age is another key factor in roof deterioration. Most roofs have a lifespan
+                        of 15 to 30 years depending on materials used and maintenance frequency. As your roof ages, it
+                        becomes more vulnerable to cracking, lifting, and moisture absorption. Proactive repairs during
+                        the lifespan of your roof can extend its usefulness and delay full replacement. A professional
+                        can assess whether sections need fixing or if it’s time to plan for a new roof altogether. This
+                        balance between maintenance and replacement is crucial for budget-conscious homeowners.</p>
+
+                </div>
+                <div class="d-none">
+                    <p>Another common issue involves poor installation or previous repair work that wasn’t up to
+                        standard. Unfortunately, not all contractors deliver quality results, and sloppy workmanship can
+                        lead to problems within a few years. In these cases, repairs focus not only on damage control
+                        but also on correcting previous errors. A thorough evaluation helps ensure the entire roof
+                        system—from tiles to underlayment—is performing properly. This attention to detail helps restore
+                        the roof’s integrity and keeps future issues at bay.
+                    </p>
+                    <p>Beyond functional repairs, aesthetics also play a role in roof upkeep. Broken or discolored
+                        tiles, warped shingles, or mismatched patches can affect your home's curb appeal. Especially if
+                        you’re considering selling, visible signs of roof damage can deter potential buyers. Repairs
+                        that match the original materials and blend seamlessly into the rest of the roof help maintain a
+                        polished appearance. A strong, attractive roof enhances the overall impression of your property.
+                        It’s a smart investment with both immediate and long-term returns.
+                    </p>
+                    <p>Many homeowners hesitate to address roof issues because they fear the costs or disruption. But
+                        working with the right roofing professionals makes the process efficient, transparent, and
+                        stress-free. Many repair jobs can be completed within a day or two, with minimal disturbance to
+                        your daily life. Clear communication and upfront pricing ensure there are no surprises. When
+                        repairs are handled professionally, you gain not just a better roof, but greater peace of mind.
+                        It’s a small step that brings major security.
+                    </p>
+                    <p>In conclusion, roof repairs are a vital part of responsible homeownership. They protect your
+                        property, prevent larger issues, and preserve your home’s appearance and value. Whether it's a
+                        minor fix or a larger restoration, addressing roof problems early pays off in the long run. With
+                        expert care, your roof can continue to shield and serve your family for years to come. Don’t
+                        wait until a small issue becomes a major concern. Trust in quality roof repair to keep your home
+                        safe, secure, and looking its best.</p>
+                </div>
+            </div>
+
+            <div class="service-block" id="Service3">
+                <div class="figures">
+                    <div class="images">
+                        <img src="images/RoofRestoration/Roofrestoration1.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration2.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration3.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration4.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration5.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration6.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration7.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration8.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration9.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration10.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration11.jpg" alt="Image 2">
+                        <img src="images/RoofRestoration/Roofrestoration12.jpg" alt="Image 2">
+                    </div>
+                </div>
+                <div class="content">
+                    <h5>Roof Restoration</h5>
+                    <p>Roof restoration is a smart alternative to full roof replacement, offering a refreshed look
+                        and improved performance at a fraction of the cost. Over time, exposure to sun, rain, wind, and
+                        debris can leave your roof looking worn and tired. Restoration breathes new life into aging
+                        materials, boosting both appearance and durability. It’s ideal for roofs that are
+                        structurally sound but need aesthetic and protective upgrades. Whether you're preparing to sell
+                        your home or simply want it to look its best, restoration adds real value. It’s a cost-effective
+                        way to protect your investment and improve your property.</p>
+                    <p>Unlike repairs that target isolated problems, restoration is a full-service process that
+                        revitalizes the entire roof. This often includes pressure cleaning, re-bedding, repointing,
+                        and applying high-quality sealants or coatings. These steps work together to shield your home
+                        from water damage and UV degradation. The result is a smooth, polished finish that’s both
+                        attractive and functional. Restoration also addresses minor flaws before they develop into
+                        serious issues. It’s a proactive way to maintain your roof’s strength and integrity.</p>
+                </div>
+                <div class="bottom-content">
+                    <p>Many homeowners choose restoration to extend their roof’s lifespan without the expense and
+                        disruption of a total replacement. If your roof is showing signs of wear—such as faded
+                        color, cracking, or minor leaks—it may be a perfect candidate. Technicians will evaluate its
+                        condition and recommend the best approach based on materials and age. Concrete tile roofs, metal
+                        roofs, and terracotta are all excellent candidates for restoration. With proper care,
+                        restoration can add another 10 to 15 years of service. It’s an efficient and sustainable option
+                        for long-term roof health.</p>
+                    <p>Curb appeal is another major reason homeowners opt for roof restoration. A weathered or
+                        discolored roof can drag down the entire look of your home. By cleaning and recoating the
+                        surface, you instantly elevate your property’s overall appearance. Restoration allows you to
+                        choose fresh colors or finishes, matching your modern style or neighborhood aesthetics.
+                        Whether you want a bold new look or a subtle upgrade, it’s a chance to transform your home’s
+                        exterior. A beautiful roof creates a lasting first impression and increases market value.</p>
+                </div>
+                <div class="d-none">
+                    <p>Energy efficiency is an often-overlooked benefit of roof restoration. Reflective coatings can
+                        reduce heat absorption, helping your home stay cooler during warm months. This lowers your
+                        reliance on air conditioning, ultimately saving you money on energy bills. Properly sealed
+                        roofs also prevent drafts and heat loss in winter, enhancing indoor comfort year-round. By
+                        improving insulation and sealing out moisture, restoration helps regulate your home’s climate.
+                        It’s a smart step toward both environmental sustainability and long-term savings.</p>
+                    <p>A professional roof restoration also ensures compliance with building standards and safety
+                        requirements. Technicians inspect for structural weaknesses, loose tiles, and potential
+                        hazards before starting the process. These thorough checks provide peace of mind that your home
+                        is protected from the inside out. During restoration, safety gear and techniques are used to
+                        prevent accidents and ensure high-quality workmanship. It’s not just about the roof—it’s
+                        about the overall well-being of your property. Trusting experts for the job ensures you get
+                        results that last.</p>
+                    <p>Restoration projects are typically completed in a few days, making them fast and relatively
+                        non-invasive. Homeowners can often remain in the house during the work, with minimal
+                        disruption to their routine. Unlike full replacements, there’s no need to remove entire roof
+                        structures or relocate temporarily. Most importantly, the finished result is polished, clean,
+                        and long-lasting. You'll gain all the advantages of a renewed roof without the stress of major
+                        construction. It's an ideal solution for busy families and property owners alike.</p>
+                    <p>In conclusion, roof restoration offers the perfect balance of function, appearance, and
+                        value. It repairs visible and hidden issues, enhances energy efficiency, and improves the
+                        overall look of your home. Whether your roof is faded, slightly damaged, or simply outdated,
+                        restoration can bring it back to life. It's an investment that pays off through extended
+                        durability and increased property appeal. With the right team and techniques, your roof can look
+                        brand new again. Don’t wait until damage gets worse—restore your roof and regain your peace of
+                        mind.
+                    </p>
+                </div>
+            </div>
+            <div class="service-block" id="Service4">
+                <div class="figures">
+                    <div class="images">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge1.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge2.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge3.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge4.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge5.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge6.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge7.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge8.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge9.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge10.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge11.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge12.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge13.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge14.jpg" alt="Service 4">
+                        <img src="images/RebeddingRidgeRepair/RebeddingRidge15.jpg" alt="Service 4">
+                    </div>
+                </div>
+                <div class="content">
+                    <h5>Rebedding / Ridge Repair</h5>
+                    <p>Loose or damaged ridge tiles can weaken your roof and increase the risk of leaks during harsh
+                        weather. Our professional rebedding and ridge repair services restore the stability of your
+                        roof, helping to protect your property from water damage and structural issues.</p>
+                    <p>Over time, the bedding beneath ridge tiles naturally deteriorates due to constant exposure to
+                        wind, rain, heat, and changing weather conditions. We carry out detailed roof inspections to
+                        identify worn bedding, loose ridge caps, and other issues before they develop into costly
+                        repairs.</p>
+                </div>
+                <div class="bottom-content">
+                    <p>Our experienced roofing specialists carefully remove damaged or failing bedding and prepare
+                        the roof for new, high-quality materials. Every stage of the repair is completed with precision
+                        to ensure a strong, secure, and long-lasting finish.</p>
+                    <p>If ridge tiles are cracked, broken, or have shifted out of position, we repair or replace
+                        them to restore both the strength and appearance of your roof. We ensure every ridge tile is
+                        properly aligned and securely fixed for maximum durability.</p>
+                </div>
+                <div class="d-none">
+                    <p>We use premium roofing materials and proven installation methods to provide repairs that
+                        withstand Australia's harsh weather conditions. Our solutions are designed to improve the
+                        lifespan of your roof while reducing future maintenance requirements.</p>
+                    <p>Whether your roof requires minor ridge repairs, complete rebedding, or repointing, we tailor
+                        our services to suit the condition of your roof. We work on residential and commercial
+                        properties, delivering reliable solutions for projects of all sizes.</p>
+                    <p>Quality workmanship, attention to detail, and dependable service are at the core of
+                        everything we do. We complete every project efficiently while maintaining a clean and safe work
+                        environment, ensuring minimal disruption to your daily routine.</p>
+                    <p>At Parkinson Roofing, we are committed to providing reliable rebedding and ridge repair
+                        services that protect your investment and keep your roof performing at its best. Contact our
+                        team today to arrange an inspection and receive a professional solution tailored to your roofing
+                        needs.
+                    </p>
+                </div>
+            </div>
+            <div class="service-block" id="Service5">
+                <div class="figures">
+                    <div class="images">
+                        <img src="images/GeneralMaintenance/Generalmaintenance2.jpg" alt="Image 6">
+                        <img src="images/GeneralMaintenance/Generalmaintenance3.jpg" alt="Image 6">
+                        <img src="images/GeneralMaintenance/Generalmaintenance1.jpg" alt="Image 6">
+                        <img src="images/GeneralMaintenance/Generalmaintenance4.jpg" alt="Image 6">
+                        <img src="images/GeneralMaintenance/Generalmaintenance5.jpg" alt="Image 6">
+                        <img src="images/GeneralMaintenance/Generalmaintenance6.jpg" alt="Image 6">
+                        <img src="images/GeneralMaintenance/Generalmaintenance7.jpg" alt="Image 6">
+                        <img src="images/GeneralMaintenance/Generalmaintenance8.jpg" alt="Image 6">
+                    </div>
+                </div>
+                <div class="content">
+                    <h5>General Maintenance</h5>
+                    <p>Routine maintenance is the foundation of a safe and long-lasting home. General maintenance
+                        involves checking key areas of your property regularly to prevent problems before they grow
+                        out
+                        of control. From inspecting roofing elements to clearing gutters and sealing cracks, these
+                        small
+                        tasks preserve your home’s structure and efficiency. Ignoring basic upkeep can lead to
+                        avoidable
+                        damage and expensive repairs. A proactive approach keeps your property looking sharp and
+                        functioning smoothly. It’s a simple yet essential commitment to care and longevity.</p>
+                    <p>Every part of a home ages with time, especially when exposed to the elements. Maintenance
+                        allows
+                        you to catch subtle signs of wear, like rusting metal fixtures or weakening timber.
+                        Addressing
+                        these early helps avoid significant deterioration and unnecessary replacements. Regular
+                        upkeep
+                        also includes repainting or re-coating exposed surfaces to protect against moisture and UV
+                        rays.
+                        The key is consistency—waiting too long can multiply the effort and cost of repairs. Stay
+                        ahead
+                        of damage with timely attention to detail.</p>
+                </div>
+                <div class="bottom-content">
+                    <p>General maintenance isn’t just about preventing breakdowns—it’s also about comfort and
+                        safety.
+                        Broken fixtures, loose tiles, or clogged gutters may seem minor but can pose real hazards.
+                        Maintenance checks help identify slipping hazards, structural weaknesses, and fire risks.
+                        This
+                        not only protects your investment but keeps your family safe. When your home is
+                        well-maintained,
+                        you feel more at ease and in control. Prioritizing upkeep is an act of responsibility that
+                        rewards you daily.</p>
+                    <p>A well-maintained property also adds visual appeal and value. Peeling paint, stained walls,
+                        or
+                        cracked pathways make a property appear neglected. Regular cleaning, touch-ups, and
+                        inspections
+                        keep your home looking fresh and cared for. Whether you’re living in the space or preparing
+                        to
+                        sell, appearances matter. A tidy, maintained exterior sets a positive first impression and
+                        boosts curb appeal. It's an affordable way to preserve pride in your property.</p>
+                </div>
+                <div class="d-none">
+                    <p>Energy efficiency improves significantly with ongoing maintenance. Damaged seals, clogged
+                        vents,
+                        or worn insulation can affect heating and cooling performance. General upkeep includes
+                        checking
+                        HVAC systems, window seals, and roof ventilation. These tasks ensure that your systems run
+                        efficiently without wasting power. Over time, you’ll see the difference in your utility
+                        bills.
+                        Small fixes today can add up to major savings tomorrow.</p>
+                    <p>Another benefit of general maintenance is that it extends the life of your property’s
+                        components.
+                        Roof tiles, pipes, and drainage systems are all built to last—but only with proper care.
+                        Regular
+                        cleaning and servicing help these systems function optimally for years longer than if left
+                        unattended. You delay the need for costly overhauls by making time for preventive action.
+                        Maintenance protects your budget as much as your home. It’s a smart and practical long-term
+                        plan.</p>
+                    <p>One of the often-overlooked advantages of general maintenance is the peace of mind it
+                        provides.
+                        You don’t have to worry about unexpected surprises or large repair bills looming over you.
+                        Everything feels under control when your home is monitored and managed consistently.
+                        Scheduling
+                        regular checks with professionals ensures nothing is missed. It's a feeling of confidence
+                        that
+                        money can’t always buy. The security of a well-maintained home is priceless.</p>
+                    <p>In conclusion, general maintenance is more than a checklist—it’s a mindset. It reflects your
+                        commitment to preserving and protecting what you own. From roofs to plumbing and everything
+                        in
+                        between, routine care prevents bigger issues and promotes stability. The time and effort
+                        invested now will pay off in the future through reliability and value. Whether you live in
+                        your
+                        home or manage a property, maintenance is a key to long-term success. Take charge today and
+                        secure a stronger tomorrow.</p>
+                </div>
+            </div>
+            <div class="service-block" id="Service6">
+                <div class="figures">
+                    <div class="images">
+                        <img src="images/service6.jpg" alt="Service 6">
+                    </div>
+                </div>
+                <div class="content">
+                    <h5>Bird Proofing</h5>
+                    <p>Bird proofing is essential for protecting your roof and property from unwanted intrusions and
+                        damage. Birds can nest in gutters, under tiles, or in roof cavities, creating blockages and
+                        mess. Left unchecked, they contribute to structural issues and health hazards caused by
+                        droppings and debris. Our bird proofing methods are designed to prevent nesting while
+                        maintaining the visual integrity of your building. Whether you’re managing a home or
+                        business,
+                        it’s vital to keep these pests away. Prevention is always more effective and affordable than
+                        repair.</p>
+                    <p>Modern bird proofing isn’t just about nets and spikes—it involves tailored solutions suited
+                        to
+                        your roof type and location. We assess the specific bird activity and choose discreet,
+                        humane
+                        deterrents that won’t harm the animals. From physical barriers to subtle modifications, we
+                        install systems that blend in with your structure. These methods are effective for both
+                        residential and commercial buildings. Every installation is carried out with attention to
+                        durability and design. Our goal is to provide solutions that work without being visually
+                        intrusive.</p>
+                </div>
+                <div class="bottom-content">
+                    <p>One major issue caused by birds is the corrosion of roofing materials due to droppings. Bird
+                        waste is acidic and can accelerate the deterioration of tiles, metal, and paint. Over time,
+                        this
+                        reduces your roof’s lifespan and increases maintenance costs. Bird proofing eliminates this
+                        risk
+                        by keeping birds off surfaces entirely. It’s an investment in the health of your property.
+                        The
+                        sooner you take action, the more you save in the long run.</p>
+                    <p>Bird infestations can also create noise, allergens, and unpleasant odors that impact your
+                        comfort. In homes, this is disruptive. In businesses, it affects customer experience and
+                        staff
+                        wellbeing. Our bird proofing services address the root cause and restore a clean, quiet
+                        environment. We ensure your roof and surrounding spaces stay clear of nests and waste. A
+                        healthier space means better quality of life for everyone who uses it. Don’t wait until it
+                        becomes a nuisance—prevent it now.</p>
+                </div>
+                <div class="d-none">
+                    <p>We also help customers comply with property and safety standards. In some areas, accumulated
+                        bird
+                        waste or infestations can lead to violations or fines. Our team is familiar with the local
+                        guidelines and offers solutions that align with regulatory requirements. Whether it’s a new
+                        installation or upgrading outdated systems, we keep your property compliant. That means
+                        peace of
+                        mind for landlords, business owners, and homeowners alike. Staying ahead of issues is part
+                        of
+                        smart property management.</p>
+                    <p>Installation is fast, non-disruptive, and tailored to your schedule. We understand that you
+                        don’t
+                        want construction noise or delays. That’s why we use efficient tools and techniques to
+                        complete
+                        the job promptly. Our trained professionals work safely at height, respecting your space
+                        throughout the process. When we leave, your roof will be secure—and your daily routine
+                        unaffected. Minimal fuss, maximum results.</p>
+                    <p>Maintenance and inspections are available to ensure your bird-proofing remains effective over
+                        time. While our systems are built to last, occasional checks help identify any signs of wear
+                        or
+                        interference. We offer follow-up support and advice so you’re never left wondering what to
+                        do
+                        next. Longevity is part of our promise. A one-time job can deliver years of protection with
+                        the
+                        right care.</p>
+                    <p>In the end, bird proofing is about preserving your investment. Your roof is a major asset,
+                        and
+                        protecting it from pests means fewer repairs and longer service life. It also improves the
+                        appearance and hygiene of your entire property. With expert solutions and professional
+                        installation, you can enjoy a roof that’s clean, clear, and bird-free. Choose smart
+                        prevention—choose bird proofing done right.</p>
+                </div>
+            </div>
+            <div class="service-block" id="Service7">
+                <div class="figures">
+                    <div class="images">
+                        <img src="images/ColourbondRoofPlumming/Colourbond1.jpg" alt="Image 5">
+                        <img src="images/ColourbondRoofPlumming/Colourbond2.jpg" alt="Image 5">
+                        <img src="images/ColourbondRoofPlumming/Colourbond3.jpg" alt="Image 5">
+                        <img src="images/ColourbondRoofPlumming/Colourbond4.jpg" alt="Image 5">
+                        <img src="images/ColourbondRoofPlumming/Colourbond5.jpg" alt="Image 5">
+                        <img src="images/ColourbondRoofPlumming/Colourbond6.jpg" alt="Image 5">
+                        <img src="images/ColourbondRoofPlumming/Colourbond7.jpg" alt="Image 5">
+                        <img src="images/ColourbondRoofPlumming/Colourbond8.jpg" alt="Image 5">
+                        <img src="images/ColourbondRoofPlumming/Colourbond9.jpg" alt="Image 5">
+                    </div>
+                </div>
+                <div class="content">
+                    <h5>colorbond replacement/ roof plumbing</h5>
+                    <p>Colorbond roof replacement is a smart choice for homeowners who want a strong, stylish, and
+                        long-lasting roofing solution. Designed to handle harsh weather conditions, Colorbond
+                        roofing offers excellent durability while giving your property a clean and modern appearance.
+                    </p>
+                    <p>
+                        Our Colorbond roof replacement service includes removing old or damaged roofing materials
+                        and installing high-quality Colorbond steel roofing with care and precision. Whether your roof
+                        is rusted, leaking, faded, or no longer performing well, a replacement can improve both
+                        protection and street appeal.</p>
+                </div>
+                <div class="bottom-content">
+                    <p>Colorbond roofing is available in a wide range of colours, allowing you to choose a finish
+                        that suits your home’s design. It is also lightweight, low maintenance, and resistant to
+                        cracking, peeling, and chipping, making it a reliable option for long-term performance.
+                    </p>
+                    <p>
+                        Along with roof replacement, we also provide professional roof plumbing services to ensure
+                        your entire roofing system works properly. Roof plumbing plays an important role in directing
+                        rainwater away from your home and preventing leaks, water damage, and drainage issues.</p>
+                </div>
+                <div class="d-none">
+                    <p>Our roof plumbing services include gutter installation, downpipe repairs, flashing
+                        replacement, valley repairs, and general maintenance. We make sure all components are correctly
+                        installed and sealed to help protect your roof, walls, and foundations from water-related
+                        problems.
+                    </p>
+                    <p>
+                        If your gutters are overflowing, your downpipes are blocked, or you have water stains inside
+                        your home, it may be time to have your roof plumbing inspected. Early repairs can prevent
+                        more serious damage and save you money in the long run.
+                    </p>
+                    <p>
+                        We take pride in delivering quality workmanship, reliable service, and practical roofing
+                        solutions for every property. Our team works carefully to ensure your Colorbond roof
+                        replacement and roof plumbing are completed to a high standard.
+                    </p>
+                    <p>
+                        Whether you need a full Colorbond roof replacement or expert roof plumbing repairs, we are
+                        ready to help. Contact us today to discuss your roofing needs and get a strong,
+                        weather-resistant roof that protects your home for years to come.</p>
+                </div>
+            </div>
+            <!-- <div class="service-block" id="Service8">
+                <div class="images">
+                    <img src="images/service8.jpg" alt="Service 8">
+                </div>
+                <div class="content">
+                    <h5>colorbond / polycarbonate replacement</h5>
+                    <p>Colorbond and polycarbonate roof replacement is a great solution for homes, patios, pergolas,
+                        carports, outdoor areas, and commercial properties that need improved protection and a fresh new
+                        look. Over time, roofing materials can become cracked, faded, rusted, leaking, or damaged by
+                        harsh weather, making replacement the best option.
+                    </p>
+                    <p>
+                        Colorbond roofing is known for its strength, durability, and modern appearance. It provides
+                        excellent protection against rain, wind, and heat while adding value and style to your property.
+                        Available in a wide range of colours, Colorbond is a popular choice for homeowners who want a
+                        low-maintenance and long-lasting roofing solution.</p>
+                </div>
+                <div class="bottom-content">
+                    <p>Polycarbonate roofing is ideal for areas where natural light is important, such as patios,
+                        verandas, pergolas, and outdoor entertainment spaces. It allows sunlight to pass through while
+                        still offering protection from rain and UV exposure. Replacing old or brittle polycarbonate
+                        sheets can instantly improve both safety and appearance.
+                    </p>
+                    <p>
+                        Our Colorbond and polycarbonate replacement service includes removing old roofing sheets,
+                        inspecting the structure underneath, and installing new materials with care and precision. We
+                        make sure every sheet is properly fitted, secured, and sealed to help prevent leaks and future
+                        damage.</p>
+                </div>
+                <div class="d-none">
+                    <p>If your roof sheets are noisy, discoloured, cracked, loose, or leaking, it may be time to
+                        consider replacement. Small roofing problems can quickly become larger issues if they are not
+                        repaired or replaced early, especially during heavy rain or strong winds.
+                    </p>
+                    <p>
+                        We can replace damaged Colorbond sheets, worn polycarbonate panels, flashing, screws, seals, and
+                        other roofing components. Our goal is to restore your roof’s strength, improve water drainage,
+                        and give your property a cleaner and more reliable finish.
+                    </p>
+                    <p>
+                        Whether you need a full roof replacement or only selected sheets replaced, we provide practical
+                        and cost-effective solutions to suit your property. Our team works with quality materials and
+                        professional workmanship to ensure the finished result is strong, neat, and built to last.
+                    </p>
+                    <p>
+                        For reliable Colorbond and polycarbonate roof replacement, contact us today. We can inspect your
+                        roofing area, recommend the best replacement option, and help you protect your home or outdoor
+                        space with a durable and attractive roofing solution.</p>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+</div>
+<?php include 'includes/footer.php'; ?>

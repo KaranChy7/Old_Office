@@ -1,0 +1,84 @@
+.quote-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+
+    .quote-info {
+        flex-basis: calc(40% - 40px);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .quote-detail {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .icon-img {
+                img {
+                    max-width: 40px;
+                }
+            }
+
+            .detail {
+                font-size: 1rem;
+                color: $black;
+            }
+        }
+    }
+
+    .form {
+        flex-basis: calc(60% - 40px);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        padding: 40px;
+        border-radius: 5px;
+        background-color: rgba($primaryColor, 0.8);
+       
+        .form-group {
+            label{
+                color: $black;
+            }
+            .form-input {
+                color: $black;
+                border-color: $black;
+                background-color: $whitey;
+
+                &::placeholder {
+                    color: $black;
+                     
+                }
+
+                &:focus-visible {
+                    box-shadow: 2px 2px 3px -1px $black;
+                    border-bottom: 1px solid $black;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .quote-wrap {
+        flex-direction: column;
+
+        .quote-info {
+            .title {
+                margin-bottom: 30px;
+            }
+
+            .quote-detail {
+                .icon-img {
+                    img {
+                        max-width: 30px;
+                    }
+                }
+
+                .detail {
+                    font-size: 0.9375rem;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,93 @@
+.page-services {
+    // background: url('../images/Pattern-Randomized.svg');
+    background-color: $tertiary;
+
+    .service-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        padding-top: 60px;
+    }
+
+    .servie-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .images {
+            flex: 0 0 50%;
+            // width: 100%;
+            aspect-ratio: 2/2;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 10px;
+            }
+        }
+
+        .content {
+            flex: 0 0 calc(50% + 40px);
+            padding: 20px 30px;
+            background-color: $fadecolor;
+            margin: 20px 0 20px -40px;
+            box-shadow: 2px 1px 14px -8px $blackie;
+            border-radius: 10px;
+
+            h5 {
+                font-size: 2rem;
+                font-weight: 700;
+                color: $tertiary;
+                text-transform: capitalize;
+            }
+
+            p {
+                font-size: 0.9375rem;
+                padding-top: 20px;
+                color: $lblack;
+            }
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            .content {
+                margin: 20px -40px 20px 0;
+                z-index: 1;
+            }
+        }
+
+    }
+}
+
+@include custom_max(992px) {
+    .page-services {
+        .servie-block {
+            flex-direction: column;
+            padding-top: 40px;
+
+            .content {
+                margin: 0;
+                text-align: center;
+
+                p {
+                    padding: 10px 0;
+                }
+            }
+
+            &:nth-child(even) {
+                flex-direction: column;
+
+                .content {
+                    margin: 0;
+                }
+            }
+
+            &:last-child {
+                padding-bottom: 40px;
+            }
+        }
+    }
+}

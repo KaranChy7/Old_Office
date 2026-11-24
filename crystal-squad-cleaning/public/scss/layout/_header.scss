@@ -1,0 +1,327 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — HEADER
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// Header-scoped teal accent (kept local so the rest of the site's
+// monochrome palette in base/variables is untouched).
+$header-teal: #D7262F;
+$header-teal-dark: #A81C24;
+$header-teal-light: #FBE2E3;
+$header-ink: #141414;
+$header-grey: #5C5C5C;
+
+@keyframes header-drop-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hamburger-punch {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  // No backdrop-filter here: any ancestor filter/backdrop-filter/transform
+  // establishes a new containing block for position:fixed descendants,
+  // which would trap the full-screen .nav mobile menu inside this bar
+  // instead of covering the viewport.
+  background: rgba($white, 0.92);
+  border-bottom: 1px solid rgba($header-ink, 0.06);
+  animation: header-drop-in 0.6s ease-out;
+  transition: $transition;
+
+  &.scrolled {
+    box-shadow: $shadow-sm;
+  }
+}
+
+.header-inner {
+  @include flex(center, space-between);
+  max-width: $container-max;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+
+  @include respond(md) {
+    padding: 0.85rem 1.25rem;
+  }
+}
+
+// Logo
+.logo {
+  @include flex(center, flex-start, 0.7rem);
+  text-decoration: none;
+
+  &__mark {
+    @include flex(center, center);
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: $header-teal;
+    color: $white;
+    font-family: $font-display;
+    font-size: 1.3rem;
+    box-shadow: 0 0 0 3px $amber;
+    font-weight: 700;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $header-ink;
+  }
+
+  &__sub {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $header-grey;
+  }
+
+  &__img {
+    display: block;
+    width: auto;
+    height: 92px;
+    border-radius: 6px;
+
+    @include respond(md) {
+      height: 64px;
+    }
+  }
+}
+
+// Nav
+.nav {
+  @include flex(center, flex-end, 0.35rem);
+
+  @include respond(lg) {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: $header-ink;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    overflow-y: auto;
+    height: 450px;
+
+    z-index: 999;
+    visibility: hidden;
+    clip-path: circle(0% at 100% 0%);
+    transition: clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.6s;
+    pointer-events: none;
+
+    &.open {
+      visibility: visible;
+      clip-path: circle(150% at 100% 0%);
+      pointer-events: auto;
+    }
+  }
+
+  &__link {
+    font-family: $font-body;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $header-grey;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      color: $header-ink;
+    }
+
+    &.active {
+      background: $header-teal-light;
+      color: $header-teal-dark;
+      font-weight: 600;
+    }
+
+    @include respond(lg) {
+      font-size: 1.1rem;
+      color: $white;
+      opacity: 0;
+      transform: scale(0.6) rotate(-8deg) translateY(10px);
+      transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      &.active {
+        background: transparent;
+        color: $header-teal-light;
+      }
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 0.75rem;
+    background: $header-teal;
+    color: $white;
+    border: none;
+    border-radius: 999px;
+    font-family: $font-body;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      background: $header-teal-dark;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+
+    @include respond(lg) {
+      margin-left: 0;
+      opacity: 0;
+      transform: scale(0.6) rotate(-8deg) translateY(10px);
+      transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+  }
+
+  // Staggered cascade entrance once the mobile nav is open
+  &.open {
+
+    .nav__link,
+    .nav__cta {
+      @include respond(lg) {
+        opacity: 1;
+        transform: scale(1) rotate(0) translateY(0);
+      }
+    }
+
+    @include respond(lg) {
+      .nav__link:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+
+      .nav__link:nth-child(2) {
+        transition-delay: 0.15s;
+      }
+
+      .nav__link:nth-child(3) {
+        transition-delay: 0.2s;
+      }
+
+      .nav__link:nth-child(4) {
+        transition-delay: 0.25s;
+      }
+
+      .nav__link:nth-child(5) {
+        transition-delay: 0.3s;
+      }
+
+      .nav__cta {
+        transition-delay: 0.35s;
+      }
+    }
+  }
+}
+
+// Backdrop behind the mobile nav panel
+.nav-backdrop {
+  display: none;
+
+  @include respond(lg) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba($header-ink, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.45s ease, visibility 0.45s;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+}
+
+// Hamburger
+.hamburger {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 4px;
+
+  &.active {
+    animation: hamburger-punch 0.4s ease;
+  }
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $header-ink;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.2s ease, background 0.3s ease;
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+      background: $white !important;
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+      background: $white !important;
+    }
+  }
+
+  @include respond(lg) {
+    display: flex;
+  }
+}

@@ -1,0 +1,49 @@
+.slick-dots {
+    margin-top: 15px;
+    text-align: center;
+    li {
+        display: inline-block;
+        margin: auto 3px;
+        height: 10px;
+        width: 10px;
+        border-radius: 100%;
+        background-color: transparent;
+        border: 1px solid $primaryColor;
+        cursor: pointer;
+        button {
+            text-indent: -9999px;
+            border: none;
+            background-color: transparent;
+            &:focus {
+                outline: none;
+            }
+        }
+        &.slick-active {
+            background-color: #333;
+            border: 1px solid #333;
+        }
+    }
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    i {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+            color: $primaryColor;
+            text-shadow: 1px 1px 7px 2px $grey;
+        }
+    }
+    &.left {
+        left: 0px;
+        z-index: 9;
+    }
+    &.right {
+        right: 0px;
+    }
+}

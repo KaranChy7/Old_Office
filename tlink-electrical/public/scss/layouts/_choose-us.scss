@@ -1,0 +1,140 @@
+.attached-service {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .atservice-block {
+        flex: 0 0 calc(100% / 4);
+        z-index: 1;
+        position: relative;
+
+        .image {
+            position: relative;
+            z-index: 1;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                //background: rgba($dblack, 0.6);                 
+                background: rgba($secondaryColor, 0.4);                 
+                transition: 0.3s ease-in-out;
+            }
+
+            img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .atservice-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 80%;
+            z-index: 11;
+
+            h6 {
+                font-size: 1.125rem;
+                font-weight: 600;
+                color: $whitey;
+            }
+
+            .icon {
+                text-align: center;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                background: $whitey;
+                border-radius: 50%;
+                margin: 20px auto 0 auto;
+
+                i {
+                    color: $primaryColor;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        // &:hover {
+        //     .image {
+        //         &::after {
+        //             transform: scale(1.03);
+        //         }
+
+        //         img {
+        //             transform: scale(1.03);
+        //         }
+        //     }
+        // }
+    }
+}
+
+@include custom_max(992px) {
+    .attached-service {
+        flex-direction: column;
+
+        .atservice-block {
+            width: 100%;
+
+            .image {
+                width: 100%;
+                margin-left: 0;
+
+                img {
+                    width: 100%;
+                    height: 300px;
+                }
+            }
+
+            .atservice-content {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                h6 {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .attached-service {
+        .atservice-block {
+            .image {
+                img {
+                    width: 100%;
+                    height: 250px;
+                }
+            }
+
+            .atservice-content {
+                h6 {
+                    font-size: 1.125rem;
+                }
+            }
+
+        }
+    }
+}
+
+
+@include custom_max(480px) {
+    .attached-service {
+        .atservice-block {
+            .atservice-content {
+                width: 100%;
+                padding: 0 20px;
+            }
+        }
+    }
+}

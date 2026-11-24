@@ -1,0 +1,116 @@
+// Bootstrap Button Overwrite
+button {
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+.btn {
+    border: none;
+}
+
+.btn {
+    outline: none;
+    box-shadow: none;
+    border-radius: 5px;
+    border: 1px solid $grey;
+    font-family: $primaryFont;
+    cursor: pointer;
+    transition: 0.4s all;
+    text-transform: capitalize;
+
+    &:focus,
+    &:hover {
+        box-shadow: none;
+        outline: none;
+        color: inherit;
+    }
+
+    &-small {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+
+    &-view-all,
+    &-custom {
+        font-size: 14px;
+        padding: 8px 26px;
+    }
+
+    &.btn-custom-small {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    &.btn-custom-medium {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    &.btn-custom-large {
+        padding: 12px 32px;
+        font-size: 16px;
+    }
+
+
+
+    &.btn-primary {
+        background-color: $primaryColor;
+        color: $whitey;
+        border-color: $primaryColor;
+
+        &:hover {
+            background-color: transparent;
+            color: $primaryColor;
+        }
+    }
+
+    &.btn-secondary {
+        background-color: $primaryColor;
+        color: $whitey;
+        border-color: $primaryColor;
+
+        &:hover {
+            background-color: transparent;
+            border-color: $primaryColor;
+            color: $primaryColor;
+        }
+    }
+}
+
+@include custom_max(1199px) {}
+
+@include custom_max(991px) {
+
+    .btn,
+    .form-control {
+        &-small {
+            font-size: 11px;
+        }
+
+        &-view-all,
+        &-custom {
+            font-size: 12px;
+        }
+
+        &.btn-custom-large,
+        &.btn-custom-small {
+            font-size: 12px;
+        }
+    }
+}
+
+@include custom_max(767px) {
+
+    .btn,
+    .form-control {
+
+        &.btn-custom-large,
+        &.btn-custom-small {
+            padding: 8px 20px;
+            font-size: 13px;
+        }
+    }
+}

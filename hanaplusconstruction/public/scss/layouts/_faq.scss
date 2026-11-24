@@ -1,0 +1,123 @@
+.faq {
+    border-top: 1px solid rgba($black, 0.4);
+    border-bottom: 1px solid rgba($black, 0.4);
+
+    .faq-wrapper {
+        .faq-block {
+            .box {
+                overflow: hidden;
+                margin-bottom: 30px;
+                cursor: pointer;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .query-wrap {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    // margin-bottom: 10px;
+
+                    h6.question {
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        color: $dblack;
+                        letter-spacing: 0.05em;
+                        text-transform: capitalize;
+                    }
+
+                    .icon {
+                        position: relative;
+                        width: 30px;
+                        height: 30px;
+
+                        i {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            font-size: 1rem;
+                            color: $dblack;
+
+                            &.fa-minus {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .desc {
+                    overflow: hidden;
+                    transition: max-height 0.4s ease;
+
+                    p.answer {
+                        max-height: 0;
+                        overflow: hidden;
+                        transform: translateY(-100px);
+                        transition: 0.3s ease-in-out;
+                        color: $black;
+
+                        &.show {
+                            max-height: 400px;
+                            transform: translateY(0);
+                            padding-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .faq {
+        .faq-wrapper {
+
+            .faq-block {
+                .box {
+
+                    .query-wrap {
+
+                        h6.question {
+                            font-size: 1.25rem;
+                        }
+
+                        .icon {
+
+                            i {
+                                font-size: 0.9375rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .faq {
+        .faq-wrapper {
+
+            .faq-block {
+                .box {
+
+                    .query-wrap {
+
+                        h6.question {
+                            font-size: 1.125rem;
+                        }
+
+                        .icon {
+
+                            i {
+                                font-size: 0.875rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

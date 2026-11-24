@@ -1,0 +1,213 @@
+.page-etimate {
+    .wrapper {
+        // min-height: 100vh;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        padding: 3rem 0;
+    }
+
+    .card {
+        // width: min(1100px, 100%);
+        background: linear-gradient(180deg,
+                rgba(255, 255, 255, 0.04),
+                rgba(255, 255, 255, 0.02));
+        border: 1px solid $border;
+        border-radius: $radius;
+        box-shadow: $shadow;
+        backdrop-filter: blur(6px);
+    }
+
+    .top-section {
+        padding: 1.5rem 1.25rem 0.75rem;
+        border-bottom: 1px solid $border;
+
+        .pill {
+            display: inline-block;
+            background: rgba(126, 231, 135, 0.1);
+            color: #7ee787;
+            border: 1px solid rgba(126, 231, 135, 0.3);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            padding: 0.35rem 0.6rem;
+            font-weight: 600;
+        }
+
+        .title {   
+            align-items: center;        
+            text-align: center;
+            
+            h2 {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin: 0.25rem 0;
+                color: $whitey;
+
+            }
+            p {
+
+                font-size: 0.95rem;
+                color: $whitey;
+            }
+        }  
+    }
+
+    form {
+        padding: 1.25rem;
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+
+            .field {
+                grid-column: span 12;
+
+                &.half {
+                    grid-column: span 6;
+                }
+
+                &.third {
+                    grid-column: span 4;
+                }
+            }
+
+             label {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 0.4rem;
+                color: $whitey;
+            }
+
+            .control {
+                display: flex;
+                align-items: center;
+                background: $lgrey;
+                border: 1px solid $border;
+                border-radius: 12px;
+                padding: 0.8rem 0.9rem;
+
+                &:focus-within {
+                    border-color: #6aa1ff;;
+                    box-shadow: 0 0 0 3px rgba(106, 161, 255, 0.2);
+                }
+
+                input,
+                select {
+                    border: none;
+                    background: transparent;
+                    color: $dblack;
+                    width: 100%;
+                    font-size: 1rem;
+                }
+
+                .suffix {
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid $dblack;
+                    border-radius: 8px;
+                    color: $dblack;
+                    font-size: 0.85rem;
+                    padding: 0.35rem 0.55rem;
+                }
+            }
+
+            .checkbox {
+                display: flex;
+                align-items: center;
+                align-content: center;
+                gap: 0.75rem;
+                border: 1px dashed $border;
+                padding: 0.75rem;
+                border-radius: 12px;
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 14px;
+        margin-top: 30px;
+
+        .btn {
+            border: 1px solid $border;
+            background: $primaryColor;
+            color: #ffffff;
+            padding:10px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            // transition: background 0.2s ease;
+
+            &:hover {
+                background: transparent;
+            }
+
+            &.primary {
+                background: linear-gradient(180deg, $instagram, $rblue);
+                color: $whitey;
+                
+            }
+            
+        }
+    }
+
+    .footer-note {
+        text-align: center;
+        color: $whitey;
+        font-size: 0.85rem;
+        padding: 1rem;
+    }
+}
+
+@include custom_max(1200px) {
+    .page-etimate {
+        .wrapper {
+             
+            form {
+                width: 100%;
+                padding: 40px 40px;
+            }
+            
+        }
+    }
+}
+@include custom_max(768px) {
+    .page-etimate {
+        .wrapper {
+             
+            form {                 
+                padding: 20px 20px;
+
+                .grid {
+                    .field {
+                        &.half,
+                        &.third {
+                            grid-column: span 12;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+@include custom_max(577px) {
+    .page-etimate {
+        .wrapper {
+             
+            form {
+                width: 100%;
+                padding: 20px 20px;
+
+                .grid {
+                    gap: 1rem;
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+            
+        }
+    }
+}
+

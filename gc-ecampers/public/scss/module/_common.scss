@@ -1,0 +1,327 @@
+// ============================================================
+// GC-E CAMPERS — COMMON MODULE
+// ============================================================
+
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+// Container
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @include tablet {
+    padding: 0 $spacing-sm;
+  }
+}
+
+.container--narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @include tablet {
+    padding: 0 $spacing-sm;
+  }
+}
+
+// Body scroll lock (mobile nav, lightbox)
+body.no-scroll {
+  overflow: hidden;
+}
+
+// Centred section heading block
+.section-head {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  @include mobile {
+    margin-bottom: 2rem;
+  }
+
+  &--tight {
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    max-width: 500px;
+    margin: 1rem auto 0;
+  }
+}
+
+// Section base
+.section {
+  @include section-padding;
+  position: relative;
+  overflow: hidden;
+}
+
+.section--dark {
+  background-color: $color-dark;
+}
+
+.section--darker {
+  background-color: $color-dark-mid;
+}
+
+.section--black {
+  background-color: $color-black;
+}
+
+// Gold divider
+.gold-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, $color-gold, rgba($color-gold, 0.1));
+  margin: 1.5rem 0;
+
+  &--center {
+    margin: 1.5rem auto;
+    background: linear-gradient(90deg, rgba($color-gold, 0.1), $color-gold, rgba($color-gold, 0.1));
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.2rem;
+  font-family: $font-body;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+  transition: all $transition-mid;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  @include mobile {
+    padding: 0.85rem 1.5rem;
+    letter-spacing: 0.12em;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    transition: opacity $transition-fast;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.btn--gold {
+  background: linear-gradient(135deg, $color-gold-light, $color-gold, $color-gold-dark);
+  color: $color-black;
+  box-shadow: 0 4px 20px rgba($color-gold, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba($color-gold, 0.5);
+  }
+}
+
+.btn--outline {
+  background: transparent;
+  color: $color-white;
+  border: 1px solid rgba($color-white, 0.4);
+
+  &:hover {
+    border-color: $color-gold;
+    color: $color-gold;
+    transform: translateY(-2px);
+  }
+}
+
+.btn--ghost {
+  background: rgba($color-white, 0.06);
+  color: $color-white;
+  border: 1px solid rgba($color-white, 0.12);
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    background: rgba($color-gold, 0.12);
+    border-color: rgba($color-gold, 0.5);
+    color: $color-gold;
+  }
+}
+
+.btn--sm {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.72rem;
+}
+
+.btn--lg {
+  padding: 1.1rem 2.5rem;
+  font-size: 0.85rem;
+}
+
+.btn--block {
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @include mobile {
+    .btn {
+      flex: 1 1 100%;
+      justify-content: center;
+    }
+  }
+}
+
+// Image cover
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+// Gradient overlays
+.overlay-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, $color-black, transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.overlay-full {
+  position: absolute;
+  inset: 0;
+  background: rgba($color-black, 0.55);
+  z-index: 1;
+}
+
+// Utility spacing
+.mt-sm {
+  margin-top: $spacing-sm;
+}
+.mt-md {
+  margin-top: $spacing-md;
+}
+.mt-lg {
+  margin-top: $spacing-lg;
+}
+.mb-sm {
+  margin-bottom: $spacing-sm;
+}
+.mb-md {
+  margin-bottom: $spacing-md;
+}
+.mb-lg {
+  margin-bottom: $spacing-lg;
+}
+
+// Grid helpers
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-md;
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-md;
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Flex helpers
+.flex-center {
+  @include flex-center;
+}
+.flex-between {
+  @include flex-between;
+}
+
+// Visually hidden
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// Animate on scroll
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-animate="fade-left"] {
+  transform: translateX(-30px);
+  &.is-visible {
+    transform: translateX(0);
+  }
+}
+
+[data-animate="fade-right"] {
+  transform: translateX(30px);
+  &.is-visible {
+    transform: translateX(0);
+  }
+}
+
+// Staggered reveal for grids — replaces per-item inline transition-delay
+.stagger > [data-animate] {
+  @for $i from 1 through 6 {
+    &:nth-child(6n + #{$i}) {
+      transition-delay: ($i - 1) * 0.1s;
+    }
+  }
+}
+
+[data-animate="scale"] {
+  transform: scale(0.92);
+  &.is-visible {
+    transform: scale(1);
+  }
+}

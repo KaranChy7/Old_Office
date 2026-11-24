@@ -1,0 +1,119 @@
+.choose-us {
+    background: $dblack;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, $dblack, rgba($secondaryColor, 0.6));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, $dblack, rgba($secondaryColor, 0.6));
+
+    .title {
+        p {
+            color: $whitey;
+            padding-top: 10px;
+            // text-transform: lowercase;
+        }
+    }
+
+    .choose-us-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px 10px;
+
+        .block {
+            flex-basis: calc(100% / 3 - 10px);
+            background-color: $whitey;
+            padding: 30px 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            transition: 0.5s ease-in-out;
+
+            h6 {
+                font-weight: 300;
+                color: $primaryColor;
+                text-transform: capitalize;
+
+                span {
+                    font-weight: 700;
+                }
+            }
+
+            .icon {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+
+                p {
+                    color: #696969;
+                    line-height: 1.5;
+                }
+
+                img {
+                    width: 40px;
+                }
+            }
+
+            &:hover {
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            }
+        }
+    }
+}
+
+@include custom_max(991px) {
+    .choose-us {
+        .choose-us-wrapper {
+            .block {
+                padding: 20px;
+                gap: 20px;
+
+                h6 {
+                    text-align: center;
+                }
+
+                .icon {
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 20px;
+
+                    p {
+                        text-align: center;
+                    }
+
+                    img {
+                        width: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include custom_max(767px) {
+    .choose-us {
+        .choose-us-wrapper {
+            flex-direction: column;
+
+            .block {
+                h6 {
+                    text-align: left;
+                }
+
+                .icon {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 60px;
+
+                    p {
+                        text-align: left;
+                    }
+
+                }
+            }
+        }
+    }
+}

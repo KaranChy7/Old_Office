@@ -1,0 +1,19 @@
+{
+    "business_name": "Evergreen Tree Nursery",
+    "phone": "+61 400 000 000",
+    "email": "hello@example.com.au",
+    "address": "Melbourne & Surrounding Areas, VIC",
+    "hours": "Monday–Friday, 8:00 am–5:00 pm",
+    "payment_methods": [
+        "cod",
+        "bank",
+        "stripe",
+        "paypal"
+    ],
+    "flat_delivery": 45,
+    "free_delivery_minimum": 500,
+    "pickup_enabled": true,
+    "low_stock_threshold": 4,
+    "stripe_payment_link": "",
+    "paypal_checkout_url": ""
+}

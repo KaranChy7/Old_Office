@@ -1,0 +1,187 @@
+.contact {
+
+    .contact-form {
+        display: flex;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: $whitey;
+        border: 1px solid $borderColor;
+
+        .form {
+            flex: 0 0 65%;
+            padding: 50px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .form-group {
+                gap: 8px;
+
+                label {
+                    font-family: $secondaryFont;
+                    font-size: 0.9375rem;
+                    font-weight: 600;
+                    color: $graphite;
+                    margin: 0;
+
+                    span {
+                        color: $primaryColor;
+                    }
+                }
+
+                .form-input {
+                    width: 100%;
+                    padding: 12px 14px;
+                    font-size: 1rem;
+                    color: $graphite;
+                    background-color: $lightBg;
+                    border: 1.5px solid $borderColor;
+                    border-radius: 8px;
+
+                    &:focus {
+                        outline: none;
+                        background-color: $whitey;
+                        border-color: $primaryColor;
+                        box-shadow: 0 0 0 3px rgba($primaryColor, 0.15);
+                    }
+                }
+
+                &.message {
+                    flex-basis: 100%;
+                }
+
+                &.submit-btn .btn {
+                    padding: 13px 32px;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .info {
+            flex: 0 0 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: $primaryColor;
+            padding: 30px 40px;
+
+            .info-block {
+                display: flex;
+                align-items: center;
+                margin: 15px 0;
+
+                .icon {
+                    min-width: 52px;
+                    height: 52px;
+                    display: grid;
+                    place-items: center;
+                    border-radius: 50%;
+                    background-color: rgba($whitey, 0.12);
+                    margin-right: 16px;
+
+                    i {
+                        font-size: 1.125rem;
+                        color: $whitey;
+                    }
+                }
+
+                .txt {
+                    .txt-title {
+                        font-size: 0.875rem;
+                        font-weight: 500;
+                        color: rgba($whitey, 0.75);
+                        line-height: 1.4;
+                        margin-bottom: 4px;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        color: $whitey;
+                        line-height: 1.4;
+                        overflow-wrap: anywhere;
+                    }
+                }
+
+                &:hover .txt p {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .contact {
+
+        .contact-form {
+
+            .form {
+                flex-basis: 60%;
+                gap: 20px;
+
+                .form-group {
+                    &.half-width {
+                        flex-basis: 100%;
+                    }
+                }
+            }
+
+            .info {
+                flex-basis: 40%;
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .contact {
+        .contact-title {
+            flex-direction: column;
+            text-align: center;
+            padding-bottom: 40px;
+
+            .left-side {
+                margin-bottom: 20px;
+            }
+        }
+
+        .contact-form {
+            flex-direction: column;
+
+            .form {
+                gap: 20px;
+                padding: 40px 20px;
+
+                .form-group {
+                    &.half-width {
+                        flex-basis: 100%;
+                    }
+                }
+            }
+
+            .info {
+                border-left: none;
+                padding: 0 20px 40px;
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .contact {
+        .contact-title {
+            padding-bottom: 30px;
+        }
+
+        .contact-form {
+            .form {
+                padding: 20px 10px;
+            }
+
+            .info {
+                padding: 20px 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,446 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — INNER PAGE ICONS & COLOURS
+// Loaded after the page partials, so these rules refine them.
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// Warmer, more varied section backgrounds
+.page-services,
+.page-about,
+.blog {
+  background: $sand;
+}
+
+.contact,
+.booking {
+  background:
+    radial-gradient(circle at 0% 100%, rgba($amber, 0.12) 0%, transparent 40%),
+    $mint;
+}
+
+// ── Services page cards ──
+.page-services {
+  &__group-badge {
+    gap: 0.45rem;
+    background: $forest;
+    color: $white;
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      font-size: 16px;
+      color: $lime;
+    }
+  }
+
+  &__card {
+    border: 0;
+    border-bottom: 4px solid $green;
+    box-shadow: $shadow-sm;
+    overflow: hidden;
+
+    &:nth-child(even) {
+      border-bottom-color: $amber;
+
+      .page-services__card-icon {
+        background: $amber;
+        color: $ink;
+      }
+    }
+  }
+
+  &__card-media {
+    position: relative;
+    margin: -1.5rem -1.5rem 1.75rem;
+  }
+
+  &__card-image {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  &__card-icon {
+    @include flex(center, center);
+    position: absolute;
+    right: 1.25rem;
+    bottom: -24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: $green;
+    color: $white;
+    border: 4px solid $white;
+
+    .icon {
+      width: 21px;
+      height: 21px;
+      font-size: 21px;
+    }
+  }
+
+  &__card-link {
+    color: $green;
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      font-size: 16px;
+    }
+  }
+}
+
+// ── Services page "residential / commercial" band ──
+.services-addons {
+  background: $forest;
+  color: $white;
+
+  &__col:last-child {
+    background: $amber;
+    color: $ink;
+    border-radius: $radius-xl;
+    padding: 2.25rem;
+
+    .services-addons__title,
+    .services-addons__subtitle {
+      color: $ink;
+    }
+
+    .services-addons__badge {
+      background: rgba($ink, 0.1);
+      color: $ink;
+    }
+  }
+
+  &__badge {
+    gap: 0.45rem;
+    background: rgba($lime, 0.16);
+    color: $lime;
+
+    .icon {
+      width: 15px;
+      height: 15px;
+      font-size: 15px;
+    }
+  }
+
+  &__title {
+    color: $white;
+  }
+
+  &__subtitle {
+    color: rgba($white, 0.78);
+  }
+
+  &__pill {
+    gap: 0.45rem;
+    background: rgba($white, 0.08);
+    border-color: rgba($white, 0.15);
+    color: $white;
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      font-size: 16px;
+      color: $lime;
+    }
+  }
+
+  &__btn-primary,
+  &__btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .icon {
+      width: 17px;
+      height: 17px;
+      font-size: 17px;
+    }
+  }
+
+  &__btn-primary {
+    background: $forest;
+    color: $white;
+
+    &:hover {
+      background: $green-dark;
+    }
+  }
+}
+
+// ── About page promise cards ──
+.page-about {
+  &__card {
+    border-top: 4px solid $green;
+
+    &:nth-child(2) {
+      border-top-color: $amber;
+    }
+
+    &:nth-child(3) {
+      border-top-color: $lime;
+    }
+
+    &:nth-child(4) {
+      border-top-color: $forest;
+    }
+  }
+
+  &__card-icon {
+    width: 54px;
+    height: 54px;
+    background: $green;
+    color: $white;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      font-size: 24px;
+    }
+  }
+
+  &__card:nth-child(2) &__card-icon {
+    background: $amber;
+    color: $ink;
+  }
+
+  &__card:nth-child(3) &__card-icon {
+    background: $lime;
+    color: $ink;
+  }
+
+  &__card:nth-child(4) &__card-icon {
+    background: $forest;
+    color: $lime;
+  }
+
+  &__stat-number {
+    color: $green;
+  }
+}
+
+// ── Contact details with icon circles ──
+.contact {
+  &__details {
+    gap: 1rem;
+  }
+
+  &__detail {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.9rem;
+    background: $white;
+    border-radius: $radius-md;
+    padding: 0.85rem 1rem;
+    box-shadow: $shadow-sm;
+  }
+
+  &__detail-icon {
+    @include flex(center, center);
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: $green;
+    color: $white;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+    }
+  }
+
+  &__detail:nth-child(even) &__detail-icon {
+    background: $amber;
+    color: $ink;
+  }
+
+  &__detail-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  &__detail-value {
+    font-weight: 600;
+  }
+
+  &__submit .icon,
+  .booking__submit .icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+  }
+}
+
+.contact__submit,
+.booking__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+  }
+}
+
+// ── Booking points ──
+.booking__points .icon {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: $green;
+}
+
+// ── Blog cards ──
+.blog {
+  &__card {
+    border-top: 4px solid $green;
+
+    &:nth-child(even) {
+      border-top-color: $amber;
+    }
+  }
+
+  &__card-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+
+    .icon {
+      width: 14px;
+      height: 14px;
+      font-size: 14px;
+      color: $green;
+    }
+  }
+
+  &__card-link .icon {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+  }
+}
+
+// ── Home "why choose us" band ──
+.why-us {
+  background: $mint;
+}
+
+// ── Linked pills and area lists ──
+a.services-addons__pill {
+  text-decoration: none;
+  gap: 0.4rem;
+  transition: $transition;
+
+  &:hover {
+    border-color: $green;
+    color: $green;
+  }
+}
+
+.service-areas__list a {
+  @include flex(flex-start, flex-start, 0.45rem);
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+// ── Form spam trap: hidden from people, still in the page for bots ──
+.form-trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// ── Gallery page: jump links and groups ──
+.gallery--page {
+  background: $sand;
+
+  .gallery__header {
+    max-width: 760px;
+  }
+}
+
+.gallery__jump {
+  @include flex(center, flex-start, 0.6rem);
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+
+  a {
+    @include flex(center, flex-start, 0.45rem);
+    background: $white;
+    color: $forest;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    box-shadow: $shadow-sm;
+    text-decoration: none;
+    transition: $transition;
+
+    .icon {
+      color: $green;
+    }
+
+    &:hover {
+      background: $green;
+      color: $white;
+
+      .icon {
+        color: $white;
+      }
+    }
+  }
+}
+
+.gallery__group {
+  scroll-margin-top: 130px;
+
+  & + & {
+    margin-top: 3.5rem;
+  }
+}
+
+.gallery__group-title {
+  @include flex(center, flex-start, 0.75rem);
+  font-family: $font-serif;
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  color: $ink;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba($green, 0.15);
+}
+
+.gallery__group-icon {
+  @include flex(center, center);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: $green;
+  color: $white;
+  font-size: 1.05rem;
+}
+
+.gallery__group-count {
+  margin-left: auto;
+  font-family: $font-body;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: $white;
+  background: $amber;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}

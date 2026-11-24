@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+body {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+    }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    margin: 0;
+    padding: 0;
+    font-family: $primaryFont;
+    color: inherit;
+}
+
+p {
+    font-weight: 400;
+    font-family: $primaryFont;
+    line-height: 1.7;
+    color: $t-color;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: $secondaryFont;
+    line-height: 1.5;
+    color: $black;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    transition: 0.4s all;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+    }
+}
+
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        display: block;
+        font-size: 0.875rem;
+        font-family: $secondaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+}
+
+span {
+    font-family: $secondaryFont;
+}
+
+// Change font size according to your own wish
+h1,
+.h1 {
+    font-size: 3rem;
+}
+
+h2,
+.h2 {
+    font-size: 2.5rem;
+}
+
+h3,
+.h3 {
+    font-size: 2rem;
+}
+
+h4,
+.h4 {
+    font-size: 1.75rem;
+}
+
+h5,
+.h5 {
+    font-size: 1.5rem;
+}
+
+h6,
+.h6 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+@include custom_max(768px) {
+
+    h1,
+    .h1 {
+        font-size: 2.5rem;
+    }
+
+    h2,
+    .h2 {
+        font-size: 2rem;
+    }
+
+    h3,
+    .h3 {
+        font-size: 1.75rem;
+    }
+
+    h4,
+    .h4 {
+        font-size: 1.5rem;
+    }
+
+    h5,
+    .h5 {
+        font-size: 1.25rem;
+    }
+
+    h6,
+    .h6 {
+        font-size: 1.125rem;
+    }
+
+    p {
+        font-size: 0.9375rem;
+    }
+}
+
+@include custom_max(576px) {
+
+    h1,
+    .h1 {
+        font-size: 2.25rem;
+    }
+
+    h2,
+    .h2 {
+        font-size: 1.75rem;
+    }
+
+}

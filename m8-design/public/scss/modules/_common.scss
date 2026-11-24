@@ -1,0 +1,150 @@
+figure {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    transition: 0.4s all;
+}
+
+body {
+    position: relative;
+}
+
+.section-title {
+    margin-bottom: 80px;
+
+    h3 {
+        font-size: 60px;
+        font-weight: 300;
+        color: $primaryColor;
+        // text-transform: capitalize;
+        font-family: $font5;
+    }
+
+    h6 {
+        font-size: 1.375rem;
+        // font-weight: 400;
+        color: $secondaryColor;
+        text-transform: capitalize;
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .contact-item {
+        display: inline-block;
+
+        h6 {
+            display: block;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: $whitey;
+            text-transform: capitalize;
+            transition: 0.5s ease-in-out;
+        }
+
+        p {
+            display: inline-block;
+            color: $lgrey;
+            margin-top: 5px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $primaryColor;
+                transition: 0.5s ease-in-out;
+            }
+        }
+
+        &:hover {
+            h6 {
+                color: $primaryColor;
+            }
+
+            p {
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.background-attachment {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.social-icon-wrap {
+    display: flex;
+    gap: 20px;
+
+    .icon {
+        i {
+            color: $secondaryColor;
+            transition: 0.3s ease-in-out;
+        }
+
+        &:hover {
+            i {
+                color: $primaryColor;
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .section-title {
+        margin-bottom: 60px;
+
+        h3 {
+            font-size: 38px;
+            // font-size: 2rem;
+        }
+
+        h6 {
+            font-size: 1.25rem;
+
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .section-title {
+        margin-bottom: 40px;
+
+        h3 {
+            // font-size: 1.75rem;
+            font-size: 38px;
+        }
+
+        h6 {
+            font-size: 1rem;
+
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .section-title {
+        margin-bottom: 30px;
+
+        h3 {
+            font-size: 1.25rem;
+        }
+
+    }
+}

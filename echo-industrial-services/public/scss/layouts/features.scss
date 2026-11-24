@@ -1,0 +1,165 @@
+.features {
+
+    .ft-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px 10px;
+        margin-top: 30px;
+    }
+
+    .item {
+        flex-basis: calc(100% / 4 - 10px);
+        // border-radius: 0px;
+        box-shadow: 1px 1px 2px 2px rgba($primaryColor, 0.5);
+        text-align: center;
+        padding: 40px 0;
+        position: relative;
+        // border-radius: 10px;
+        // overflow: hidden;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: rgba($primaryColor, 0.5);
+            transition: all 0.2s linear;
+            // border-radius: 10px;
+        }
+
+        &::after {
+            left: 0;
+            bottom: 0;
+            transition-delay: 0.6s;
+        }
+
+        &::before {
+            right: 0;
+            top: 0;
+            transition-delay: 0.2s;
+        }
+
+        .sub-item {
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 0;
+                background-color: rgba($primaryColor, 0.5);
+                transition: all 0.2s linear;
+                // border-radius: 10px;
+            }
+
+            &::after {
+                right: 0;
+                bottom: 0;
+                transition-delay: 0.4s;
+            }
+
+            &::before {
+                top: 0;
+                left: 0;
+                transition-delay: 0s;
+            }
+
+            .icon {
+                i {
+                    font-size: 3rem;
+                    color: $black;
+                    padding-bottom: 20px;
+                    transition: 0.3s ease-in-out 0.2s;
+                }
+            }
+
+            h5 {
+                text-transform: capitalize;
+                color: $black;
+                font-family: $secondaryFont;
+                padding-bottom: 10px;
+                font-weight: 700;
+                transition: 0.3s ease-in-out 0.2s;
+            }
+        }
+
+        &:hover {
+            &::after {
+                transition-delay: 0s;
+                width: 100%;
+            }
+
+            &::before {
+                transition-delay: 0.4s;
+                width: 100%;
+            }
+
+            .sub-item {
+                &::after {
+                    transition-delay: 0.2s;
+                    height: 100%;
+                }
+
+                &::before {
+                    transition-delay: 0.6s;
+                    height: 100%;
+                }
+
+                h5,
+                i {
+                    color: $primaryColor;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .features {
+        .item {
+            flex-basis: calc(100% / 2 - 10px);
+            box-shadow: 1px 1px 2px 2px rgba($primaryColor, 0.5);
+            padding: 30px 0;
+
+            .icon {
+                i {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .features {
+        .item {
+            width: 70%;
+            margin: 10px auto;
+            box-shadow: 1px 1px 2px 2px rgba($primaryColor, 0.5);
+            padding: 20px 0;
+
+            .icon {
+                i {
+                    font-size: 1.75rem;
+                }
+            }
+
+        }
+    }
+}
+
+@include custom_max(580px) {
+    .features {
+        .item {
+            width: 50%;
+
+            .icon {
+                i {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+}

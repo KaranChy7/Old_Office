@@ -1,0 +1,306 @@
+.why-choose-us {
+    .title {
+        text-align: center;
+
+        h2 {
+            span {
+                display: block;
+                font-size: 1rem;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        // align-items: center;
+        gap: 30px;
+        // padding-bottom: 40px;
+        justify-content: space-between;
+
+        .block {
+            flex-basis: calc(100% / 3 - 30px);
+
+            .image {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+.choose-block {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 20px 10px;
+    height: 150px;
+    display: grid;
+    place-items: center;
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primaryColor;
+        border-radius: 5px;
+        z-index: -1;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .top-side {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        transition: 0.5s ease-in-out;
+
+        .icon {
+            margin: auto;
+            width: 80px;
+            aspect-ratio: 1/1;
+            display: grid;
+            place-items: center;
+            background-color: $whitey;
+            border-radius: 100%;
+            z-index: 1;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 0;
+                border-radius: 100%;
+                background-color: $primaryColor;
+                z-index: -1;
+                transition: 0.5s ease-in-out;
+                transition-delay: 0.3s;
+            }
+
+            i {
+                font-size: 2rem;
+                color: $primaryColor;
+                transition: 0.5s ease-in-out;
+            }
+
+        }
+
+        h6 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: $black;
+            text-transform: capitalize;
+            margin-top: 10px;
+        }
+
+
+    }
+
+    // .desc {
+    //     position: absolute;
+    //     // transform: translateY(300px);
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, 150%);
+    //     width: 100%;
+    //     transition: 0.5s ease-in-out;
+    //     padding: 0 20px;
+
+    //     p {
+    //         font-size: 0.875rem;
+    //         line-height: 1.5;
+    //         color: $lgrey;
+    //         text-align: center;
+    //         margin-top: 15px;
+
+    //     }
+    // }
+
+
+    &:hover {
+
+        .top-side {
+            // top: 0;
+            // transform: translate(-50%, 10px);
+
+            .icon {
+                &::before {
+                    height: 110%;
+                }
+
+                i {
+                    color: $whitey;
+                }
+            }
+        }
+
+        // .desc {
+        //     transform: translate(-50%, -20px);
+        // }
+
+    }
+}
+
+@include custom_max(1200px) {
+    .choose-block {
+        // height: 320px;
+
+        &:hover {
+            .desc {
+                transform: translate(-50%, -40px);
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .why-choose-us {
+        .wrapper {
+            flex-direction: column;
+
+            .block {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+
+                .image {
+                    max-width: 300px;
+                    aspect-ratio: 1/1;
+                }
+            }
+        }
+    }
+
+    .choose-block {
+        width: 330px;
+        margin: 0;
+
+        .top-side {
+            .icon {
+                i {
+                    font-size: 1.5rem;
+                }
+            }
+
+            h6 {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .why-choose-us {
+        .wrapper {
+            justify-content: center;
+            align-items: center;
+
+            .block {
+                flex-direction: column;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .choose-block {
+        // width: 400px;    
+        margin: 0;
+        // height: 280px;
+
+        .top-side {
+            .icon {
+                i {
+                    font-size: 1.5rem;
+                }
+            }
+
+            h6 {
+                font-size: 1rem;
+            }
+        }
+
+        &:hover {
+            .desc {
+                transform: translate(-50%, -10px);
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .why-choose-us {
+        .wrapper {
+            align-items: initial;
+
+            .block {
+                .image {
+                    max-width: 100%;
+                    aspect-ratio: 5/2;
+                }
+            }
+        }
+    }
+
+    .choose-block {
+        width: 100%;
+        margin: 0;
+        // height: auto;
+
+        .top-side {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+
+            .icon {
+                &::before {
+                    height: 100%;
+                }
+
+                i {
+                    color: $whitey;
+                }
+            }
+
+        }
+
+        .desc {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            padding: 0;
+        }
+
+        &:hover {
+            .top-side {
+                transform: translate(0, 0);
+            }
+
+            .desc {
+                transform: translate(0, 0);
+            }
+        }
+    }
+}

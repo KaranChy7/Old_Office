@@ -1,0 +1,56 @@
+// ============================================================
+// GC-E CAMPERS — VARIABLES
+// ============================================================
+
+// Colors
+$color-black: #0a0a0a;
+$color-dark: #111111;
+$color-dark-mid: #1a1a1a;
+$color-dark-card: #161616;
+$color-gold: #c9a84c;
+$color-gold-light: #e2bf72;
+$color-gold-dark: #a8893a;
+$color-white: #ffffff;
+$color-off-white: #f5f0e8;
+$color-gray-light: #c8c8c8;
+$color-gray-mid: #888888;
+$color-green: #2d5a3d;
+$color-green-light: #4a8b62;
+
+// Typography
+$font-display: "Cormorant Garamond", serif;
+$font-heading: "Barlow Condensed", sans-serif;
+$font-body: "Jost", sans-serif;
+$font-accent: "Playfair Display", serif;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+$spacing-xl: 6rem;
+$spacing-xxl: 10rem;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-laptop: 1024px;
+$bp-desktop: 1280px;
+$bp-wide: 1600px;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-mid: 0.4s ease;
+$transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+// Border Radius
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-pill: 100px;
+
+// Z-index layers
+$z-base: 1;
+$z-overlay: 10;
+$z-nav: 100;
+$z-modal: 1000;

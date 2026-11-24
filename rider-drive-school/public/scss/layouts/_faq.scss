@@ -1,0 +1,220 @@
+// ── FAQ (home) ────────────────────────────────────────────
+#faq {
+  padding: $section-pad;
+  background: $white;
+
+  .section-title { color: $steel; }
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+
+  @include respond($bp-lg) { grid-template-columns: 1fr; }
+}
+
+.faq-intro {
+  p {
+    color: rgba($steel, 0.75);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-top: 1.5rem;
+  }
+}
+
+.faq-cta { margin-top: 2.5rem; }
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faq-item { border-bottom: 1px solid rgba($black, 0.08); }
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  cursor: pointer;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $steel;
+  transition: color 0.2s;
+
+  &:hover { color: $blue; }
+}
+
+.faq-toggle {
+  width: 28px; height: 28px;
+  background: rgba($blue, 0.1);
+  border: 1px solid rgba($blue, 0.2);
+  @include flex-center;
+  flex-shrink: 0;
+  transition: background 0.3s, transform 0.3s;
+
+  svg { width: 14px; height: 14px; color: $blue; }
+}
+
+.faq-item.open {
+  .faq-toggle {
+    background: $blue;
+    transform: rotate(45deg);
+
+    svg { color: $white; }
+  }
+
+  .faq-answer { max-height: 400px; }
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+
+  p {
+    padding-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: rgba($steel, 0.7);
+    line-height: 1.85;
+  }
+}
+
+// ── FAQ PAGE ──────────────────────────────────────────────
+.faq-page { padding: 5rem 0 7rem; background: $white; }
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  align-items: start;
+
+  @include respond($bp-lg) { grid-template-columns: 1fr; }
+}
+
+.faq-sidebar {
+  position: sticky;
+  top: 120px;
+
+  @include respond($bp-lg) { position: static; }
+
+  h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $blue;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba($blue, 0.2);
+  }
+}
+
+.faq-cat-list { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.faq-cat-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0.65rem 1rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba($steel, 0.6);
+  transition: color 0.2s, background 0.2s;
+  border-left: 2px solid transparent;
+
+  &:hover { color: $steel; background: rgba($black, 0.03); }
+  &.active { color: $blue; border-left-color: $blue; background: rgba($blue, 0.06); }
+}
+
+.faq-sidebar-cta {
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  background: $steel;
+  border: 1px solid rgba($blue, 0.15);
+
+  p { font-size: 0.85rem; color: $muted; line-height: 1.7; margin-bottom: 1.25rem; }
+
+  strong {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: $blue;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.faq-category {
+  margin-bottom: 3.5rem;
+
+  &-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: $steel;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba($black, 0.08);
+  }
+}
+
+.faq-search { padding: 2.5rem 0; background: $steel; }
+
+.faq-search-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+
+  h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: $white; margin-bottom: 0.5rem; }
+  p { font-size: 0.9rem; color: $muted; margin-bottom: 1.5rem; }
+}
+
+.search-box {
+  display: flex;
+  gap: 0.75rem;
+
+  @include respond($bp-md) { flex-direction: column; }
+
+  input {
+    flex: 1;
+    background: $dark;
+    border: 1px solid rgba($white, 0.1);
+    padding: 0.85rem 1.25rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+    color: $white;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus { border-color: rgba($blue, 0.5); }
+    &::placeholder { color: $muted; }
+  }
+
+  button {
+    background: $blue;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $white;
+    transition: background 0.2s;
+
+    &:hover { background: $blue2; }
+  }
+}

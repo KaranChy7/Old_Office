@@ -1,0 +1,19 @@
+{
+  "name": "ap-heating-cooling",
+  "version": "1.0.0",
+  "description": "AP Heating & Cooling Systems website",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "server": "php -S localhost:3000 -t public"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-php2html": "^1.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.99.0"
+  }
+}

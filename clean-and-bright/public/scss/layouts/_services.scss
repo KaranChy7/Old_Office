@@ -1,0 +1,146 @@
+.service {
+    padding-top: 40px;
+    background-color: #ebecef;
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px 10px;
+    }
+}
+
+.service-block {
+    flex-basis: calc(100% / 3 - 10px);
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow 0.5s ease-in-out;
+
+    &:last-child {
+        margin-right: auto;
+    }
+
+    .figure {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .service-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(0);
+        padding: 10px 40px;
+        background-color: $primaryColor;
+        transition: 0.5s ease-in-out;
+    }
+
+    h6 {
+        font-size: 1.125rem;
+        color: $whitey;
+        text-transform: capitalize;
+    }
+
+    .content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-300px);
+        width: 250px;
+        height: 100%;
+        background-color: $whitey;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        transition: 0.5s ease-in-out 0.2s;
+
+        h6 {
+            color: $secondaryColor;
+        }
+
+        p {
+            margin: 15px 0;
+            font-size: 0.935rem;
+            line-height: 1.5;
+        }
+    }
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        .service-title {
+            transform: translateX(-300px);
+        }
+
+        .content {
+            transform: translateX(0);
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .service {
+        .wrapper {
+            gap: 30px 10px;
+        }
+    }
+
+    .service-block {
+        flex-basis: calc(50% - 10px);
+
+        .service-title {
+            padding: 10px 20px;
+        }
+
+        h6 {
+            font-size: 1rem;
+        }
+
+        .content {
+            transform: translateX(-200px);
+            width: 200px;
+            padding: 20px;
+
+            p {
+                font-size: 0.875rem;
+            }
+        }
+
+        &:hover {
+            .service-title {
+                transform: translateX(-200px);
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .service {
+        .wrapper {
+            gap: 20px;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+    }
+
+    .service-block {
+        aspect-ratio: 4/2;
+    }
+}
+
+@include custom_max(480px) {
+    .service-block {
+        aspect-ratio: 3/2;
+    }
+}

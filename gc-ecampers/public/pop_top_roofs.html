@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Pop-top roof conversions on the Gold Coast. Add standing room, a rooftop bed and ventilation to your van while keeping it garage friendly.">
+    <title>
+        GC-E Campers    </title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons (Remix Icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav__overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Nav Drawer -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">
+            <i class="ri-close-line"></i>
+        </button>
+        <a href="./" class="">Home</a>
+        <div class="mobile-nav__group">
+            <div class="mobile-nav__row">
+                <a href="camper_hire" class="">Hire</a>
+                <button class="mobile-nav__toggle" type="button" aria-expanded="false" aria-controls="mobileSubHire"
+                    aria-label="Show Hire services">
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+            </div>
+            <div class="mobile-nav__sub" id="mobileSubHire">
+                <div class="mobile-nav__sub-inner">
+                                        <a href="electric_camper_hire"
+                        class="">Electric Camper Hire</a>
+                                        <a href="hybrid_camper_hire"
+                        class="">Hybrid Camper Hire</a>
+                                        <a href="private_drive"
+                        class="">Private Drive</a>
+                                    </div>
+            </div>
+        </div>
+        <div class="mobile-nav__group">
+            <div class="mobile-nav__row">
+                <a href="fit_outs" class="active">Fit-Outs</a>
+                <button class="mobile-nav__toggle" type="button" aria-expanded="false" aria-controls="mobileSubFitouts"
+                    aria-label="Show Fit-Outs services">
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+            </div>
+            <div class="mobile-nav__sub" id="mobileSubFitouts">
+                <div class="mobile-nav__sub-inner">
+                                        <a href="custom_fit_outs"
+                        class="">Custom Fit-Outs</a>
+                                        <a href="solar_electrical"
+                        class="">Solar &amp; Electrical</a>
+                                        <a href="pop_top_roofs"
+                        class="active">Pop-Top Roofs</a>
+                                        <a href="diy_camper_kits"
+                        class="">DIY Camper Kits</a>
+                                    </div>
+            </div>
+        </div>
+        <a href="about_us" class="">About</a>
+        <a href="gallery" class="">Gallery</a>
+        <a href="contact_us" class="">Contact</a>
+        <div class="mobile-nav__cta">
+            <a href="quote" class="btn btn--gold btn--block">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Site Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+
+            <!-- Logo -->
+            <a href="./" class="site-logo" aria-label="GC-E Campers home">
+                <div>
+                    <div class="site-logo__mark">GC&#8209;<span>E</span> CAMPERS</div>
+                    <div class="site-logo__sub">Electric &amp; Hybrid Hire</div>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="./" class="">Home</a>
+                <div class="site-nav__item">
+                    <a href="camper_hire" class="">Hire <i
+                            class="ri-arrow-down-s-line"></i></a>
+                    <div class="site-nav__dropdown">
+                                                <a href="electric_camper_hire"
+                            class="">Electric Camper Hire</a>
+                                                <a href="hybrid_camper_hire"
+                            class="">Hybrid Camper Hire</a>
+                                                <a href="private_drive"
+                            class="">Private Drive</a>
+                                            </div>
+                </div>
+                <div class="site-nav__item">
+                    <a href="fit_outs" class="active">Fit-Outs <i
+                            class="ri-arrow-down-s-line"></i></a>
+                    <div class="site-nav__dropdown">
+                                                <a href="custom_fit_outs"
+                            class="">Custom Fit-Outs</a>
+                                                <a href="solar_electrical"
+                            class="">Solar &amp; Electrical</a>
+                                                <a href="pop_top_roofs"
+                            class="active">Pop-Top Roofs</a>
+                                                <a href="diy_camper_kits"
+                            class="">DIY Camper Kits</a>
+                                            </div>
+                </div>
+                <a href="about_us" class="">About</a>
+                <a href="gallery" class="">Gallery</a>
+                <a href="contact_us" class="">Contact</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="quote" class="btn btn--gold btn--sm">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+<section class="page-hero">
+    <div class="page-hero__bg">
+        <img src="images/image-4.jpg" alt="Pop-Top Roofs — GC-E Campers" loading="eager">
+    </div>
+    <div class="container">
+        <div class="page-hero__content">
+            <div class="breadcrumb">
+                <a href="./">Home</a>
+                <span class="breadcrumb__sep">/</span>
+                <a href="fit_outs">Fit-Outs</a>
+                <span class="breadcrumb__sep">/</span>
+                <span class="breadcrumb__current">Pop-Top Roofs</span>
+            </div>
+            <h2 class="page-hero__title">Pop-Top <em>Roofs</em></h2>
+        </div>
+    </div>
+</section>
+
+<!-- Intro -->
+<section class="section section--black">
+    <div class="container">
+        <div class="about-story__layout">
+
+            <div class="about-story__img" data-animate="fade-left">
+                <img src="images/image-3.jpg" alt="Pop-Top Roofs by GC-E Campers" loading="lazy">
+                <div class="about-story__label">
+                    <div class="about-story__label-tag">Standing Room</div>
+                    <div class="about-story__label-title">Rooftop Bed</div>
+                </div>
+            </div>
+
+            <div class="about-story__content" data-animate="fade-right">
+                <div class="section-eyebrow">Pop-Top Conversions</div>
+                <h2 class="section-title">Stand up, sleep up,<br><span class="text-gold">stay low on the road.</span></h2>
+                <div class="gold-divider"></div>
+                                <p class="body-text">A pop-top roof transforms a van. You get full standing height at camp and an extra bed up top, while the van stays low enough for car parks and garages.</p>
+                                <p class="body-text">We supply and fit quality pop-top roofs with proper structural reinforcement, sealing and interior finishing so it looks factory and stays watertight.</p>
+                
+                <div class="about-story__stats">
+                                        <div>
+                        <div class="about-story__stat-num">+2</div>
+                        <div class="about-story__stat-label">Extra Berths</div>
+                    </div>
+                                        <div>
+                        <div class="about-story__stat-num">Full</div>
+                        <div class="about-story__stat-label">Standing Height</div>
+                    </div>
+                                        <div>
+                        <div class="about-story__stat-num">Low</div>
+                        <div class="about-story__stat-label">Driving Profile</div>
+                    </div>
+                                    </div>
+
+                <div class="btn-group service-single__actions">
+                    <a href="quote?type=fitout&package=pop-top-roof" class="btn btn--gold">
+                        <i class="ri-calendar-check-line"></i> Quote My Pop-Top                    </a>
+                    <a href="contact_us" class="btn btn--outline">Ask a Question</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="section section--dark">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow section-eyebrow--center">Pop-Top Roofs</div>
+            <h2 class="section-title">Why go <span class="text-gold">pop-top</span></h2>
+        </div>
+        <div class="grid-3 stagger">
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-user-line"></i></div>
+                <div class="service-box__title">Standing Room</div>
+                <p class="service-box__text">Cook, dress and move around inside without hunching over.</p>
+            </div>
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-hotel-bed-line"></i></div>
+                <div class="service-box__title">Rooftop Bed</div>
+                <p class="service-box__text">A comfortable upstairs bed that frees up space downstairs.</p>
+            </div>
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-windy-line"></i></div>
+                <div class="service-box__title">Ventilation</div>
+                <p class="service-box__text">Canvas windows with insect screens for airflow on warm nights.</p>
+            </div>
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-parking-line"></i></div>
+                <div class="service-box__title">Garage Friendly</div>
+                <p class="service-box__text">Roof down, the van stays low for car parks and home garages.</p>
+            </div>
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-shield-check-line"></i></div>
+                <div class="service-box__title">Structural Fit</div>
+                <p class="service-box__text">Roof reinforcement done properly for strength and safety.</p>
+            </div>
+                        <div class="service-box" data-animate>
+                <div class="service-box__icon service-box__icon--ring"><i class="ri-drop-line"></i></div>
+                <div class="service-box__title">Watertight Seal</div>
+                <p class="service-box__text">Quality seals and finishing to keep weather and dust out.</p>
+            </div>
+                    </div>
+    </div>
+</section>
+
+<!-- Inclusions -->
+<section class="section section--black">
+    <div class="container">
+        <div class="vehicle-detail__layout">
+
+            <div class="vehicle-detail__gallery" data-animate="fade-left">
+                <div class="vehicle-detail__main-img">
+                    <img src="images/image-7.jpg" alt="Pop-Top Roofs inclusions"
+                        loading="lazy">
+                </div>
+            </div>
+
+            <div data-animate="fade-right">
+                <div class="section-eyebrow">The Details</div>
+                <h2 class="section-title">Every roof <span class="text-gold">includes</span></h2>
+                <div class="gold-divider"></div>
+                <div class="vehicle-detail__features">
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Vehicle suitability check</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Quality pop-top roof</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Structural reinforcement</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Canvas with insect screens</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Roof bed & mattress</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Interior trim & finishing</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Seal & water testing</span>
+                    </div>
+                                        <div class="vehicle-detail__feature">
+                        <i class="ri-check-line"></i>
+                        <span>Handover & operation guide</span>
+                    </div>
+                                    </div>
+                <div class="btn-group vehicle-detail__actions">
+                    <a href="quote?type=fitout&package=pop-top-roof"
+                        class="btn btn--gold">Quote My Pop-Top</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="how-section section">
+    <div class="container">
+        <div class="section-head section-head--tight">
+            <div class="section-eyebrow section-eyebrow--center">The Process</div>
+            <h2 class="section-title">How it <span class="text-gold">works</span></h2>
+        </div>
+        <div class="how-section__steps stagger">
+                        <div class="step-item" data-animate>
+                <div class="step-item__num">01</div>
+                <div class="step-item__title">Check</div>
+                <p class="step-item__text">We confirm your vehicle suits a pop-top and discuss options.</p>
+            </div>
+                        <div class="step-item" data-animate>
+                <div class="step-item__num">02</div>
+                <div class="step-item__title">Quote</div>
+                <p class="step-item__text">You get a clear quote with timing and any extras you want.</p>
+            </div>
+                        <div class="step-item" data-animate>
+                <div class="step-item__num">03</div>
+                <div class="step-item__title">Fit</div>
+                <p class="step-item__text">We cut, reinforce, fit and finish the roof in our workshop.</p>
+            </div>
+                        <div class="step-item" data-animate>
+                <div class="step-item__num">04</div>
+                <div class="step-item__title">Handover</div>
+                <p class="step-item__text">We test the seals and show you how to raise and lower it.</p>
+            </div>
+                    </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--black">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow section-eyebrow--center">Good to Know</div>
+            <h2 class="section-title">Common <span class="text-gold">Questions</span></h2>
+        </div>
+        <div class="service-faq">
+                        <details class="service-faq__item" open>
+                <summary class="service-faq__q">Will a pop-top fit my van?<i class="ri-add-line"></i></summary>
+                <p class="service-faq__a">Pop-tops suit many popular vans. Send us your make, model and year and we'll confirm the options.</p>
+            </details>
+                        <details class="service-faq__item" >
+                <summary class="service-faq__q">Is it waterproof?<i class="ri-add-line"></i></summary>
+                <p class="service-faq__a">Yes. Roofs are properly sealed and water tested before handover. Canvas should be dried out after wet trips to keep it in top condition.</p>
+            </details>
+                        <details class="service-faq__item" >
+                <summary class="service-faq__q">Can I add a pop-top as part of a full fit-out?<i class="ri-add-line"></i></summary>
+                <p class="service-faq__a">Absolutely — it's often best to plan the roof alongside your interior layout. See our Custom Fit-Outs service.</p>
+            </details>
+                    </div>
+    </div>
+</section>
+
+<!-- Other services -->
+<section class="section section--dark">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-eyebrow section-eyebrow--center">Explore More</div>
+            <h2 class="section-title">Other <span class="text-gold">Services</span></h2>
+        </div>
+        <div class="service-links stagger">
+                                    <a href="electric_camper_hire" class="service-links__card" data-animate>
+                <i class="ri-flashlight-line service-links__icon"></i>
+                <span class="service-links__name">Electric Camper Hire</span>
+                <span class="service-links__text">Hire our fully electric VW ID. Buzz camper with pop-top roof, solar and a full touring fit-out.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                    <a href="hybrid_camper_hire" class="service-links__card" data-animate>
+                <i class="ri-roadster-line service-links__icon"></i>
+                <span class="service-links__name">Hybrid Camper Hire</span>
+                <span class="service-links__text">A compact Mini Countryman rooftop camper — easy to drive, easy to park, perfect for couples.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                    <a href="custom_fit_outs" class="service-links__card" data-animate>
+                <i class="ri-tools-line service-links__icon"></i>
+                <span class="service-links__name">Custom Fit-Outs</span>
+                <span class="service-links__text">Full campervan conversions designed and built in our Arundel workshop.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                    <a href="solar_electrical" class="service-links__card" data-animate>
+                <i class="ri-sun-line service-links__icon"></i>
+                <span class="service-links__name">Solar &amp; Electrical</span>
+                <span class="service-links__text">Lithium batteries, roof solar, inverters and monitoring for true off-grid touring.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                                <a href="diy_camper_kits" class="service-links__card" data-animate>
+                <i class="ri-box-3-line service-links__icon"></i>
+                <span class="service-links__name">DIY Camper Kits</span>
+                <span class="service-links__text">Ready-made camper modules and kits you can fit yourself and remove when you need the van back.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                                    <a href="private_drive" class="service-links__card" data-animate>
+                <i class="ri-steering-line service-links__icon"></i>
+                <span class="service-links__name">Private Drive</span>
+                <span class="service-links__text">Premium airport transfers, private day hire and events in the green-and-white ID. Buzz.</span>
+                <span class="service-links__more">Learn more <i class="ri-arrow-right-line"></i></span>
+            </a>
+                    </div>
+    </div>
+</section>
+
+
+<div class="parallax-banner" id="parallaxBanner">
+    <div class="parallax-banner__bg" id="parallaxBg">
+        <img src="images/image-14.jpg" alt="Australian coastline road trip" loading="lazy">
+    </div>
+    <div class="parallax-banner__content">
+        <div class="section-eyebrow section-eyebrow--center">Ready to start?</div>
+        <h2 class="parallax-banner__title">
+            Hire it. Build it. <span class="text-gold"> Explore.</span>
+        </h2>
+        <p class="parallax-banner__text">
+            Camper hire, custom fit-outs, ID. Buzz conversions, DIY products or Private Drive.
+        </p>
+        <a href="quote.html" class="btn btn--gold">
+            <i class="ri-calendar-line"></i> Book Your Adventure
+        </a>
+    </div>
+</div>
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer__grid">
+
+            <!-- Brand col -->
+            <div>
+                <div class="site-logo__mark site-footer__logo">GC&#8209;<span>E</span>
+                    CAMPERS</div>
+                <p class="site-footer__about">
+                    Premium camper hire, custom campervan fit-outs, VW ID. Buzz conversions, DIY camper modules
+                    and private-drive experiences from the Gold Coast.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <div class="site-footer__col-title">Navigate</div>
+                <ul class="site-footer__links">
+                    <li><a href="index">Home</a></li>
+                    <!-- <li><a href="camper_hire">Camper Hire</a></li>
+                    <li><a href="fit_outs">Fit-Outs</a></li> -->
+                    <li><a href="about_us">About Us</a></li>
+                    <li><a href="contact_us">Contact</a></li>
+                    <li><a href="quote">Get a Quote</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <div class="site-footer__col-title">Services</div>
+                <ul class="site-footer__links">
+                    <!--                     <li><a href="electric_camper_hire">Electric Camper Hire</a></li>
+                                        <li><a href="hybrid_camper_hire">Hybrid Camper Hire</a></li>
+                                        <li><a href="custom_fit_outs">Custom Fit-Outs</a></li>
+                                        <li><a href="solar_electrical">Solar &amp; Electrical</a></li>
+                                        <li><a href="pop_top_roofs">Pop-Top Roofs</a></li>
+                                        <li><a href="diy_camper_kits">DIY Camper Kits</a></li>
+                                        <li><a href="private_drive">Private Drive</a></li>
+                     -->
+
+                    <li><a href="camper_hire">Camper Hire</a></li>
+                    <li><a href="fit_outs">Fit-Outs</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <div class="site-footer__col-title">Contact</div>
+
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 7.81 19.79 19.79 0 01.01 4.18a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.12 6.12l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                    <span>
+                        <a href="tel:0400123456">0400 123 456</a>
+                                            </span>
+                </div>
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <a href="mailto:info@gcecampers.com.au">info@gcecampers.com.au</a>
+                </div>
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>14 Logistics Drive Arundel QLD 4214</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="site-footer__bottom">
+            <p class="site-footer__copyright">&copy; 2026 GC-E Campers. All rights reserved.            </p>
+            <div class="site-footer__legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+            <button class="back-to-top" id="backToTop" aria-label="Back to top">
+                <i class="ri-arrow-up-line"></i>
+            </button>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+</body>
+
+</html>

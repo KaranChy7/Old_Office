@@ -1,0 +1,80 @@
+.page-quote {
+    background-color: $territary;
+    position: relative;
+    z-index: 1;
+
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 60%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        height: calc(100% - 60%);
+        background-color: $whitey;
+        z-index: -1;
+
+        // content: '';
+        // position: absolute;
+        // top: 60%;
+        // left: 0;
+        // transform: translateY(-50%) rotate(-45deg);
+        // /* Adjust the angle to your needs */
+        // width: 100%;
+        // height: calc(100% - 60%);
+        // background-color: $whitey;
+        // z-index: -99999;
+        // overflow: hidden;
+
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        // background-image: url(../images/abstract.png);
+        top: 40%;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 40%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+
+
+    .form {
+        max-width: 800px;
+        margin: auto;
+        background-color: $grey;
+        padding: 40px;
+        box-shadow: 0 0 5px -2px $dblack;
+        border-radius: 10px;
+
+        .form-group {
+            flex-direction: column;
+            box-shadow: none;
+
+            label {
+                color: $dblack;
+            }
+
+            .form-input {
+                width: 100%;
+                border-bottom: 1px solid $black;
+                color: $black;
+
+                &::placeholder {
+                    color: $black;
+                }
+
+                &:focus-visible {
+                    box-shadow: 2px 2px 3px -1px $dblack;
+                    border-bottom: 1px solid $dblack;
+                }
+            }
+        }
+
+    }
+}

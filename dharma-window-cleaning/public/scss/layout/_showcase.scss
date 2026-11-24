@@ -1,0 +1,195 @@
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.showcase {
+  background: $white;
+  padding: 5.5rem 0;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 4rem;
+
+    @include respond(lg) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  // Image collage
+  &__media {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 420px;
+
+    @include respond(sm) {
+      height: 320px;
+    }
+  }
+
+  &__media-item {
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-sm;
+
+    &--main {
+      grid-row: 1 / 3;
+    }
+
+    &--top {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    &--bottom {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__tag {
+    position: absolute;
+    left: -1.25rem;
+    bottom: -1.25rem;
+    background: $white;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+
+    @include respond(sm) {
+      left: 0.75rem;
+      bottom: -1rem;
+      padding: 0.7rem 1rem;
+    }
+  }
+
+  &__tag-title {
+    font-family: $font-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: $primary;
+  }
+
+  &__tag-sub {
+    font-size: 0.72rem;
+    color: $grey;
+  }
+
+  // Content
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    background: $primary-light;
+    color: $primary-dark;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+  }
+
+  &__content {
+    h2 {
+      font-family: $font-serif;
+      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: $ink;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: $grey;
+      max-width: 480px;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__points {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-bottom: 2.25rem;
+
+    li {
+      @include flex(center, flex-start, 0.75rem);
+      font-size: 0.95rem;
+      color: $ink;
+      font-weight: 500;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: $primary;
+    }
+  }
+
+  &__actions {
+    @include flex(center, flex-start, 1rem);
+    flex-wrap: wrap;
+  }
+
+  &__btn-primary {
+    @include btn-base;
+    background: $secondary;
+    color: $white;
+    border: none;
+    border-radius: 999px;
+    font-family: $font-body;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 600;
+    padding: 0.9rem 1.6rem;
+
+    &:hover {
+      background: $secondary-dark;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__btn-secondary {
+    @include btn-base;
+    background: $white;
+    color: $ink;
+    border: 1px solid rgba($ink, 0.14);
+    border-radius: 999px;
+    font-family: $font-body;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 600;
+    padding: 0.9rem 1.6rem;
+
+    &:hover {
+      border-color: $primary;
+      color: $primary-dark;
+      transform: translateY(-2px);
+    }
+  }
+}

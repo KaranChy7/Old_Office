@@ -1,0 +1,47 @@
+// =============================================
+// TRUE-LINE INSTALLS — BREADCRUMBS
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.breadcrumbs {
+  background: $grey-100;
+  border-bottom: 1px solid $grey-200;
+  margin-top: var(--header-height, 172px);
+
+  &__inner {
+    padding: 0.9rem 2rem;
+  }
+
+  ol {
+    @include flex(center, flex-start, 0.4rem);
+    flex-wrap: wrap;
+  }
+
+  li {
+    @include flex(center, flex-start, 0.4rem);
+    font-family: $font-body;
+    font-size: 0.82rem;
+
+    &:not(:last-child)::after {
+      content: '/';
+      color: $grey-400;
+    }
+
+    &[aria-current="page"] {
+      font-weight: 600;
+      color: $navy;
+    }
+  }
+
+  a {
+    font-weight: 500;
+    color: $grey-600;
+    transition: $transition;
+
+    &:hover {
+      color: $navy;
+    }
+  }
+}

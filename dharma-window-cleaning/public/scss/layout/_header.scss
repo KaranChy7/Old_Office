@@ -1,0 +1,579 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+@keyframes header-drop-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hamburger-punch {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Top contact bar
+.top-bar {
+  background: $ink;
+  color: rgba($white, 0.85);
+
+  &__inner {
+    @include flex(center, space-between);
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0.55rem 2rem;
+    font-size: 0.78rem;
+    gap: 1rem;
+
+    @include respond(md) {
+      padding: 0.5rem 1.25rem;
+      display: none
+    }
+
+    @include respond(sm) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1rem;
+      text-align: center;
+      display: none
+    }
+  }
+
+  &__left,
+  &__right {
+    @include flex(center, flex-start, 1.25rem);
+    flex-wrap: wrap;
+
+    @include respond(sm) {
+      justify-content: center;
+      gap: 0.5rem 1rem;
+    }
+  }
+
+  &__item {
+    @include flex(center, flex-start, 0.4rem);
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: $transition;
+
+    svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      color: $primary-light;
+    }
+  }
+
+  a.top-bar__item:hover {
+    color: $white;
+  }
+
+  &__item--email {
+    @include respond(sm) {
+      display: none;
+    }
+  }
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  // No backdrop-filter here: any ancestor filter/backdrop-filter/transform
+  // establishes a new containing block for position:fixed descendants,
+  // which would trap the full-screen .nav mobile menu inside this bar
+  // instead of covering the viewport.
+  background: rgba($white, 0.92);
+  border-bottom: 1px solid rgba($ink, 0.06);
+  animation: header-drop-in 0.6s ease-out;
+  transition: $transition;
+
+  &.scrolled {
+    box-shadow: $shadow-sm;
+  }
+}
+
+.header-inner {
+  @include flex(center, space-between);
+  max-width: $container-max;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+
+  @include respond(md) {
+    padding: 0.85rem 1.25rem;
+  }
+}
+
+// Logo
+.logo {
+  @include flex(center, flex-start, 0.7rem);
+  text-decoration: none;
+
+  &__image {
+    display: block;
+    height: 80px;
+    width: auto;
+
+    @include respond(sm) {
+      height: 80px;
+    }
+  }
+}
+
+// Nav
+.nav {
+  @include flex(center, flex-end, 0.35rem);
+
+  @include respond(lg) {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: $ink;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    padding: 5.5rem 2rem 2rem;
+    overflow-y: auto;
+    height: 100%;
+
+    z-index: 999;
+    visibility: hidden;
+    clip-path: circle(0% at 100% 0%);
+    transition: clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.6s;
+    pointer-events: none;
+
+    &.open {
+      visibility: visible;
+      clip-path: circle(150% at 100% 0%);
+      pointer-events: auto;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    @include flex(center, center, 0);
+
+    @include respond(lg) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &--dropdown {
+      @include respond(lg) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__link {
+    font-family: $font-body;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $grey;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      color: $ink;
+    }
+
+    &.active {
+      background: $primary-light;
+      color: $primary-dark;
+      font-weight: 600;
+    }
+
+    @include respond(lg) {
+      font-size: 1.1rem;
+      color: $white;
+      opacity: 0;
+      transform: scale(0.6) rotate(-8deg) translateY(10px);
+      transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+      padding: 0.4rem 1rem;
+
+      &.active {
+        background: transparent;
+        color: $primary-light;
+      }
+    }
+  }
+
+  &__dropdown-toggle {
+    @include flex(center, center);
+    width: 26px;
+    height: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $grey;
+    padding: 0;
+    margin-left: -0.35rem;
+    transition: $transition;
+
+    .nav__chevron {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    @include respond(lg) {
+      width: 32px;
+      height: 32px;
+      color: $white;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    &--sub {
+      margin-left: 0;
+
+      @include respond(lg) {
+        color: rgba($white, 0.7);
+      }
+    }
+  }
+
+  // Desktop dropdown / flyout submenu
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    left: 0;
+    min-width: 250px;
+    background: $white;
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+    padding: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    pointer-events: none;
+    z-index: 10;
+
+    @include respond(lg) {
+      position: static;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      margin-top: 0.35rem;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      pointer-events: auto;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      width: 100%;
+    }
+  }
+
+  &__item--dropdown:hover .nav__dropdown,
+  &__item--dropdown.open .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+
+    @include respond(lg) {
+      background-color: $primary-dark;
+      max-height: 600px;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__item--dropdown.open .nav__dropdown-toggle .nav__chevron {
+    transform: rotate(180deg);
+  }
+
+  &__dropdown-item {
+    position: relative;
+    border-radius: $radius-sm;
+
+    @include flex(center, space-between, 0);
+
+    @include respond(lg) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &:hover {
+      background: rgba($primary-light, 0.6);
+
+      @include respond(lg) {
+        background: transparent;
+      }
+    }
+  }
+
+  &__dropdown-link {
+    flex: 1;
+    display: block;
+    padding: 0.65rem 0.85rem;
+    font-family: $font-body;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: $ink;
+    text-decoration: none;
+
+    @include respond(lg) {
+      color: $white;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+    }
+  }
+
+  &__dropdown-item.open>.nav__dropdown-toggle--sub .nav__chevron {
+    transform: rotate(180deg);
+  }
+
+  // Nested flyout (submenu)
+  &__submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 0.5rem;
+    min-width: 240px;
+    background: $white;
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+    padding: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    pointer-events: none;
+
+    @include respond(xl) {
+      left: auto;
+      right: 100%;
+      margin-left: 0;
+      margin-right: 0.5rem;
+    }
+
+    @include respond(lg) {
+      position: static;
+      background: transparent;
+      box-shadow: none;
+      padding: 0 0 0 1rem;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      pointer-events: auto;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+  }
+
+  &__dropdown-item:hover .nav__submenu,
+  &__dropdown-item.open .nav__submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: auto;
+
+    @include respond(lg) {
+      max-height: 400px;
+    }
+  }
+
+  &__submenu-link {
+    display: block;
+    padding: 0.55rem 0.85rem;
+    font-family: $font-body;
+    font-size: 0.83rem;
+    font-weight: 500;
+    color: $grey;
+    text-decoration: none;
+    border-radius: $radius-sm;
+    transition: $transition;
+
+    &:hover {
+      background: $primary-light;
+      color: $primary-dark;
+    }
+
+    @include respond(lg) {
+      color: rgba($white, 0.75);
+      font-size: 0.92rem;
+      padding: 0.4rem 0;
+
+      &:hover {
+        background: transparent;
+        color: $primary-light;
+      }
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 0.75rem;
+    background: $secondary;
+    color: $white;
+    border: none;
+    border-radius: 999px;
+    font-family: $font-body;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      background: $secondary-dark;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+
+    @include respond(lg) {
+      margin-left: 0;
+      margin-top: 0.5rem;
+      opacity: 0;
+      transform: scale(0.6) rotate(-8deg) translateY(10px);
+      transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+  }
+
+  // Staggered cascade entrance once the mobile nav is open
+  &.open {
+
+    >.nav__link,
+    >.nav__item .nav__link,
+    >.nav__cta {
+      @include respond(lg) {
+        opacity: 1;
+        transform: scale(1) rotate(0) translateY(0);
+      }
+    }
+
+    .nav__dropdown-toggle {
+      @include respond(lg) {
+        opacity: 1;
+      }
+    }
+
+    @include respond(lg) {
+      >.nav__link:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+
+      >.nav__item:nth-child(2) .nav__link {
+        transition-delay: 0.15s;
+      }
+
+      >.nav__link:nth-child(3) {
+        transition-delay: 0.2s;
+      }
+
+      >.nav__link:nth-child(4) {
+        transition-delay: 0.25s;
+      }
+
+      >.nav__link:nth-child(5) {
+        transition-delay: 0.3s;
+      }
+
+      >.nav__link:nth-child(6) {
+        transition-delay: 0.33s;
+      }
+
+      >.nav__cta {
+        transition-delay: 0.38s;
+      }
+    }
+  }
+}
+
+// Backdrop behind the mobile nav panel
+.nav-backdrop {
+  display: none;
+
+  @include respond(lg) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba($ink, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.45s ease, visibility 0.45s;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+}
+
+// Hamburger
+.hamburger {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 4px;
+
+  &.active {
+    animation: hamburger-punch 0.4s ease;
+  }
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $ink;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.2s ease, background 0.3s ease;
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+      background: $white !important;
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+      background: $white !important;
+    }
+  }
+
+  @include respond(lg) {
+    display: flex;
+  }
+}

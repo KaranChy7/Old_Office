@@ -1,0 +1,58 @@
+// =============================================
+// MIXINS — Reliable Tradies Group
+// =============================================
+
+@mixin custom_max($x) {
+    @media screen and (max-width: $x) {
+        @content;
+    }
+}
+
+@mixin custom_min($x) {
+    @media screen and (min-width: $x) {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder { @content; }
+    &:-moz-placeholder           { @content; }
+    &::-moz-placeholder          { @content; }
+    &:-ms-input-placeholder      { @content; }
+}
+
+@mixin clear {
+    &::after {
+        clear:   both;
+        content: "";
+        display: table;
+        width:   100%;
+    }
+}
+
+@mixin flex-center {
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+}
+
+@mixin section-padding {
+    padding: 100px 0;
+    @include custom_max(991px) { padding: 70px 0; }
+    @include custom_max(767px) { padding: 50px 0; }
+}
+
+@mixin amber-underline {
+    position: relative;
+    &::after {
+        content:    '';
+        position:   absolute;
+        bottom:     -4px;
+        left:       0;
+        width:      0;
+        height:     2px;
+        background: #D4842A;
+        transition: width 0.35s ease;
+    }
+    &:hover::after { width: 100%; }
+}

@@ -1,0 +1,32 @@
+@import "base/variables";
+@import "base/mixins";
+@import "modules/font";
+@import "modules/typography";
+@import "modules/buttons";
+@import "modules/scroll-top";
+@import "modules/mobile-button";
+@import "modules/common";
+@import "modules/slider";
+@import "modules/components";
+@import "modules/breadcrumb";
+//Index Section Style
+@import "layouts/header";
+@import "layouts/banner";
+@import "layouts/about_section";
+@import "layouts/about-features";
+@import "layouts/service_section";
+@import "layouts/gallery";
+@import "layouts/process_section";
+@import "layouts/testimonial_section";
+@import "layouts/call_us_section";
+@import "layouts/footer";
+// Other Page Style
+@import "layouts/page_about";
+@import "layouts/page_services";
+@import "layouts/page_gallery";
+@import "layouts/page_contact";
+@import "layouts/page_quote";
+@import "layouts/page_estimate";
+// Thanks Page Style
+@import "layouts/thanks";
+@import "layouts/all_form";

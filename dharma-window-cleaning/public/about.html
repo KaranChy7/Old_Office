@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Everest Crew Clean Pty Ltd</title>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts: Oswald + Inter + Playfair Display -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;900&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/main.min.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+
+<body>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" aria-hidden="true">
+        <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="top-bar__inner">
+            <div class="top-bar__left">
+                <a href="tel:0466803866" class="top-bar__item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.01l-2.2 2.21z" />
+                    </svg>
+                    0466 803 866                </a>
+                <a href="mailto:info@everestcrewclean.com.au" class="top-bar__item top-bar__item--email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z" />
+                    </svg>
+                    info@everestcrewclean.com.au                </a>
+            </div>
+            <div class="top-bar__right">
+                <span class="top-bar__item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2a8 8 0 00-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 00-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z" />
+                    </svg>
+                    Ashfield NSW 2131 &middot; Servicing within 80 km                </span>
+                            </div>
+        </div>
+    </div>
+
+    <!-- Site Header -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Everest Crew Clean Pty Ltd Home">
+                <img src="images/logo.png" alt="Everest Crew Clean Pty Ltd" class="logo__image">
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="nav__link ">Home</a>
+
+                <a href="about.html" class="nav__link active">About</a>
+
+                <div class="nav__item nav__item--dropdown">
+                    <a href="services.html"
+                        class="nav__link ">Services</a>
+                    <button type="button" class="nav__dropdown-toggle" aria-label="Toggle services menu"
+                        aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="nav__chevron">
+                            <path d="M7 10l5 5 5-5z" />
+                        </svg>
+                    </button>
+
+                    <div class="nav__dropdown">
+                                                <a href="window-cleaning.html" class="nav__dropdown-link">Window Cleaning</a>
+                                                <a href="gutter-cleaning.html" class="nav__dropdown-link">Gutter Cleaning</a>
+                                                <a href="solar-panel-cleaning.html" class="nav__dropdown-link">Solar Panel Cleaning</a>
+                                                <a href="skylight-cleaning.html" class="nav__dropdown-link">Skylight Cleaning</a>
+                                                <a href="roof-pressure-wash.html" class="nav__dropdown-link">Roof Pressure Wash</a>
+                                                <a href="house-soft-pressure-wash.html" class="nav__dropdown-link">House Soft Pressure Wash</a>
+                                                <a href="backyard-pressure-wash-sealing.html" class="nav__dropdown-link">Backyard Pressure Wash &amp; Sealing</a>
+                                                <a href="gutter-guard-installation.html" class="nav__dropdown-link">Gutter Guard Installation</a>
+                                                <a href="solar-panel-bird-proofing.html" class="nav__dropdown-link">Solar Panel Bird Mesh (Bird Proofing)</a>
+                                                <a href="roof-repair-maintenance.html" class="nav__dropdown-link">Roof Repair &amp; Maintenance</a>
+                                                <a href="tree-branch-trimming.html" class="nav__dropdown-link">Tree &amp; Branch Trimming</a>
+                                            </div>
+                </div>
+
+                <a href="gallery.html" class="nav__link ">Gallery</a>
+                <a href="reviews.html" class="nav__link ">Reviews</a>
+                <a href="contact.html" class="nav__link ">Contact</a>
+                <a href="quote.html" class="nav__cta">Get a quote</a>
+            </nav>
+
+            <div class="nav-backdrop" id="nav-backdrop"></div>
+
+            <!-- Hamburger -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+<!-- ═══════════════════════════════════════
+     ABOUT — OUR STORY & FOUR PROMISES
+══════════════════════════════════════ -->
+<section class="page-about">
+    <div class="page-about__container">
+
+        <!-- Our story -->
+        <div class="page-about__hero" id="our-story">
+
+            <div class="page-about__hero-content" data-reveal="left">
+                <div class="page-about__badge">Our story</div>
+
+                <h1>Sparkling Clean, Naturally!</h1>
+
+                <p>Everest Crew Clean Pty Ltd is committed to providing outstanding cleaning services designed to meet
+                    your specific needs. With 9+ years of experience, we use modern techniques and ensure a safe, clean
+                    environment for residential, commercial and strata properties. Our customer-centred approach
+                    includes tailored cleaning plans, flexible scheduling and clear, upfront pricing.</p>
+
+                <p>Whether it&rsquo;s a one-time service or ongoing maintenance, you can count on us to keep your
+                    property pristine and inviting. We are dedicated to sustainability and environmentally conscious
+                    practices, and we serve properties within an 80 km radius of Ashfield, NSW.</p>
+
+                <div class="page-about__stats">
+                    <div class="page-about__stat">
+                        <div class="page-about__stat-number">80 km</div>
+                        <div class="page-about__stat-label">Service radius</div>
+                    </div>
+                    <div class="page-about__stat">
+                        <div class="page-about__stat-number">Eco</div>
+                        <div class="page-about__stat-label">Friendly products</div>
+                    </div>
+                    <div class="page-about__stat">
+                        <div class="page-about__stat-number">9+ Years</div>
+                        <div class="page-about__stat-label">Experience</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-about__media" data-reveal="right" data-delay="150">
+                <img src="images/window-cleaning-detail.jpg" alt="Our team cleaning a tall glass window with a water-fed pole" class="page-about__image">
+            </div>
+
+        </div>
+
+        <!-- Four promises -->
+        <div class="page-about__badge page-about__badge--secondary" data-reveal>Why choose us</div>
+        <h2 data-reveal data-delay="100">A strong commitment to
+            exceptional results.</h2>
+
+        <div class="page-about__grid">
+
+            <div class="page-about__card" data-reveal data-delay="0">
+                <div class="page-about__card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z" />
+                    </svg>
+                </div>
+                <h3>Expert Team</h3>
+                <p>Our highly trained professionals bring 9+ years of experience to ensure top-quality cleaning for every space.</p>
+            </div>
+
+            <div class="page-about__card" data-reveal data-delay="50">
+                <div class="page-about__card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z" />
+                    </svg>
+                </div>
+                <h3>Eco-Friendly Products</h3>
+                <p>We use non-toxic, environmentally friendly cleaning products that are safe for your family, pets, and the planet.</p>
+            </div>
+
+            <div class="page-about__card" data-reveal data-delay="100">
+                <div class="page-about__card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z" />
+                    </svg>
+                </div>
+                <h3>Advanced Equipment</h3>
+                <p>We utilise the latest cleaning technology and equipment to achieve superior results efficiently.</p>
+            </div>
+
+            <div class="page-about__card" data-reveal data-delay="150">
+                <div class="page-about__card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z" />
+                    </svg>
+                </div>
+                <h3>Transparent Pricing</h3>
+                <p>Enjoy honest and upfront pricing with no hidden fees, so you know exactly what to expect.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+ <footer class="site-footer">
+     <div class="site-footer__container">
+
+         <div class="site-footer__grid">
+
+             <!-- Brand -->
+             <div class="site-footer__brand">
+                 <a href="index.html" class="site-footer__logo" aria-label="Everest Crew Clean Pty Ltd Home">
+                     <img src="images/logo.png" alt="Everest Crew Clean Pty Ltd" class="site-footer__logo-image">
+                 </a>
+                 <p>Window, gutter, roof, solar panel and pressure cleaning, plus roof and property maintenance,
+                     within 80 km of Ashfield, NSW. A 100% insured company &mdash; Cleaning Beyond Expectations.</p>
+             </div>
+
+             <!-- Company -->
+             <div class="site-footer__col">
+                 <h4>Company</h4>
+                 <ul class="site-footer__links">
+                     <li><a href="about.html">About</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="gallery.html">Gallery</a></li>
+                     <li><a href="reviews.html">Reviews</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                     <li><a href="quote.html">Get a Quote</a></li>
+                 </ul>
+             </div>
+
+             <!-- Services -->
+             <div class="site-footer__col">
+                 <h4>Services</h4>
+                 <ul class="site-footer__links">
+                                          <li><a href="window-cleaning.html">Window Cleaning</a></li>
+                                          <li><a href="gutter-cleaning.html">Gutter Cleaning</a></li>
+                                          <li><a href="solar-panel-cleaning.html">Solar Panel Cleaning</a></li>
+                                          <li><a href="skylight-cleaning.html">Skylight Cleaning</a></li>
+                                          <li><a href="roof-pressure-wash.html">Roof Pressure Wash</a></li>
+                                          <li><a href="house-soft-pressure-wash.html">House Soft Pressure Wash</a></li>
+                                          <li><a href="backyard-pressure-wash-sealing.html">Backyard Pressure Wash &amp; Sealing</a></li>
+                                          <li><a href="gutter-guard-installation.html">Gutter Guard Installation</a></li>
+                                          <li><a href="solar-panel-bird-proofing.html">Solar Panel Bird Mesh (Bird Proofing)</a></li>
+                                          <li><a href="roof-repair-maintenance.html">Roof Repair &amp; Maintenance</a></li>
+                                          <li><a href="tree-branch-trimming.html">Tree &amp; Branch Trimming</a></li>
+                                      </ul>
+             </div>
+
+             <!-- Contact -->
+             <div class="site-footer__col">
+                 <h4>Contact</h4>
+                 <ul class="site-footer__links">
+                     <li><a href="tel:0466803866">0466 803 866</a></li>
+                     <li><a href="mailto:info@everestcrewclean.com.au">info@everestcrewclean.com.au</a></li>
+                     <li><span>Ashfield NSW 2131</span></li>
+                                                           </ul>
+             </div>
+
+         </div>
+
+     </div>
+
+     <div class="site-footer__bottom">
+         <div class="site-footer__container site-footer__bottom-inner">
+             <p>&copy; 2026 Everest Crew Clean Pty Ltd. All rights reserved. Designed &amp;
+                 Developed by <a href="https://linearwebsolutions.com.au/">Linear Web Solutions</a></p>
+
+         </div>
+     </div>
+ </footer>
+
+ <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+ <script src="js/scroll-animations.js"></script>
+ <script src="js/main.js"></script>
+ </body>
+
+ </html>

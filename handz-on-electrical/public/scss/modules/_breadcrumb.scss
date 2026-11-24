@@ -1,0 +1,99 @@
+.breadcrumb {
+    padding: 70px 0;
+    background: url('../images/banner2.jpg') no-repeat center center/cover;
+    text-align: center;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(#000, 0.7);
+        transition: 0.5s all;
+        z-index: -1;
+    }
+
+    .breadcrumb-wrapper {
+        h1 {
+            font-size: 2.25rem;
+            font-family: $territaryFont;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 20px;
+
+            li {
+                background-color: $primaryColor;
+                padding: 10px;
+                justify-content: center;
+                color: $grey;
+                font-size: 14px;
+                line-height: 1.5;
+
+                a {
+                    font-size: 14px;
+                    color: #fff;
+                    line-height: 1.5;
+                }
+
+                &.active::before {
+                    content: "//";
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    display: "block";
+                    padding-right: 20px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+@include custom_max(992px) {
+    .breadcrumb {
+        .breadcrumb-wrapper {
+            h1 {
+                font-size: 1.875rem;
+            }
+
+            .breadcrumb-nav {
+                padding-top: 20px;
+
+                li {
+                    font-size: 14px;
+
+                    a {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(767px) {
+    .breadcrumb {
+        padding: 50px 0;
+
+        .breadcrumb-wrapper {
+            h1 {
+                font-size: 1.625rem;
+            }
+        }
+    }
+}

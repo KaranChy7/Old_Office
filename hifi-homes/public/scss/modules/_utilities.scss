@@ -1,0 +1,87 @@
+// =============================================
+// GLINT PLUS PAINTING SERVICE — PAGE HERO (inner pages)
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ── Inner page hero ────────────────────────
+.page-hero {
+  background: $navy;
+  padding: calc(var(--header-height, 172px) + 2rem) 0 4rem;
+  position: relative;
+  overflow: hidden;
+
+  @include respond(lg) {
+    padding-bottom: 3rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, $navy-dark 0%, $navy 100%);
+  }
+
+  // Angled bottom edge — cream (about)
+  &--cream::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    height: 60px;
+    background: $cream;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    transform: translateZ(0);
+  }
+
+  // Angled bottom edge — white (gallery, contact)
+  &--white::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    height: 60px;
+    background: $white;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    transform: translateZ(0);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__eyebrow {
+    justify-content: flex-start;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  // Bare h1 / p — no class needed on the tag itself
+  h1 {
+    @include heading($white);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    @include lead(rgba($white, 0.75));
+  }
+}
+
+// ── SVG icon sizes ──────────────────────────
+.icon-md {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+// ── Section eyebrow centered / left variants
+.section-eyebrow--center {
+  justify-content: center;
+}
+

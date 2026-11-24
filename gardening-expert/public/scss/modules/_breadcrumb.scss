@@ -1,0 +1,79 @@
+.breadcrumb-wrapper {
+    background: url('../images/breadcrumb.jpg') no-repeat center bottom;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    padding-top: 60px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($blackie, 0.3);
+    }
+
+    .bread-title {
+        padding: 40px 0;
+        position: relative;
+    }
+
+    h4 {
+        font-size: 48px;
+        color: $whitey;
+        font-weight: 900;
+        text-transform: capitalize;
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        border-radius: 0;
+        position: relative;
+
+        .breadcrumb-item {
+            text-transform: capitalize;
+            color: $whitey;
+            font-weight: 500;
+            font-size: 16px;
+            background-color: $primaryColor;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                font-family: "font Awesome 5 Free";
+                font-weight: 700;
+                color: $whitey;
+            }
+
+            .breadcrumb-link {
+                color: $whitey;
+                font-weight: 400;
+                font-size: 16px;
+                padding: 20px;
+                transition: 0.3s ease-in;
+            }
+
+            &:first-child {
+                border-top-left-radius: 5px;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            &:last-child {
+                border-top-right-radius: 5px;
+            }
+        }
+    }
+}

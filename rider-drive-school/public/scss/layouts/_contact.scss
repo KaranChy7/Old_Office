@@ -1,0 +1,246 @@
+// ── CONTACT PAGE ──────────────────────────────────────────
+.contact-main {
+  padding: 6rem 0 7rem;
+  background: $white;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+
+  @include respond($bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-form-wrap {
+  background: $black;
+  padding: 3rem;
+  border: 1px solid rgba($white, 0.05);
+
+  h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.4rem;
+    color: $white;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+  }
+
+  > p {
+    font-size: 0.9rem;
+    color: $muted;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.form-note {
+  font-size: 0.78rem;
+  color: $muted;
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-card {
+  background: rgba($black, 0.02);
+  border: 1px solid rgba($black, 0.08);
+  padding: 2rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: rgba($blue, 0.25);
+  }
+}
+
+.info-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba($blue, 0.1);
+  border: 1px solid rgba($blue, 0.2);
+  @include flex-center;
+  flex-shrink: 0;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    color: $blue;
+  }
+}
+
+.info-text {
+  strong {
+    display: block;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $steel;
+    margin-bottom: 0.3rem;
+  }
+
+  p,
+  a {
+    font-size: 0.9rem;
+    color: rgba($steel, 0.7);
+    line-height: 1.65;
+  }
+  a:hover {
+    color: $blue;
+  }
+}
+
+.hours-table {
+  margin-top: 0.6rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba($black, 0.08);
+
+  &:last-child {
+    border: none;
+  }
+  .day {
+    color: rgba($steel, 0.6);
+  }
+  .time {
+    color: $blue;
+    font-weight: 600;
+  }
+}
+
+.contact-map {
+  padding: 0 0 7rem;
+  background: $dark;
+}
+
+.map-wrap {
+  height: 420px;
+  background: $steel;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba($white, 0.06);
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  @include flex-center;
+  flex-direction: column;
+  gap: 1rem;
+  background: $steel;
+
+  svg {
+    width: 48px;
+    height: 48px;
+    color: $blue;
+  }
+  p {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $muted;
+  }
+
+  a {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $blue;
+    border: 1px solid $blue;
+    padding: 0.5rem 1.25rem;
+    transition:
+      background 0.2s,
+      color 0.2s;
+
+    &:hover {
+      background: $blue;
+      color: $white;
+    }
+  }
+}
+
+.contact-quick {
+  padding: 4rem 0;
+  background: $steel;
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @include respond($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quick-card {
+  background: rgba($white, 0.03);
+  border: 1px solid rgba($white, 0.06);
+  padding: 2rem;
+  text-align: center;
+  transition:
+    border-color 0.3s,
+    transform 0.3s;
+
+  &:hover {
+    border-color: rgba($blue, 0.3);
+    transform: translateY(-4px);
+  }
+
+  svg {
+    width: 36px;
+    height: 36px;
+    color: $blue;
+    margin: 0 auto 1rem;
+  }
+
+  h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $white;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: $muted;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $blue;
+  }
+}

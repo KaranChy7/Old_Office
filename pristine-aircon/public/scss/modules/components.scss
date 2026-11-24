@@ -1,0 +1,96 @@
+.section {
+    padding: 120px 0;
+}
+
+.main-title {
+    margin-bottom: 60px;
+    max-width: 600px;
+
+    h6 {
+        font-size: 0.9375rem;
+        font-weight: 300;
+        color: $black;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -10px;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 150%;
+            background-color: $territary;
+            border-radius: 20px 5px 12px 18px;
+            z-index: -1;
+        }
+    }
+
+    h3 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: $primaryColor;
+        line-height: 1;
+        text-transform: capitalize;
+        padding-top: 10px;
+    }
+}
+
+@include custom_max(1200px) {
+    .section {
+        padding: 100px 0;
+    }
+
+    .main-title {
+        margin-bottom: 60px;
+
+        h3 {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .section {
+        padding: 80px 0;
+    }
+
+    .main-title {
+        margin-bottom: 40px;
+
+        h3 {
+            font-size: 2rem;
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .section {
+        padding: 60px 0;
+    }
+}
+
+@include custom_max(576px) {
+    .section {
+        padding: 40px 0;
+    }
+
+    .main-title {
+        margin-bottom: 30px;
+
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .section {
+        padding: 30px 0;
+    }
+}

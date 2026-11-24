@@ -1,0 +1,128 @@
+.features {
+    .ft-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 50px 0;
+        background-color: $primaryColor;
+        border-radius: $radius-m;
+
+        .block-wrap {
+            flex-basis: calc(100% / 4);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 2px;
+                height: 50%;
+                background-color: $t-color;
+            }
+
+            &:last-child {
+                &::before {
+                    display: none;
+                }
+            }
+
+            .desc {
+                text-align: center;
+
+                h6 {
+                    font-size: 2.125rem;
+                    font-weight: 700;
+                    color: $whitey;
+                    line-height: 1.1;
+
+                    span {
+                        color: $whitey;
+                    }
+                }
+
+                p {
+                    font-size: 0.875rem;
+                    color: $whitey;
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+    }
+}
+
+@include custom_max(992px) {
+    .features {
+        padding: 40px 0;
+
+        .ft-wrap {
+
+            .block-wrap {
+                gap: 15px;
+
+                .desc {
+                    text-align: center;
+
+                    h6 {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .features {
+        .ft-wrap {
+            gap: 40px 0;
+
+            .block-wrap {
+                flex-basis: 50%;
+                flex-direction: column;
+                gap: 10px;
+
+                .desc {
+                    h6 {
+                        font-size: 1.75rem;
+                    }
+                }
+
+                &:nth-child(even) {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .features {
+        .ft-wrap {
+            flex-direction: column;
+
+            .block-wrap {
+                &::before {
+                    display: none;
+                }
+
+                .desc {
+                    h6 {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+        }
+    }
+}

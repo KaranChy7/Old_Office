@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="GC-E Campers — Premium electric & hybrid camper hire and bespoke custom fit-outs on the Gold Coast. Explore Australia in style.">
+    <title>quote | GC-E Campers    </title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Icons (Remix Icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav__overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Nav Drawer -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">
+            <i class="ri-close-line"></i>
+        </button>
+        <a href="./" class="">Home</a>
+        <a href="camper_hire" class="">Hire</a>
+        <a href="fit_outs" class="">Fit-Outs</a>
+        <a href="about_us" class="">About</a>
+        <a href="gallery" class="">Gallery</a>
+        <a href="contact_us" class="">Contact</a>
+        <div class="mobile-nav__cta">
+            <a href="quote" class="btn btn--gold" style="width:100%; justify-content:center;">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Site Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+
+            <!-- Logo -->
+            <a href="./" class="site-logo" aria-label="GC-E Campers home">
+                <div>
+                    <div class="site-logo__mark">GC&#8209;<span>E</span> CAMPERS</div>
+                    <div class="site-logo__sub">Electric &amp; Hybrid Hire</div>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="./" class="">Home</a>
+                <a href="camper_hire" class="">Hire</a>
+                <a href="fit_outs" class="">Fit-Outs</a>
+                <a href="about_us" class="<br />
+<b>Warning</b>:  Undefined variable $current_page in <b>C:\xampp\htdocs\LinearWeb\gc-ecampers\public\includes\header.php</b> on line <b>84</b><br />
+">About</a>
+                <a href="gallery" class="<br />
+<b>Warning</b>:  Undefined variable $current_page in <b>C:\xampp\htdocs\LinearWeb\gc-ecampers\public\includes\header.php</b> on line <b>85</b><br />
+">Gallery</a>
+                <a href="contact_us" class="<br />
+<b>Warning</b>:  Undefined variable $current_page in <b>C:\xampp\htdocs\LinearWeb\gc-ecampers\public\includes\header.php</b> on line <b>86</b><br />
+">Contact</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="quote" class="btn btn--gold" style="font-size:0.72rem; padding:0.7rem 1.5rem;">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+<section class="page-hero" style="height:40vh; min-height:280px;">
+    <div class="page-hero__bg">
+        <img src="images/quote-hero.jpg" alt="Book a camper" loading="eager">
+    </div>
+    <div class="container">
+        <div class="page-hero__content">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb__sep">/</span>
+                <span class="breadcrumb__current">Get a Quote</span>
+            </div>
+            <h1 class="page-hero__title">Book Your <em>Adventure</em></h1>
+        </div>
+    </div>
+</section>
+
+<section class="section section--black" id="quote">
+    <div class="container">
+        <div style="text-align:center; margin-bottom:3rem;">
+            <div class="section-eyebrow" style="justify-content:center;">Let's Get Started</div>
+            <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);">Request a <span
+                    class="text-gold">Quote</span>
+            </h2>
+            <p class="body-text" style="max-width:500px; margin:1rem auto 0;">Fill out the form below and we'll get back
+                to
+                you with availability and pricing within a few hours.</p>
+        </div>
+
+        <div class="quote-form">
+            <form id="quoteForm" novalidate>
+
+                <!-- Vehicle Selection -->
+                <div class="quote-form__section">
+                    <div class="quote-form__section-title">01. Select Service</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="q_service">Service Type</label>
+                            <select id="q_service" name="service" class="form-control" required>
+                                <option value="">Choose a service…</option>
+                                <option value="hire_buzz"
+                                    >
+                                    Camper Hire — VW ID. Buzz (from $349/day)</option>
+                                <option value="hire_mini"
+                                    >
+                                    Camper Hire — Mini Countryman (from $199/day)</option>
+                                <option value="fitout"
+                                    >
+                                    Custom Fit-Out</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="datesGroup">
+                            <label class="form-label" for="q_dates">Pickup Date</label>
+                            <input type="date" id="q_dates" name="pickup_date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row" id="returnGroup">
+                        <div class="form-group">
+                            <label class="form-label" for="q_return">Return Date</label>
+                            <input type="date" id="q_return" name="return_date" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="q_guests">Number of Guests</label>
+                            <select id="q_guests" name="guests" class="form-control">
+                                <option value="1">1 person</option>
+                                <option value="2" selected>2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Info -->
+                <div class="quote-form__section">
+                    <div class="quote-form__section-title">02. Your Details</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="q_fname">First Name</label>
+                            <input type="text" id="q_fname" name="first_name" class="form-control" placeholder="John"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="q_lname">Last Name</label>
+                            <input type="text" id="q_lname" name="last_name" class="form-control" placeholder="Smith"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="q_email">Email</label>
+                            <input type="email" id="q_email" name="email" class="form-control"
+                                placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="q_phone">Phone</label>
+                            <input type="tel" id="q_phone" name="phone" class="form-control" placeholder="04XX XXX XXX">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="quote-form__section">
+                    <div class="quote-form__section-title">03. Extra Details</div>
+                    <div class="form-group">
+                        <label class="form-label" for="q_message">Tell us about your trip / fit-out plans</label>
+                        <textarea id="q_message" name="message" class="form-control"
+                            placeholder="Where are you headed? Any special requirements?"></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="q_terms" name="terms" required>
+                        <label class="form-check__label" for="q_terms">
+                            I agree to the <a href="#" style="color:#c9a84c;">terms and conditions</a> and understand
+                            this is an
+                            enquiry, not a confirmed booking.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-success" id="quoteSuccess" style="margin-bottom:1.5rem;">
+                    <i class="ri-check-circle-line"></i> Quote request received! We'll be in touch within 4 hours.
+                </div>
+
+                <button type="submit" class="btn btn--gold"
+                    style="width:100%; justify-content:center; padding:1.1rem; font-size:0.85rem;">
+                    <i class="ri-send-plane-line"></i> Submit Enquiry
+                </button>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer__grid">
+
+            <!-- Brand col -->
+            <div>
+                <div class="site-logo__mark" style="font-size:1.5rem; margin-bottom:1rem;">GC&#8209;<span
+                        style="background: linear-gradient(135deg,#e2bf72,#c9a84c,#a8893a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">E</span>
+                    CAMPERS</div>
+                <p class="site-footer__about">
+                    Premium electric &amp; hybrid camper hire and bespoke custom fit-outs crafted on the Gold Coast for
+                    the
+                    adventure-minded.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                    <!-- <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a> -->
+                    <!-- <a href="#" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a> -->
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <div class="site-footer__col-title">Navigate</div>
+                <ul class="site-footer__links">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="camper_hire">Camper Hire</a></li>
+                    <li><a href="fit_outs">Fit-Outs</a></li>
+                    <li><a href="about_us">About Us</a></li>
+                    <li><a href="contact_us">Contact</a></li>
+                    <li><a href="quote">Get a Quote</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <div class="site-footer__col-title">Services</div>
+                <ul class="site-footer__links">
+                    <li><a href="camper_hire">Electric Hire</a></li>
+                    <li><a href="camper_hire">Hybrid Hire</a></li>
+                    <li><a href="fit_outs">Custom Fit-Outs</a></li>
+                    <li><a href="fit_outs">Solar &amp; Electrical</a></li>
+                    <li><a href="fit_outs">Pop-Top Roofs</a></li>
+                    <li><a href="fit_outs">DIY Kits</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <div class="site-footer__col-title">Contact</div>
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>14 Logistics Drive<br>Arundel QLD 4214</span>
+                </div>
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 7.81 19.79 19.79 0 01.01 4.18a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.12 6.12l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                    <span>0400 123 456</span>
+                </div>
+                <div class="site-footer__contact-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span>info@gcecampers.com.au</span>
+                </div>
+            </div>
+
+        </div><!-- /.site-footer__grid -->
+
+        <div class="site-footer__bottom">
+            <p class="site-footer__copyright">&copy; 2026 GC-E Campers. All rights reserved. Gold
+                Coast,
+                QLD.</p>
+            <div class="site-footer__legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+</body>
+
+</html>

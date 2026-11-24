@@ -1,0 +1,44 @@
+@use 'sass:map';
+
+// Colors
+$pp-navy: #0E3563;
+$pp-navy-dark: #0A2849;
+$pp-footer: #0B2645;
+$pp-yellow: #F6C230;
+$pp-yellow-dark: #E9B214;
+$pp-blue: #1B64B5;
+$pp-green: #2E9F5E;
+$pp-gold: #F4B723;
+$pp-purple: #5B3DB8;
+$pp-teal: #15948C;
+$pp-heading: #13243A;
+$pp-text: #4D5866;
+$pp-light: #EDF2F8;
+$pp-border: #E1E7EF;
+$pp-white: #FFFFFF;
+
+// Typography
+$pp-font-display: 'Lexend', sans-serif;
+$pp-font-body: 'Inter', sans-serif;
+$pp-font-script: 'Caveat', cursive;
+
+// Layout
+$pp-container: 1200px;
+$pp-header-h: 82px;
+$pp-transition: all 0.3s ease;
+
+// Breakpoints (max-width)
+$pp-bp: (
+  xl: 1199px,
+  nav: 1100px,
+  lg: 991px,
+  md: 767px,
+  sm: 575px,
+  xs: 400px,
+);
+
+@mixin pp-down($key) {
+  @media (max-width: map.get($pp-bp, $key)) {
+    @content;
+  }
+}

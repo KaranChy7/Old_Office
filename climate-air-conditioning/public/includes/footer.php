@@ -1,0 +1,107 @@
+<footer class="footer section">
+    <div class="footer-top">
+        <div class="container">
+            <div class="top-wrap">
+                <div class="footer-block">
+                    <a href="./" class="logo">
+                        <img src="images/logo.png" alt="Company Logo">
+                    </a>
+                    <div class="desc">
+                        <p>Mirtop Render Solutions has over 8 years of experience delivering expert workmanship with
+                            precision and care. Our team is committed to reliability, professionalism, and ensuring
+                            every client is completely satisfied with the results.
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-block">
+                    <ul class="quick-link">
+                        <h5>quick links</h5>
+                        <li class="footer-item"><a href="#about_us" class="footer-link">about us</a></li>
+                        <li class="footer-item"><a href="#our_project" class="footer-link">our projects</a></li>
+                        <li class="footer-item"><a href="#contact_us" class="footer-link">contact us</a></li>
+                        <li class="footer-item"><a href="#get_a_quote" class="footer-link">get a quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-block">
+                    <ul class="quick-link">
+                        <h5>office info</h5>
+                        <li class="footer-item">
+                            <a href="tel:<?= $phone ?>" class="footer-link">Phone: <?= $phone ?></a>
+                        </li>
+
+                        <li class="footer-item">
+                            <div class="footer-link">Address: <?= $address ?></div>
+                        </li>
+                        <li class="footer-item">
+                            <div class="footer-link">ABN: <?= $abn ?></div>
+                        </li>
+                        <li class="footer-item">
+                            <a href="mailto:<?= $email ?>" class="footer-link"><?= $email ?></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-block">
+                    <ul class="quick-link">
+                        <h5>quick links</h5>
+                        <li class="footer-item">
+                            <div class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M5.99999 8.22228C7.22727 8.22228 8.22222 7.22733 8.22222 6.00005C8.22222 4.77275 7.22727 3.77783 5.99999 3.77783C4.77269 3.77783 3.77777 4.77275 3.77777 6.00005C3.77777 7.22733 4.77269 8.22228 5.99999 8.22228Z"
+                                        stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M1 8.22222V3.77778C1 2.24366 2.24366 1 3.77778 1H8.22222C9.75633 1 11 2.24366 11 3.77778V8.22222C11 9.75633 9.75633 11 8.22222 11H3.77778C2.24366 11 1 9.75633 1 8.22222Z"
+                                        stroke="black" />
+                                    <path d="M9.05554 2.95002L9.0611 2.94385" stroke="black" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <a href="<?= $instagram ?>" class="footer-link" target="_blank">instagram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="bottom-wrap">
+                <div class="block">
+                    <p>©</p>
+                    <a href="./"><?= $company;?></a>
+                    <p>all rights reserved.</p>
+                </div>
+                <div class=" develop">
+                    <p>Designed & Developed by</p>
+                    <a href="https://linearwebsolutions.com.au/" target="_blank">Linear Web Solutions Pty
+                        Ltd</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<div class="mobile-call-button">
+    <a href="tel:<?= $phone;?>"><i class="fa fa-phone"></i></a>
+</div>
+<div class="scrollevent">
+    <a class="scrollToTop" href="#">
+        <button class="btn btn-scroll-up"><i class="fa fa-chevron-up"></i></button>
+    </a>
+</div>
+
+<!-- Jquery Links -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+<!-- End of Body Section -->
+
+</html>
+<!-- End -->

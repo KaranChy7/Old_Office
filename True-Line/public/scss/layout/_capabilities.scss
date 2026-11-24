@@ -1,0 +1,190 @@
+// =============================================
+// COMMERCIAL CLEANING — CAPABILITIES
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.capabilities {
+  padding: 7rem 0;
+  background: $white;
+  overflow: hidden;
+}
+
+.capabilities__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 3rem;
+  align-items: center;
+
+  @include respond(lg) {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+// ── Intro column ──────────────────────────────
+.capabilities__intro {
+  max-width: 420px;
+
+  @include respond(lg) {
+    max-width: none;
+  }
+}
+
+.capabilities__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.capabilities__title {
+  font-family: $font-display;
+  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: $text-dark;
+}
+
+.capabilities__heading-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0.35rem;
+
+  span:first-child {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: $font-body;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: $grey-400;
+    white-space: nowrap;
+  }
+}
+
+.capabilities__heading-line {
+  width: 1px;
+  height: 42px;
+  background: linear-gradient(to bottom, $grey-400, transparent);
+}
+
+.capabilities__desc {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: $grey-600;
+  margin-bottom: 2.25rem;
+}
+
+.capabilities__view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: $font-display;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $text-dark;
+
+  &:hover .capabilities__view-all-icon {
+    background: $navy-dark;
+    border-color: $navy-dark;
+    color: $white;
+    transform: translateX(3px);
+  }
+}
+
+.capabilities__view-all-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: $white;
+  border: 1px solid $grey-200;
+  box-shadow: $shadow-md;
+  color: $navy-dark;
+  transition: $transition;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// ── Icon list ─────────────────────────────────
+.capabilities__list {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 3rem 2.5rem;
+
+  @include respond(lg) {
+    justify-content: center;
+  }
+
+  @include respond(sm) {
+    gap: 2.5rem 1.75rem;
+  }
+}
+
+.capabilities__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  text-align: center;
+}
+
+.capabilities__diamond {
+  width: 108px;
+  height: 108px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border: 1px solid $grey-200;
+  transform: rotate(45deg);
+  transition: $transition;
+
+  svg {
+    width: 34px;
+    height: 34px;
+    color: $navy-dark;
+    transform: rotate(-45deg);
+  }
+
+  @include respond(sm) {
+    width: 84px;
+    height: 84px;
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+
+.capabilities__item:hover .capabilities__diamond {
+  background: $navy-dark;
+  border-color: $navy-dark;
+
+  svg {
+    color: $white;
+  }
+}
+
+.capabilities__label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $text-dark;
+}

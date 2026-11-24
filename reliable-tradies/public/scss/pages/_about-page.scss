@@ -1,0 +1,128 @@
+// =============================================
+// ABOUT PAGE
+// =============================================
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.about-page {
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+
+        @include custom_max(767px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include custom_max(480px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .values-section {
+        @include section-padding;
+        background: $lgrey;
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 50px;
+
+            @include custom_max(767px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .value-card {
+            background: $whitey;
+            border-radius: $radius;
+            padding: 36px 30px;
+            text-align: center;
+            border-bottom: 3px solid $secondaryColor;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: translateY(-4px);
+            }
+
+            i {
+                font-size: 2.5rem;
+                color: $secondaryColor;
+                margin-bottom: 16px;
+                display: block;
+            }
+
+            h4 {
+                font-family: $primaryFont;
+                font-size: 1.2rem;
+                color: $primaryColor;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-family: $secondaryFont;
+                font-size: 14px;
+                color: $dark-color;
+                line-height: 1.65;
+            }
+        }
+    }
+
+    .milestones {
+        @include section-padding;
+        background: $primaryColor;
+
+        .milestones-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: $radius;
+            overflow: hidden;
+            margin-top: 50px;
+
+            @include custom_max(767px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .milestone-item {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px 28px;
+            text-align: center;
+
+            .m-num {
+                font-family: $primaryFont;
+                font-size: clamp(2.5rem, 5vw, 3.5rem);
+                font-weight: 700;
+                color: $secondaryColor;
+                line-height: 1;
+                margin-bottom: 8px;
+            }
+
+            .m-label {
+                font-family: $secondaryFont;
+                font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.55);
+            }
+        }
+    }
+
+    .aboout-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+
+        @include custom_max(768px) {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+    }
+}

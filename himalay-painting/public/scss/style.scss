@@ -1,0 +1,41 @@
+@import "base/variables";
+@import "base/mixins";
+@import "modules/typography";
+@import "modules/breadcrumb";
+@import "modules/buttons";
+@import "modules/components";
+@import "modules/common";
+@import "modules/form";
+@import "modules/icon_block";
+@import "modules/mobile-call-button";
+@import "modules/scroll-top";
+@import "modules/slick";
+// @import "modules/custom_animation";
+
+//Index Section Style
+@import "layouts/header";
+
+@import "layouts/banner";
+@import "layouts/about";
+@import "layouts/why-choose-us";
+@import "layouts/what-we-do";
+@import "layouts/before_after";
+@import "layouts/process";
+@import "layouts/call-us";
+@import "layouts/service";
+@import "layouts/about-feature";
+@import "layouts/gallery";
+@import "layouts/review"; 
+
+@import "layouts/footer";
+
+// Inner Page Styles
+@import "layouts/page-about.scss";
+@import "layouts/page-careers.scss";
+@import "layouts/page-services.scss";
+@import "layouts/page-contact.scss";
+@import "layouts/page-estimate.scss";
+// unwanted
+@import "layouts/quote";
+@import "layouts/testimonial";
+@import "layouts/icon-slider";

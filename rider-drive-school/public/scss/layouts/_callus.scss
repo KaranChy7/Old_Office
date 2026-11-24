@@ -1,0 +1,101 @@
+// ── CALL US / CTA STRIP ───────────────────────────────────
+#callus {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(100deg,
+      $dark 0%,
+      $dark 56%,
+      $blue2 56%,
+      $blue2 58%,
+      $blue 58%,
+      $blue 100%);
+
+  @include respond($bp-md) {
+    background: linear-gradient(160deg,
+        $dark 0%,
+        $dark 46%,
+        $blue2 46%,
+        $blue2 48%,
+        $blue 48%,
+        $blue 100%);
+  }
+}
+
+.callus-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  @include respond($bp-md) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.callus-text {
+  flex: 1 1 46%;
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: $white;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: rgba($white, 0.65);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.callus-actions {
+  flex: 1 1 40%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  @include respond($bp-md) {
+    justify-content: flex-start;
+  }
+}
+
+.callus-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: $black;
+  }
+}
+
+.phone-detail {
+  strong {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: $black;
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+
+  span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba($black, 0.6);
+  }
+}

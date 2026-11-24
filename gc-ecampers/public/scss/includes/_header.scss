@@ -1,0 +1,377 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-nav;
+  padding: 1.5rem 0;
+  transition: all $transition-mid;
+
+  @include tablet {
+    padding: 1rem 0;
+  }
+
+  &.scrolled {
+    padding: 0.85rem 0;
+    background: rgba($color-black, 0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba($color-gold, 0.1);
+  }
+
+  .container {
+    @include flex-between;
+  }
+}
+
+// Logo
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+
+  &__mark {
+    font-family: $font-heading;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-white;
+
+    span {
+      @include gold-text;
+    }
+  }
+
+  &__sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba($color-white, 0.45);
+    display: block;
+    margin-top: -2px;
+  }
+}
+
+// Nav
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  @include laptop {
+    display: none;
+  }
+
+  a {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba($color-white, 0.65);
+    transition: color $transition-fast;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: $color-gold;
+      transition: width $transition-mid;
+    }
+
+    &:hover,
+    &.active {
+      color: $color-white;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &.active {
+      color: $color-gold;
+    }
+  }
+}
+
+// Nav dropdowns
+.site-nav__item {
+  position: relative;
+
+  >a i {
+    font-size: 0.9rem;
+    vertical-align: middle;
+    margin-left: 0.1rem;
+  }
+
+  // Hover bridge so the menu doesn't close crossing the gap
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 1.25rem;
+  }
+
+  &:hover .site-nav__dropdown,
+  &:focus-within .site-nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+}
+
+.site-nav__dropdown {
+  position: absolute;
+  top: calc(100% + 1.25rem);
+  left: 50%;
+  transform: translate(-50%, 8px);
+  min-width: 230px;
+  padding: 0.75rem 0;
+  background: rgba($color-black, 0.96);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba($color-gold, 0.15);
+  border-radius: $radius-md;
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition-fast;
+  z-index: $z-nav + 1;
+
+  .site-nav & a {
+    display: block;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+
+    &::after {
+      display: none;
+    }
+
+    &:hover,
+    &.active {
+      color: $color-gold;
+      background: rgba($color-gold, 0.06);
+    }
+  }
+}
+
+// Header actions
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @include laptop {
+    gap: 0.75rem;
+  }
+
+  // Drawer has its own Book Now — free up room for the logo on phones
+  @include mobile {
+    .btn {
+      display: none;
+    }
+  }
+}
+
+// Mobile menu toggle
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+
+  @include laptop {
+    display: flex;
+  }
+
+  span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: $color-white;
+    transition: all $transition-mid;
+  }
+
+  &.is-open {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(4.5px, 4.5px);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(4.5px, -4.5px);
+    }
+  }
+}
+
+// Mobile nav drawer
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(360px, 100vw);
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  background: $color-dark;
+  z-index: $z-modal;
+  padding: 6rem 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border-left: 1px solid rgba($color-gold, 0.1);
+
+  @include mobile {
+    padding: 5rem 1.5rem 2rem;
+    gap: 1.5rem;
+  }
+
+  &.is-open {
+    right: 0;
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba($color-black, 0.7);
+    z-index: $z-modal - 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $transition-mid;
+    backdrop-filter: blur(4px);
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  a {
+    font-family: $font-heading;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba($color-white, 0.6);
+    transition: color $transition-fast;
+
+    &:hover,
+    &.active {
+      color: $color-gold;
+    }
+  }
+
+  // Collapsible Hire / Fit-Outs groups
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__toggle {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    @include flex-center;
+    border: 1px solid rgba($color-white, 0.15);
+    border-radius: 50%;
+    color: rgba($color-white, 0.7);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    i {
+      transition: transform $transition-mid;
+    }
+
+    &:hover {
+      border-color: $color-gold;
+      color: $color-gold;
+    }
+  }
+
+  &__sub {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows $transition-mid;
+  }
+
+  &__sub-inner {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-left: 1rem;
+    border-left: 1px solid rgba($color-gold, 0.2);
+  }
+
+  &__group.is-open {
+    .mobile-nav__sub {
+      grid-template-rows: 1fr;
+    }
+
+    .mobile-nav__sub-inner {
+      margin-top: 1rem;
+    }
+
+    .mobile-nav__toggle {
+      border-color: $color-gold;
+      color: $color-gold;
+
+      i {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__sub-inner {
+    a {
+      font-family: $font-body;
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: rgba($color-white, 0.5);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    @include flex-center;
+    border: 1px solid rgba($color-white, 0.15);
+    border-radius: 50%;
+    color: $color-white;
+    font-size: 1.2rem;
+    transition: all $transition-fast;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-gold;
+      color: $color-gold;
+    }
+  }
+
+  &__cta {
+    margin-top: auto;
+  }
+}

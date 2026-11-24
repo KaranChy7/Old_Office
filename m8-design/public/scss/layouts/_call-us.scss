@@ -1,0 +1,139 @@
+.call-us {
+    background-image: url(../images/callus_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    padding: 80px 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba($dblack, 0.9);
+        z-index: -1;
+    }
+
+    .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .desc {
+            flex-basis: 70%;
+
+            .section-title {
+                margin-bottom: 0;
+
+                h6 {
+                    font-size: 32px;
+                    padding-left: 3px;
+                    color: $whitey;
+                    font-family: $primaryFont;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+
+                h3 {
+                    color: $whitey;
+                    margin-block: 22px;
+                    font-weight: 450;
+                    font-size: 48px;
+                    font-family: $primaryFont;
+
+                    span {
+                        font-weight: 700;
+                        display: inline-block;
+
+                        &::after {
+                            content: "";
+                            width: 100%;
+                            height: 1.8px;
+                            background: $whitey;
+                            display: block;
+                            margin-top: -2px;
+                            // margin: auto
+                        }
+                    }
+                }
+            }
+
+            p {
+                color: $lgrey;
+                font-family: $primaryFont;
+            }
+        }
+
+        .button {
+
+            .btn-primary {
+                background-color: $whitey;
+                color: $dblack;
+                border-color: $whitey;
+
+                &:hover {
+                    background-color: transparent;
+                    border-color: $whitey;
+                    color: $whitey;
+
+                    .btn-wrap {
+                        i {
+                            color: $dblack;
+                        }
+                    }
+                }
+            }
+
+
+            .btn {
+                border-radius: 5px;
+                font-weight: 600;
+            }
+        }
+
+    }
+}
+
+@include custom_max(992px) {
+    .call-us {
+        .wrap {
+            flex-direction: column;
+            justify-content: center;
+
+            .desc {
+                text-align: center;
+                margin-bottom: 20px;
+
+                .section-title {
+                    h3 {
+                        margin-block: 40px;
+                        font-size: 32px;
+
+                    }
+                }
+            }
+
+            .button {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .call-us {
+        .wrap {
+            .desc {
+                .section-title {
+                    h3 {
+                        font-size: 20px;
+                    }
+
+                    h6 {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+}

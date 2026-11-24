@@ -1,0 +1,381 @@
+// =============================================
+// TRU-LINE INSTALLS — INNER PAGES
+// Service, project and services-overview pages.
+// Reuses the homepage hero / about / services / capabilities
+// blocks; only the additions live here.
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ── Inner page banner (single background photo) ──
+.page-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 320px;
+  padding: calc(100px + 1.5rem) 0 2rem;
+  background-color: $navy-dark;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  @include respond(lg) {
+    min-height: 240px;
+    padding: calc(76px + 1.25rem) 0 1.5rem;
+  }
+}
+
+.page-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba($navy-dark, 0.8) 0%, rgba($navy-dark, 0.35) 50%, rgba($navy-dark, 0.7) 100%);
+
+}
+
+.page-banner__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+
+  @include respond(md) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+
+.page-banner__title {
+  font-family: $font-display;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  // text-transform: uppercase;
+  color: $white;
+}
+
+ 
+
+.page-banner__tag {
+  background: $white;
+  color: $navy-dark;
+  font-family: $font-display;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.1rem;
+  border-radius: 999px;
+  box-shadow: $shadow-md;
+}
+
+ 
+
+// ── Feature list inside the "What's Included" panel ──
+.services__features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem 2rem;
+  max-width: 520px;
+  margin-top: 2rem;
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+
+  li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: $text-dark;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 10px;
+      height: 1px;
+      background: $text-dark;
+    }
+  }
+}
+
+// Linked capability diamonds
+a.capabilities__item {
+  color: inherit;
+}
+
+// ── Work / service card grid ─────────────────
+.work {
+  padding: 7rem 0;
+  background: $grey-100;
+  overflow: hidden;
+
+  &--white {
+    background: $white;
+  }
+}
+
+.work__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+
+  .capabilities__heading {
+    margin-bottom: 0;
+  }
+
+  @include respond(md) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.work__lead {
+  max-width: 440px;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: $grey-600;
+}
+
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3.5rem 2.25rem;
+
+  @include respond(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.work-card {
+  position: relative;
+  display: block;
+  padding-bottom: 2.5rem;
+  color: inherit;
+
+  &:hover {
+    .work-card__img {
+      transform: scale(1.05);
+    }
+
+    .work-card__caption {
+      background: $navy-dark;
+    }
+
+    .work-card__title,
+    .work-card__num {
+      color: $white;
+    }
+
+    .work-card__sub {
+      color: rgba($white, 0.6);
+      border-color: rgba($white, 0.15);
+    }
+  }
+}
+
+.work-card__media {
+  overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%);
+  box-shadow: $shadow-lg;
+}
+
+.work-card__img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+
+  @include respond(md) {
+    height: 260px;
+  }
+}
+
+.work-card__caption {
+  position: absolute;
+  left: -1rem;
+  bottom: 0;
+  width: min(250px, 80%);
+  background: $white;
+  padding: 1.25rem 1.5rem;
+  box-shadow: $shadow-xl;
+  transition: $transition;
+
+  @include respond(sm) {
+    left: 0;
+  }
+}
+
+.work-card__num {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: $font-display;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: $grey-400;
+  transition: $transition;
+}
+
+.work-card__title {
+  display: block;
+  font-family: $font-display;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: $text-dark;
+  margin-bottom: 0.6rem;
+  transition: $transition;
+}
+
+.work-card__sub {
+  display: block;
+  padding-top: 0.6rem;
+  border-top: 1px solid $grey-200;
+  font-size: 0.78rem;
+  color: $grey-600;
+  transition: $transition;
+}
+
+// ── FAQ accordion (information page) ─────────
+.faq {
+  padding: 7rem 0;
+  background: $grey-100;
+}
+
+.faq__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 4rem;
+  align-items: start;
+
+  @include respond(lg) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.faq__list {
+  border-top: 1px solid $grey-200;
+}
+
+.faq__item {
+  border-bottom: 1px solid $grey-200;
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1.5rem 0;
+  text-align: left;
+  font-family: $font-display;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: $text-dark;
+
+  &::after {
+    content: '+';
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid $grey-200;
+    background: $white;
+    font-family: $font-body;
+    font-size: 1.1rem;
+    transition: $transition;
+  }
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+
+  p {
+    padding-bottom: 1.5rem;
+    max-width: 620px;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: $grey-600;
+  }
+}
+
+.faq__item.open {
+  .faq__question::after {
+    content: '−';
+    background: $navy-dark;
+    border-color: $navy-dark;
+    color: $white;
+  }
+
+  .faq__answer {
+    max-height: 400px;
+  }
+}
+
+// ── Legal / long-form text ───────────────────
+.legal {
+  padding: 6rem 0 7rem;
+  background: $white;
+}
+
+.legal__body {
+  max-width: 760px;
+
+  h2 {
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $text-dark;
+    margin: 2.5rem 0 0.85rem;
+  }
+
+  p,
+  li {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: $grey-600;
+  }
+
+  p + p {
+    margin-top: 1rem;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin-top: 0.75rem;
+  }
+
+  a {
+    color: $text-dark;
+    text-decoration: underline;
+  }
+}
+
+.legal__updated {
+  font-size: 0.85rem;
+  color: $grey-400;
+}

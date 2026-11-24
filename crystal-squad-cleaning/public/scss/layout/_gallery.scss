@@ -1,0 +1,342 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — GALLERY PREVIEW
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// Section-scoped teal accent + serif display face (kept local so the
+// rest of the site's monochrome palette/typography is untouched).
+$gallery-teal: #D7262F;
+$gallery-teal-dark: #A81C24;
+$gallery-teal-light: #FBE2E3;
+$gallery-ink: #141414;
+$gallery-grey: #5C5C5C;
+$gallery-font-serif: 'Playfair Display', serif;
+
+.gallery {
+  background: $white;
+  padding: 5rem 0;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__header {
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    background: $gallery-teal-light;
+    color: $gallery-teal-dark;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+  }
+
+  &__title {
+    font-family: $gallery-font-serif;
+    font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: $gallery-ink;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $gallery-grey;
+    max-width: 520px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    @include respond(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    &:hover .ba-compare {
+      box-shadow: $shadow-lg;
+    }
+  }
+
+  &__item-caption {
+    margin-top: 0.85rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: $gallery-ink;
+  }
+
+  // View-all CTA
+  &__cta-wrap {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  &__btn {
+    @include btn-base;
+    display: inline-flex;
+    background: $gallery-teal;
+    color: $white;
+    border: none;
+    border-radius: 999px;
+    font-family: $font-body;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 600;
+    padding: 0.9rem 1.75rem;
+
+    &:hover {
+      background: $gallery-teal-dark;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+}
+
+// =============================================
+// BEFORE / AFTER SPLIT COMPARISON
+// =============================================
+.ba-compare {
+  display: flex;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  position: relative;
+  box-shadow: $shadow-sm;
+  transition: $transition;
+  cursor: pointer;
+
+  &__panel {
+    position: relative;
+    flex: 1 1 50%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: $grey-100;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.04);
+    }
+
+    &:not(:last-child) {
+      border-right: 2px solid $white;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-family: $font-body;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $white;
+    background: rgba($gallery-ink, 0.55);
+    backdrop-filter: blur(8px) saturate(140%);
+    -webkit-backdrop-filter: blur(8px) saturate(140%);
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    pointer-events: none;
+  }
+
+  &__panel--after &__label {
+    left: auto;
+    right: 0.75rem;
+    background: rgba($gallery-teal-dark, 0.85);
+  }
+}
+
+// =============================================
+// GALLERY LIGHTBOX
+// =============================================
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  background: rgba($gallery-ink, 0.92);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__figure {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    transform: scale(0.96);
+    transition: transform 0.3s ease;
+  }
+
+  &.open &__figure {
+    transform: scale(1);
+  }
+
+  &__img {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    border-radius: $radius-md;
+    box-shadow: 0 1.5rem 4rem rgba(black, 0.4);
+  }
+
+  &__caption {
+    margin-top: 1rem;
+    text-align: center;
+    color: $white;
+    font-family: $gallery-font-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+  }
+
+  &__close {
+    position: absolute;
+    top: -1.25rem;
+    right: -1.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: none;
+    background: $white;
+    color: $gallery-ink;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.25rem 1rem rgba(black, 0.25);
+    transition: $transition;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    &:hover {
+      background: $gallery-teal;
+      color: $white;
+    }
+
+    @include respond(sm) {
+      top: -3.25rem;
+      right: 0;
+    }
+  }
+}
+
+// =============================================
+// GALLERY PAGE — jump links and grouped sections
+// =============================================
+.gallery__jump {
+  @include flex(center, flex-start, 0.6rem);
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+
+  a {
+    @include flex(center, flex-start, 0.45rem);
+    background: $white;
+    color: $gallery-ink;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba($gallery-ink, 0.1);
+    box-shadow: $shadow-sm;
+    text-decoration: none;
+    transition: $transition;
+
+    .icon {
+      color: $gallery-teal;
+    }
+
+    &:hover {
+      border-color: $gallery-teal;
+      color: $gallery-teal;
+    }
+  }
+}
+
+.gallery__group {
+  scroll-margin-top: 140px;
+
+  & + & {
+    margin-top: 4rem;
+  }
+}
+
+.gallery__group-title {
+  @include flex(center, flex-start, 0.75rem);
+  flex-wrap: wrap;
+  font-family: $gallery-font-serif;
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  font-weight: 600;
+  color: $gallery-ink;
+  padding-bottom: 1rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 2px solid $gallery-teal-light;
+}
+
+.gallery__group-icon {
+  @include flex(center, center);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: $gallery-teal;
+  color: $white;
+  font-size: 1.1rem;
+}
+
+.gallery__group-count {
+  margin-left: auto;
+  font-family: $font-body;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: $white;
+  background: $amber;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+
+// Cards with 3 photos: narrower panels so the card is the same height as 2-photo cards
+.ba-compare:has(> :nth-child(3)) .ba-compare__panel {
+  aspect-ratio: 1 / 2;
+}

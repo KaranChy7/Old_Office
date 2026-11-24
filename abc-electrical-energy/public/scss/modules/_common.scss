@@ -1,0 +1,20 @@
+body {
+    position: relative;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    transition: 0.4s all;
+}
+
+
+
+@include custom_max(992px) {}
+
+@include custom_max(768px) {}
+
+@include custom_max(576px) {}

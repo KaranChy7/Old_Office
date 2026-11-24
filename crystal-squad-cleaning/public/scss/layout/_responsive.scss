@@ -1,0 +1,508 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — RESPONSIVE TUNING
+// Loaded last. Breakpoints: lg 1024px (tablet), md 768px, sm 576px (phone).
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ─────────────────────────────────────────────
+// HEADER
+// ─────────────────────────────────────────────
+
+// Small laptops: keep the desktop menu from crowding
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .header-inner {
+    padding: 0.85rem 1.5rem;
+  }
+
+  .nav__link {
+    padding: 0.5rem 0.7rem;
+  }
+
+  .nav__cta {
+    margin-left: 0.4rem;
+    padding: 0.65rem 1.1rem;
+  }
+}
+
+// Call button + hamburger, only on tablet and phone
+.header-actions {
+  display: none;
+
+  @include respond(lg) {
+    @include flex(center, flex-end, 0.6rem);
+  }
+}
+
+.header-call {
+  @include flex(center, center, 0.5rem);
+  height: 44px;
+  padding: 0 1.1rem;
+  border-radius: 999px;
+  background: $green;
+  color: $white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: $transition;
+
+  .icon {
+    font-size: 15px;
+  }
+
+  &:hover {
+    background: $green-dark;
+  }
+
+  // Phone: round icon-only button
+  @include respond(sm) {
+    width: 44px;
+    padding: 0;
+
+    &__text {
+      display: none;
+    }
+  }
+}
+
+// Bigger, easier-to-tap hamburger
+.hamburger {
+  @include respond(lg) {
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: $mint;
+
+    span {
+      width: 20px;
+    }
+
+    // White "X" needs a dark circle behind it
+    &.active {
+      background: $green;
+    }
+  }
+}
+
+.header-inner {
+  @include respond(md) {
+    padding: 0.6rem 1.25rem;
+  }
+}
+
+.logo__img {
+  @include respond(md) {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+// Mobile menu: full height, scrollable, with contact details at the bottom
+.nav {
+  @include respond(lg) {
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    gap: 1rem;
+    padding: 5.5rem 1.5rem 2rem;
+    background: $forest;
+  }
+}
+
+.nav__contact {
+  display: none;
+
+  @include respond(lg) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+    max-width: 360px;
+    margin-top: 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba($white, 0.12);
+    color: rgba($white, 0.8);
+    font-size: 0.95rem;
+
+    a,
+    span {
+      @include flex(center, center, 0.55rem);
+      color: inherit;
+    }
+
+    a:hover {
+      color: $amber;
+    }
+
+    .icon {
+      font-size: 15px;
+      color: $lime;
+    }
+  }
+}
+
+.nav__menu {
+  @include respond(lg) {
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Top bar: phones only show the phone number
+.topbar__inner {
+  @include respond(sm) {
+    padding: 0.5rem 1rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .topbar__group:first-child {
+    display: none;
+  }
+}
+
+// ─────────────────────────────────────────────
+// SHARED SECTION SPACING ON PHONES
+// ─────────────────────────────────────────────
+@include respond(sm) {
+  .services,
+  .how-we-work,
+  .gallery,
+  .testimonials,
+  .page-services,
+  .page-about,
+  .contact,
+  .booking,
+  .blog,
+  .service-detail {
+    padding-top: 3.25rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .services-addons,
+  .call-us {
+    padding: 3rem 0;
+  }
+
+  .services__header,
+  .page-services__header {
+    margin-bottom: 2rem;
+  }
+
+  // Stop iOS from zooming into form fields
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+// ─────────────────────────────────────────────
+// HOME BANNER
+// ─────────────────────────────────────────────
+.banner {
+  @include respond(sm) {
+    padding: 3rem 0 2rem;
+
+    &__badge {
+      font-size: 0.7rem;
+      padding: 0.45rem 0.85rem;
+    }
+
+    &__title {
+      font-size: 2.3rem;
+    }
+
+    &__subtitle {
+      font-size: 0.98rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__actions {
+      flex-direction: column;
+      align-items: stretch;
+      margin-bottom: 0;
+    }
+
+    &__btn-primary,
+    &__btn-secondary {
+      width: 100%;
+    }
+
+    // Contact cards become a compact 2 x 2 grid
+    &__info {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65rem;
+      margin-top: 2rem;
+      padding: 0 1rem;
+    }
+
+    &__info-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.55rem;
+      padding: 0.9rem;
+      border-radius: $radius-md;
+    }
+
+    &__info-icon {
+      width: 38px;
+      height: 38px;
+    }
+
+    &__info-label {
+      font-size: 0.65rem;
+    }
+
+    &__info-value {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────
+// SERVICE CARDS — compact side-by-side layout on phones
+// ─────────────────────────────────────────────
+@include respond(sm) {
+  .services__grid,
+  .page-services__grid {
+    gap: 0.85rem;
+  }
+
+  .services__card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .services__card-media {
+    flex: 0 0 115px;
+    height: auto;
+    min-height: 130px;
+  }
+
+  .services__card-icon {
+    left: auto;
+    right: -18px;
+    bottom: auto;
+    top: 0.75rem;
+    width: 38px;
+    height: 38px;
+    border-width: 3px;
+
+    .icon {
+      font-size: 15px;
+    }
+  }
+
+  .services__card-body {
+    padding: 0.9rem 0.9rem 0.9rem 1.6rem;
+  }
+
+  .services__card-title {
+    font-size: 0.98rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .services__card-desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  // Services page cards stay stacked, with a shorter photo
+  .page-services__card-image {
+    height: 160px;
+  }
+
+  .page-services__card-title {
+    font-size: 1.05rem;
+  }
+}
+
+// ─────────────────────────────────────────────
+// HOW IT WORKS / GALLERY / REVIEWS / CALL BAND
+// ─────────────────────────────────────────────
+@include respond(sm) {
+  .how-we-work {
+    &__step {
+      padding: 1rem;
+      gap: 0.85rem;
+    }
+
+    &__step-icon {
+      width: 42px;
+      height: 42px;
+    }
+
+    &__image {
+      height: 260px;
+    }
+
+    &__tag {
+      left: 0.75rem;
+      right: 0.75rem;
+      bottom: 0.75rem;
+    }
+  }
+
+  .testimonials {
+    &__header {
+      margin-bottom: 1.75rem;
+      gap: 1.25rem;
+    }
+
+    &__card {
+      padding: 1.25rem;
+    }
+  }
+
+  .call-us {
+    &__icon {
+      width: 56px;
+      height: 56px;
+    }
+
+    &__actions {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    &__btn-primary,
+    &__btn-secondary {
+      width: 100%;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────
+// INNER PAGES
+// ─────────────────────────────────────────────
+.page-hero {
+  @include respond(sm) {
+    padding: 2.75rem 0 2.25rem;
+
+    &__icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.75rem;
+    }
+
+    &__title {
+      font-size: 1.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    &__crumbs {
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+    }
+  }
+}
+
+.service-detail {
+  @include respond(sm) {
+    &__image {
+      height: 230px;
+      border-radius: $radius-lg;
+    }
+
+    &__media {
+      margin-bottom: 2.25rem;
+    }
+
+    &__media-icon {
+      left: 1rem;
+      width: 58px;
+      height: 58px;
+
+      .icon {
+        font-size: 22px;
+      }
+    }
+
+    &__included {
+      padding: 1.25rem;
+    }
+
+    &__actions {
+      flex-direction: column;
+    }
+
+    &__btn-primary,
+    &__btn-secondary {
+      width: 100%;
+    }
+
+    &__box {
+      padding: 1.25rem;
+    }
+  }
+}
+
+.services-addons__col:last-child {
+  @include respond(sm) {
+    padding: 1.5rem;
+  }
+}
+
+.services-addons__actions {
+  @include respond(sm) {
+    flex-direction: column;
+    align-items: stretch;
+
+    a {
+      justify-content: center;
+    }
+  }
+}
+
+.contact__form-wrap,
+.booking__form-wrap {
+  @include respond(sm) {
+    padding: 1.5rem 1.15rem;
+  }
+}
+
+// ─────────────────────────────────────────────
+// FOOTER
+// ─────────────────────────────────────────────
+@include respond(sm) {
+  .site-footer {
+    padding-top: 3rem;
+
+    &__grid {
+      gap: 2rem;
+      padding-bottom: 2.5rem;
+    }
+
+    &__brand {
+      text-align: center;
+    }
+
+    &__logo-img {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto;
+    }
+
+    &__tagline {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // Quick links in two columns to save space
+    &__links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.7rem 1rem;
+    }
+  }
+}

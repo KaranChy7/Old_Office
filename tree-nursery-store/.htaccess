@@ -1,0 +1,17 @@
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^data/ - [F,L]
+RewriteRule ^shop/?$ index.php?page=shop [L,QSA]
+RewriteRule ^shop/category/([^/]+)/?$ index.php?page=shop&category=$1 [L,QSA]
+RewriteRule ^shop/product/([^/]+)/?$ index.php?page=product&slug=$1 [L,QSA]
+RewriteRule ^about/?$ index.php?page=about [L,QSA]
+RewriteRule ^services/?$ index.php?page=services [L,QSA]
+RewriteRule ^contact/?$ index.php?page=contact [L,QSA]
+</IfModule>
+
+<FilesMatch "\.(json|log)$">
+  Require all denied
+</FilesMatch>

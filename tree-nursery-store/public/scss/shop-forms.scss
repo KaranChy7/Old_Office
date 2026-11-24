@@ -1,0 +1,21 @@
+.shop-story{padding-bottom:20px}
+.shop-layout{display:grid;grid-template-columns:260px 1fr;gap:30px;align-items:start}
+.filters{position:sticky;top:110px;padding:22px;border:1px solid var(--line);border-radius:20px;background:#fff}
+.filter-title{display:flex;justify-content:space-between;align-items:center}
+.filter-title h2{font-size:26px}
+.filters form,.admin-form,.checkout-form,.contact-form{display:grid;gap:16px}
+.filters label,.form-card label,.admin-form label,.admin-login-card label{display:grid;gap:7px;font-weight:800;font-size:13px}
+.filters input,.filters select,.form-card input,.form-card select,.form-card textarea,.admin-form input,.admin-form select,.admin-form textarea,.admin-login-card input,.order-update-form select,.enquiry-card select,.coupon-form input{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;outline:none}
+.filters input:focus,.filters select:focus,.form-card input:focus,.form-card select:focus,.form-card textarea:focus,.admin-form input:focus,.admin-form select:focus,.admin-form textarea:focus{border-color:var(--green-600);box-shadow:0 0 0 3px rgba(45,124,90,.1)}
+.two-cols,.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.span-2{grid-column:span 2}
+.results-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.results-toolbar select{border:1px solid var(--line);border-radius:999px;padding:10px 14px}
+.compact-grid{grid-template-columns:repeat(3,1fr)}
+.empty-state{text-align:center;padding:70px 20px;border:1px dashed #bfcfc5;border-radius:24px;background:#fff}
+.empty-state.wide{grid-column:1/-1}
+.payment-options{display:grid;gap:10px}
+.payment-option{grid-template-columns:auto 1fr!important;align-items:start;border:1px solid var(--line);padding:14px;border-radius:14px}
+.payment-option input{width:auto!important}
+.payment-option span,.payment-option small{display:block}
+.payment-option small{color:var(--muted)}

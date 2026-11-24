@@ -1,0 +1,115 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — HOME PAGE SUBURBS
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// Same region colours as the service areas page
+$chip-colours: (
+  'green':  $green,
+  'lime':   #D7262F,
+  'blue':   #1F7FB8,
+  'pink':   #C2457A,
+  'amber':  #C98A00,
+  'purple': #6B4FB0,
+);
+
+.home-suburbs {
+  // Sydney Harbour, NSW — darkened so the white text stays readable
+  background: linear-gradient(rgba($dblack, 0.62), rgba($dblack, 0.72)), url('../images/nsw-sydney.jpg') center 60% / cover no-repeat;
+  padding: 6rem 0;
+
+  .section-badge {
+    background: rgba($white, 0.95);
+  }
+
+  @include respond(md) {
+    padding: 3.5rem 0;
+  }
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__intro {
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 0.85rem;
+  }
+
+  &__text {
+    color: rgba($white, 0.88);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  &__list {
+    @include flex(center, center, 0.75rem);
+    flex-wrap: wrap;
+    max-width: 960px;
+    margin: 0 auto 2.5rem;
+    list-style: none;
+
+    @include respond(sm) {
+      gap: 0.55rem;
+    }
+  }
+
+  &__chip {
+    @include flex(center, flex-start, 0.5rem);
+    padding: 0.65rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: $transition;
+
+    @include respond(sm) {
+      padding: 0.55rem 0.95rem;
+      font-size: 0.88rem;
+    }
+
+    @each $name, $colour in $chip-colours {
+      &--#{$name} {
+        background: $white;
+        color: $colour;
+        border: 1px solid $white;
+
+        &:hover {
+          background: $colour;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    @include btn-base;
+    background: $green;
+    color: $white;
+
+    &:hover {
+      background: $white;
+      color: $ink;
+    }
+
+    @include respond(sm) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

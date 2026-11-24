@@ -1,0 +1,72 @@
+.slick-slide {
+    &:focus {
+        outline: none;
+    }
+}
+
+.slick-dots {
+    position: absolute;
+    //bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    li {
+        height: 4px;
+        width: 20px;
+        background-color: $whitey;
+        cursor: pointer;
+
+        button {
+            text-indent: -9999px;
+            border: none;
+            background-color: transparent;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &.slick-active {
+            background-color: $primaryColor;
+        }
+    }
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    aspect-ratio: 1/1;
+    background-color: $lgrey;
+    display: grid;
+    place-items: center;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    i {
+        font-size: 1.5rem;
+        color: $dblack;
+        transition: 0.3s ease-in-out;
+    }
+
+    &:hover {
+        background-color: $secondaryColor;
+
+        i {
+            color: $whitey;
+        }
+    }
+
+    &.left {
+        left: 0px;
+        z-index: 9;
+    }
+
+    &.right {
+        right: 0px;
+    }
+}

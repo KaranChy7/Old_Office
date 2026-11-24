@@ -1,0 +1,127 @@
+// Bootstrap Button Overwrite
+button {
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+.btn {
+    border: none;
+}
+
+.btn,
+.form-control {
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: 1px solid $grey;
+    font-family: $font2;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s all;
+    &:focus,
+    &:hover {
+        box-shadow: none;
+        outline: none;
+        color: inherit;
+    }
+    &-small {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+    &-view-all,
+    &-custom {
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 8px 26px;
+    }
+    &.btn-custom-large,
+    &.btn-custom-small {
+        padding: 12px 32px;
+        color: $whitey;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border: 2px solid $primaryColor;
+        background-color: $primaryColor;
+        letter-spacing: 0.03em;
+        &:hover {
+            color: $primaryColor;
+            background-color: transparent;
+        }
+    }
+    &.btn-custom-small {
+        padding: 8px 20px;
+    }
+    &.btn-primary {
+        background-color: $primaryColor;
+        color: $whitey;
+        border-color: $primaryColor;
+        &:hover {
+            background-color: transparent;
+            border-color: $primaryColor;
+            color: $primaryColor;
+        }
+        &-ghost {
+            background-color: transparent;
+            border-color: $primaryColor;
+            color: $primaryColor;
+            &:hover {
+                background-color: $primaryColor;
+                color: $whitey;
+                border-color: $primaryColor;
+            }
+        }
+    }
+    &.btn-whitey {
+        background-color: $whitey;
+        color: $primaryColor;
+        border-color: $primaryColor;
+        &:hover {
+            background-color: transparent;
+            border-color: $whitey;
+            color: $whitey;
+        }
+        &-ghost {
+            background-color: transparent;
+            border-color: $whitey;
+            color: $whitey;
+            &:hover {
+                background-color: $whitey;
+                color: $primaryColor;
+                border-color: $primaryColor;
+            }
+        }
+    }
+}
+
+@include custom_max(1199px) {}
+
+@include custom_max(991px) {
+    .btn,
+    .form-control {
+        &-small {
+            font-size: 11px;
+        }
+        &-view-all,
+        &-custom {
+            font-size: 12px;
+        }
+        &.btn-custom-large,
+        &.btn-custom-small {
+            font-size: 12px;
+        }
+    }
+}
+
+@include custom_max(767px) {
+    .btn,
+    .form-control {
+        &.btn-custom-large,
+        &.btn-custom-small {
+            padding: 8px 20px;
+            font-size: 13px;
+        }
+    }
+}

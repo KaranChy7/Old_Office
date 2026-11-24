@@ -1,0 +1,44 @@
+.form {
+    width: 100%;
+    .form-group {
+        
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        &.half-width {
+            flex-basis: calc(100% / 2 - 10px);
+        }
+
+        label {
+            font-size: clamp(0.9375rem, 2vw, 1.125rem);
+            font-weight: 500;
+            text-transform: capitalize;
+            color: $dark-color;
+            padding-bottom: 5px;
+        }
+        .form-fill {
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: $t-color;
+            border: 1px solid rgba($t-color, 0.3);
+            resize: none;
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+            &::placeholder {
+                // font-size: 0.9375rem;
+                color: $dark-color;
+                font-weight: 300;
+            }
+        }
+    }
+    .form-submit {
+        .btn {
+            border-radius: 40px;
+        }
+    }
+}

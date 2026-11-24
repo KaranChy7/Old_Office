@@ -1,0 +1,115 @@
+.about {
+    overflow: hidden;
+
+    .about-top-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .abt-image {
+            flex: 0 0 40%;
+            position: relative;
+            height: auto;
+            z-index: 11;
+
+            .b-img1 {
+                width: 100%;
+                // height: 100%;
+                aspect-ratio: 2/2;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 10px;
+            }
+        }
+
+        .abt-block {
+            flex: 0 0 60%;
+            margin-top: 0;
+            padding: 0 60px;
+            z-index: 2;
+
+            p {
+                margin: 15px 0;
+                word-spacing: 0.04em;
+            }
+        }
+    }
+
+    .reverse-about-wrap {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px 30px;
+        margin-top: 40px;
+
+        .image {
+            flex-basis: calc(40% - 30px);
+            height: auto;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        }
+
+        .content {
+            flex-basis: calc(60% - 30px);
+
+            p {
+                margin-bottom: 20px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .about {
+        .about-top-wrapper {
+            flex-direction: column;
+
+            .abt-block {
+                padding: 40px 0 0 0;
+
+                h6 {
+                    font-size: 16px;
+                }
+
+                h4 {
+                    font-size: 26px;
+                    padding-top: 10px;
+                }
+            }
+        }
+
+        .reverse-about-wrap {
+            flex-direction: column;
+        }
+    }
+}
+
+@include custom_max(767px) {
+    .about {
+        .about-top-wrapper {
+            .abt-image {
+                margin-right: 0;
+            }
+
+            .abt-block {
+                // margin-top: 20px;
+                padding: 20px 0 0;
+                margin-left: 0;
+
+                h4 {
+                    font-size: 20px;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+}

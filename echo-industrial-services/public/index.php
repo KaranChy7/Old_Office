@@ -1,0 +1,16 @@
+<?php 
+    $page = 'home';
+    include 'includes/header.php'; 
+?>
+
+
+<?php include 'includes/banner.php'; ?>
+<?php include 'includes/about.php'; ?>
+<?php include 'includes/services.php'; ?>
+<?php include 'includes/quote.php'; ?>
+<?php include 'includes/gallery.php'; ?>
+<?php include 'includes/testimonials.php'; ?>
+
+
+
+<?php include 'includes/footer.php'; ?>

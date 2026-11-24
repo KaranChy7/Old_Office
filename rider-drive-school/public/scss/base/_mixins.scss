@@ -1,0 +1,55 @@
+// ── RESPOND ───────────────────────────────────────────────
+@mixin respond($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+// ── FLEX CENTER ───────────────────────────────────────────
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ── GOLD BORDER BOTTOM ────────────────────────────────────
+@mixin gold-line-bottom {
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: $blue;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+// ── SECTION LABEL centered (no left line) ─────────────────
+@mixin label-centered {
+  justify-content: center;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: $red2;
+  }
+}
+
+// ── OVERLAY GRADIENT (image overlays) ─────────────────────
+@mixin overlay-gradient {
+  background: linear-gradient(to top, rgba($black, 0.6) 0%, transparent 60%);
+}

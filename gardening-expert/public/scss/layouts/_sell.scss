@@ -1,0 +1,83 @@
+.sell-tag { 
+
+    .sell-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px 20px;
+
+        .content {
+            flex-basis: calc(50% - 20px);
+
+            h6 {
+                font-size: 2rem;
+                font-weight: 700;
+                color: $primaryColor;
+                text-transform: capitalize;
+            }
+
+            p {
+                font-size: 1.125rem;
+                line-height: 1.5;
+                font-weight: 500;
+                margin-top: 20px;
+            color: $black;
+            }
+        }
+
+
+
+        .image {
+            flex-basis: calc(50% - 20px);
+            border-radius: 5px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                aspect-ratio: 4/2;
+                object-fit: cover;
+                object-position: top;
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .sell-tag {
+        .sell-wrap {
+            flex-direction: column;
+            gap: 30px;
+
+            .content {
+
+                h6 {
+                    font-size: 1.75rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .sell-tag {
+        .sell-wrap {
+            gap: 20px;
+
+            .content {
+
+                h6 {
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    font-size: 0.9375rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,118 @@
+.banner-block {
+    position: relative;
+
+    .figure {
+        width: 100%;
+        height: calc(100dvh - 90px);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .text {
+        position: absolute;
+        top: 50%;
+        left: 40px;
+        transform: translateY(-50%);
+        padding: 40px;
+        border-radius: 10px;
+        max-width: 500px;
+        background-color: rgba($whitey, 0.8);
+
+        h1,
+        h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: $primaryColor;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            font-size: 0.9375rem;
+            font-weight: 300;
+            color: $dblack;
+            // text-transform: capitalize;
+            letter-spacing: 1px;
+            margin: 15px 0 25px;
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .banner-block {
+        .text {
+
+            p {
+                font-size: 0.9375rem;
+            }
+
+            h1,
+            h3 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .banner-block {
+        background-color: rgba($grey, 0.6);
+
+        .text {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translateY(0);
+            width: 100%;
+            padding: 30px 0;
+            text-align: center;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        .figure {
+            height: auto;
+
+            img {
+                display: block;
+                aspect-ratio: 3/2;
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .banner-block {
+        .text {
+            padding: 20px;
+
+            h1,
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .banner-block {
+        .text {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translateY(0);
+            max-width: 100%;
+            border-radius: 0;
+
+            h1,
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

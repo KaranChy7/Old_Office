@@ -1,0 +1,980 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+// ── PAGE HERO (inner pages) ───────────────────────────────
+.page-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: $spacing-lg;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba($color-black, 0.9) 20%, rgba($color-black, 0.4) 100%);
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: clamp(1.8rem, 5vw, 4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.9;
+    margin-bottom: 0.75rem;
+
+    em {
+      font-style: normal;
+      @include gold-text;
+    }
+  }
+
+  &--short {
+    height: 40vh;
+    min-height: 280px;
+  }
+
+  @include tablet {
+    height: 40vh;
+    min-height: 300px;
+    padding-bottom: $spacing-md;
+  }
+}
+
+// ── HIRE PAGE ─────────────────────────────────────────────
+.vehicle-detail {
+  margin-bottom: 5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    margin-bottom: 3.5rem;
+  }
+
+  &__badge {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border: 1px solid rgba($color-gold, 0.4);
+    border-radius: $radius-pill;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  &__tagline {
+    font-family: $font-display;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: rgba($color-white, 0.6);
+    margin-bottom: 1.5rem;
+  }
+
+  &__desc {
+    margin-bottom: 2rem;
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba($color-white, 0.06);
+    border-bottom: 1px solid rgba($color-white, 0.06);
+    margin-bottom: 2rem;
+
+    @include mobile {
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+
+  &__stat {
+    text-align: center;
+  }
+
+  &__stat-num {
+    font-family: $font-heading;
+    font-size: 1.8rem;
+    font-weight: 700;
+    @include gold-text;
+  }
+
+  &__stat-label {
+    font-size: 0.7rem;
+    color: #666;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__actions {
+    margin-top: 1rem;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: $spacing-lg;
+    align-items: start;
+
+    @include laptop {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__gallery {
+    position: sticky;
+    top: 100px;
+
+    @include laptop {
+      position: static;
+    }
+  }
+
+  &__main-img {
+    border-radius: $radius-md;
+    overflow: hidden;
+    height: 450px;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      height: 320px;
+    }
+
+    @include mobile {
+      height: 240px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  &__thumb {
+    height: 80px;
+    border-radius: $radius-sm;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity $transition-fast;
+    border: 2px solid transparent;
+
+    &.is-active,
+    &:hover {
+      opacity: 1;
+      border-color: $color-gold;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: $color-gray-light;
+
+    svg,
+    i {
+      color: $color-gold;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// ── FITOUTS PAGE ──────────────────────────────────────────
+.fitout-packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fitout-card {
+  background: $color-dark-card;
+  border-radius: $radius-md;
+  overflow: hidden;
+  @include shimmer-border;
+  transition: transform $transition-mid;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+
+  &__img {
+    height: 220px;
+    overflow: hidden;
+
+    img {
+      transition: transform 0.8s ease;
+    }
+  }
+
+  &:hover &__img img {
+    transform: scale(1.06);
+  }
+
+  &__body {
+    padding: 1.5rem;
+  }
+
+  &__tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 0.4rem;
+  }
+
+  &__name {
+    font-family: $font-heading;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.75rem;
+  }
+
+  &__includes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+
+    li {
+      font-size: 0.82rem;
+      color: $color-gray-mid;
+      padding-left: 1rem;
+      position: relative;
+
+      &::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: $color-gold;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.fitout-note {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.82rem;
+  color: #666;
+}
+
+// ── ABOUT PAGE ────────────────────────────────────────────
+.about-story {
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: $spacing-lg;
+    align-items: center;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img {
+    border-radius: $radius-md;
+    overflow: hidden;
+    height: 600px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include tablet {
+      height: 350px;
+    }
+
+    @include mobile {
+      height: 280px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+
+    @include mobile {
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+    }
+
+    padding: 1rem 1.5rem;
+    background: rgba($color-black, 0.8);
+    backdrop-filter: blur(10px);
+    border-left: 3px solid $color-gold;
+    border-radius: $radius-sm;
+  }
+
+  &__label-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 0.3rem;
+  }
+
+  &__label-title {
+    font-family: $font-heading;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__content .body-text:not(:last-of-type) {
+    margin-bottom: 1.25rem;
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2.5rem;
+
+    @include mobile {
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+  }
+
+  &__stat-num {
+    font-family: $font-heading;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    @include gold-text;
+  }
+
+  &__stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-gray-mid;
+  }
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-card {
+  text-align: center;
+
+  &__img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.25rem;
+    border: 3px solid rgba($color-gold, 0.3);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    font-family: $font-heading;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  &__role {
+    font-size: 0.75rem;
+    color: $color-gold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+}
+
+// ── CONTACT PAGE ──────────────────────────────────────────
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: $spacing-lg;
+
+  @include laptop {
+    gap: $spacing-md;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info {
+  &__item {
+    @include flex-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba($color-white, 0.06);
+
+    &:first-child {
+      border-top: 1px solid rgba($color-white, 0.06);
+    }
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba($color-gold, 0.3);
+    @include flex-center;
+    flex-shrink: 0;
+    color: $color-gold;
+  }
+
+  &__body {
+    flex: 1;
+  }
+
+  &__label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 0.25rem;
+  }
+
+  &__value {
+    overflow-wrap: anywhere;
+    font-size: 0.9rem;
+    color: $color-gray-light;
+    line-height: 1.6;
+
+    a {
+      color: $color-gray-light;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-gold;
+      }
+    }
+  }
+}
+
+.contact-layout .section-title {
+  margin-bottom: 2rem;
+}
+
+.contact-areas {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid rgba($color-gold, 0.12);
+  border-radius: $radius-md;
+  background: rgba($color-gold, 0.03);
+
+  &__title {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 0.75rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid rgba($color-white, 0.08);
+    border-radius: $radius-pill;
+    font-size: 0.75rem;
+    color: $color-gray-mid;
+
+    i {
+      color: $color-gold;
+      font-size: 0.7rem;
+    }
+  }
+}
+
+.contact-form-wrap {
+  background: $color-dark-card;
+  border-radius: $radius-lg;
+  padding: 2.5rem;
+  border: 1px solid rgba($color-gold, 0.08);
+
+  @include mobile {
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  &__note {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+}
+
+// ── GALLERY PAGE ──────────────────────────────────────────
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+
+  @include mobile {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.gallery-filter-btn {
+  padding: 0.5rem 1.2rem;
+  background: rgba($color-white, 0.04);
+  border: 1px solid rgba($color-white, 0.1);
+  border-radius: $radius-pill;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $color-gray-mid;
+  cursor: pointer;
+  transition: all $transition-mid;
+
+  &:hover {
+    border-color: rgba($color-gold, 0.5);
+    color: $color-gold;
+  }
+
+  &.is-active {
+    background: linear-gradient(135deg, $color-gold-light, $color-gold, $color-gold-dark);
+    border-color: transparent;
+    color: $color-black;
+  }
+
+  @include mobile {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+.gallery-main-grid {
+  column-count: 3;
+  column-gap: 1rem;
+
+  @include tablet {
+    column-count: 2;
+  }
+
+  @include mobile {
+    column-gap: 0.5rem;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: $radius-md;
+  cursor: pointer;
+
+  @include mobile {
+    margin-bottom: 0.5rem;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+
+  &:hover .gallery-hover {
+    opacity: 1;
+  }
+
+  &__tag {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    background: rgba($color-black, 0.6);
+    border-radius: $radius-pill;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-gold;
+    backdrop-filter: blur(4px);
+
+    @include mobile {
+      bottom: 0.5rem;
+      left: 0.5rem;
+      font-size: 0.55rem;
+    }
+  }
+}
+
+.gallery-hover {
+  position: absolute;
+  inset: 0;
+  @include flex-center;
+  background: rgba($color-black, 0.35);
+  opacity: 0;
+  transition: opacity $transition-fast;
+
+  i {
+    font-size: 2rem;
+    color: $color-white;
+  }
+}
+
+// Lightbox
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba($color-black, 0.92);
+  backdrop-filter: blur(8px);
+
+  @include mobile {
+    padding: 1rem;
+  }
+
+  &.is-open {
+    display: flex;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    @include flex-center;
+    border-radius: 50%;
+    border: 1px solid rgba($color-white, 0.2);
+    color: $color-white;
+    font-size: 1.4rem;
+
+    @include mobile {
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+
+  &__img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: $radius-md;
+    box-shadow: 0 40px 100px rgba($color-black, 0.8);
+    object-fit: contain;
+
+    @include mobile {
+      max-width: 100%;
+      max-height: 75vh;
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba($color-white, 0.5);
+    letter-spacing: 0.05em;
+
+    @include mobile {
+      bottom: 1rem;
+    }
+  }
+}
+
+// ── QUOTE PAGE ────────────────────────────────────────────
+.quote-form {
+  max-width: 760px;
+  margin: 0 auto;
+
+  &__section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    @include mobile {
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+    }
+
+    border-bottom: 1px solid rgba($color-white, 0.06);
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+
+  .form-success {
+    margin-bottom: 1.5rem;
+  }
+
+  &__section-title {
+    font-family: $font-heading;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba($color-gold, 0.15);
+  }
+}
+
+
+// ── SINGLE SERVICE PAGES ──────────────────────────────────
+.service-single__actions {
+  margin-top: 2.5rem;
+}
+
+.service-faq {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__item {
+    border: 1px solid rgba($color-gold, 0.12);
+    border-radius: $radius-md;
+    background: $color-dark-card;
+    transition: border-color $transition-fast;
+
+    &[open] {
+      border-color: rgba($color-gold, 0.35);
+
+      .service-faq__q i {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    font-family: $font-heading;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    i {
+      flex-shrink: 0;
+      font-size: 1.3rem;
+      color: $color-gold;
+      transition: transform $transition-fast;
+    }
+
+    @include mobile {
+      padding: 1rem 1.25rem;
+      font-size: 1.05rem;
+    }
+  }
+
+  &__a {
+    padding: 0 1.5rem 1.5rem;
+    color: $color-gray-light;
+    line-height: 1.7;
+
+    @include mobile {
+      padding: 0 1.25rem 1.25rem;
+    }
+  }
+}
+
+.service-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.75rem;
+    border: 1px solid rgba($color-gold, 0.1);
+    border-radius: $radius-md;
+    background: $color-dark-card;
+    transition: all $transition-mid;
+
+    &:hover {
+      border-color: rgba($color-gold, 0.4);
+      transform: translateY(-4px);
+
+      .service-links__more i {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 1.8rem;
+    color: $color-gold;
+  }
+
+  &__name {
+    font-family: $font-heading;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: $color-gray-mid;
+    flex-grow: 1;
+  }
+
+  &__more {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-gold;
+
+    i {
+      display: inline-block;
+      vertical-align: middle;
+      transition: transform $transition-fast;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+body{
+    background: #f5f5f5;
+        
+    // /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    // /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to right, #243B55, #141E30);
+    // /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    // background: #FF7743;
+    // /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #FF7743, #B3471D);
+    // /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to right, #FF7743, #B3471D);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body,
+p,
+a {
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    font-family: $primaryFont;
+    color: $black;
+}
+
+p {
+    font-family: $secondaryFont;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-family: $primaryFont;
+    color: $primaryColor;
+    margin: 0;
+    padding: 0;
+}

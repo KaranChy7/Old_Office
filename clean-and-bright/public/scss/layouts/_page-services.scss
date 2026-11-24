@@ -1,0 +1,125 @@
+.page-services {
+
+    position: relative;
+
+    .background-attachment {
+        opacity: 0.3;
+    }
+
+    .service_wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        padding-top: 60px;
+    }
+
+    .servie-block {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        background-color: $whitey;
+        border-radius: 10px;
+        box-shadow: 2px 1px 14px -8px $black;
+        padding: 30px;
+
+        .images {
+            flex-basis: 50%;
+            width: 100%;
+            aspect-ratio: 3/2;
+            
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 10px;
+                
+            }
+        }
+
+        .content {
+            flex-basis: calc(50% - 30px);
+
+            h5 {
+                font-size: 2rem;
+                font-weight: 700;
+                color: $primaryColor;
+                text-transform: capitalize;
+            }
+
+            p {
+                font-size: 0.9375rem;
+                padding-top: 20px;
+                color: $black;
+            }
+        }
+
+        .bottom-content {
+            flex-basis: 100%;
+
+            p {
+                font-size: 0.9375rem;
+                padding-top: 20px;
+                color: $black;
+
+                &:first-child {
+                    padding-top: 0;
+                }
+            }
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        &:last-child {
+            margin-bottom: 40px;
+        }
+
+    }
+}
+
+@include custom_max(992px) {
+    .page-services {
+        .servie-block {
+            flex-direction: column;
+
+            .content {
+                text-align: center;
+
+                p {
+                    padding: 10px 0;
+                }
+            }
+
+            .bottom-content {
+                text-align: center;
+                display: none;
+
+                p {
+                    padding: 10px 0;
+                }
+
+                ul {
+                    li {
+                        p {
+                            span {
+                                font-size: 1.125rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                flex-direction: column;
+
+            }
+
+            &:last-child {
+                padding-bottom: 40px;
+            }
+        }
+    }
+}

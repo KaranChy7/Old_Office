@@ -1,0 +1,68 @@
+.testimonial {
+    background-color: rgba($background , 0.4);
+    // padding-top: 0;
+
+    .main-title {
+        h4 {
+            color: $secondaryColor;
+            font-weight: 800;
+            text-transform: capitalize;
+
+            span {
+                font-weight: 800;
+                font-family: 'thepostgatesdemo';
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+.testimonial-block {
+    margin: 20px;
+
+    .top-content {
+        h5 {
+            font-weight: 800;
+            color: $secondaryColor;
+        }
+
+        .image {
+            margin-block: 60px;
+            border-radius: $radius-m;
+            overflow: hidden;
+        }
+
+        .details {
+            margin-bottom: 20px;
+
+            p {
+                font-size: 0.875rem;
+                font-weight: 700;
+                line-height: 1.5;
+
+
+                &.place {
+                    text-transform: uppercase;
+                    font-weight: 300;
+                }
+
+            }
+        }
+
+        .desc {
+
+            p,
+            span {
+                margin-top: 20px;
+                font-size: 0.9375rem;
+                color: $secondaryColor;
+                font-weight: 300;
+                line-height: 1.5;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

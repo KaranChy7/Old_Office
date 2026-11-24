@@ -1,0 +1,120 @@
+// =============================================
+// QUOTE PAGE
+// =============================================
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.quote-page {
+    @include section-padding;
+    background: $lgrey;
+
+    .quote-page-inner {
+        display:               grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap:                   60px;
+        align-items:           start;
+
+        @include custom_max(991px) {
+            grid-template-columns: 1fr;
+            gap: 44px;
+        }
+    }
+
+    .quote-sidebar {
+        .sidebar-box {
+            background:    $primaryColor;
+            border-radius: $radius;
+            padding:       36px 28px;
+            position:      sticky;
+            top:           110px;
+
+            // Amber top strip
+            &::before {
+                content:       '';
+                display:       block;
+                width:         50px; height: 3px;
+                background:    $secondaryColor;
+                margin-bottom: 22px;
+            }
+
+            h3 {
+                font-family:   $primaryFont;
+                font-size:     1.5rem;
+                color:         $whitey;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-family:   $secondaryFont;
+                font-size:     14px;
+                color:         rgba(255,255,255,0.6);
+                margin-bottom: 28px;
+                line-height:   1.7;
+            }
+        }
+
+        .sidebar-contact {
+            margin-top: 22px;
+
+            a {
+                display:       flex;
+                align-items:   center;
+                gap:           10px;
+                color:         rgba(255,255,255,0.75);
+                font-family:   $secondaryFont;
+                font-size:     14px;
+                margin-bottom: 14px;
+                transition:    color 0.3s;
+
+                i { color: $secondaryColor; }
+                &:hover { color: $secondaryColor; }
+            }
+        }
+
+        .srv-tags {
+            display:   flex;
+            flex-wrap: wrap;
+            gap:       8px;
+            margin-top: 16px;
+
+            span {
+                background:  rgba(212,132,42,0.15);
+                color:       $secondaryColor;
+                font-family: $secondaryFont;
+                font-size:   12px;
+                font-weight: 600;
+                padding:     6px 14px;
+                border-radius: 3px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    .quote-form-wrap {
+        background:    $whitey;
+        border-radius: $radius;
+        padding:       48px 44px;
+        border:        1px solid $grey;
+        box-shadow:    0 8px 40px rgba(0,0,0,0.05);
+
+        .form-heading {
+            margin-bottom: 34px;
+
+            h2 {
+                font-family:   $primaryFont;
+                font-size:     2rem;
+                color:         $primaryColor;
+                margin-bottom: 6px;
+            }
+
+            p {
+                font-family: $secondaryFont;
+                font-size:   14px;
+                color:       $dark-color;
+            }
+        }
+
+        @include custom_max(480px) { padding: 28px 20px; }
+    }
+}

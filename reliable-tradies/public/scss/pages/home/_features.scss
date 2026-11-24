@@ -1,0 +1,58 @@
+// =============================================
+// FEATURES STRIP
+// =============================================
+@use '../../base/variables' as *;
+@use '../../base/mixins' as *;
+
+.features-strip {
+    background: $territary;
+    padding:    0;
+
+    .features-grid {
+        display:               grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-left:           1px solid rgba(255,255,255,0.06);
+
+        @include custom_max(991px) { grid-template-columns: repeat(2, 1fr); }
+        @include custom_max(480px) { grid-template-columns: 1fr; }
+    }
+
+    .feature-item {
+        padding:   36px 28px;
+        border-right: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        transition: background 0.3s;
+
+        &:hover { background: rgba(255,255,255,0.03); }
+
+        .feat-icon {
+            width:         46px;
+            height:        46px;
+            border-radius: 6px;
+            background:    rgba(212, 132, 42, 0.12);
+            display:       flex;
+            align-items:   center;
+            justify-content: center;
+            margin-bottom: 16px;
+
+            i {
+                font-size: 20px;
+                color:     $secondaryColor;
+            }
+        }
+
+        h4 {
+            font-family:   $primaryFont;
+            font-size:     1.1rem;
+            color:         $whitey;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-family: $secondaryFont;
+            font-size:   13px;
+            color:       rgba(255,255,255,0.55);
+            line-height: 1.6;
+        }
+    }
+}

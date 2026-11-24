@@ -1,0 +1,345 @@
+// =============================================
+// INDIVIDUAL SERVICE DETAIL PAGES
+// =============================================
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ── Service hero banner ──────────────────────
+.service-hero {
+    position:      relative;
+    min-height:    55vh;
+    display:       flex;
+    align-items:   flex-end;
+    overflow:      hidden;
+    background:    $primaryColor;
+    padding-bottom: 0;
+
+    .srv-hero-bg {
+        position:  absolute;
+        inset:     0;
+        z-index:   0;
+
+        img {
+            width:      100%;
+            height:     100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &::after {
+            content:    '';
+            position:   absolute;
+            inset:      0;
+            background: linear-gradient(
+                to right,
+                rgba(28,28,30,0.90) 0%,
+                rgba(28,28,30,0.65) 55%,
+                rgba(28,28,30,0.30) 100%
+            );
+        }
+    }
+
+    .container {
+        position:   relative;
+        z-index:    2;
+        padding-top: 140px;
+        padding-bottom: 60px;
+    }
+
+    .srv-hero-label {
+        display:        inline-flex;
+        align-items:    center;
+        gap:            10px;
+        font-family:    $secondaryFont;
+        font-size:      11px;
+        font-weight:    700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color:          $secondaryColor;
+        margin-bottom:  16px;
+
+        &::before {
+            content:    '';
+            display:    block;
+            width:      30px;
+            height:     2px;
+            background: $secondaryColor;
+        }
+    }
+
+    h1 {
+        font-family:   $primaryFont;
+        font-size:     clamp(2.5rem, 6vw, 4.5rem);
+        font-weight:   700;
+        color:         $whitey;
+        line-height:   1.1;
+        margin-bottom: 18px;
+
+        em {
+            font-style: italic;
+            color:      $secondaryColor;
+        }
+    }
+
+    .srv-hero-desc {
+        font-family:   $secondaryFont;
+        font-size:     17px;
+        color:         rgba(255,255,255,0.70);
+        line-height:   1.75;
+        max-width:     560px;
+        margin-bottom: 28px;
+    }
+
+    .srv-hero-actions {
+        display:   flex;
+        gap:       14px;
+        flex-wrap: wrap;
+    }
+
+    // Amber slash
+    &::before {
+        content:    '';
+        position:   absolute;
+        top:        0;
+        right:      35%;
+        width:      4px;
+        height:     100%;
+        background: $secondaryColor;
+        opacity:    0.3;
+        transform:  skewX(-8deg);
+        z-index:    1;
+
+        @include custom_max(991px) { display: none; }
+    }
+}
+
+// ── Sub-service overview strip ───────────────
+.srv-sub-strip {
+    background: $territary;
+    padding:    0;
+    position:   relative;
+    z-index:    10;
+
+    .sub-strip-inner {
+        display:     flex;
+        align-items: stretch;
+        flex-wrap:   wrap;
+    }
+
+    .sub-strip-item {
+        flex:        1;
+        min-width:   160px;
+        padding:     22px 24px;
+        border-right: 1px solid rgba(255,255,255,0.07);
+        display:     flex;
+        align-items: center;
+        gap:         12px;
+        text-decoration: none;
+        transition:  background 0.3s;
+
+        &:last-child { border-right: none; }
+
+        &:hover { background: rgba(255,255,255,0.04); }
+
+        &.strip-active { background: rgba(212,132,42,0.1); }
+
+        i {
+            font-size:  20px;
+            color:      $secondaryColor;
+            flex-shrink: 0;
+        }
+
+        span {
+            font-family: $secondaryFont;
+            font-size:   13px;
+            font-weight: 600;
+            color:       rgba(255,255,255,0.80);
+        }
+    }
+}
+
+// ── Sub-service sections ─────────────────────
+.sub-service-section {
+    @include section-padding;
+    background: $whitey;
+
+    &:nth-child(even) {
+        background: $lgrey;
+
+        .sub-inner { direction: rtl; }
+        .sub-content, .sub-image { direction: ltr; }
+    }
+
+    .sub-inner {
+        display:               grid;
+        grid-template-columns: 1fr 1fr;
+        gap:                   70px;
+        align-items:           center;
+
+        @include custom_max(991px) {
+            grid-template-columns: 1fr;
+            gap:       44px;
+            direction: ltr !important;
+        }
+    }
+
+    .sub-image {
+        position:      relative;
+        border-radius: $radius;
+        overflow:      hidden;
+        height:        420px;
+
+        img {
+            width:      100%;
+            height:     100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        &:hover img { transform: scale(1.04); }
+
+        // Amber corner accent
+        &::after {
+            content:       '';
+            position:      absolute;
+            bottom:        0;
+            right:         0;
+            width:         60px;
+            height:        60px;
+            border-bottom: 3px solid $secondaryColor;
+            border-right:  3px solid $secondaryColor;
+            border-radius: 0 0 $radius 0;
+        }
+
+        @include custom_max(767px) { height: 280px; }
+    }
+
+    .sub-content {
+        .sub-num {
+            font-family:    $primaryFont;
+            font-size:      4rem;
+            font-weight:    700;
+            color:          $secondaryColor;
+            opacity:        0.15;
+            line-height:    1;
+            margin-bottom:  -10px;
+        }
+
+        h2 {
+            font-family:   $primaryFont;
+            font-size:     clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight:   700;
+            color:         $primaryColor;
+            margin-bottom: 16px;
+            line-height:   1.15;
+        }
+
+        p {
+            font-family:   $secondaryFont;
+            font-size:     15px;
+            color:         $dark-color;
+            line-height:   1.75;
+            margin-bottom: 26px;
+        }
+
+        .sub-list {
+            display:               grid;
+            grid-template-columns: 1fr 1fr;
+            gap:                   8px 20px;
+            margin-bottom:         30px;
+
+            @include custom_max(480px) { grid-template-columns: 1fr; }
+
+            li {
+                display:     flex;
+                align-items: center;
+                gap:         8px;
+                font-family: $secondaryFont;
+                font-size:   13px;
+                color:       $dark-color;
+                padding:     5px 0;
+                border-bottom: 1px solid $grey;
+
+                i {
+                    color:     $secondaryColor;
+                    font-size: 11px;
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+}
+
+// ── Anchor target offset (for fixed header) ──
+.sub-anchor {
+    display:    block;
+    position:   relative;
+    top:        -110px;
+    visibility: hidden;
+}
+
+// ── Service page intro ───────────────────────
+.srv-page-intro {
+    background: $primaryColor;
+    padding:    70px 0;
+    position:   relative;
+    overflow:   hidden;
+
+    &::after {
+        content:       '';
+        position:      absolute;
+        top:           0;
+        right:         0;
+        width:         300px;
+        height:        300px;
+        border-radius: 50%;
+        background:    $secondaryColor;
+        opacity:       0.05;
+        transform:     translate(30%, -30%);
+    }
+
+    .container { position: relative; z-index: 1; }
+
+    .intro-grid {
+        display:               grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap:                   1px;
+        background:            rgba(255,255,255,0.06);
+        border:                1px solid rgba(255,255,255,0.06);
+        border-radius:         $radius;
+        overflow:              hidden;
+        margin-top:            50px;
+
+        @include custom_max(767px) { grid-template-columns: 1fr 1fr; }
+    }
+
+    .intro-stat {
+        background: rgba(255,255,255,0.02);
+        padding:    32px 24px;
+        text-align: center;
+
+        i {
+            font-size:     2rem;
+            color:         $secondaryColor;
+            margin-bottom: 12px;
+            display:       block;
+        }
+
+        .stat-val {
+            font-family: $primaryFont;
+            font-size:   1.8rem;
+            font-weight: 700;
+            color:       $whitey;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-lbl {
+            font-family:    $secondaryFont;
+            font-size:      11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color:          rgba(255,255,255,0.5);
+        }
+    }
+}

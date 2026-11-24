@@ -1,0 +1,320 @@
+// =============================================
+// HIFI HOMES — CATEGORY / SHOP LISTING
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.shop {
+  padding: 3rem 0 5rem;
+  background: $white;
+}
+
+.shop__layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+
+  @include respond(lg) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+// ── Filters sidebar ───────────────────────────
+// Collapsed behind a toggle on narrow viewports so the product grid
+// isn't buried under every filter group on first load.
+.shop__filters-toggle {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.25rem;
+  background: $grey-100;
+  border-radius: $radius-sm;
+  font-family: $font-display;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $text-dark;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  &[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+
+  @include respond(lg) {
+    display: flex;
+  }
+}
+
+.shop__filters {
+  @include respond(lg) {
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
+}
+
+.shop__filters > h2 {
+  font-family: $font-display;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $text-dark;
+  margin-bottom: 1.25rem;
+}
+
+.shop__filter-group {
+  border-bottom: 1px solid $grey-200;
+}
+
+.shop__filter-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+  font-family: $font-body;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: $text-dark;
+  text-align: left;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    color: $grey-600;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    color: $navy;
+  }
+}
+
+.shop__filter-group.open .shop__filter-toggle svg {
+  transform: rotate(180deg);
+}
+
+.shop__filter-panel {
+  display: none;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding-bottom: 1.1rem;
+}
+
+.shop__filter-group.open .shop__filter-panel {
+  display: flex;
+}
+
+.shop__filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: $grey-600;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    accent-color: $navy;
+    flex-shrink: 0;
+  }
+
+  span:last-child {
+    margin-left: auto;
+    color: $grey-400;
+    font-size: 0.78rem;
+  }
+
+  &:hover {
+    color: $text-dark;
+  }
+}
+
+// ── Main column ────────────────────────────────
+.shop__title {
+  font-family: $font-display;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: $text-dark;
+  margin-bottom: 1.5rem;
+}
+
+.shop__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $grey-200;
+}
+
+.shop__count {
+  font-size: 0.85rem;
+  color: $grey-600;
+}
+
+.shop__toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.shop__sort {
+  font-size: 0.85rem;
+  color: $grey-600;
+
+  strong {
+    color: $text-dark;
+  }
+}
+
+.shop__view-toggle {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.shop__view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: $radius-sm;
+  color: $grey-400;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.active,
+  &:hover {
+    background: $grey-100;
+    color: $navy-dark;
+  }
+}
+
+.shop__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 1.5rem;
+
+  @include respond(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 1rem;
+  }
+}
+
+.shop__group {
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.shop__group > h2 {
+  font-family: $font-display;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: $text-dark;
+  margin-bottom: 1.25rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid $grey-200;
+}
+
+// ── Product card ───────────────────────────────
+.product-card {
+  display: flex;
+  flex-direction: column;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// Product photos come in mixed proportions — show the whole image inside
+// the square frame instead of cropping it.
+.card-image {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $white;
+  border: 1px solid $grey-100;
+  border-radius: $radius-md;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  color: $navy-dark;
+  transition: $transition;
+  overflow: hidden;
+
+  svg {
+    width: 40%;
+    height: 40%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.product-card:hover .card-image {
+  border-color: $gold;
+  color: $gold;
+}
+
+.product-card h4 {
+  margin: 0 0 0.25rem;
+  font-family: $font-body;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $grey-400;
+}
+
+.product-card h3 {
+  font-family: $font-body;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: $text-dark;
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+
+.product-card__quote-btn {
+  @include btn-base;
+  align-self: flex-start;
+  background: $gold;
+  color: $navy-dark;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+
+  &:hover {
+    background: $gold-light;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}

@@ -1,0 +1,155 @@
+@use 'variables' as *;
+
+.pp-services {
+  padding: 64px 0 76px;
+  background: $pp-white;
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px 14px;
+
+    @include pp-down(nav) {
+      gap: 24px 20px;
+    }
+
+    // Phones: swipeable row with the next card peeking in
+    @include pp-down(md) {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      gap: 16px;
+      margin: 0 -24px;
+      padding: 4px 24px 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 0 24px;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @include pp-down(sm) {
+      margin: 0 -16px;
+      padding: 4px 16px 18px;
+      scroll-padding: 0 16px;
+    }
+  }
+
+  @include pp-down(md) {
+    padding: 52px 0 60px;
+  }
+}
+
+.pp-service-card {
+  flex: 0 0 calc((100% - 4 * 14px) / 5);
+  display: flex;
+
+  @include pp-down(nav) {
+    flex-basis: calc((100% - 2 * 20px) / 3);
+  }
+
+  @include pp-down(md) {
+    flex-basis: 70%;
+    scroll-snap-align: start;
+  }
+
+  @include pp-down(sm) {
+    flex-basis: 82%;
+  }
+
+  flex-direction: column;
+  overflow: hidden;
+  background: $pp-white;
+  border: 1px solid $pp-border;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba($pp-navy, 0.06);
+  transition: $pp-transition;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba($pp-navy, 0.14);
+  }
+
+  &__media {
+    height: 132px;
+    overflow: hidden;
+    background: $pp-light;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  }
+
+  &:hover &__media img {
+    transform: scale(1.06);
+  }
+
+  // Whole card is clickable via the title link
+  position: relative;
+
+  &__link {
+    transition: color 0.2s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+  }
+
+  &:hover &__link {
+    color: $pp-blue;
+  }
+
+  &__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: -24px auto 0;
+    border: 3px solid $pp-white;
+    border-radius: 50%;
+    color: $pp-white;
+    box-shadow: 0 4px 10px rgba($pp-navy, 0.18);
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__body {
+    padding: 12px 18px 24px;
+    text-align: center;
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+  }
+
+  @include pp-down(md) {
+    &__media {
+      height: 170px;
+    }
+
+    &__body p {
+      font-size: 14.5px;
+    }
+  }
+}

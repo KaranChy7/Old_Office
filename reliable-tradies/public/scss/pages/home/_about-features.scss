@@ -1,0 +1,107 @@
+// =============================================
+// ABOUT FEATURES / PROCESS
+// =============================================
+@use '../../base/variables' as *;
+@use '../../base/mixins' as *;
+
+.process-section {
+    @include section-padding;
+    background: $lgrey;
+
+    .section-header {
+        text-align:    center;
+        margin-bottom: 60px;
+
+        .section-label { justify-content: center; }
+        .section-desc  { margin: 0 auto; }
+    }
+
+    .process-grid {
+        display:               grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap:                   30px;
+        position:              relative;
+
+        // Connector line
+        &::before {
+            content:    '';
+            position:   absolute;
+            top:        44px;
+            left:       12%;
+            width:      76%;
+            height:     1px;
+            background: repeating-linear-gradient(
+                90deg,
+                $secondaryColor 0,
+                $secondaryColor 8px,
+                transparent 8px,
+                transparent 18px
+            );
+            z-index: 0;
+        }
+
+        @include custom_max(991px) {
+            grid-template-columns: repeat(2, 1fr);
+            &::before { display: none; }
+        }
+
+        @include custom_max(480px) { grid-template-columns: 1fr; }
+    }
+
+    .process-step {
+        text-align:  center;
+        position:    relative;
+        z-index:     1;
+
+        .step-num {
+            width:         88px;
+            height:        88px;
+            border-radius: 50%;
+            background:    $whitey;
+            border:        2px solid $secondaryColor;
+            display:       flex;
+            align-items:   center;
+            justify-content: center;
+            margin:        0 auto 24px;
+            font-family:   $primaryFont;
+            font-size:     2rem;
+            font-weight:   700;
+            color:         $secondaryColor;
+            position:      relative;
+            transition:    background 0.3s, color 0.3s;
+            box-shadow:    0 4px 20px rgba(212,132,42,0.12);
+        }
+
+        &:hover .step-num {
+            background: $secondaryColor;
+            color:      $whitey;
+        }
+
+        .step-icon {
+            position:  absolute;
+            bottom:    -4px; right: -4px;
+            width:     28px; height: 28px;
+            background: $primaryColor;
+            border-radius: 50%;
+            display:   flex;
+            align-items: center;
+            justify-content: center;
+
+            i { color: $secondaryColor; font-size: 12px; }
+        }
+
+        h4 {
+            font-family:   $primaryFont;
+            font-size:     1.15rem;
+            color:         $primaryColor;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-family: $secondaryFont;
+            font-size:   14px;
+            color:       $dark-color;
+            line-height: 1.65;
+        }
+    }
+}

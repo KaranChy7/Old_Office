@@ -1,0 +1,82 @@
+.breadcrumb {
+    padding: 50px 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-image: url('../images/breadcrumb.jpg');
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba($black, 0.3);
+        z-index: -1;
+    }
+
+    h4 {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        word-spacing: 0.2em;
+        color: $primaryColor;
+        text-transform: capitalize;
+    }
+
+    .breadcrumb-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+
+        .breadcrumb-item {
+            text-transform: capitalize;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.5;
+
+            &::before {
+                content: '\f054';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 700;
+                font-size: 0.75rem;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                color: $whitey;
+            }
+
+            &:first-child {
+                padding-left: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            a {
+
+                font-size: 1rem;
+                font-weight: 700;
+                color: $whitey;
+                transition: 0.3s ease-in-out;
+                line-height: 1.5;
+
+
+                &:hover {
+                    color: $primaryColor;
+                }
+            }
+
+            p {
+                font-size: 0.9375rem;
+                color: $lgrey;
+                line-height: 1.5;
+                text-transform: capitalize;
+            }
+        }
+    }
+}

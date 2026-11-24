@@ -1,0 +1,240 @@
+// =============================================
+// GLINT PLUS PAINTING SERVICE — ABOUT PAGE (unique layout)
+// Unique to about.php — does not affect the
+// homepage about section (.about / .about__highlight)
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ── Story / founder spotlight ────────────────
+.about-story {
+  background: $cream;
+  padding: 6rem 0 7rem;
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 4rem;
+    align-items: start;
+
+    @include respond(lg) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__lead {
+    font-family: $font-display;
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    font-weight: 500;
+    line-height: 1.5;
+    color: $navy;
+    margin: 1rem 0 1.75rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: $text-body;
+    max-width: 640px;
+
+    p { margin-bottom: 1.25rem; }
+  }
+
+  &__actions {
+    @include flex(center, flex-start, 1rem);
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__btn-primary { @include btn-primary; }
+  &__btn-outline { @include btn-outline; }
+
+  &__founder {
+    background: $white;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-lg;
+    position: sticky;
+    top: 140px;
+
+    @include respond(lg) {
+      position: static;
+      // max-width: 360px;
+    }
+  }
+
+  &__founder-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__founder-body {
+    padding: 1.5rem;
+  }
+
+  &__founder-name {
+    font-family: $font-display;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $navy;
+  }
+
+  &__founder-role {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $grey-600;
+    margin-bottom: 0.85rem;
+  }
+
+  &__founder-quote {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: $text-body;
+    font-style: italic;
+    border-left: 3px solid $teal;
+    padding-left: 0.85rem;
+  }
+}
+
+// ── Journey timeline ──────────────────────────
+.about-timeline {
+  background: $white;
+  padding: 6rem 0 7rem;
+
+  &__header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+  }
+
+  &__line {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      left: 20px;
+      width: 2px;
+      background: $grey-200;
+
+      @include respond(md) {
+        left: 14px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 4rem;
+    padding-bottom: 3rem;
+
+    &:last-child { padding-bottom: 0; }
+
+    @include respond(md) {
+      padding-left: 3rem;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    left: 12px;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: $teal;
+    border: 4px solid $white;
+    box-shadow: 0 0 0 2px $teal;
+
+    @include respond(md) {
+      left: 6px;
+    }
+  }
+
+  &__tag {
+    display: block;
+    font-family: $font-display;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $blue;
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $navy;
+    margin-bottom: 0.6rem;
+  }
+
+  &__desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: $text-body;
+    max-width: 560px;
+  }
+}
+
+// ── Values ─────────────────────────────────────
+.about-values {
+  background: $navy-dark;
+  padding: 6rem 0 7rem;
+
+  &__header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3.5rem;
+  }
+
+  &__row {
+    @include flex(center, space-between, 2rem);
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba($white, 0.1);
+    flex-wrap: wrap;
+
+    &:first-of-type {
+      border-top: 1px solid rgba($white, 0.1);
+    }
+  }
+
+  &__num {
+    font-family: $font-display;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba($white, 0.12);
+    flex-shrink: 0;
+    width: 70px;
+  }
+
+  &__row-title {
+    font-family: $font-display;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $white;
+    flex: 0 0 230px;
+
+    @include respond(md) {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__row-desc {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba($white, 0.6);
+    flex: 1;
+    min-width: 240px;
+  }
+}

@@ -1,0 +1,104 @@
+// =============================================
+// HIFI HOMES — PRODUCT CATEGORIES
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.category-section {
+  padding: 6rem 0;
+  background: $white;
+  scroll-margin-top: 190px;
+
+  &--tint {
+    background: $cream;
+  }
+}
+
+.category-section__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+
+  .section-eyebrow {
+    justify-content: center;
+  }
+}
+
+.category-section__lead {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+
+  @include respond(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond(sm) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  // padding: 2rem 1rem;
+  text-align: center;
+  background: $white;
+  border: 1px solid $grey-200;
+  border-radius: $radius-md;
+  transition: $transition;
+
+  .category-section--tint & {
+    background: $white;
+  }
+
+  &:hover {
+    border-color: $navy-dark;
+    background: $navy-dark;
+    transform: translateY(-4px);
+    box-shadow: $shadow-md;
+
+    .category-card__icon {
+      border-color: $gold-light;
+    }
+
+    .category-card__label {
+      color: $white;
+    }
+  }
+}
+
+.category-card__icon {
+  width: 100%;
+  height: 100%;
+  border-radius: $radius-md;
+  overflow: hidden;
+  border: 1px solid $grey-200;
+  transition: $transition;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.category-card__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: $text-dark;
+  transition: $transition;
+  padding-bottom: 20px;
+}

@@ -1,0 +1,6 @@
+Image credits (outside public/)
+
+public/images/rubbish-removal.jpg
+  "Milton yard waste" - Flickr photo 54074236131
+  https://live.staticflickr.com/65535/54074236131_f8d436f775_b.jpg
+  Found via Openverse with license filter cc0,pdm (public domain / CC0)

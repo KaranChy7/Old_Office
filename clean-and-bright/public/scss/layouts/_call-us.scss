@@ -1,0 +1,82 @@
+.call-us {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 0;
+    // background-color: rgba($secondaryColor, 0.8);
+    // background-color: #ebecef;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 130px;
+        // the size of the top is given by calculating the padding applied on this section top and how much i need the space
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ebecef;
+    }
+
+    .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $whitey;
+        padding: 60px;
+        border-radius: $radius-m;
+        position: relative;
+        z-index: 99;
+
+        p {
+            font-size: 1.75rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: $dblack;
+            max-width: 600px;
+        }
+    }
+}
+
+@include custom_max(1200px) {
+    .call-us {
+        &::before {
+            top: 110px;
+        }
+
+        .wrap {
+            padding: 40px;
+
+            p {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .call-us {
+        &::before {
+            top: 100px;
+        }
+
+        .wrap {
+            gap: 20px;
+            justify-content: center;
+
+            p {
+                font-size: 1.25rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .call-us {
+        .wrap {
+            p {
+                font-size: 1.125rem;
+            }
+        }
+    }
+}

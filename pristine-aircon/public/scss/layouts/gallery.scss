@@ -1,0 +1,101 @@
+.gallery {
+    background: $background1;
+
+    .main-title {
+        h3 {
+            color: $whitey;
+        }
+    }
+}
+
+.gallery-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 15px;
+
+    .image-wrap {
+        aspect-ratio: 8/8;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            // filter: blur(1px);
+            transform: scale(1.2);
+            transition:
+                transform 1s,
+                filter 2s ease-in-out;
+        }
+
+        &:first-child {
+            grid-row: 1/3;
+            grid-column: 1/3;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &:hover {
+            img {
+                // filter: blur(0);
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .gallery-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include custom_max(768px) {
+    .gallery-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+
+        .image-wrap {
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .gallery-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+
+        .image-wrap {
+            aspect-ratio: 4/4;
+
+            &:last-child {
+                display: block;
+            }
+        }
+    }
+}
+
+@include custom_max(480px) {
+    .gallery-wrapper {
+        .image-wrap {
+            img {
+                filter: blur(0);
+                transform: scale(1);
+            }
+        }
+    }
+}
+// section label on the dark background
+.gallery .main-title h6 {
+    color: $bg-color;
+
+    &::before {
+        background-color: rgba($whitey, 0.1);
+    }
+}

@@ -1,0 +1,50 @@
+.page-about {
+
+    /* This Scss will be shown in about us page only */
+    .full-content {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+
+        p {
+            color: $black;
+        }
+    }
+}
+
+@include custom_max(992px) {
+    .page-about {
+        .about {
+            .wrapper {
+                flex-direction: column;
+                gap: 20px;
+
+                .about-image {
+                    aspect-ratio: 5/3;
+                }
+
+                .about-content {
+                    .desc {
+                        p:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .page-about {
+        .about {
+            .wrapper {
+                .full-content {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

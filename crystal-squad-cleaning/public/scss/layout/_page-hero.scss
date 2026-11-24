@@ -1,0 +1,83 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — INNER PAGE BANNER
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.page-hero {
+  position: relative;
+  padding: 1.5rem 0 1.5rem;
+  color: $white;
+  background-color: $forest;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba($forest, 0.88) 0%, rgba($green-dark, 0.8) 100%);
+  }
+
+  @include respond(md) {
+    padding: 2rem 0 2.25rem;
+  }
+
+  &__container {
+    position: relative;
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__icon {
+    @include flex(center, center);
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.1rem;
+    border-radius: 50%;
+    background: $amber;
+    color: $ink;
+
+    .icon {
+      width: 26px;
+      height: 26px;
+      font-size: 26px;
+    }
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 1rem;
+  }
+
+  &__crumbs {
+    @include flex(center, center, 0.5rem);
+    font-size: 0.9rem;
+    color: rgba($white, 0.8);
+
+    a {
+      @include flex(center, center, 0.35rem);
+      color: $lime;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .icon {
+      width: 15px;
+      height: 15px;
+      font-size: 15px;
+    }
+  }
+}

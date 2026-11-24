@@ -1,0 +1,106 @@
+
+<section class="section section--black" id="contact">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Contact Info -->
+      <div data-animate="fade-left">
+        <div class="section-eyebrow">Reach Us</div>
+        <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem); margin-bottom:2rem;">
+          Let's Talk <span class="text-gold">Adventure</span>
+        </h2>
+
+        <div class="contact-info">
+          <div class="contact-info__item">
+            <div class="contact-info__icon"><i class="ri-map-pin-2-line"></i></div>
+            <div class="contact-info__body">
+              <div class="contact-info__label">Workshop</div>
+              <div class="contact-info__value">14 Logistics Drive<br>Arundel QLD 4214</div>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon"><i class="ri-phone-line"></i></div>
+            <div class="contact-info__body">
+              <div class="contact-info__label">Phone</div>
+              <div class="contact-info__value"><a href="tel:0400123456" style="color:#c8c8c8; transition:0.2s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#c8c8c8'">0400 123 456</a></div>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon"><i class="ri-mail-line"></i></div>
+            <div class="contact-info__body">
+              <div class="contact-info__label">Email</div>
+              <div class="contact-info__value"><a href="mailto:info@gcecampers.com.au" style="color:#c8c8c8; transition:0.2s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#c8c8c8'">info@gcecampers.com.au</a></div>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon"><i class="ri-time-line"></i></div>
+            <div class="contact-info__body">
+              <div class="contact-info__label">Hours</div>
+              <div class="contact-info__value">Mon–Fri: 8am – 5pm<br>Sat: 9am – 2pm</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service areas -->
+        <div style="margin-top:2rem; padding:1.25rem; border:1px solid rgba(201,168,76,0.12); border-radius:8px; background:rgba(201,168,76,0.03);">
+          <div style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:#c9a84c; margin-bottom:0.75rem;">Service Areas</div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                        <span style="display:inline-flex; align-items:center; gap:0.3rem; padding:0.3rem 0.75rem; border:1px solid rgba(255,255,255,0.08); border-radius:100px; font-size:0.75rem; color:#888;">
+              <i class="ri-map-pin-line" style="color:#c9a84c; font-size:0.7rem;"></i>Gold Coast            </span>
+                        <span style="display:inline-flex; align-items:center; gap:0.3rem; padding:0.3rem 0.75rem; border:1px solid rgba(255,255,255,0.08); border-radius:100px; font-size:0.75rem; color:#888;">
+              <i class="ri-map-pin-line" style="color:#c9a84c; font-size:0.7rem;"></i>Brisbane            </span>
+                        <span style="display:inline-flex; align-items:center; gap:0.3rem; padding:0.3rem 0.75rem; border:1px solid rgba(255,255,255,0.08); border-radius:100px; font-size:0.75rem; color:#888;">
+              <i class="ri-map-pin-line" style="color:#c9a84c; font-size:0.7rem;"></i>Sunshine Coast            </span>
+                        <span style="display:inline-flex; align-items:center; gap:0.3rem; padding:0.3rem 0.75rem; border:1px solid rgba(255,255,255,0.08); border-radius:100px; font-size:0.75rem; color:#888;">
+              <i class="ri-map-pin-line" style="color:#c9a84c; font-size:0.7rem;"></i>Noosa            </span>
+                        <span style="display:inline-flex; align-items:center; gap:0.3rem; padding:0.3rem 0.75rem; border:1px solid rgba(255,255,255,0.08); border-radius:100px; font-size:0.75rem; color:#888;">
+              <i class="ri-map-pin-line" style="color:#c9a84c; font-size:0.7rem;"></i>Northern NSW            </span>
+                      </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap" data-animate="fade-right">
+        <h3 style="font-family:'Barlow Condensed',sans-serif; font-size:1.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.5rem;">Send a Message</h3>
+        <p style="font-size:0.85rem; color:#666; margin-bottom:2rem;">We typically respond within a few hours.</p>
+
+        <div class="form-success" id="contactSuccess">
+          <i class="ri-check-circle-line"></i> Thank you! We'll be in touch shortly.
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contact_name">Your Name</label>
+              <input type="text" id="contact_name" name="name" class="form-control" placeholder="John Smith" required>
+              <span class="form-error" id="nameError">Please enter your name.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact_email">Email Address</label>
+              <input type="email" id="contact_email" name="email" class="form-control" placeholder="you@example.com" required>
+              <span class="form-error" id="emailError">Please enter a valid email.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact_subject">Subject</label>
+            <select id="contact_subject" name="subject" class="form-control">
+              <option value="">Select a topic…</option>
+              <option value="hire">Camper Hire Enquiry</option>
+              <option value="fitout">Custom Fit-Out Enquiry</option>
+              <option value="general">General Question</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact_message">Message</label>
+            <textarea id="contact_message" name="message" class="form-control" placeholder="Tell us about your adventure plans…" required></textarea>
+            <span class="form-error" id="messageError">Please enter a message.</span>
+          </div>
+          <button type="submit" class="btn btn--gold" style="width:100%; justify-content:center; padding:1rem;">
+            <i class="ri-send-plane-line"></i> Send Message
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

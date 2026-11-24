@@ -1,0 +1,346 @@
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.page-services {
+  background: linear-gradient(160deg, $white 0%, rgba($ink, 0.03) 100%);
+  padding: 5rem 0 6rem;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    background: $primary-light;
+    color: $primary-dark;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+
+  &__header {
+    h1 {
+      font-family: $font-serif;
+      font-size: clamp(2rem, 3.8vw, 2.9rem);
+      font-weight: 600;
+      line-height: 1.25;
+      color: $ink;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: $grey;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+  }
+
+  // Category tab nav
+  &__tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0 auto 4rem;
+    position: sticky;
+    top: 0.75rem;
+    z-index: 5;
+  }
+
+  &__tab {
+    display: inline-flex;
+    align-items: center;
+    background: $white;
+    color: $ink;
+    font-family: $font-display;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba($ink, 0.1);
+    box-shadow: $shadow-sm;
+    transition: $transition;
+
+    &:hover {
+      border-color: $primary;
+      color: $primary-dark;
+      transform: translateY(-2px);
+    }
+  }
+
+  // Category group
+  &__group {
+    & + & {
+      margin-top: 4.5rem;
+    }
+  }
+
+  &__group-label {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+
+    span {
+      flex-shrink: 0;
+      font-family: $font-display;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $primary;
+    }
+
+    &::after {
+      content: '';
+      flex-grow: 1;
+      height: 1px;
+      background: rgba($ink, 0.12);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+
+    @include respond(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // Image-led card
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-sm;
+    transition: $transition;
+
+    &:hover {
+      box-shadow: $shadow-lg;
+      transform: translateY(-6px);
+
+      .page-services__card-image {
+        transform: scale(1.06);
+      }
+    }
+  }
+
+  &__card-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  &__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  &__card-tag {
+    position: absolute;
+    top: 0.9rem;
+    left: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    background: rgba($ink, 0.6);
+    backdrop-filter: blur(4px);
+    color: $white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+  }
+
+  &__card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.5rem;
+
+    h3 {
+      font-family: $font-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: $ink;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+      line-height: 1.55;
+      color: $grey;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+  }
+
+  &__card-link {
+    @include flex(center, flex-start, 0.3rem);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $primary;
+    transition: $transition;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      transition: transform 0.2s ease;
+    }
+  }
+
+  &__card:hover &__card-link svg {
+    transform: translateX(3px);
+  }
+}
+
+// ── Add-ons & custom scopes ───────────────────
+.services-addons {
+  background: linear-gradient(160deg, $white 0%, rgba($ink, 0.03) 100%);
+  padding: 4.5rem 0;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+
+    @include respond(lg) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    background: $primary-light;
+    color: $primary-dark;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+  }
+
+  &__col {
+    h2 {
+      font-family: $font-serif;
+      font-size: clamp(1.6rem, 2.8vw, 2rem);
+      font-weight: 600;
+      line-height: 1.25;
+      color: $ink;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: $grey;
+      max-width: 420px;
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  &__pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__pill {
+    display: inline-flex;
+    align-items: center;
+    background: $white;
+    border: 1px solid rgba($ink, 0.1);
+    color: $ink;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+  }
+
+  &__actions {
+    @include flex(center, flex-start, 1rem);
+    flex-wrap: wrap;
+  }
+
+  &__btn-primary {
+    @include btn-base;
+    background: $secondary;
+    color: $white;
+    border: none;
+    border-radius: 999px;
+    font-family: $font-body;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 600;
+    padding: 0.9rem 1.6rem;
+
+    &:hover {
+      background: $secondary-dark;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__btn-secondary {
+    @include btn-base;
+    background: $white;
+    color: $ink;
+    border: 1px solid rgba($ink, 0.14);
+    border-radius: 999px;
+    font-family: $font-body;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 600;
+    padding: 0.9rem 1.6rem;
+
+    &:hover {
+      border-color: $primary;
+      color: $primary-dark;
+      transform: translateY(-2px);
+    }
+  }
+}

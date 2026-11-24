@@ -1,0 +1,17 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — UTILITIES
+// =============================================
+
+// ── SVG icon sizes ──────────────────────────
+.icon-sm {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+// ── Broken image fallback ───────────────────
+// Applied by main.js when an <img> fails to load, so the wrapper shows
+// a themed placeholder instead of the browser's broken-image glyph.
+.img-fallback {
+  background: linear-gradient(135deg, #D7262F 0%, #4CAF2A 100%);
+}

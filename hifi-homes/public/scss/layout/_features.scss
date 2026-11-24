@@ -1,0 +1,80 @@
+// =============================================
+// HIFI HOMES — FEATURES (why choose us)
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.features {
+  padding: 6rem 0 6.5rem;
+  background: $white;
+}
+
+.features__header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 3.5rem;
+
+  .section-eyebrow {
+    justify-content: center;
+  }
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+
+  @include respond(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 1.5rem;
+  }
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.features__card {
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.features__icon {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: $cream;
+  color: $navy-dark;
+  transition: $transition;
+
+  svg {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+.features__card:hover .features__icon {
+  background: $gold;
+  color: $white;
+  transform: translateY(-4px);
+}
+
+.features__title {
+  font-family: $font-display;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: $text-dark;
+  margin-bottom: 0.6rem;
+}
+
+.features__desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: $grey-600;
+}

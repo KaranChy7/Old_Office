@@ -1,0 +1,228 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — BOOK A CLEAN
+// =============================================
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// Section-scoped teal accent + serif display face (kept local so the
+// rest of the site's monochrome palette/typography is untouched).
+$booking-teal: #D7262F;
+$booking-teal-dark: #A81C24;
+$booking-teal-light: #FBE2E3;
+$booking-ink: #141414;
+$booking-grey: #5C5C5C;
+$booking-border: rgba(20, 20, 20, 0.12);
+$booking-font-serif: 'Playfair Display', serif;
+
+.booking {
+  background: linear-gradient(160deg, #F7FAF4 0%, #EEF7E8 100%);
+  padding: 6rem 0;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: start;
+    gap: 3.5rem;
+
+    @include respond(lg) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  // Info side
+  &__info {
+    padding-top: 0.5rem;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    background: $booking-teal-light;
+    color: $booking-teal-dark;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    font-family: $booking-font-serif;
+    font-size: clamp(2rem, 3.6vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: $booking-ink;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    max-width: 460px;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $booking-grey;
+    max-width: 420px;
+    margin-bottom: 2rem;
+  }
+
+  &__points {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.92rem;
+      color: $booking-ink;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: $booking-teal;
+    }
+  }
+
+  &__contact-link {
+    font-size: 0.9rem;
+    color: $booking-grey;
+
+    a {
+      color: $booking-teal;
+      font-weight: 600;
+      margin-left: 0.3rem;
+      transition: $transition;
+
+      &:hover {
+        color: $booking-teal-dark;
+      }
+    }
+  }
+
+  // Form card
+  &__form-wrap {
+    background: $white;
+    border-radius: $radius-xl;
+    padding: 2.5rem;
+    box-shadow: $shadow-lg;
+
+    @include respond(sm) {
+      padding: 1.5rem;
+    }
+  }
+
+  &__form-title {
+    font-family: $booking-font-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $booking-ink;
+    margin-bottom: 0.35rem;
+  }
+
+  &__form-sub {
+    font-size: 0.85rem;
+    color: $booking-grey;
+    margin-bottom: 1.75rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: $booking-grey;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 0.8rem 1rem;
+      background: $white;
+      border: 1px solid $booking-border;
+      border-radius: $radius-md;
+      font-family: $font-body;
+      font-size: 0.92rem;
+      color: $booking-ink;
+      transition: $transition;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+        border-color: $booking-teal;
+        box-shadow: 0 0 0 3px rgba($booking-teal, 0.12);
+      }
+
+      &::placeholder {
+        color: rgba($booking-ink, 0.35);
+      }
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+  }
+
+  &__submit {
+    @include flex(center, center, 0.5rem);
+    width: 100%;
+    background: $booking-teal;
+    color: $white;
+    border: none;
+    border-radius: 999px;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.95rem 1.5rem;
+    cursor: pointer;
+    transition: $transition;
+    margin-top: 0.25rem;
+
+    &:hover {
+      background: $booking-teal-dark;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+}

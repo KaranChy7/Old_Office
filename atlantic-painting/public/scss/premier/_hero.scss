@@ -1,0 +1,142 @@
+@use 'variables' as *;
+
+.pp-hero {
+  position: relative;
+  overflow: hidden;
+  background: $pp-navy;
+  color: $pp-white;
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    min-height: 480px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  &__content {
+    max-width: 620px;
+  }
+
+  &__eyebrow {
+    margin-bottom: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgba($pp-white, 0.88);
+  }
+
+  &__title {
+    font-size: clamp(30px, 3.6vw, 46px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: $pp-white;
+
+    span {
+      display: block;
+      color: $pp-yellow;
+    }
+  }
+
+  &__text {
+    max-width: 500px;
+    margin: 22px 0 32px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba($pp-white, 0.9);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 56%;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left center;
+    }
+
+    // Blend photo into the navy panel
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, $pp-navy 0%, rgba($pp-navy, 0.75) 10%, rgba($pp-navy, 0) 32%);
+    }
+  }
+
+  @include pp-down(xl) {
+    &__inner {
+      min-height: 440px;
+    }
+
+    &__content {
+      max-width: 520px;
+    }
+
+    &__media {
+      width: 54%;
+    }
+  }
+
+  @include pp-down(lg) {
+    &__inner {
+      min-height: 0;
+      padding-top: 56px;
+      padding-bottom: 44px;
+    }
+
+    &__content {
+      max-width: 640px;
+    }
+
+    &__media {
+      position: relative;
+      width: 100%;
+      height: 360px;
+
+      &::before {
+        background: linear-gradient(180deg, $pp-navy 0%, rgba($pp-navy, 0) 35%);
+      }
+    }
+  }
+
+  @include pp-down(sm) {
+    &__inner {
+      padding-top: 44px;
+      padding-bottom: 36px;
+    }
+
+    &__eyebrow {
+      font-size: 10.5px;
+      letter-spacing: 0.2em;
+    }
+
+    &__text {
+      font-size: 15px;
+    }
+
+    &__actions .pp-btn {
+      flex: 1 1 100%;
+    }
+
+    &__media {
+      height: 260px;
+    }
+  }
+}

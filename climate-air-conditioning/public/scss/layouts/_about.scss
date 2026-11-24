@@ -1,0 +1,186 @@
+.add-background-image {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('../images/background-img.jpg') no-repeat center/cover fixed;
+        z-index: -1;
+        opacity: 0.1;
+    }
+}
+
+.about {
+    .abt-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .image-block {
+            position: relative;
+            flex-basis: 50%;
+            border-radius: 20px;
+            overflow: hidden;
+
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     top: -70px;
+            //     left: calc(100% - 150px);
+            //     width: 60%;
+            //     height: 120%;
+            //     background-color: $secondaryColor;
+            //     transform: rotate(160deg);
+            //     transition: 0.5s ease-in-out;
+            // }
+
+            .figure {
+                width: 100%;
+                height: 100%;
+                aspect-ratio: 2/2;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .small-image {
+                position: absolute;
+                bottom: 20px;
+                right: 50px;
+                // transform: translateY(-50%);
+                border-radius: 100%;
+                overflow: hidden;
+                border: 1px solid rgba($black, 0.5);
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+                img {
+                    width: 300px;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                &::before {
+                    // width: 0;
+                    left: 125%;
+                }
+            }
+        }
+
+        .text-block {
+            flex-basis: calc(50% - 30px);
+
+            .description {
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                justify-content: center;
+                height: 100%;
+                gap: 20px;
+
+                .sub-title {
+                    h6 {
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        text-transform: capitalize;
+                        color: $black;
+                        margin-bottom: 10px;
+                    }
+
+                    h4 {
+                        font-size: 2rem;
+                        font-weight: 700;
+                        color: $primaryColor;
+                        line-height: 1.1;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                p {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    color: $black;
+                }
+
+                .abt-statistics {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .slot {
+                        flex: 0 0 calc(100% / 3);
+
+                        p {
+
+                            font-size: 1.125rem;
+                            color: $black;
+                            // text-align: center;
+                            text-transform: capitalize;
+
+                            span {
+                                display: block;
+                                font-size: 1.75rem;
+                                font-weight: 700;
+                                color: $secondaryColor;
+                            }
+                        }
+                    }
+
+                    .button {
+                        padding-top: 20px;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+@include custom_max(992px) {
+    .about {
+        .abt-wrap {
+            flex-direction: column;
+            gap: 30px;
+
+            .image-block {
+                &::before {
+                    top: -90px;
+                }
+
+                .figure {
+                    aspect-ratio: 3/2;
+                }
+
+                .small-image {
+                    width: 140px;
+                    bottom: 10px;
+                    right: 10px;
+                }
+            }
+
+            .text-block {
+                .description {
+                    text-align: center;
+
+                    .sub-title {
+                        h4 {
+                            font-size: 1.25rem;
+                        }
+                    }
+
+                    p {
+                        font-size: 0.9375rem;
+                    }
+                }
+            }
+        }
+    }
+}

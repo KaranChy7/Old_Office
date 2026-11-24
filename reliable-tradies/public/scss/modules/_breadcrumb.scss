@@ -1,0 +1,52 @@
+// =============================================
+// BREADCRUMB
+// =============================================
+@use '../base/variables' as *;
+
+.page-banner {
+    background:    $primaryColor;
+    padding:       100px 0 70px;
+    position:      relative;
+    overflow:      hidden;
+
+    &::after {
+        content:   '';
+        position:  absolute;
+        bottom:    0; right: 0;
+        width:     400px; height: 400px;
+        background: $secondaryColor;
+        opacity:   0.05;
+        border-radius: 50%;
+        transform: translate(30%, 30%);
+    }
+
+    .banner-title {
+        font-family: $primaryFont;
+        font-size:   clamp(2.2rem, 5vw, 3.5rem);
+        color:       $whitey;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+}
+
+.breadcrumb {
+    display:   flex;
+    flex-wrap: wrap;
+    gap:       8px;
+    align-items: center;
+
+    li {
+        font-family: $secondaryFont;
+        font-size:   14px;
+        color:       rgba(255,255,255,0.6);
+
+        a {
+            color:      rgba(255,255,255,0.8);
+            transition: color 0.3s;
+            &:hover { color: $secondaryColor; }
+        }
+
+        &.separator { color: $secondaryColor; }
+        &.active    { color: $secondaryColor; }
+    }
+}

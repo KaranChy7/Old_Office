@@ -1,0 +1,101 @@
+.page-about {
+    .about {
+
+        .full-content {
+            margin-top: 40px;
+
+            p {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    /*  Call Us Section */
+    .call-us {
+        position: relative;
+        z-index: 1;
+        background-image: url('../images/call_us.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba($primaryColor, 0.8);
+            z-index: -1;
+        }
+    }
+
+    .call-wrap {
+        text-align: center;
+
+
+        h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: $whitey;
+            line-height: 1.2;
+            text-transform: capitalize;
+        }
+
+        p {
+            color: $lgrey;
+            max-width: 700px;
+            margin: 30px auto;
+        }
+    }
+}
+
+
+@include custom_max(992px) {
+    .page-about {
+        .about {
+            .full-content {
+                margin-top: 20px;
+
+                p {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        .call-wrap {
+            h3 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@include custom_max(768px) {
+    .page-about {
+        .about {
+            .full-content {
+                margin-top: 10px;
+            }
+        }
+
+        .call-wrap {
+            h3 {
+                font-size: 1.75rem;
+            }
+
+            p {
+                margin: 20px 0;
+            }
+        }
+    }
+}
+
+@include custom_max(576px) {
+    .page-about {
+        .call-wrap {
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

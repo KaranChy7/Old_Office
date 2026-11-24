@@ -1,0 +1,249 @@
+.footer {
+    background-color: $whitey;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 0;
+    // padding: 34px 20px;
+    padding: 12px 20px;
+
+    .footer-wrapper {
+        .social-link-wrap {
+            align-items: center;
+            text-align: center;
+
+            .title {
+                display: none;
+                font-size: 0.8125rem;
+                font-weight: 400;
+                color: $dblack;
+                margin-top: 20px;
+                text-transform: uppercase;
+            }
+
+            ul {
+                display: flex;
+                gap: 30px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+
+                li {
+                    a {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: $dblack;
+                        text-transform: capitalize;
+                        transition: 0.5s ease-in-out;
+
+                        &:hover {
+                            color: $dblack;
+                        }
+                    }
+
+                }
+            }
+
+            .footer-desc {
+                margin-top: 30px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+                gap: 8px;
+                width: 100%;
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .figure {
+                    display: inline-flex;
+                    align-items: center;
+                    flex-shrink: 0;
+
+                    img {
+                        width: 22px;
+                        display: block;
+                    }
+                }
+
+                p {
+                    margin: 0;
+                    display: inline-flex;
+                    align-items: center;
+                    white-space: nowrap;
+                    flex-shrink: 0;
+                    font-size: 14px;
+                    line-height: 1;
+                    color: #000;
+                    text-transform: uppercase;
+
+                    span {
+                        font-weight: 400;
+                        margin: 0 2px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.bottom-footer {
+    background-color: $dblack;
+    width: 100%;
+    padding: 10px 0;
+
+    .content-wrap {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+
+        p,
+        a {
+            line-height: 1.5;
+            font-size: 0.875rem;
+            font-family: $secondaryFont;
+            color: $whitey ;
+            text-transform: capitalize;
+
+        }
+
+        a {
+            position: relative;
+            transition: 0.3s ease-in-out;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $primaryColor;
+                transition: 0.3s ease-in-out 0.1s;
+            }
+
+            &:hover {
+                color: $primaryColor;
+
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+@include custom_max(992px) {
+    .footer {
+        overflow: hidden;
+        padding: 20px 0 10px 0;
+
+        .footer-wrapper {
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px 0;
+            padding: 6px 0;
+
+            .footer-block {
+                gap: 40px 20px;
+
+                h5 {
+                    font-size: 1.25rem;
+                }
+
+                .desc {
+
+                    p {
+                        font-size: 0.875rem;
+                    }
+                }
+
+                .title {
+                    font-size: 0.875rem;
+                    display: block;
+                }
+
+                .quick-link {
+                    .footer-item {
+                        justify-content: center;
+                    }
+                }
+
+                .footer-desc {
+                    flex-wrap: nowrap !important;
+                    justify-content: center;
+                    gap: 6px;
+
+                    .figure {
+
+                        img {
+                            width: 20px;
+                        }
+                    }
+
+                    p {
+                        font-size: 12px;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-footer {
+        justify-content: center;
+        padding: 20px 0;
+
+        .content-wrap {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            p,
+            a {
+                line-height: 1.5;
+                font-size: 0.775rem;
+                font-family: $secondaryFont;
+                color: $whitey ;
+                text-transform: capitalize;
+                display: inline-block;
+            }
+
+            a {
+                position: relative;
+                transition: 0.3s ease-in-out;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $primaryColor;
+                    transition: 0.3s ease-in-out 0.1s;
+                }
+
+                &:hover {
+                    color: $primaryColor;
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

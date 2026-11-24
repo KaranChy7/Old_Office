@@ -1,0 +1,90 @@
+// =============================================
+// SERVICES PAGE
+// =============================================
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.services-page {
+    @include section-padding;
+
+    .services-intro {
+        text-align:    center;
+        max-width:     640px;
+        margin:        0 auto 70px;
+
+        .section-label { justify-content: center; }
+    }
+
+    .srv-page-grid {
+        display:               grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap:                   40px;
+
+        @include custom_max(767px) { grid-template-columns: 1fr; }
+    }
+
+    .srv-page-card {
+        display:       grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: $radius;
+        overflow:      hidden;
+        border:        1px solid $grey;
+        transition:    box-shadow 0.35s, transform 0.35s;
+
+        &:hover {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transform:  translateY(-4px);
+        }
+
+        .srv-page-img {
+            min-height: 280px;
+            img {
+                width:      100%;
+                height:     100%;
+                object-fit: cover;
+            }
+        }
+
+        .srv-page-body {
+            padding: 36px 30px;
+            background: $whitey;
+
+            .tag { margin-bottom: 14px; }
+
+            h3 {
+                font-family:   $primaryFont;
+                font-size:     1.6rem;
+                color:         $primaryColor;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size:     14px;
+                color:         $dark-color;
+                line-height:   1.7;
+                margin-bottom: 22px;
+            }
+
+            ul {
+                margin-bottom: 24px;
+
+                li {
+                    font-size:     13px;
+                    color:         $dark-color;
+                    padding:       7px 0;
+                    border-bottom: 1px solid $lgrey;
+                    display:       flex;
+                    align-items:   center;
+                    gap:           8px;
+
+                    i { color: $secondaryColor; font-size: 12px; }
+                }
+            }
+        }
+
+        @include custom_max(991px) {
+            grid-template-columns: 1fr;
+            .srv-page-img { min-height: 220px; }
+        }
+    }
+}

@@ -1,0 +1,159 @@
+.our-features {
+    // margin-top: -140px;
+    background-color: $black;
+    padding: 20px 0;
+
+    .our-features-wrapper {
+        // background-color:$territary;
+        position: relative;
+        border-radius: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px 10px;
+
+        .block {
+            flex-basis: calc(100% / 3 - 10px);
+            text-align: center;
+            padding: 40px 20px;
+            transition: 0.5s ease-in-out;
+            background-color: $whitey;
+            border-radius: 10px;
+
+            .icon {
+                position: relative;
+
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    max-width: 70px;
+                }
+
+                .sub-icon {
+                    display: inline-block;
+
+                    i {
+                        color: $secondaryColor;
+                        width: 80px;
+                        aspect-ratio: 1/1;
+                        font-size: 2rem;
+                        position: relative;
+
+                        &:before {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            box-sizing: border-box;
+                            border-radius: 50%;
+                            z-index: 0;
+                            border: 2px dashed $dblack;
+                        }
+
+                        &:hover {
+                            animation: yo 5s linear infinite;
+
+                            &::after {
+                                animation: yo 5s linear;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .text {
+                h6 {
+                    font-size: 1.25rem;
+                    text-transform: capitalize;
+                    font-weight: 600;
+                    color: $primaryColor;
+                    margin: 20px 0 10px 0;
+                    transition: 0.5s ease-in-out 0.2s;
+                }
+
+                p {
+                    line-height: 1.5;
+                    transition: 0.5s ease-in-out 0.2s;
+                }
+            }
+
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                border-radius: 20px;
+                cursor: pointer;
+                transform: scale(0.97);
+
+                .text {
+
+                    h6,
+                    p {
+                        transform: scale(1.01);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes yo {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@include custom_max(991px) {
+    .our-features {
+        margin-top: 0;
+
+        .our-features-wrapper {
+            flex-direction: column;
+            gap: 0;
+
+            .block {
+                padding: 20px;
+
+                .text {
+                    h6 {
+                        margin: 10px 0 5px 0;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+@include custom_max(767px) {
+    .our-features {
+        .our-features-wrapper {
+            .block {
+                .icon {
+
+                    .sub-icon {
+                        i {
+                            font-size: 1.75rem;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

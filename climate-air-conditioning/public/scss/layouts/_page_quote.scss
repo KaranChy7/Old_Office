@@ -1,0 +1,60 @@
+.page-quote {
+    background-color: $secondaryColor;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 60%;
+        left: 0;
+        // transform: translateY(-50%);
+        width: 100%;
+        height: calc(100% - 60%);
+        background-color: $t-color;
+        z-index: -1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url(../images/abstract.png);
+        top: 40%;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 40%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+
+    .main-title {
+        h5 {
+            color: $black;
+        }
+    }
+
+    .form {
+
+        .form-group {
+            label {
+                color: $dblack;
+            }
+
+            .form-input {
+                border-bottom: 1px solid $black;
+                color: $dblack;
+                background-color: $whitey !important;
+
+                &::placeholder {
+                    color: $black;
+                }
+
+                &:focus-visible {
+                    box-shadow: 2px 2px 3px -1px $dblack;
+                    border-bottom: 1px solid $dblack;
+                }
+            }
+        }
+    }
+}

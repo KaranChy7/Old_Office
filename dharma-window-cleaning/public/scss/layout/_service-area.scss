@@ -1,0 +1,228 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+@keyframes service-area-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.service-area {
+  position: relative;
+  padding: 5.5rem 0;
+  overflow: hidden;
+  isolation: isolate;
+
+  &__media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  &__bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba($ink, 0.5) 40%);
+  }
+
+  &__container {
+    position: relative;
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 3.5rem;
+
+    @include respond(lg) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    @include respond(md) {
+      padding: 0 1.25rem;
+    }
+  }
+
+  // Radius diagram
+  &__radius {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+
+    @include respond(lg) {
+      order: -1;
+    }
+  }
+
+  &__radius-rings {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    @include flex(center, center);
+  }
+
+  &__ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba($primary-light, 0.3);
+  }
+
+  &__ring--1 {
+    width: 90px;
+    height: 90px;
+  }
+
+  &__ring--2 {
+    width: 150px;
+    height: 150px;
+  }
+
+  &__ring--3 {
+    width: 220px;
+    height: 220px;
+    animation: service-area-pulse 2.6s ease-out infinite;
+  }
+
+  &__pin {
+    position: relative;
+    @include flex(center, center);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: $primary;
+    color: $white;
+    box-shadow: 0 0 0 8px rgba($primary, 0.18);
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__radius-label {
+    margin-top: 1.5rem;
+    font-family: $font-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $white;
+  }
+
+  // Content
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba($primary-light, 0.14);
+    color: $primary-light;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+  }
+
+  &__content {
+    h2 {
+      font-family: $font-serif;
+      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.25;
+      color: $white;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba($white, 0.75);
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__suburbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    list-style: none;
+
+    li {
+      padding: 0.4rem 0.9rem;
+      border: 1px solid rgba($white, 0.25);
+      border-radius: 999px;
+      background: rgba($white, 0.08);
+      color: $white;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1.75rem;
+    margin-bottom: 2.25rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba($white, 0.14);
+
+    @include respond(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__stat-number {
+    font-family: $font-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $primary-light;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+    white-space: nowrap;
+  }
+
+  &__stat-label {
+    font-size: 0.75rem;
+    color: rgba($white, 0.65);
+    white-space: nowrap;
+  }
+
+  &__btn {
+    @include btn-base;
+    background: $secondary;
+    color: $white;
+    border: none;
+    border-radius: 999px;
+    font-family: $font-body;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 600;
+    padding: 0.9rem 1.6rem;
+
+    &:hover {
+      background: $secondary-dark;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+}

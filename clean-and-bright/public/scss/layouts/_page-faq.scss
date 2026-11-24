@@ -1,0 +1,51 @@
+.faq-wrap {
+    display: block;
+    padding: 80px ;
+
+    .faq-block {
+        .main-title {
+            h3 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: $black;
+                text-align: center;
+
+            }
+        }
+    }
+
+    .accordion-button {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: $primaryColor;
+        word-spacing: 2px;
+        
+
+        &:not(.collapsed) {
+            background-color: $primaryColor;
+            color: $whitey;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .accordion-collapse {
+        .accordion-body {
+            p {
+                font-size: 1.125rem;
+                line-height: 1.8;
+                word-spacing: 2px;
+            }
+        }
+
+    }
+}
+
+@include custom_max(992px) {
+    .faq-wrap {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+}

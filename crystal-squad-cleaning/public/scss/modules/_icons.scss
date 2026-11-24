@@ -1,0 +1,55 @@
+// =============================================
+// OLD SCHOOL CLEANING & MAINTENANCE SERVICES — ICONS & SECTION BADGES
+// =============================================
+
+@use '../base/variables' as *;
+
+// Font Awesome icons from includes/icons.php
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+// Small pill label above section titles
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: $mint;
+  color: $green-dark;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.05rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+
+  .icon {
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+  }
+
+  // On dark green backgrounds
+  &--dark {
+    background: rgba($lime, 0.16);
+    color: $lime;
+  }
+
+  // On the amber reviews section
+  &--amber {
+    background: $white;
+    color: #9A6B00;
+
+    .icon {
+      color: $amber;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /includes/
+Disallow: /scss/
+
+Sitemap: https://oldschoolcleaningservices.com.au/sitemap.xml

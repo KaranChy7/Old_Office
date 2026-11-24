@@ -1,0 +1,19 @@
+body {
+    overflow-x: hidden;
+}
+
+.custom-animation {
+    opacity: 0;
+    transform: translate(150%);
+    transition: opacity 0.9s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+
+    &:nth-child(even) {
+        transform: translate(-150%);
+    }
+
+    &.show {
+        opacity: 1;
+        transform: translate(0);
+    }
+}

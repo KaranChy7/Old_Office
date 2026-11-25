@@ -1,0 +1,1 @@
+const b=document.querySelector('#menu'),n=document.querySelector('#nav'),h=document.querySelector('#header');b?.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);document.body.classList.toggle('locked',o)});window.addEventListener('scroll',()=>h?.classList.toggle('stuck',scrollY>20),{passive:true});
